@@ -238,14 +238,14 @@ public void updateStartTimeDateCar(String username,String date,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET StartTime = '"+ time +"',Datee='"+date+"' where ID = '"+mat+"'";
+        String sql = "UPDATE RideRealtime SET StartTime = '"+ time +"',Datee='"+date+"' where ID = "+mat+"";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
                JOptionPane.showMessageDialog(null, "Start Time/Date Updated");
            }
            else{
-               JOptionPane.showMessageDialog(null, "a: Insertion Failed");
+               JOptionPane.showMessageDialog(null, "e: Insertion Failed");
            }
       
            conn.CloseConnection();
@@ -257,14 +257,14 @@ public void updateStartTimeDateCar(String username,String date,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE DriverCarRT SET StartTime = '"+ time +"',Datee='"+date+"' where ID = '"+mat+"'";
+        String sql = "UPDATE DriverCarRT SET StartTime = '"+ time +"',Datee='"+date+"' where ID = "+mat+"";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
                
            }
            else{
-               JOptionPane.showMessageDialog(null, "a: Insertion Failed");
+               JOptionPane.showMessageDialog(null, "f: Insertion Failed");
            }
       
            conn.CloseConnection();
@@ -384,6 +384,7 @@ public void updateEndTimeDateCar(String username,String time)
             while(rst.next())
             {
                 mat=rst.getInt("ID");
+                System.out.println(mat);
 //           matching=rst.getString("RideStatus");
            
                 }
@@ -432,7 +433,7 @@ public void updateEndTimeDateCar(String username,String time)
               
            }
            else{
-               JOptionPane.showMessageDialog(null, "a: Insertion Failed");
+               JOptionPane.showMessageDialog(null, "b: Insertion Failed");
            }
       
            conn.CloseConnection();
@@ -549,6 +550,7 @@ public void updateEndTimeDateRickshaw(String username,String time)
             while(rst.next())
             {
                 mat=rst.getInt("ID");
+                System.out.println(mat);
 //           matching=rst.getString("RideStatus");
            
                 }
@@ -578,7 +580,7 @@ public void updateEndTimeDateRickshaw(String username,String time)
                JOptionPane.showMessageDialog(null, "Bill Status Updated ");
            }
            else{
-               JOptionPane.showMessageDialog(null, "a: Insertion Failed");
+               JOptionPane.showMessageDialog(null, "c: Insertion Failed");
            }
       
            conn.CloseConnection();
@@ -590,14 +592,15 @@ public void updateEndTimeDateRickshaw(String username,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE DriverCarRT SET BillStatus = '"+ billStatus +"',Bill = '"+billCar+"' where ID = '"+mat+"'";
-         int flagg=comm.InsertUpdateDelete(sql);
+        String sql = "UPDATE DriverCarRT SET BillStatus = '"+ billStatus +"',Bill = '"+billCar+"' where ID = "+mat+"";
+       System.out.println(sql);
+         int flaggg=comm.InsertUpdateDelete(sql);
                  
-           if(flagg==1){
+           if(flaggg==1){
              
            }
            else{
-               JOptionPane.showMessageDialog(null, "a: Insertion Failed");
+               JOptionPane.showMessageDialog(null, "d: Insertion Failed");
            }
       
            conn.CloseConnection();

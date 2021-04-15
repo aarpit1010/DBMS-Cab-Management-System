@@ -114,16 +114,18 @@ public class DriverCar implements Driver {
         String matching=null;
 //        "SELECT TOP 1 ID FROM DriverCarRT ORDER BY ID DESC"; 
          boolean flag = false;
+         int idd=0;
 //        String sqlBill = "Select MAX(BillNumber) AS BillNumber FROM BillT where PID = '" + PID + "'"  ;
         try{
             conn.OpenConnection();
-            String sql="Select MAX(RideStatus) AS RideStatus FROM DriverCarRT where Username = '" + username + "'";
-            
+            String sql="Select MAX(ID) AS ID FROM DriverCarRT where Username = '" + username + "'";
+            System.out.println(sql);
             rst= conn.GetData(sql);
             while(rst.next())
             {
-           matching=rst.getString("RideStatus");
-           
+                idd=rst.getInt("ID");
+//           matching=rst.getString("ID");
+           System.out.println(idd);
                 }
        
         
@@ -135,8 +137,34 @@ public class DriverCar implements Driver {
         catch(Exception e){
           JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last DriverCarId");  
         }
+        
+        try{
+            conn.OpenConnection();
+            String sql="Select RideStatus FROM DriverCarRT where ID = " + idd + "";
+            System.out.println(sql);
+            rst= conn.GetData(sql);
+            while(rst.next())
+            {
+//                idd=rst.getInt("ID");
+           matching=rst.getString("RideStatus");
+           System.out.println(matching);
+                }
+       
+        
+//           conn.CloseConnection();
+        
+        
+            conn.CloseConnection();
+          }
+        catch(Exception e){
+          JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last DriverCarId");  
+        }
+        
+        
+        if(matching==null)
+            matching="";
         String j=matching;
-        if(matching.equals("Running")||matching.equals("Built")||matching.equals("AtPickUp"))
+        if(matching.equals("Running")||matching.equals("Built")||matching.equals("AtPickUp")||matching.equals(""))
         {
             flag=true;
             
@@ -430,15 +458,15 @@ public class DriverCar implements Driver {
         {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
-        String sql="Insert into DriverCarRT (Username, DriverName,CarPlate, CarId, CarName,DriverAvail) values '"
+        String sql="Insert into DriverCarRT (Username, DriverName,CarPlate, CarId, CarName,DriverAvail) values ('"
                     + driverUsername+ "','"
                     + driverName+ "','"
-                + plateNo+ "','"
-                    + carId+ "','"
+                + plateNo+ "',"
+                    + carId+ ",'"
                      + carName+ "','"
-                    + avail+ "'";
+                    + avail+ "')";
         
-         
+        System.out.println( "sql" ); 
         int flag=conn.InsertUpdateDelete(sql);
                  
            if(flag==1){
@@ -500,14 +528,14 @@ public class DriverCar implements Driver {
         {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
-        String sql="Insert into RideRealtime (ID,Username, DriverName,VehiclePlate, VehicleId, VehicleName,DriverContactNo) values '"
+        String sql="Insert into RideRealtime (ID,Username, DriverName,VehiclePlate, VehicleId, VehicleName,DriverContactNo) values ('"
                 + no+ "','"
                     + driverUsername+ "','"
                     + driverName+ "','"
                 + plateNo+ "','"
                     + carId+ "','"
                      + carName+ "','"
-                    + contact+ "'";
+                    + contact+ "')";
                    
         
          
@@ -538,7 +566,7 @@ public class DriverCar implements Driver {
         {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
-        String sql="SELECT TOP 1 ID FROM DriverCarRT ORDER BY ID DESC"; 
+        String sql="SELECT ID FROM DriverCarRT ORDER BY ID DESC LIMIT 1"; 
         rst= conn.GetData(sql);      
           
          while(rst.next()){
@@ -596,7 +624,7 @@ public class DriverCar implements Driver {
         int flag;
         try{
         conn.OpenConnection();
-        String sql = "UPDATE DriverCarRT SET DriverAvail = '"+ newAss +"' where ID = '"+i+ "'";
+        String sql = "UPDATE DriverCarRT SET DriverAvail = "+ newAss +" where ID = "+i+ "";
        
         flag = conn.InsertUpdateDelete(sql);
            if(flag == 1){
@@ -613,7 +641,7 @@ public class DriverCar implements Driver {
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE DriverCarRT SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"' where ID = '"+i+ "'";
+        String sql = "UPDATE DriverCarRT SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"' where ID = "+i+ "";
         
          
         int flagg=comm.InsertUpdateDelete(sql);
@@ -622,7 +650,7 @@ public class DriverCar implements Driver {
               
            }
            else{
-               JOptionPane.showMessageDialog(null, "Insertion Failed");
+               JOptionPane.showMessageDialog(null, "Insertion Failed asdfghjk");
            }
            conn.CloseConnection();
           }
@@ -651,18 +679,23 @@ public class DriverCar implements Driver {
                catch(Exception e){
           JOptionPane.showMessageDialog(null, e+"\n getPassengerContact  Error");  
         }
+              
+        
          try
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"',PassengerContactNo='"+contact+"' where ID = '"+i+ "'";
-         int flagg=comm.InsertUpdateDelete(sql);
+        String sql = "UPDATE RideRealtime SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"',PassengerContactNo='"+contact+"' where ID = "+i+ "";
+         
+        System.out.println( sql );
+        
+        int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
                
            }
            else{
-               JOptionPane.showMessageDialog(null, "Insertion Failed");
+               JOptionPane.showMessageDialog(null, "Insertion Failed abc");
            }
          
          
@@ -676,7 +709,7 @@ public class DriverCar implements Driver {
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE DriverCarRT SET PName = '"+ pname +"' where ID = '"+i+ "'";
+        String sql = "UPDATE DriverCarRT SET PName = '"+ pname +"' where ID = "+i+ "";
         
          
         int flagg=comm.InsertUpdateDelete(sql);
@@ -685,7 +718,7 @@ public class DriverCar implements Driver {
                
            }
            else{
-               JOptionPane.showMessageDialog(null, "Insertion Failed");
+               JOptionPane.showMessageDialog(null, "Insertion Failed dfghjhgf");
            }
            conn.CloseConnection();
           }
@@ -696,7 +729,7 @@ public class DriverCar implements Driver {
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET PName = '"+ pname +"' where ID = '"+i+ "'";
+        String sql = "UPDATE RideRealtime SET PName = '"+ pname +"' where ID = "+i+ "";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -704,7 +737,7 @@ public class DriverCar implements Driver {
                
            }
            else{
-               JOptionPane.showMessageDialog(null, "Insertion Failed");
+               JOptionPane.showMessageDialog(null, "Insertion Failed cvbnm");
            }
       
            conn.CloseConnection();
