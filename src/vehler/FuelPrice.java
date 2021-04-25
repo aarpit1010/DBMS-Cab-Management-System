@@ -400,21 +400,25 @@ public class FuelPrice extends javax.swing.JFrame {
                 .addContainerGap(243, Short.MAX_VALUE))
         );
 
+        fuelButton.setBackground(new java.awt.Color(51, 0, 102));
         fuelButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 fuelButtonMouseClicked(evt);
             }
         });
 
-        jLabel8.setText("Fuel Price");
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/price.png"))); // NOI18N
+        jLabel8.setText("       Fuel Price");
 
         javax.swing.GroupLayout fuelButtonLayout = new javax.swing.GroupLayout(fuelButton);
         fuelButton.setLayout(fuelButtonLayout);
         fuelButtonLayout.setHorizontalGroup(
             fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fuelButtonLayout.createSequentialGroup()
-                .addGap(119, 119, 119)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
+                .addComponent(jLabel8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         fuelButtonLayout.setVerticalGroup(

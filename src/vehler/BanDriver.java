@@ -91,13 +91,13 @@ public class BanDriver extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel3.setBackground(new java.awt.Color(51, 0, 102));
+        jPanel3.setBackground(new java.awt.Color(64, 34, 107));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Vehler");
 
-        addVehicleButton.setBackground(new java.awt.Color(51, 0, 102));
+        addVehicleButton.setBackground(new java.awt.Color(64, 34, 107));
         addVehicleButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addVehicleButtonMouseClicked(evt);
@@ -142,7 +142,7 @@ public class BanDriver extends javax.swing.JFrame {
         addVehicleButton5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         removeVehicleButton.add(addVehicleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        banDriverButton.setBackground(new java.awt.Color(51, 0, 102));
+        banDriverButton.setBackground(new java.awt.Color(64, 34, 107));
         banDriverButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 banDriverButtonMouseClicked(evt);
@@ -164,7 +164,7 @@ public class BanDriver extends javax.swing.JFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Denied_25px.png"))); // NOI18N
         banDriverButton.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        ridesHistoryButton.setBackground(new java.awt.Color(51, 0, 102));
+        ridesHistoryButton.setBackground(new java.awt.Color(64, 34, 107));
         ridesHistoryButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ridesHistoryButtonMouseClicked(evt);
@@ -186,7 +186,7 @@ public class BanDriver extends javax.swing.JFrame {
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Clock_25px.png"))); // NOI18N
         ridesHistoryButton.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        settingsButton.setBackground(new java.awt.Color(51, 0, 102));
+        settingsButton.setBackground(new java.awt.Color(64, 34, 107));
         settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 settingsButtonMouseClicked(evt);
@@ -208,7 +208,7 @@ public class BanDriver extends javax.swing.JFrame {
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
         settingsButton.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        logOutButton.setBackground(new java.awt.Color(51, 0, 102));
+        logOutButton.setBackground(new java.awt.Color(64, 34, 107));
         logOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logOutButtonMouseClicked(evt);
@@ -230,21 +230,25 @@ public class BanDriver extends javax.swing.JFrame {
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Logout_Rounded_Up_25px.png"))); // NOI18N
         logOutButton.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
+        fuelButton.setBackground(new java.awt.Color(64, 34, 107));
         fuelButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 fuelButtonMouseClicked(evt);
             }
         });
 
-        jLabel9.setText("Fuel Price");
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/price.png"))); // NOI18N
+        jLabel9.setText("        Fuel Price");
 
         javax.swing.GroupLayout fuelButtonLayout = new javax.swing.GroupLayout(fuelButton);
         fuelButton.setLayout(fuelButtonLayout);
         fuelButtonLayout.setHorizontalGroup(
             fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fuelButtonLayout.createSequentialGroup()
-                .addGap(141, 141, 141)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         fuelButtonLayout.setVerticalGroup(

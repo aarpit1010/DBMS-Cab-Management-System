@@ -45,7 +45,7 @@
     <Container class="javax.swing.JPanel" name="jPanel3">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="33" type="rgb"/>
+          <Color blue="6b" green="22" red="40" type="rgb"/>
         </Property>
       </Properties>
 
@@ -133,7 +133,7 @@
         <Container class="javax.swing.JPanel" name="addVehicleButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="0" red="33" type="rgb"/>
+              <Color blue="6b" green="22" red="40" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -216,7 +216,7 @@
         <Container class="javax.swing.JPanel" name="banDriverButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="0" red="33" type="rgb"/>
+              <Color blue="6b" green="22" red="40" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -262,7 +262,7 @@
         <Container class="javax.swing.JPanel" name="ridesHistoryButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="0" red="33" type="rgb"/>
+              <Color blue="6b" green="22" red="40" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -308,7 +308,7 @@
         <Container class="javax.swing.JPanel" name="settingsButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="0" red="33" type="rgb"/>
+              <Color blue="6b" green="22" red="40" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -354,7 +354,7 @@
         <Container class="javax.swing.JPanel" name="logOutButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="0" red="33" type="rgb"/>
+              <Color blue="6b" green="22" red="40" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -398,6 +398,11 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="fuelButton">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="6b" green="22" red="40" type="rgb"/>
+            </Property>
+          </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fuelButtonMouseClicked"/>
           </Events>
@@ -406,8 +411,8 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
-                      <Component id="jLabel9" min="-2" pref="64" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <Component id="jLabel9" min="-2" pref="137" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -425,7 +430,16 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Fuel Price"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Century Gothic" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="f0" green="f0" red="f0" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Images/price.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="        Fuel Price"/>
               </Properties>
             </Component>
           </SubComponents>

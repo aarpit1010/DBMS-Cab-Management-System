@@ -73,7 +73,9 @@ String username;
         setUndecorated(true);
 
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 51, 153));
-        kGradientPanel1.setkStartColor(new java.awt.Color(102, 0, 102));
+        kGradientPanel1.setkGradientFocus(200);
+        kGradientPanel1.setkStartColor(new java.awt.Color(41, 144, 181));
+        kGradientPanel1.setName(""); // NOI18N
         kGradientPanel1.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -97,7 +99,7 @@ String username;
         kGradientPanel1.add(confirmLabel);
         confirmLabel.setBounds(490, 490, 170, 19);
 
-        LoginButton.setBackground(new java.awt.Color(153, 51, 255));
+        LoginButton.setBackground(new java.awt.Color(26, 111, 145));
         LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LoginButtonMouseClicked(evt);
@@ -139,7 +141,7 @@ String username;
         kGradientPanel1.add(jSeparator7);
         jSeparator7.setBounds(910, 530, 150, 10);
 
-        SignInButton.setBackground(new java.awt.Color(153, 51, 255));
+        SignInButton.setBackground(new java.awt.Color(26, 111, 145));
         SignInButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SignInButtonMouseClicked(evt);
@@ -200,7 +202,7 @@ String username;
         kGradientPanel1.add(jSeparator9);
         jSeparator9.setBounds(490, 470, 270, 10);
 
-        saveButton.setBackground(new java.awt.Color(153, 51, 255));
+        saveButton.setBackground(new java.awt.Color(26, 111, 145));
         saveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 saveButtonMouseClicked(evt);

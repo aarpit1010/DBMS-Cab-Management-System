@@ -125,6 +125,7 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         fuelButton = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jMenu3.setText("jMenu3");
 
@@ -214,7 +215,7 @@ public class AddVehicle extends javax.swing.JFrame {
         checkRickshaw.setText("Rickshaw");
 
         finishButton.setBackground(new java.awt.Color(255, 255, 255));
-        finishButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 102, 255), 3));
+        finishButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(100, 149, 237), 3));
         finishButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 finishButtonMouseClicked(evt);
@@ -334,7 +335,7 @@ public class AddVehicle extends javax.swing.JFrame {
         fromLabel.setText("From");
 
         doneButton.setBackground(new java.awt.Color(255, 255, 255));
-        doneButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 102, 255), 3));
+        doneButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(100, 149, 237), 3));
         doneButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 doneButtonMouseClicked(evt);
@@ -517,7 +518,7 @@ public class AddVehicle extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(51, 0, 102));
 
-        addVehicleButton.setBackground(new java.awt.Color(51, 0, 102));
+        addVehicleButton.setBackground(new java.awt.Color(25, 25, 112));
         addVehicleButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addVehicleButtonMouseClicked(evt);
@@ -562,7 +563,7 @@ public class AddVehicle extends javax.swing.JFrame {
         addVehicleButton5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         removeVehicleButton.add(addVehicleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        banDriverButton.setBackground(new java.awt.Color(51, 0, 102));
+        banDriverButton.setBackground(new java.awt.Color(25, 25, 112));
         banDriverButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 banDriverButtonMouseClicked(evt);
@@ -584,7 +585,7 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Denied_25px.png"))); // NOI18N
         banDriverButton.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        ridesHistoryButton.setBackground(new java.awt.Color(51, 0, 102));
+        ridesHistoryButton.setBackground(new java.awt.Color(25, 25, 112));
         ridesHistoryButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ridesHistoryButtonMouseClicked(evt);
@@ -628,7 +629,7 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
         settingsButton.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        logOutButton.setBackground(new java.awt.Color(51, 0, 102));
+        logOutButton.setBackground(new java.awt.Color(25, 25, 112));
         logOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logOutButtonMouseClicked(evt);
@@ -650,13 +651,13 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Logout_Rounded_Up_25px.png"))); // NOI18N
         logOutButton.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        jPanel7.setBackground(new java.awt.Color(51, 0, 102));
+        jPanel7.setBackground(new java.awt.Color(25, 25, 112));
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Vehler");
 
-        addVehicleButton1.setBackground(new java.awt.Color(51, 0, 102));
+        addVehicleButton1.setBackground(new java.awt.Color(25, 25, 112));
         addVehicleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addVehicleButton1MouseClicked(evt);
@@ -701,7 +702,7 @@ public class AddVehicle extends javax.swing.JFrame {
         addVehicleButton6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         removeVehicleButton1.add(addVehicleButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        banDriverButton1.setBackground(new java.awt.Color(51, 0, 102));
+        banDriverButton1.setBackground(new java.awt.Color(25, 25, 112));
         banDriverButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 banDriverButton1MouseClicked(evt);
@@ -745,7 +746,7 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Clock_25px.png"))); // NOI18N
         ridesHistoryButton1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        settingsButton1.setBackground(new java.awt.Color(51, 0, 102));
+        settingsButton1.setBackground(new java.awt.Color(25, 25, 112));
         settingsButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 settingsButton1MouseClicked(evt);
@@ -767,7 +768,7 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
         settingsButton1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        logOutButton1.setBackground(new java.awt.Color(51, 0, 102));
+        logOutButton1.setBackground(new java.awt.Color(25, 25, 112));
         logOutButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logOutButton1MouseClicked(evt);
@@ -789,29 +790,40 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Logout_Rounded_Up_25px.png"))); // NOI18N
         logOutButton1.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
+        fuelButton.setBackground(new java.awt.Color(25, 25, 112));
         fuelButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 fuelButtonMouseClicked(evt);
             }
         });
 
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Fuel Price");
+        jLabel11.setMaximumSize(new java.awt.Dimension(54, 19));
+        jLabel11.setMinimumSize(new java.awt.Dimension(54, 19));
+        jLabel11.setPreferredSize(new java.awt.Dimension(54, 19));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/price.png"))); // NOI18N
 
         javax.swing.GroupLayout fuelButtonLayout = new javax.swing.GroupLayout(fuelButton);
         fuelButton.setLayout(fuelButtonLayout);
         fuelButtonLayout.setHorizontalGroup(
             fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fuelButtonLayout.createSequentialGroup()
-                .addGap(141, 141, 141)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addGap(83, 83, 83)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(272, Short.MAX_VALUE))
         );
         fuelButtonLayout.setVerticalGroup(
             fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(fuelButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fuelButtonLayout.createSequentialGroup()
+                .addGap(0, 22, Short.MAX_VALUE)
+                .addGroup(fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -826,7 +838,7 @@ public class AddVehicle extends javax.swing.JFrame {
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addComponent(ridesHistoryButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(12, 12, 12)
-                                .addComponent(removeVehicleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 10, Short.MAX_VALUE))
+                                .addComponent(removeVehicleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(settingsButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(logOutButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(banDriverButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -882,7 +894,7 @@ public class AddVehicle extends javax.swing.JFrame {
                             .addComponent(banDriverButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(settingsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(removeVehicleButton, javax.swing.GroupLayout.DEFAULT_SIZE, 10, Short.MAX_VALUE))
+                        .addComponent(removeVehicleButton, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(logOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -908,7 +920,7 @@ public class AddVehicle extends javax.swing.JFrame {
                 .addComponent(removeVehicleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
                 .addComponent(logOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(106, 106, 106))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1326,6 +1338,7 @@ else
     private javax.swing.JComboBox fromCombo;
     private javax.swing.JLabel fromLabel;
     private javax.swing.JPanel fuelButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

@@ -54,8 +54,6 @@ public class LoginMain extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         xpanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -65,8 +63,10 @@ public class LoginMain extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 51, 153));
-        kGradientPanel1.setkStartColor(new java.awt.Color(255, 153, 255));
+        kGradientPanel1.setkStartColor(new java.awt.Color(41, 144, 181));
         kGradientPanel1.setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -142,7 +142,8 @@ public class LoginMain extends javax.swing.JFrame {
         kGradientPanel1.add(jSeparator6);
         jSeparator6.setBounds(910, 450, 270, 10);
 
-        LoginButton.setBackground(new java.awt.Color(153, 51, 255));
+        LoginButton.setBackground(new java.awt.Color(26, 111, 145));
+        LoginButton.setToolTipText("");
         LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LoginButtonMouseClicked(evt);
@@ -199,7 +200,7 @@ public class LoginMain extends javax.swing.JFrame {
         kGradientPanel1.add(jSeparator7);
         jSeparator7.setBounds(150, 570, 150, 10);
 
-        SignUpButton.setBackground(new java.awt.Color(153, 51, 255));
+        SignUpButton.setBackground(new java.awt.Color(26, 111, 145));
         SignUpButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SignUpButtonMouseClicked(evt);
@@ -226,9 +227,9 @@ public class LoginMain extends javax.swing.JFrame {
         kGradientPanel1.add(SignUpButton);
         SignUpButton.setBounds(150, 590, 140, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/v1 (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
         kGradientPanel1.add(jLabel1);
-        jLabel1.setBounds(100, 240, 350, 260);
+        jLabel1.setBounds(20, 230, 530, 280);
 
         jSeparator8.setForeground(new java.awt.Color(255, 255, 255));
         kGradientPanel1.add(jSeparator8);
@@ -237,15 +238,6 @@ public class LoginMain extends javax.swing.JFrame {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         kGradientPanel1.add(jSeparator1);
         jSeparator1.setBounds(760, 230, 50, 320);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Copyright_24px.png"))); // NOI18N
-        kGradientPanel1.add(jLabel2);
-        jLabel2.setBounds(1050, 650, 34, 30);
-
-        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel5.setText("All rights reserved, Adeel Zafar.");
-        kGradientPanel1.add(jLabel5);
-        jLabel5.setBounds(1090, 660, 200, 14);
 
         jPanel1.setOpaque(false);
 
@@ -333,22 +325,7 @@ public class LoginMain extends javax.swing.JFrame {
         kGradientPanel1.add(jPanel1);
         jPanel1.setBounds(1180, 10, 83, 30);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1287, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jPanel2.add(kGradientPanel1, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -367,12 +344,12 @@ public class LoginMain extends javax.swing.JFrame {
 
     private void SignUpButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpButtonMouseExited
         // TODO add your handling code here:
-        SignUpButton.setBackground(new Color(153,51,255));
+        SignUpButton.setBackground(new Color(26,111,145));
     }//GEN-LAST:event_SignUpButtonMouseExited
 
     private void SignUpButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpButtonMouseEntered
         // TODO add your handling code here:
-        SignUpButton.setBackground(new Color(204,153,255));
+        SignUpButton.setBackground(new Color(51,153,153));
     }//GEN-LAST:event_SignUpButtonMouseEntered
 
     private void SignUpButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpButtonMouseClicked
@@ -395,12 +372,12 @@ public class LoginMain extends javax.swing.JFrame {
 
     private void LoginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseExited
         // TODO add your handling code here:
-        LoginButton.setBackground(new Color(153,51,255));
+        LoginButton.setBackground(new Color(26,111,145));
     }//GEN-LAST:event_LoginButtonMouseExited
 
     private void LoginButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseEntered
         // TODO add your handling code here:
-        LoginButton.setBackground(new Color(204,153,255));
+        LoginButton.setBackground(new Color(51,153,153));
     }//GEN-LAST:event_LoginButtonMouseEntered
 
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseClicked
@@ -523,7 +500,7 @@ public class LoginMain extends javax.swing.JFrame {
 
     private void xpanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseEntered
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(153,51,255));
+        xpanel.setBackground(new Color(51,153,153));
     }//GEN-LAST:event_xpanelMouseEntered
 
     private void xpanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseExited
@@ -533,7 +510,7 @@ public class LoginMain extends javax.swing.JFrame {
 
     private void ypanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseEntered
         // TODO add your handling code here:
-         ypanel.setBackground(new Color(153,51,255));
+         ypanel.setBackground(new Color(51,153,153));
     }//GEN-LAST:event_ypanelMouseEntered
 
     private void ypanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseExited
@@ -600,10 +577,8 @@ public class LoginMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

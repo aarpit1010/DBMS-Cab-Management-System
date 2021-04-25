@@ -314,7 +314,7 @@ public class AdminSettings extends javax.swing.JFrame {
         newPasswordLabel.setText("New Password");
 
         saveButton.setBackground(new java.awt.Color(255, 255, 255));
-        saveButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 102, 255), 3));
+        saveButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(72, 209, 204), 3));
         saveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 saveButtonMouseClicked(evt);
@@ -354,7 +354,7 @@ public class AdminSettings extends javax.swing.JFrame {
         );
 
         verifyButton.setBackground(new java.awt.Color(255, 255, 255));
-        verifyButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 102, 255), 3));
+        verifyButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(72, 209, 204), 3));
         verifyButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 verifyButtonMouseClicked(evt);
@@ -511,21 +511,28 @@ public class AdminSettings extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
+        fuelButton.setBackground(new java.awt.Color(51, 0, 102));
+        fuelButton.setFocusable(false);
+        fuelButton.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         fuelButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 fuelButtonMouseClicked(evt);
             }
         });
 
-        jLabel8.setText("Fuel Price");
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/price.png"))); // NOI18N
+        jLabel8.setText("        Fuel Price");
+        jLabel8.setToolTipText("");
 
         javax.swing.GroupLayout fuelButtonLayout = new javax.swing.GroupLayout(fuelButton);
         fuelButton.setLayout(fuelButtonLayout);
         fuelButtonLayout.setHorizontalGroup(
             fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fuelButtonLayout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81)
+                .addComponent(jLabel8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         fuelButtonLayout.setVerticalGroup(

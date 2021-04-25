@@ -86,7 +86,7 @@ public class DriverSignUp extends javax.swing.JFrame {
         setUndecorated(true);
 
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 51, 153));
-        kGradientPanel1.setkStartColor(new java.awt.Color(255, 153, 255));
+        kGradientPanel1.setkStartColor(new java.awt.Color(41, 144, 181));
         kGradientPanel1.setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -269,8 +269,7 @@ public class DriverSignUp extends javax.swing.JFrame {
         kGradientPanel1.add(checkBus);
         checkBus.setBounds(440, 270, 90, 25);
 
-        nextButton.setBackground(new java.awt.Color(153, 102, 255));
-        nextButton.setForeground(new java.awt.Color(102, 102, 102));
+        nextButton.setBackground(new java.awt.Color(26, 111, 145));
         nextButton.setText("Next");
         nextButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -285,7 +284,8 @@ public class DriverSignUp extends javax.swing.JFrame {
         kGradientPanel1.add(nextButton);
         nextButton.setBounds(300, 340, 80, 30);
 
-        SignInButton.setBackground(new java.awt.Color(153, 51, 255));
+        SignInButton.setBackground(new java.awt.Color(26, 111, 145));
+        SignInButton.setToolTipText("");
         SignInButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SignInButtonMouseClicked(evt);
@@ -579,7 +579,7 @@ else if(checkRickshaw.isSelected())
 
     private void xpanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseEntered
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(153,51,255));
+        xpanel.setBackground(new Color(51,153,153));
     }//GEN-LAST:event_xpanelMouseEntered
 
     private void xpanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseExited
@@ -594,7 +594,7 @@ else if(checkRickshaw.isSelected())
 
     private void ypanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseEntered
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(153,51,255));
+        ypanel.setBackground(new Color(51,153,153));
     }//GEN-LAST:event_ypanelMouseEntered
 
     private void ypanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseExited

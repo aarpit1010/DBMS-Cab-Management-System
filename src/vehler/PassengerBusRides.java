@@ -87,13 +87,13 @@ public class PassengerBusRides extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(51, 0, 102));
+        jPanel3.setBackground(new java.awt.Color(64, 34, 107));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Vehler");
 
-        bookRideButton.setBackground(new java.awt.Color(51, 0, 102));
+        bookRideButton.setBackground(new java.awt.Color(64, 34, 107));
         bookRideButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bookRideButtonMouseClicked(evt);
@@ -115,7 +115,7 @@ public class PassengerBusRides extends javax.swing.JFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Add_Key_25px.png"))); // NOI18N
         bookRideButton.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        removeVehicleButton.setBackground(new java.awt.Color(51, 0, 102));
+        removeVehicleButton.setBackground(new java.awt.Color(64, 34, 107));
         removeVehicleButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 removeVehicleButtonMouseEntered(evt);
@@ -138,7 +138,7 @@ public class PassengerBusRides extends javax.swing.JFrame {
         addVehicleButton5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         removeVehicleButton.add(addVehicleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        myRidesButton.setBackground(new java.awt.Color(51, 0, 102));
+        myRidesButton.setBackground(new java.awt.Color(64, 34, 107));
         myRidesButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 myRidesButtonMouseClicked(evt);
@@ -160,7 +160,7 @@ public class PassengerBusRides extends javax.swing.JFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Present_25px_1.png"))); // NOI18N
         myRidesButton.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        busRidesButton.setBackground(new java.awt.Color(51, 0, 102));
+        busRidesButton.setBackground(new java.awt.Color(64, 34, 107));
         busRidesButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 busRidesButtonMouseClicked(evt);
@@ -182,7 +182,7 @@ public class PassengerBusRides extends javax.swing.JFrame {
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Bus_25px.png"))); // NOI18N
         busRidesButton.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        logOutButton.setBackground(new java.awt.Color(51, 0, 102));
+        logOutButton.setBackground(new java.awt.Color(64, 34, 107));
         logOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logOutButtonMouseClicked(evt);

@@ -85,7 +85,7 @@ public class RegistrationForm extends javax.swing.JFrame {
         setUndecorated(true);
 
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 51, 153));
-        kGradientPanel1.setkStartColor(new java.awt.Color(255, 153, 255));
+        kGradientPanel1.setkStartColor(new java.awt.Color(41, 144, 181));
         kGradientPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
@@ -183,7 +183,7 @@ public class RegistrationForm extends javax.swing.JFrame {
         registerUsername.setForeground(new java.awt.Color(102, 102, 102));
         registerUsername.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(12, 91, 160)));
 
-        registerButton.setBackground(new java.awt.Color(153, 51, 255));
+        registerButton.setBackground(new java.awt.Color(26, 111, 145));
         registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 registerButtonMouseClicked(evt);
@@ -432,7 +432,7 @@ public class RegistrationForm extends javax.swing.JFrame {
         kGradientPanel1.add(jPanel2);
         jPanel2.setBounds(1220, 10, 120, 30);
 
-        SignInButton.setBackground(new java.awt.Color(153, 51, 255));
+        SignInButton.setBackground(new java.awt.Color(26, 111, 145));
         SignInButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SignInButtonMouseClicked(evt);
@@ -551,7 +551,7 @@ else
 
     private void xpanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseEntered
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(153,51,255));
+        xpanel.setBackground(new Color(51,153,153));
     }//GEN-LAST:event_xpanelMouseEntered
 
     private void xpanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseExited
@@ -566,7 +566,7 @@ else
 
     private void ypanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseEntered
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(153,51,255));
+        ypanel.setBackground(new Color(51,153,153));
     }//GEN-LAST:event_ypanelMouseEntered
 
     private void ypanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseExited
@@ -576,12 +576,12 @@ else
 
     private void registerButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseEntered
         // TODO add your handling code here:
-        registerButton.setBackground(new Color(204,153,255));
+        registerButton.setBackground(new Color(51,153,153));
     }//GEN-LAST:event_registerButtonMouseEntered
 
     private void registerButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseExited
         // TODO add your handling code here:
-        registerButton.setBackground(new Color(153,51,255));
+        registerButton.setBackground(new Color(26,111,145));
     }//GEN-LAST:event_registerButtonMouseExited
 
     private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
@@ -597,12 +597,12 @@ else
 
     private void SignInButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseEntered
         // TODO add your handling code here:
-        SignInButton.setBackground(new Color(204,153,255));
+        SignInButton.setBackground(new Color(51,153,153));
     }//GEN-LAST:event_SignInButtonMouseEntered
 
     private void SignInButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseExited
         // TODO add your handling code here:
-        SignInButton.setBackground(new Color(153,51,255));
+        SignInButton.setBackground(new Color(26,111,145));
     }//GEN-LAST:event_SignInButtonMouseExited
 
     /**

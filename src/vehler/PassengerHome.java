@@ -250,7 +250,7 @@ public class PassengerHome extends javax.swing.JFrame {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 410, 646));
 
-        jPanel1.setBackground(new java.awt.Color(153, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(106, 90, 205));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
