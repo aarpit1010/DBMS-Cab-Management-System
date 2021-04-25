@@ -17,9 +17,9 @@ public class CurrentRide extends javax.swing.JFrame {
     /**
      * Creates new form CurrentRide
      */
-    int billCar;
-        int billRickshaw;
-        int billBus;
+    double billCar;
+        double billRickshaw;
+        double billBus;
     private String username,type;
     public CurrentRide() {
         initComponents();
@@ -1476,10 +1476,15 @@ public class CurrentRide extends javax.swing.JFrame {
         int km=Integer.parseInt(String.valueOf(kmCombo.getSelectedItem()));
         Ride ride=new Ride();
         String billStatus="Unpaid";
+        int fuelprice=FuelPrice.getFuelPrice();
+        System.out.println("KKK");
+        System.out.println(fuelprice);
         if(type=="Car")
         {
-            billCar=km*20;
-            billText.setText(Integer.toString(billCar));
+            double carprice=fuelprice+(fuelprice*17)/100;
+            System.out.println(carprice);
+            billCar=km*carprice;
+            billText.setText(String.valueOf(billCar));
             DateTime dt=new DateTime();
             String endtime=dt.getTime();
             ride.updateEndTimeDateCar(username,endtime);
@@ -1487,8 +1492,9 @@ public class CurrentRide extends javax.swing.JFrame {
         }
         else if(type=="Rickshaw")
         {
-            billRickshaw=km*15;
-            billText.setText(Integer.toString(billRickshaw));
+            double rickshawprice=fuelprice+(fuelprice*11)/100;
+            billRickshaw=(km*rickshawprice);
+            billText.setText(String.valueOf(billRickshaw));
              DateTime dt=new DateTime();
             String endtime=dt.getTime();
             ride.updateEndTimeDateRickshaw(username,endtime);
@@ -1496,8 +1502,9 @@ public class CurrentRide extends javax.swing.JFrame {
         }
         else if(type=="Bus")
         {
-            billBus=km*10;
-            billText.setText(Integer.toString(billBus));
+            double busprice=fuelprice+(fuelprice*20)/100;
+            billBus=(km*busprice);
+            billText.setText(String.valueOf(billBus));
             DateTime dt=new DateTime();
             String endtime=dt.getTime();
             ride.updateEndTimeDateBus(username,endtime);

@@ -538,7 +538,7 @@ public void updateEndTimeDateRickshaw(String username,String time)
         }
         
 }
- public void updateBillStatusCar(String username,String billStatus,int billCar)
+ public void updateBillStatusCar(String username,String billStatus,double billCar)
     {
         String matching=null;
         int mat=0;
@@ -611,7 +611,7 @@ public void updateEndTimeDateRickshaw(String username,String time)
              
         }
  
- public void updateBillStatusRickshaw(String username,String billStatus,int billRickshaw)
+ public void updateBillStatusRickshaw(String username,String billStatus,double billRickshaw)
     {
         String matching=null;
         int mat=0;
@@ -681,7 +681,7 @@ public void updateEndTimeDateRickshaw(String username,String time)
         }
              
         }
- public void updateBillStatusBus(String username,String billStatus,int billBus)
+ public void updateBillStatusBus(String username,String billStatus,double billBus)
     {
          
             

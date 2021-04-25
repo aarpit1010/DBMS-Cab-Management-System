@@ -71,6 +71,8 @@ public class BanDriver extends javax.swing.JFrame {
         logOutButton = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        fuelButton = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -228,6 +230,31 @@ public class BanDriver extends javax.swing.JFrame {
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Logout_Rounded_Up_25px.png"))); // NOI18N
         logOutButton.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
+        fuelButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fuelButtonMouseClicked(evt);
+            }
+        });
+
+        jLabel9.setText("Fuel Price");
+
+        javax.swing.GroupLayout fuelButtonLayout = new javax.swing.GroupLayout(fuelButton);
+        fuelButton.setLayout(fuelButtonLayout);
+        fuelButtonLayout.setHorizontalGroup(
+            fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fuelButtonLayout.createSequentialGroup()
+                .addGap(141, 141, 141)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        fuelButtonLayout.setVerticalGroup(
+            fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fuelButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -257,6 +284,7 @@ public class BanDriver extends javax.swing.JFrame {
                                 .addComponent(banDriverButton, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
+            .addComponent(fuelButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,7 +303,9 @@ public class BanDriver extends javax.swing.JFrame {
                 .addComponent(removeVehicleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fuelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(logOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(106, 106, 106))
         );
@@ -675,6 +705,14 @@ addvehicle.setVisible(true);
         jLabel3.setForeground(new Color(102,102,102));
     }//GEN-LAST:event_jButton2MouseExited
 
+    private void fuelButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseClicked
+        // TODO add your handling code here:
+
+        FuelPrice fuelprice=new FuelPrice(adminusername);
+        this.setVisible(false);
+        fuelprice.setVisible(true);
+    }//GEN-LAST:event_fuelButtonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -716,6 +754,7 @@ addvehicle.setVisible(true);
     private javax.swing.JPanel addVehicleButton5;
     private javax.swing.JPanel banDriverButton;
     private javax.swing.JTextField banText;
+    private javax.swing.JPanel fuelButton;
     private javax.swing.JPanel jButton1;
     private javax.swing.JPanel jButton2;
     private javax.swing.JLabel jLabel1;
@@ -735,6 +774,7 @@ addvehicle.setVisible(true);
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
