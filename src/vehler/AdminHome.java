@@ -62,7 +62,7 @@ public class AdminHome extends javax.swing.JFrame {
         ridesHistoryButton = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        settingsButton = new javax.swing.JPanel();
+        rephisbutton = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         logOutButton = new javax.swing.JPanel();
@@ -71,6 +71,9 @@ public class AdminHome extends javax.swing.JFrame {
         fuelButton = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        settingsButton = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -326,27 +329,28 @@ public class AdminHome extends javax.swing.JFrame {
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Clock_25px.png"))); // NOI18N
         ridesHistoryButton.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        settingsButton.setBackground(new java.awt.Color(25, 25, 112));
-        settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        rephisbutton.setBackground(new java.awt.Color(25, 25, 112));
+        rephisbutton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                settingsButtonMouseClicked(evt);
+                rephisbuttonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                settingsButtonMouseEntered(evt);
+                rephisbuttonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                settingsButtonMouseExited(evt);
+                rephisbuttonMouseExited(evt);
             }
         });
-        settingsButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        rephisbutton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel18.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel18.setText("Settings");
-        settingsButton.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
+        jLabel18.setText("View Repair History");
+        rephisbutton.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
+        jLabel18.getAccessibleContext().setAccessibleParent(settingsButton);
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
-        settingsButton.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
+        rephisbutton.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
         logOutButton.setBackground(new java.awt.Color(25, 25, 112));
         logOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -381,7 +385,7 @@ public class AdminHome extends javax.swing.JFrame {
         fuelButton.setLayout(fuelButtonLayout);
         fuelButtonLayout.setHorizontalGroup(
             fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 219, Short.MAX_VALUE)
+            .addGap(0, 164, Short.MAX_VALUE)
         );
         fuelButtonLayout.setVerticalGroup(
             fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -392,10 +396,33 @@ public class AdminHome extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel9.setText("Fuel Price");
+        jLabel9.setText("     Fuel Price");
         jLabel9.setMaximumSize(new java.awt.Dimension(54, 19));
         jLabel9.setMinimumSize(new java.awt.Dimension(54, 19));
         jLabel9.setPreferredSize(new java.awt.Dimension(54, 19));
+
+        settingsButton.setBackground(new java.awt.Color(25, 25, 112));
+        settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                settingsButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                settingsButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                settingsButtonMouseExited(evt);
+            }
+        });
+        settingsButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel22.setText("Settings");
+        settingsButton.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
+        jLabel22.getAccessibleContext().setAccessibleParent(rephisbutton);
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
+        settingsButton.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -420,17 +447,22 @@ public class AdminHome extends javax.swing.JFrame {
                                 .addGap(297, 297, 297)
                                 .addComponent(removeVehicleButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(ridesHistoryButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(settingsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(rephisbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(logOutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(banDriverButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(75, 75, 75)
                         .addComponent(jLabel10)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(fuelButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(settingsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -449,19 +481,23 @@ public class AdminHome extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ridesHistoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fuelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-                        .addComponent(logOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66))
+                        .addGap(64, 64, 64)
+                        .addComponent(fuelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(130, 130, 130)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(17, 17, 17)))
+                .addComponent(rephisbutton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(logOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addContainerGap(354, Short.MAX_VALUE)
+                    .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(258, 258, 258)))
         );
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, -1));
@@ -518,15 +554,15 @@ public class AdminHome extends javax.swing.JFrame {
          ridesHistoryButton.setBackground(new Color(51,0,102));
     }//GEN-LAST:event_ridesHistoryButtonMouseExited
 
-    private void settingsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseEntered
+    private void rephisbuttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseEntered
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(85,65,118));
-    }//GEN-LAST:event_settingsButtonMouseEntered
+        rephisbutton.setBackground(new Color(85,65,118));
+    }//GEN-LAST:event_rephisbuttonMouseEntered
 
-    private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
+    private void rephisbuttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseExited
         // TODO add your handling code here:
-         settingsButton.setBackground(new Color(51,0,102));
-    }//GEN-LAST:event_settingsButtonMouseExited
+         rephisbutton.setBackground(new Color(51,0,102));
+    }//GEN-LAST:event_rephisbuttonMouseExited
 
     private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
         // TODO add your handling code here:
@@ -577,12 +613,12 @@ public class AdminHome extends javax.swing.JFrame {
         rh.setVisible(true);
     }//GEN-LAST:event_ridesHistoryButtonMouseClicked
 
-    private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
+    private void rephisbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseClicked
         // TODO add your handling code here:
-        AdminSettings as=new AdminSettings(username);
+        ViewRepairHis rephis=new ViewRepairHis(username);
         this.setVisible(false);
-        as.setVisible(true);
-    }//GEN-LAST:event_settingsButtonMouseClicked
+        rephis.setVisible(true);
+    }//GEN-LAST:event_rephisbuttonMouseClicked
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
         // TODO add your handling code here:
@@ -629,6 +665,24 @@ public class AdminHome extends javax.swing.JFrame {
         fuelprice.setVisible(true);
 
     }//GEN-LAST:event_fuelButtonMouseClicked
+
+    private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
+        // TODO add your handling code here:
+        
+        AdminSettings as=new AdminSettings(username);
+        this.setVisible(false);
+        as.setVisible(true);
+    }//GEN-LAST:event_settingsButtonMouseClicked
+
+    private void settingsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseEntered
+        // TODO add your handling code here:
+        settingsButton.setBackground(new Color(85,65,118));
+    }//GEN-LAST:event_settingsButtonMouseEntered
+
+    private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
+        // TODO add your handling code here:
+        settingsButton.setBackground(new Color(51,0,102));
+    }//GEN-LAST:event_settingsButtonMouseExited
 
     /**
      * @param args the command line arguments
@@ -683,6 +737,8 @@ public class AdminHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -698,6 +754,7 @@ public class AdminHome extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JPanel logOutButton;
     private javax.swing.JPanel removeVehicleButton;
+    private javax.swing.JPanel rephisbutton;
     private javax.swing.JPanel ridesHistoryButton;
     private javax.swing.JPanel settingsButton;
     private javax.swing.JPanel xpanel;

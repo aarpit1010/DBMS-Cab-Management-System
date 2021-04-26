@@ -85,4 +85,26 @@ public class Admin {
         return null;
     }
     
+    public ResultSet ViewRepairHistory()
+    {
+        ResultSet rst2=null;
+    
+        
+        try{
+            conn.OpenConnection();
+            String sql = "Select * from repairhistory ";
+            rst2= conn.GetData(sql);
+                   do{
+                return rst2;
+            } 
+            while(rst2.next());
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e+"\nError Displaying Repair History");
+        }
+          
+        conn.CloseConnection();
+        return null;
+    }
+    
 }
