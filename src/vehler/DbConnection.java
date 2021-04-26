@@ -42,7 +42,7 @@ public class DbConnection {
             String url = "jdbc:mysql://localhost:3306/vehicle";
      connection = null;
       try{
-          connection =   DriverManager.getConnection(url,"root","aa101001");
+          connection =   DriverManager.getConnection(url,"root","2001");
       }catch(Exception e){
           System.out.println(e);
       }

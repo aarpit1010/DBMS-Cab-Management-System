@@ -259,7 +259,7 @@ public class DriverCar implements Driver {
         {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
-        String sql="Insert into Driver (ID, Password, Name,FatherName,Age, Gender, SecurityQuestion,Type,CNIC,ContactNo,DOB) values '"
+        String sql="Insert into Driver (ID, Password, Name,FatherName,Age, Gender, SecurityQuestion,Type,CNIC,ContactNo,DOB) values ('"
                 + getUsername()+ "','"
                     + getPassword()+ "','"
                     + getName()+ "','"
@@ -270,7 +270,7 @@ public class DriverCar implements Driver {
                     + getType()+ "','"
                     +getCnic()+ "','"
                     +getContactno()+ "','"
-                  + getDob()+"'";
+                  + getDob()+"')";
         
        
         int flag=conn.InsertUpdateDelete(sql);
@@ -313,13 +313,13 @@ public class DriverCar implements Driver {
         {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
-        String sql="Insert into DriverCarT (DriverUsername, DriverName,CarPlate,VehicleType, CarID, CarName) values '"
+        String sql="Insert into DriverCarT (DriverUsername, DriverName,CarPlate,VehicleType, CarID, CarName) values ('"
                     + driverUsername+ "','"
                     + driverName+ "','"
                     + type + "','"
                 + carPlate+ "','"
                     + carId+ "','"
-                    + carName+ "'";
+                    + carName+ "')";
         
          
         int flag=conn.InsertUpdateDelete(sql);

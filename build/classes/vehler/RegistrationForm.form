@@ -42,7 +42,7 @@
           <Color blue="99" green="33" red="0" type="rgb"/>
         </Property>
         <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="99" red="ff" type="rgb"/>
+          <Color blue="b5" green="90" red="29" type="rgb"/>
         </Property>
       </Properties>
 
@@ -465,7 +465,7 @@
             <Container class="javax.swing.JPanel" name="registerButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="33" red="99" type="rgb"/>
+                  <Color blue="91" green="6f" red="1a" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -734,7 +734,7 @@
         <Container class="javax.swing.JPanel" name="SignInButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="33" red="99" type="rgb"/>
+              <Color blue="91" green="6f" red="1a" type="rgb"/>
             </Property>
           </Properties>
           <Events>

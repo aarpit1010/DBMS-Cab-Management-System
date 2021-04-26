@@ -1476,7 +1476,7 @@ public class CurrentRide extends javax.swing.JFrame {
         int km=Integer.parseInt(String.valueOf(kmCombo.getSelectedItem()));
         Ride ride=new Ride();
         String billStatus="Unpaid";
-        int fuelprice=FuelPrice.getFuelPrice();
+        double fuelprice=FuelPrice.getFuelPrice();
         System.out.println("KKK");
         System.out.println(fuelprice);
         if(type=="Car")

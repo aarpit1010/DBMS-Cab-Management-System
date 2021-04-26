@@ -41,14 +41,14 @@ public class Car extends Vehicle{
         {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
-        String sql="Insert into CarT (Model,Version,Color,PlateNo,RegistrationDate,ExpirationDate,CarName) values ' "
+        String sql="Insert into CarT (Model,Version,Color,PlateNo,RegistrationDate,ExpirationDate,CarName) values (' "
                     + super.getModel()+ "','"
                     + super.getVersion()+ "','"
                     + super.getColor()+ "','"
                     + super.getPlateNo()+ "','"
                     + super.getregistrationDate()+ "','"
                     + super.getExpirationDate()+ "','"
-                    + getCarName()+ "'";
+                    + getCarName()+ "')";
         int flag=conn.InsertUpdateDelete(sql);
                  
            if(flag==1){
@@ -75,7 +75,8 @@ public class Car extends Vehicle{
         {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
-        String sql="SELECT TOP 1 CarId FROM CarT ORDER BY CarId DESC"; 
+        String sql="SELECT ID FROM CarT ORDER BY ID DESC LIMIT 1"; 
+        
         rst= conn.GetData(sql);      
           
          while(rst.next()){

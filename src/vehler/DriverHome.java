@@ -485,31 +485,38 @@ public class DriverHome extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-
         int yes=1;
-        if(type=="Rickshaw")
-       {
-           
-          DriverRickshaw driverr=new DriverRickshaw();
-          driverr.insertAvailablity(iidd, dname, plateNo,carid, carName, yes);
-         
-           
-       }
-       else if(type=="Car")
-       {
-           DriverCar driver=new DriverCar();
-        driver.insertAvailablity(iidd, dname,plateNo, carid, carName, yes);
-           
-       }
-        else if(type=="Bus")
-       {
-           DriverBus driver=new DriverBus();
-           String fromm=driver.getDriverBusFrom(iidd);
-           String too=driver.getDriverBusToo(iidd);
-        driver.insertAvailablity(iidd, dname,plateNo, carid, carName, yes,fromm,too);
-           
-       }
-        JOptionPane.showMessageDialog(null,"You are online now.");
+        if(plateNo.equals("null")){
+            JOptionPane.showMessageDialog(null,"NO Vehicle ASSIGNED");
+        }
+        else {
+            if(type=="Rickshaw")
+           {
+
+              DriverRickshaw driverr=new DriverRickshaw();
+              driverr.insertAvailablity(iidd, dname, plateNo,carid, carName, yes);
+             JOptionPane.showMessageDialog(null,"You are online now.");
+
+           }
+           else if(type=="Car")
+           {
+                DriverCar driver=new DriverCar();
+    //                          
+                driver.insertAvailablity(iidd, dname,plateNo, carid, carName, yes);
+                JOptionPane.showMessageDialog(null,"You are online now.");
+
+
+           }
+            else if(type=="Bus")
+           {
+               DriverBus driver=new DriverBus();
+               String fromm=driver.getDriverBusFrom(iidd);
+               String too=driver.getDriverBusToo(iidd);
+            driver.insertAvailablity(iidd, dname,plateNo, carid, carName, yes,fromm,too);
+            JOptionPane.showMessageDialog(null,"You are online now.");
+
+           }
+    }
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered

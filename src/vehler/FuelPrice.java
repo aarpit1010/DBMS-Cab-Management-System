@@ -7,7 +7,7 @@ package vehler;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
-
+import java.sql.ResultSet;
 /**
  *
  * @author user
@@ -24,6 +24,7 @@ public class FuelPrice extends javax.swing.JFrame {
     }
     public FuelPrice(String username) {
         initComponents();
+        getFuelPrice();
         this.username=username;
     }
 
@@ -67,8 +68,8 @@ public class FuelPrice extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         updateButton = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        fuelPrice = new javax.swing.JPasswordField();
         jSeparator6 = new javax.swing.JSeparator();
+        fuelPrice = new java.awt.TextField();
         fuelButton = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -332,21 +333,9 @@ public class FuelPrice extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        fuelPrice.setForeground(new java.awt.Color(51, 0, 204));
-        fuelPrice.setBorder(null);
-        fuelPrice.setOpaque(false);
-        fuelPrice.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                fuelPriceFocusGained(evt);
-            }
-        });
-        fuelPrice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fuelPriceActionPerformed(evt);
-            }
-        });
-
         jSeparator6.setForeground(new java.awt.Color(0, 51, 153));
+
+        fuelPrice.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -371,10 +360,10 @@ public class FuelPrice extends javax.swing.JFrame {
                         .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(292, 292, 292)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                             .addComponent(jLabel14)
-                            .addComponent(fuelPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(fuelPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -397,7 +386,7 @@ public class FuelPrice extends javax.swing.JFrame {
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addContainerGap(240, Short.MAX_VALUE))
         );
 
         fuelButton.setBackground(new java.awt.Color(51, 0, 102));
@@ -655,9 +644,26 @@ public class FuelPrice extends javax.swing.JFrame {
     else{
     int newPrice=Integer.parseInt(fuelPrice.getText());
     System.out.println(newPrice);
-    
-    fuelprice=newPrice;
-    JOptionPane.showMessageDialog(null,"Updated");
+    DbConnection conn = new DbConnection();
+        int flag;
+        try{
+        conn.OpenConnection();
+        String sql = "Update fuel set price="+String.valueOf(newPrice)+" where id=1;";
+       
+        flag = conn.InsertUpdateDelete(sql);
+           if(flag == 1){
+               JOptionPane.showMessageDialog(null, "Price Updated");
+           }
+           else{
+                JOptionPane.showMessageDialog(null, "Price not updated" );
+           }
+        }
+        catch(Exception e){
+             JOptionPane.showMessageDialog(null, "Update Price Query Failed");
+        }
+     
+//    fuelprice=newPrice;
+//    JOptionPane.showMessageDialog(null,"Updated");
     }
     
 
@@ -676,19 +682,10 @@ public class FuelPrice extends javax.swing.JFrame {
         jLabel3.setForeground(new Color(153,153,153));
     }//GEN-LAST:event_updateButtonMouseExited
 
-    private void fuelPriceFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fuelPriceFocusGained
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_fuelPriceFocusGained
-
     private void fuelButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseClicked
         // TODO add your handling code here:
                 
     }//GEN-LAST:event_fuelButtonMouseClicked
-
-    private void fuelPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fuelPriceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fuelPriceActionPerformed
 
     /**
      * @param args the command line arguments
@@ -725,10 +722,30 @@ public class FuelPrice extends javax.swing.JFrame {
             }
         });
     }
-    
-    private static int fuelprice=20;
-    public static int getFuelPrice(){
-        return fuelprice;
+//    
+//    private static int fuelprice=20;
+    public static double getFuelPrice(){
+        double price=20;
+        DbConnection conn = new DbConnection();
+        int flag;
+        try{
+        conn.OpenConnection();
+        String sql = "Select price from fuel where id=1;";
+       ResultSet rst = null;
+        rst= conn.GetData(sql); 
+           while(rst.next())
+            {
+                price=rst.getDouble("price");
+//           matching=rst.getString("ID");
+           System.out.println(price);
+                }
+         conn.CloseConnection();
+          }
+        catch(Exception e){
+          JOptionPane.showMessageDialog(null, e+"\nCouldn't Read price");  
+        }
+        return price;
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -736,7 +753,7 @@ public class FuelPrice extends javax.swing.JFrame {
     private javax.swing.JPanel addVehicleButton5;
     private javax.swing.JPanel banDriverButton;
     private javax.swing.JPanel fuelButton;
-    private javax.swing.JPasswordField fuelPrice;
+    private java.awt.TextField fuelPrice;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
