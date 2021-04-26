@@ -20,13 +20,15 @@ public class DriverRide extends javax.swing.JFrame {
      * Creates new form DriverRide
      */
     private String username,type;
+    private int carid;
     public DriverRide()
     {
         
     }
-    public DriverRide(String username,String type) {
+    public DriverRide(String username,String type,int carid) {
         initComponents();
         this.username=username;
+        this.carid=carid;
         this.type=type;
          ResultSet rst;
         try{
@@ -65,6 +67,9 @@ public class DriverRide extends javax.swing.JFrame {
         logOutButton = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        repairButton1 = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -199,6 +204,28 @@ public class DriverRide extends javax.swing.JFrame {
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Logout_Rounded_Up_25px.png"))); // NOI18N
         logOutButton.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
+        repairButton1.setBackground(new java.awt.Color(64, 34, 107));
+        repairButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                repairButton1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                repairButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                repairButton1MouseExited(evt);
+            }
+        });
+        repairButton1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel37.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel37.setText("Repair Request");
+        repairButton1.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
+
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
+        repairButton1.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -225,6 +252,10 @@ public class DriverRide extends javax.swing.JFrame {
                             .addComponent(logOutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(currentRideButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(repairButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,9 +270,11 @@ public class DriverRide extends javax.swing.JFrame {
                 .addComponent(currentRideButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(removeVehicleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(repairButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
                 .addComponent(logOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66))
         );
@@ -391,7 +424,7 @@ public class DriverRide extends javax.swing.JFrame {
 
     private void currentRideButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseClicked
         // TODO add your handling code here:
-        CurrentRide cr= new CurrentRide(username,type);
+        CurrentRide cr= new CurrentRide(username,type,carid);
         this.setVisible(false);
         cr.setVisible(true);
     }//GEN-LAST:event_currentRideButtonMouseClicked
@@ -408,7 +441,7 @@ public class DriverRide extends javax.swing.JFrame {
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
         // TODO add your handling code here:
-        DriverSettings ds=new DriverSettings(username,type);
+        DriverSettings ds=new DriverSettings(username,type,carid);
         this.setVisible(false);
         ds.setVisible(true);
     }//GEN-LAST:event_settingsButtonMouseClicked
@@ -475,6 +508,21 @@ public class DriverRide extends javax.swing.JFrame {
         jPanel6.setBackground(new Color(255,255,255));
     }//GEN-LAST:event_jPanel6MouseExited
 
+    private void repairButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseClicked
+        // TODO add your handling code here:
+        Repair rep= new Repair(carid,username,type);
+        this.setVisible(false);
+        rep.setVisible(true);
+    }//GEN-LAST:event_repairButton1MouseClicked
+
+    private void repairButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_repairButton1MouseEntered
+
+    private void repairButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_repairButton1MouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -523,6 +571,8 @@ public class DriverRide extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -537,6 +587,7 @@ public class DriverRide extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JPanel logOutButton;
     private javax.swing.JPanel removeVehicleButton;
+    private javax.swing.JPanel repairButton1;
     private javax.swing.JPanel settingsButton;
     // End of variables declaration//GEN-END:variables
 }

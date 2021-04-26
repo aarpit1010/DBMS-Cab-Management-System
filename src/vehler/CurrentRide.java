@@ -21,14 +21,16 @@ public class CurrentRide extends javax.swing.JFrame {
         double billRickshaw;
         double billBus;
     private String username,type;
+    private int carid;
     public CurrentRide() {
         initComponents();
     }
-    public CurrentRide(String username,String type)
+    public CurrentRide(String username,String type,int carid)
     {
         initComponents();
         this.username=username;
         this.type=type;
+        this.carid=carid;
         updateHeading.setVisible(false);
         checkAtPickup.setVisible(false);
         checkRunning.setVisible(false);
@@ -142,6 +144,9 @@ public class CurrentRide extends javax.swing.JFrame {
         inkmLabel = new javax.swing.JLabel();
         receivedButton = new javax.swing.JPanel();
         jLabel49 = new javax.swing.JLabel();
+        repairButton1 = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
 
         jPanel3.setBackground(new java.awt.Color(51, 0, 102));
 
@@ -1009,6 +1014,30 @@ public class CurrentRide extends javax.swing.JFrame {
 
         jPanel6.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 1030, 646));
 
+        repairButton1.setBackground(new java.awt.Color(64, 34, 107));
+        repairButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                repairButton1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                repairButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                repairButton1MouseExited(evt);
+            }
+        });
+        repairButton1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel37.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel37.setText("Repair Request");
+        repairButton1.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
+
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
+        repairButton1.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
+
+        jPanel6.add(repairButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 390, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1066,7 +1095,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
     private void currentRideButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseClicked
         // TODO add your handling code here:
-        CurrentRide cr= new CurrentRide(username,type);
+        CurrentRide cr= new CurrentRide(username,type,carid);
         this.setVisible(false);
         cr.setVisible(true);
     }//GEN-LAST:event_currentRideButtonMouseClicked
@@ -1083,7 +1112,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
         // TODO add your handling code here:
-        DriverSettings ds=new DriverSettings(username,type);
+        DriverSettings ds=new DriverSettings(username,type,carid);
         this.setVisible(false);
         ds.setVisible(true);
     }//GEN-LAST:event_settingsButtonMouseClicked
@@ -1169,7 +1198,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
     private void settingsButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButton1MouseClicked
         // TODO add your handling code here:
-        DriverSettings ds=new DriverSettings(username,type);
+        DriverSettings ds=new DriverSettings(username,type,carid);
         this.setVisible(false);
         ds.setVisible(true);
     }//GEN-LAST:event_settingsButton1MouseClicked
@@ -1238,7 +1267,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
     private void currentRideButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButton2MouseClicked
         // TODO add your handling code here:
-        CurrentRide cr= new CurrentRide(username,type);
+        CurrentRide cr= new CurrentRide(username,type,carid);
         this.setVisible(false);
         cr.setVisible(true);
     }//GEN-LAST:event_currentRideButton2MouseClicked
@@ -1255,7 +1284,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
     private void settingsButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButton2MouseClicked
         // TODO add your handling code here:
-        DriverSettings ds=new DriverSettings(username,type);
+        DriverSettings ds=new DriverSettings(username,type,carid);
         this.setVisible(false);
         ds.setVisible(true);
     }//GEN-LAST:event_settingsButton2MouseClicked
@@ -1289,7 +1318,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
     private void checkRidesButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkRidesButton3MouseClicked
         // TODO add your handling code here:
-                DriverRide driverride=new DriverRide(username,type);
+                DriverRide driverride=new DriverRide(username,type,carid);
                 this.setVisible(false);
                 driverride.setVisible(true);
     }//GEN-LAST:event_checkRidesButton3MouseClicked
@@ -1341,7 +1370,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
     private void settingsButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButton3MouseClicked
         // TODO add your handling code here:
-        DriverSettings ds=new DriverSettings(username,type);
+        DriverSettings ds=new DriverSettings(username,type,carid);
         this.setVisible(false);
         ds.setVisible(true);
     }//GEN-LAST:event_settingsButton3MouseClicked
@@ -1645,6 +1674,22 @@ public class CurrentRide extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_confirmButtonMouseClicked
 
+    private void repairButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseClicked
+        // TODO add your handling code here:
+        Repair rep= new Repair(carid,username,type);
+        this.setVisible(false);
+        rep.setVisible(true);
+
+    }//GEN-LAST:event_repairButton1MouseClicked
+
+    private void repairButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_repairButton1MouseEntered
+
+    private void repairButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_repairButton1MouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -1732,6 +1777,8 @@ public class CurrentRide extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel42;
@@ -1763,6 +1810,7 @@ public class CurrentRide extends javax.swing.JFrame {
     private javax.swing.JPanel removeVehicleButton1;
     private javax.swing.JPanel removeVehicleButton2;
     private javax.swing.JPanel removeVehicleButton3;
+    private javax.swing.JPanel repairButton1;
     private javax.swing.JPanel settingsButton;
     private javax.swing.JPanel settingsButton1;
     private javax.swing.JPanel settingsButton2;

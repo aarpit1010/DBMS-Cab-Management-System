@@ -486,7 +486,7 @@ if(checkCar.isSelected())
 {
     
         DriverCar driver=new DriverCar(name,fname,age,gender,sec,user,pass,"Car",cnic,contactNo,dob);
-        driver.addDriver();
+//        driver.addDriver();
     type=checkCar.getText();
     Car car=new Car();
    int result;

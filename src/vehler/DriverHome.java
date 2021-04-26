@@ -74,6 +74,9 @@ public class DriverHome extends javax.swing.JFrame {
         logOutButton = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        repairButton1 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -206,6 +209,28 @@ public class DriverHome extends javax.swing.JFrame {
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Logout_Rounded_Up_25px.png"))); // NOI18N
         logOutButton.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
+        repairButton1.setBackground(new java.awt.Color(64, 34, 107));
+        repairButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                repairButton1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                repairButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                repairButton1MouseExited(evt);
+            }
+        });
+        repairButton1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel22.setText("Repair Request");
+        repairButton1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
+        repairButton1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -230,7 +255,8 @@ public class DriverHome extends javax.swing.JFrame {
                                 .addComponent(removeVehicleButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(settingsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(logOutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(currentRideButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(currentRideButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(repairButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -248,7 +274,9 @@ public class DriverHome extends javax.swing.JFrame {
                 .addComponent(removeVehicleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(repairButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                 .addComponent(logOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66))
         );
@@ -391,7 +419,7 @@ public class DriverHome extends javax.swing.JFrame {
 
     private void checkRidesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkRidesButtonMouseClicked
         // TODO add your handling code here:
-        DriverRide driverride=new DriverRide(iidd,type);
+        DriverRide driverride=new DriverRide(iidd,type,carid);
         this.setVisible(false);
         driverride.setVisible(true);
     }//GEN-LAST:event_checkRidesButtonMouseClicked
@@ -426,7 +454,7 @@ public class DriverHome extends javax.swing.JFrame {
 
     private void currentRideButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseClicked
         // TODO add your handling code here:
-        CurrentRide cr= new CurrentRide(iidd,type);
+       CurrentRide cr= new CurrentRide(iidd,type,carid);
        this.setVisible(false);
        cr.setVisible(true);
     }//GEN-LAST:event_currentRideButtonMouseClicked
@@ -443,7 +471,7 @@ public class DriverHome extends javax.swing.JFrame {
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
         // TODO add your handling code here:
-        DriverSettings ds=new DriverSettings(iidd,type);
+        DriverSettings ds=new DriverSettings(iidd,type,carid);
         this.setVisible(false);
         ds.setVisible(true);
     }//GEN-LAST:event_settingsButtonMouseClicked
@@ -531,6 +559,22 @@ public class DriverHome extends javax.swing.JFrame {
         jLabel2.setForeground(new Color(102,102,102));
     }//GEN-LAST:event_jButton1MouseExited
 
+    private void repairButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseClicked
+        // TODO add your handling code here:
+        Repair rep= new Repair(carid,dname,type);
+        this.setVisible(false);
+        rep.setVisible(true);
+
+    }//GEN-LAST:event_repairButton1MouseClicked
+
+    private void repairButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_repairButton1MouseEntered
+
+    private void repairButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_repairButton1MouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -581,6 +625,8 @@ public class DriverHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -593,6 +639,7 @@ public class DriverHome extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JPanel logOutButton;
     private javax.swing.JPanel removeVehicleButton;
+    private javax.swing.JPanel repairButton1;
     private javax.swing.JPanel settingsButton;
     private javax.swing.JTextField welcome;
     // End of variables declaration//GEN-END:variables
