@@ -39,10 +39,10 @@ public class DbConnection {
 //            
 //String url = "jdbc:ucanaccess://" + dir + "/" + dataSourceName;
             
-            String url = "jdbc:mysql://localhost:3306/vehicle";
+            String url = "jdbc:mysql://remotemysql.com:3306/J65uX6B2Zx";
      connection = null;
       try{
-          connection =   DriverManager.getConnection(url,"root","aa101001");
+          connection =   DriverManager.getConnection(url,"J65uX6B2Zx","afOGrnCSXU");
       }catch(Exception e){
           System.out.println(e);
       }
