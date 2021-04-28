@@ -529,7 +529,7 @@ public class DriverCar implements Driver {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
         String sql="Insert into RideRealtime (ID,Username, DriverName,VehiclePlate, VehicleId, VehicleName,DriverContactNo) values ('"
-                + no+ "','"
+                +"C"+ no+ "','"
                     + driverUsername+ "','"
                     + driverName+ "','"
                 + plateNo+ "','"
@@ -685,7 +685,7 @@ public class DriverCar implements Driver {
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"',PassengerContactNo='"+contact+"' where ID = "+i+ "";
+        String sql = "UPDATE RideRealtime SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"',PassengerContactNo='"+contact+"' where ID = 'C"+String.valueOf(i)+ "'";
          
         System.out.println( sql );
         
@@ -729,7 +729,7 @@ public class DriverCar implements Driver {
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET PName = '"+ pname +"' where ID = "+i+ "";
+        String sql = "UPDATE RideRealtime SET PName = '"+ pname +"' where ID = 'C"+i+ "'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){

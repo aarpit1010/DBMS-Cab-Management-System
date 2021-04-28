@@ -8,7 +8,8 @@ package vehler;
 import java.awt.Color;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 /**
  *
  * @author user
@@ -554,13 +555,17 @@ public class Repair extends javax.swing.JFrame {
 
     private void submitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitButtonMouseClicked
         // TODO add your handling code here:
+        SimpleDateFormat dateFormat = new SimpleDateFormat(""
+                        + "yyyy-MM-dd::HH:mm:ss");
+
+String repairHistory_datetime = dateFormat.format(new Date());
       String s=repair.getText();
       System.out.println(s);
       DbConnection conn = new DbConnection();
         int flag;
         try{
         conn.OpenConnection();
-        String sql = "insert into repairhistory values("+String.valueOf(carid)+",'"+s+"')";
+        String sql = "insert into repairhistory values('"+repairHistory_datetime+"','"+username+"',"+String.valueOf(carid)+",'"+s+"')";
        System.out.println(sql);
         flag = conn.InsertUpdateDelete(sql);
            if(flag == 1){

@@ -461,7 +461,7 @@ public class DriverRickshaw implements Driver {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
         String sql="Insert into RideRealtime (ID,Username, DriverName,VehiclePlate, VehicleId, VehicleName,DriverContactNo) values '"
-                + no+ "','"
+                + "R"+no+ "','"
                     + driverUsername+ "','"
                     + driverName+ "','"
                 + plateNo+ "','"
@@ -615,7 +615,7 @@ public class DriverRickshaw implements Driver {
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"',PassengerContactNo='"+contact+"' where ID = '"+i+ "'";
+        String sql = "UPDATE RideRealtime SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"',PassengerContactNo='"+contact+"' where ID = 'R"+i+ "'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -656,7 +656,7 @@ public class DriverRickshaw implements Driver {
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET PName = '"+ pname +"' where ID = '"+i+ "'";
+        String sql = "UPDATE RideRealtime SET PName = '"+ pname +"' where ID = 'R"+i+ "'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){

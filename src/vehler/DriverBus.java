@@ -464,7 +464,7 @@ public class DriverBus implements Driver {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
         String sql="Insert into RideRealtime (ID,Username, DriverName,VehiclePlate, VehicleId, VehicleName,Fromm,Too,DriverContactNo) values '"
-                + no+ "','"
+                + "B"+no+ "','"
                     + driverUsername+ "','"
                     + driverName+ "','"
                 + plateNo+ "','"
@@ -620,7 +620,7 @@ public class DriverBus implements Driver {
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"',PassengerContactNo='"+contact+"' where ID = '"+i+ "'";
+        String sql = "UPDATE RideRealtime SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"',PassengerContactNo='"+contact+"' where ID = B'"+i+ "'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -661,7 +661,7 @@ public class DriverBus implements Driver {
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET PName = '"+ pname +"' where ID = '"+i+ "'";
+        String sql = "UPDATE RideRealtime SET PName = '"+ pname +"' where ID = 'B"+i+ "'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -760,7 +760,7 @@ public class DriverBus implements Driver {
         {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
-        String sql="Select Username from RideRealtime where iD = '"+ rideId + "'";
+        String sql="Select Username from RideRealtime where iD = 'B"+ rideId + "'";
         rst= conn.GetData(sql);      
           
          while(rst.next()){
