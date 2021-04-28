@@ -9,6 +9,7 @@ package vehler;
  *
  * @author user
  */import java.sql.Connection;
+import java.sql.*;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -773,13 +774,110 @@ public class DriverCar implements Driver {
      public void banDriver(String username)
      {
      
-    
+        int CarId=-1;
+        String password="";
+        String name="";
+        String fname="";
+        int Age=-1;
+        String gender="";
+        String security="";
+        String type="";
+        String cnic="";
+        String mobile="";
+        String dob="";
+        
+        DbConnection conn = new DbConnection();
+        try{
+            conn.OpenConnection();
+            String select_sql = "Select CarID from DriverCarT where DriverUsername='"+username+"'";
+            rst=conn.GetData(select_sql);
+           while(rst.next())
+            {
+                CarId=rst.getInt("CarID");
+//           matching=rst.getString("ID");
+           System.out.println(CarId);
+                }
+         conn.CloseConnection();
+        
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Get Car Data Query Failed");
+        }
+
+        
+        
+        try{
+            conn.OpenConnection();
+            String select_sql = "Select * from Driver where ID='"+username+"'";
+            rst=null;
+            rst=conn.GetData(select_sql);
+//            System.out.println(rst.getObject("*"));
+            System.out.println(select_sql);
+//            rst.absoulte(1);
+
+            
+           while(rst.next())
+            {
+                System.out.println(rst.getString("ID"));
+                password=rst.getString("Password");
+                name=rst.getString("Name");
+                fname=rst.getString("FatherName");
+                Age=rst.getInt("Age");
+                gender=rst.getString("Gender");
+                security=rst.getString("SecurityQuestion");
+                type=rst.getString("Type");
+                cnic=rst.getString("CNIC");
+                mobile=rst.getString("ContactNo");
+                dob=rst.getString("DOB");
+//                System.out.println("HHHHH");
+//           System.out.println(rst.getInt("ID"));
+           System.out.println(rst.getString("Password"));
+                }
+         conn.CloseConnection();
+        
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Get Car Data Query Failed");
+        }
+        
+     try
+        {
+        
+        conn.OpenConnection();
+        String sql="Insert into BanDriver (ID, Password, Name,FatherName,Age, Gender, SecurityQuestion,Type,CNIC,ContactNo,DOB) values ('"
+                + username+ "','"
+                    + CarId+ "','"
+                    + password+ "','"
+                    + name +"','"
+                    + fname+ "','"
+                    + Age+ "','"
+                    + gender+ "','"
+                    + security + "','"
+                    + type+ "','"
+                    +cnic+ "','"
+                    +mobile+ "','"
+                  + dob+"')";
+        
+       
+        int flag=conn.InsertUpdateDelete(sql);
+                 
+           if(flag==1){
+               JOptionPane.showMessageDialog(null, "Driver inserted in Ban Driver");
+           }
+           else{
+               JOptionPane.showMessageDialog(null, "Insertion into Ban Failed");
+           }
+           conn.CloseConnection();
+          }
+        catch(Exception e){
+          JOptionPane.showMessageDialog(null, e);  
+        }    
      
      try
         {
         DbConnection comm = new DbConnection();
         comm.OpenConnection();
-        String sql = "DELETE from Driver WHERE ID = '"+username+"'";
+        String sql = "DELETE from Driver WHERE ID = '"+"1"+"'";
         
          
         int flagg=comm.InsertUpdateDelete(sql);
@@ -795,6 +893,32 @@ public class DriverCar implements Driver {
         catch(Exception e){
           JOptionPane.showMessageDialog(null, e);  
         }
+     
+     
+    try
+        {
+//        DbConnection conn = new DbConnection();
+        conn.OpenConnection();
+        int newAss=0;
+        String sql = "Update CarT set Assigned='"+newAss+"' where CarId= '"+CarId+"'";
+        
+         
+        int flagg=conn.InsertUpdateDelete(sql);
+                 
+           if(flagg==1){
+               JOptionPane.showMessageDialog(null, "Car status updated");
+           }
+           else{
+               JOptionPane.showMessageDialog(null, "Car status update failed");
+           }
+           conn.CloseConnection();
+          }
+        catch(Exception e){
+          JOptionPane.showMessageDialog(null, e);  
+        }
+ 
+     
+     // CAR ASSIGN UPDATE TO 0
      }
      public ResultSet getDriverData()
      {

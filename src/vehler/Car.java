@@ -75,7 +75,7 @@ public class Car extends Vehicle{
         {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
-        String sql="SELECT ID FROM CarT ORDER BY ID DESC LIMIT 1"; 
+        String sql="SELECT CarId FROM CarT ORDER BY CarId DESC LIMIT 1"; 
         
         rst= conn.GetData(sql);      
           
@@ -138,16 +138,21 @@ public class Car extends Vehicle{
        
         flag = conn.InsertUpdateDelete(sql);
            if(flag == 1){
+//               add driver;
                JOptionPane.showMessageDialog(null, "Car's Availablity Updated ");
+                return i;
            }
            else{
-                JOptionPane.showMessageDialog(null, "Car's Availability COuldn't Be Updated " );
+               
+                JOptionPane.showMessageDialog(null, "No Car Available. Try again later. " );
+                return -1;
            }
         }
         catch(Exception e){
-             JOptionPane.showMessageDialog(null, "UpdateBill Query Failed");
+             JOptionPane.showMessageDialog(null, "Update car availability Query Failed");
+             return -2;
         }
-        return i;
+        
                
     }
     

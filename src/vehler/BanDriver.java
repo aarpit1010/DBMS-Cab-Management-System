@@ -449,7 +449,7 @@ public class BanDriver extends javax.swing.JFrame {
         banText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         banText.setForeground(new java.awt.Color(102, 102, 102));
         banText.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(12, 91, 160)));
-        jPanel1.add(banText, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 360, 240, -1));
+        jPanel1.add(banText, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 360, 240, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 102, 255), 3));

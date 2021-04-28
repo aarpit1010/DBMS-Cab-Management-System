@@ -486,11 +486,14 @@ if(checkCar.isSelected())
 {
     
         DriverCar driver=new DriverCar(name,fname,age,gender,sec,user,pass,"Car",cnic,contactNo,dob);
-//        driver.addDriver();
+        
     type=checkCar.getText();
     Car car=new Car();
    int result;
     result = car.assignCar();
+    if(result!=-1)
+    {
+        driver.addDriver();
     String model=car.getRModel(result);
     String version=car.getRVersion(result);
     String color=car.getRColor(result);
@@ -507,6 +510,13 @@ if(checkCar.isSelected())
     showCarName.setText(carName);
     DriverCar dd=new DriverCar();
     dd.insertDriverCarData(user,name,type,plateNo,result,carName);
+    }
+    else{
+        LoginMain lm=new LoginMain();
+        this.setVisible(false);
+        lm.setVisible(true);
+    }
+    
 }
 else if(checkBus.isSelected())
 {

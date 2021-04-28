@@ -54,9 +54,11 @@ public class DbConnection {
         try {
             pst = connection.prepareStatement(Sql);
              rst = pst.executeQuery();
+             
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex + "\nDbConnection GetData Error");
         }
+//        System.out.println(rst);
         return rst;
     }
     
