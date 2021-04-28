@@ -23,7 +23,9 @@ public class DriverSignUp extends javax.swing.JFrame {
     {
         
     }
-    public DriverSignUp(String user,String name,String fname,String age, String gender, String sec, String pass,String cnic,String contactNo,String dob) {
+    public DriverSignUp(String user,String name,String fname,String age, 
+            String gender, String sec, String pass,
+            String cnic,String contactNo,String dob) {
        
         initComponents();
         this.user=user;
@@ -438,13 +440,13 @@ public class DriverSignUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     private void mm()
     {
-    showModel.setEditable(false);
-    showVersion.setEditable(false);
-    showColor.setEditable(false);
-    showPlateNo.setEditable(false);
-    showRDate.setEditable(false);
-    showEDate.setEditable(false);
-    showCarName.setEditable(false);
+        showModel.setEditable(false);
+        showVersion.setEditable(false);
+        showColor.setEditable(false);
+        showPlateNo.setEditable(false);
+        showRDate.setEditable(false);
+        showEDate.setEditable(false);
+        showCarName.setEditable(false);
     }
     private void checkCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkCarActionPerformed
         // TODO add your handling code here:
@@ -482,98 +484,112 @@ public class DriverSignUp extends javax.swing.JFrame {
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
         // TODO add your handling code here:
         String type;        // TODO add your handling code here:
-if(checkCar.isSelected())
-{
-    
-        DriverCar driver=new DriverCar(name,fname,age,gender,sec,user,pass,"Car",cnic,contactNo,dob);
+        if(checkCar.isSelected()) {
+            DriverCar driver=new DriverCar(name,fname,age,gender,sec,
+                    user,pass,"Car",cnic,contactNo,dob);
+
+            type=checkCar.getText();
+            Car car=new Car();
+            int result;
+            result = car.assignCar();
+            if(result!=-1)
+            {
+                driver.addDriver();
+                String model=car.getRModel(result);
+                String version=car.getRVersion(result);
+                String color=car.getRColor(result);
+                String plateNo=car.getRPlateNo(result);
+                String rDate=car.getRRDate(result);
+                String eDate=car.getEDate(result);
+                String carName=car.getCarName(result);
+                showModel.setText(model);
+                showVersion.setText(version);
+                showColor.setText(color);
+                showPlateNo.setText(plateNo);
+                showRDate.setText(rDate);
+                showEDate.setText(eDate);
+                showCarName.setText(carName);
+                DriverCar dd=new DriverCar();
+                dd.insertDriverCarData(user,name,type,plateNo,result,carName);
+            }
+            else{
+                LoginMain lm=new LoginMain();
+                this.setVisible(false);
+                lm.setVisible(true);
+            }   
+        }
         
-    type=checkCar.getText();
-    Car car=new Car();
-   int result;
-    result = car.assignCar();
-    if(result!=-1)
-    {
-        driver.addDriver();
-    String model=car.getRModel(result);
-    String version=car.getRVersion(result);
-    String color=car.getRColor(result);
-    String plateNo=car.getRPlateNo(result);
-    String rDate=car.getRRDate(result);
-    String eDate=car.getEDate(result);
-    String carName=car.getCarName(result);
-    showModel.setText(model);
-    showVersion.setText(version);
-    showColor.setText(color);
-    showPlateNo.setText(plateNo);
-    showRDate.setText(rDate);
-    showEDate.setText(eDate);
-    showCarName.setText(carName);
-    DriverCar dd=new DriverCar();
-    dd.insertDriverCarData(user,name,type,plateNo,result,carName);
-    }
-    else{
-        LoginMain lm=new LoginMain();
-        this.setVisible(false);
-        lm.setVisible(true);
-    }
-    
-}
-else if(checkBus.isSelected())
-{
-    type=checkBus.getText();
-    DriverBus driver=new DriverBus(name,fname,age,gender,sec,user,pass,"Bus",cnic,contactNo,dob);
-        driver.addDriver();
-        type=checkBus.getText();
-    Bus bus=new Bus();
-   int result;
-    result = bus.assignBus();
-    String model=bus.getRModel(result);
-    String version=bus.getRVersion(result);
-    String color=bus.getRColor(result);
-    String plateNo=bus.getRPlateNo(result);
-    String rDate=bus.getRRDate(result);
-    String eDate=bus.getEDate(result);
-    String busName=bus.getBusName(result);
-    String fromm=bus.getRFromm(result);
-    String too=bus.getRToo(result);
-    showModel.setText(model);
-    showVersion.setText(version);
-    showColor.setText(color);
-    showPlateNo.setText(plateNo);
-    showRDate.setText(rDate);
-    showEDate.setText(eDate);
-    showCarName.setText(busName);
-    DriverBus dd=new DriverBus();
-    dd.insertDriverBusData(user,name,type,plateNo,result,busName,fromm,too);
-    
-    
-}
-else if(checkRickshaw.isSelected())
-{
-    
-    DriverRickshaw driver=new DriverRickshaw(name,fname,age,gender,sec,user,pass,"Rickshaw",cnic,contactNo,dob);
-        driver.addDriver();
-        type=checkRickshaw.getText();
-    Rickshaw rickshaw=new Rickshaw();
-   int result;
-    result = rickshaw.assignRickshaw();
-    String model=rickshaw.getRModel(result);
-    String version=rickshaw.getRVersion(result);
-    String color=rickshaw.getRColor(result);
-    String plateNo=rickshaw.getRPlateNo(result);
-    String rDate=rickshaw.getRRDate(result);
-    String eDate=rickshaw.getEDate(result);
-    String carName=rickshaw.getRickshawName(result);
-    showModel.setText(model);
-    showVersion.setText(version);
-    showColor.setText(color);
-    showPlateNo.setText(plateNo);
-    showRDate.setText(rDate);
-    showEDate.setText(eDate);
-    showCarName.setText(carName);
-    DriverRickshaw dd=new DriverRickshaw();
-    dd.insertDriverRickshawData(user,name,type,plateNo,result,carName);
-}
+        else if(checkBus.isSelected()){
+            DriverBus driver=new DriverBus(name,fname,age,gender,
+                    sec,user,pass,"Bus",cnic,contactNo,dob);
+            
+            type=checkBus.getText();
+            Bus bus=new Bus();
+            int result;
+            result = bus.assignBus();
+            if(result!=-1) {
+                driver.addDriver();
+                String model=bus.getRModel(result);
+                String version=bus.getRVersion(result);
+                String color=bus.getRColor(result);
+                String plateNo=bus.getRPlateNo(result);
+                String rDate=bus.getRRDate(result);
+                String eDate=bus.getEDate(result);
+                String busName=bus.getBusName(result);
+                String fromm=bus.getRFromm(result);
+                String too=bus.getRToo(result);
+                showModel.setText(model);
+                showVersion.setText(version);
+                showColor.setText(color);
+                showPlateNo.setText(plateNo);
+                showRDate.setText(rDate);
+                showEDate.setText(eDate);
+                showCarName.setText(busName);
+                DriverBus dd=new DriverBus();
+                dd.insertDriverBusData(user,name,type,plateNo,result,busName,fromm,too);
+            }
+            else{
+                LoginMain lm=new LoginMain();
+                this.setVisible(false);
+                lm.setVisible(true);
+            } 
+        }
+
+        else if(checkRickshaw.isSelected()) {
+            DriverRickshaw driver=new DriverRickshaw(name,fname,age,gender,
+                    sec,user,pass,"Rickshaw",cnic,contactNo,dob);
+            
+            
+            type=checkRickshaw.getText(); 
+            Rickshaw rickshaw=new Rickshaw();
+            int result;
+            result = rickshaw.assignRickshaw();
+            if(result!=-1) {
+                driver.addDriver();
+                String model=rickshaw.getRModel(result);
+                String version=rickshaw.getRVersion(result);
+                String color=rickshaw.getRColor(result);
+                String plateNo=rickshaw.getRPlateNo(result);
+                String rDate=rickshaw.getRRDate(result);
+                String eDate=rickshaw.getEDate(result);
+                String carName=rickshaw.getRickshawName(result);
+                showModel.setText(model);
+                showVersion.setText(version);
+                showColor.setText(color);
+                showPlateNo.setText(plateNo);
+                showRDate.setText(rDate);
+                showEDate.setText(eDate);
+                showCarName.setText(carName);
+                DriverRickshaw dd=new DriverRickshaw();
+                dd.insertDriverRickshawData(user,name,type,plateNo,result,carName);
+            }
+            else{
+                LoginMain lm=new LoginMain();
+                this.setVisible(false);
+                lm.setVisible(true);
+            } 
+        }
+        
     }//GEN-LAST:event_nextButtonActionPerformed
 
     private void nextButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextButtonMouseEntered
