@@ -1570,6 +1570,29 @@ public class CurrentRide extends javax.swing.JFrame {
             ride.updateBillStatusCar(username, billStatus,billCar);
             ride.updateRideStatus(username,answer);
             
+            try
+            {
+            DbConnection comm = new DbConnection();
+            comm.OpenConnection();
+            String sql = "DELETE from DriverCarRT WHERE Username = '"+username+"'";
+
+
+            int flagg=comm.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+//                   JOptionPane.showMessageDialog(null, "Driver Deleted");
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "Driver removal FAILED");
+               }
+               comm.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
+         
+            JOptionPane.showMessageDialog(null, "Ride Finished");
+
         }
         else if(type=="Rickshaw")
         {
@@ -1577,14 +1600,62 @@ public class CurrentRide extends javax.swing.JFrame {
             ride.updateBillStatusRickshaw(username,billStatus,billRickshaw);
             ride.updateRideStatusRickshaw(username,answer);
             
+            try
+            {
+            DbConnection comm = new DbConnection();
+            comm.OpenConnection();
+            String sql = "DELETE from DriverRickshawRT WHERE Username = '"+username+"'";
+
+
+            int flagg=comm.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+//                   JOptionPane.showMessageDialog(null, "Driver Deleted ");
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "Driver removal FAILED");
+               }
+               comm.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
+         
+            JOptionPane.showMessageDialog(null, "Ride Finished");
+            
         }
         else if(type=="Bus")
         {
             answer="Completed";
             ride.updateBillStatusBus(username,billStatus,billBus);
             ride.updateRideStatusBus(username,answer);
+            
+            
+            try
+            {
+            DbConnection comm = new DbConnection();
+            comm.OpenConnection();
+            String sql = "DELETE from DriverBusRT WHERE Username = '"+username+"'";
+
+
+            int flagg=comm.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+//                   JOptionPane.showMessageDialog(null, "Driver Deleted ");
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "Driver removal FAILED");
+               }
+               comm.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
+         
+            JOptionPane.showMessageDialog(null, "Ride Finished");
            
         }
+        
     }//GEN-LAST:event_receivedButtonMouseClicked
 
     private void receivedButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_receivedButtonMouseEntered

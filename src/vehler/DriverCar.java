@@ -988,7 +988,7 @@ public class DriverCar implements Driver {
                else{
                    JOptionPane.showMessageDialog(null, "Driver & Car removal FAILED");
                }
-               conn.CloseConnection();
+               comm.CloseConnection();
               }
             catch(Exception e){
               JOptionPane.showMessageDialog(null, e);  
