@@ -27,14 +27,14 @@ public class DriverCar implements Driver {
     private String securityQ;
     private String username;
     private String password;
-    private String type,cnic,contactNo,dob;
+    private String type,aadhar,contactNo,dob;
     DriverCar()
     {
         
     }
     DriverCar(String name,String fatherName,String age,String gender, 
             String securityQ, String username,String password, 
-            String type,String cnic,String contactNo,String dob)
+            String type,String aadhar,String contactNo,String dob)
     {
         this.name=name;
         this.fatherName=fatherName;
@@ -44,7 +44,7 @@ public class DriverCar implements Driver {
         this.username=username;
         this.password=password;
         this.type=type;
-      this.cnic=cnic;
+      this.aadhar=aadhar;
       this.contactNo=contactNo;
       this.dob=dob;
     }
@@ -74,7 +74,7 @@ public class DriverCar implements Driver {
     }
       public String getCnic()
     {
-        return cnic;
+        return aadhar;
     }
     public String getContactno()
     {
@@ -822,7 +822,7 @@ public class DriverCar implements Driver {
         String gender="";
         String security="";
         String type="";
-        String cnic="";
+        String aadhar="";
         String mobile="";
         String dob="";
         
@@ -867,7 +867,7 @@ public class DriverCar implements Driver {
                 gender=rst.getString("Gender");
                 security=rst.getString("SecurityQuestion");
                 type=rst.getString("Type");
-                cnic=rst.getString("CNIC");
+                aadhar=rst.getString("CNIC");
                 mobile=rst.getString("ContactNo");
                 dob=rst.getString("DOB");
 //                System.out.println("HHHHH");
@@ -897,7 +897,7 @@ public class DriverCar implements Driver {
                     + gender+ "','"
                     + security + "','"
                     + type+ "','"
-                    +cnic+ "','"
+                    +aadhar+ "','"
                     +mobile+ "','"
                   + dob+"')";
         

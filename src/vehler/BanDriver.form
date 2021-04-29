@@ -45,7 +45,7 @@
     <Container class="javax.swing.JPanel" name="jPanel3">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="6b" green="22" red="40" type="rgb"/>
+          <Color blue="70" green="19" red="19" type="rgb"/>
         </Property>
       </Properties>
 
@@ -140,7 +140,7 @@
         <Container class="javax.swing.JPanel" name="addVehicleButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="6b" green="22" red="40" type="rgb"/>
+              <Color blue="70" green="19" red="19" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -186,7 +186,7 @@
         <Container class="javax.swing.JPanel" name="removeVehicleButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="0" red="33" type="rgb"/>
+              <Color blue="70" green="19" red="19" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -223,7 +223,7 @@
         <Container class="javax.swing.JPanel" name="banDriverButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="6b" green="22" red="40" type="rgb"/>
+              <Color blue="70" green="19" red="19" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -269,7 +269,7 @@
         <Container class="javax.swing.JPanel" name="ridesHistoryButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="6b" green="22" red="40" type="rgb"/>
+              <Color blue="70" green="19" red="19" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -315,7 +315,7 @@
         <Container class="javax.swing.JPanel" name="settingsButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="6b" green="22" red="40" type="rgb"/>
+              <Color blue="70" green="19" red="19" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -361,7 +361,7 @@
         <Container class="javax.swing.JPanel" name="logOutButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="6b" green="22" red="40" type="rgb"/>
+              <Color blue="70" green="19" red="19" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -407,7 +407,7 @@
         <Container class="javax.swing.JPanel" name="fuelButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="6b" green="22" red="40" type="rgb"/>
+              <Color blue="70" green="19" red="19" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -454,7 +454,7 @@
         <Container class="javax.swing.JPanel" name="rephisbutton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="6b" green="22" red="40" type="rgb"/>
+              <Color blue="70" green="19" red="19" type="rgb"/>
             </Property>
           </Properties>
           <Events>

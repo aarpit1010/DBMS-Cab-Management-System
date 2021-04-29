@@ -26,12 +26,12 @@ public class DriverRickshaw implements Driver {
     private String gender;
     private String securityQ;
     private String username;
-    private String password,type,cnic,contactNo,dob;
+    private String password,type,aadhar,contactNo,dob;
     DriverRickshaw()
     {
         
     }
-    DriverRickshaw(String name,String fatherName,String age,String gender, String securityQ, String username,String password,String type,String cnic,String contactNo,String dob)
+    DriverRickshaw(String name,String fatherName,String age,String gender, String securityQ, String username,String password,String type,String aadhar,String contactNo,String dob)
     {
         this.name=name;
         this.fatherName=fatherName;
@@ -41,13 +41,13 @@ public class DriverRickshaw implements Driver {
         this.username=username;
         this.password=password;
         this.type=type;
-          this.cnic=cnic;
+          this.aadhar=aadhar;
       this.contactNo=contactNo;
       this.dob=dob;
     }
       public String getCnic()
     {
-        return cnic;
+        return aadhar;
     }
     public String getContactno()
     {

@@ -260,6 +260,11 @@ public class BookRide extends javax.swing.JFrame {
 
         toCombo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         toCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Quaiabad", "Malir1", "Malir2", "DHA", "Clifton", "4 Minaar", "Dhoraji", "Bahria University", "Sir Syed University", "Quaid-e-Azam Tomb", "Hyperstar Mall", "Bahria College NORE1", "Dalmia", "Gulshan Chowrangi", "Gulistan-e-Johar", "Gulshan-e-Iqbal", "Kemari", "Landhi", "Malir", "Quaidabad", "Landhi Town", "Korangi Town", "North Nazimabad Town", "New Karachi Town", "Gulberg Town", "Liaquatabad Town", "Malir Town", "Bin Qasim Town", "Gadap Town", "Kiamari Town", "S.I.T.E Town", "Baldia Town", "Orangi Town", "Lyari Town", "Saddar Town", "Jamshed Town", "Gulshan Town", "Shah Faisal Town" }));
+        toCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toComboActionPerformed(evt);
+            }
+        });
         jPanel2.add(toCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 230, 30));
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -587,14 +592,16 @@ public class BookRide extends javax.swing.JFrame {
 
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
         // TODO add your handling code here:
-              String currentLocation=String.valueOf(fromCombo.getSelectedItem());
+        // System.out.println(s.replace(' ','+'));
+        String currentLocation=String.valueOf(fromCombo.getSelectedItem());
         String finalLocation=String.valueOf(toCombo.getSelectedItem());
         JOptionPane.showMessageDialog(null,"PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
-            DriverRickshaw dr=new DriverRickshaw();
-            int iidd=dr.assignDriver(username,name,currentLocation,finalLocation);
-            String dname=dr.getRRDriverName(iidd);
-            String cname=dr.getRRRickshawName(iidd);
-            JOptionPane.showMessageDialog(null,"YOUR RIDE HAS BEEN BOOKED \n DRIVER's NAME : "+dname+"\n RICKSHAW NAME : "+cname);
+        DriverRickshaw dr=new DriverRickshaw();
+        int iidd=dr.assignDriver(username,name,currentLocation,finalLocation);
+        String dname=dr.getRRDriverName(iidd);
+        String cname=dr.getRRRickshawName(iidd);
+        JOptionPane.showMessageDialog(null,"YOUR RIDE HAS BEEN BOOKED \n "
+                + "DRIVER's NAME : "+dname+"\n RICKSHAW NAME : "+cname);
     }//GEN-LAST:event_jPanel7MouseClicked
 
     private void jPanel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseExited
@@ -609,6 +616,7 @@ public class BookRide extends javax.swing.JFrame {
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         // TODO add your handling code here:
+        // System.out.println(currentLocation.replace(' ','+'));
         String currentLocation=String.valueOf(fromCombo.getSelectedItem());
         String finalLocation=String.valueOf(toCombo.getSelectedItem());
         JOptionPane.showMessageDialog(null,"PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
@@ -616,7 +624,8 @@ public class BookRide extends javax.swing.JFrame {
         int iidd=dr.assignDriver(username,name,currentLocation,finalLocation);
         String dname=dr.getRRDriverName(iidd);
         String cname=dr.getRRCarName(iidd);
-        JOptionPane.showMessageDialog(null,"YOUR RIDE HAS BEEN BOOKED \n DRIVER's NAME : "+dname+"\n CAR NAME : "+cname);
+        JOptionPane.showMessageDialog(null,"YOUR RIDE HAS BEEN BOOKED \n "
+                + "DRIVER's NAME : "+dname+"\n CAR NAME : "+cname);
 
     }//GEN-LAST:event_jPanel1MouseClicked
 
@@ -649,6 +658,10 @@ public class BookRide extends javax.swing.JFrame {
         // TODO add your handling code here:
         ypanel.setBackground(new Color(255,255,255));
     }//GEN-LAST:event_ypanelMouseExited
+
+    private void toComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_toComboActionPerformed
 
     /**
      * @param args the command line arguments

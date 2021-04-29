@@ -727,7 +727,7 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Denied_25px.png"))); // NOI18N
         banDriverButton1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        ridesHistoryButton1.setBackground(new java.awt.Color(51, 0, 102));
+        ridesHistoryButton1.setBackground(new java.awt.Color(25, 25, 112));
         ridesHistoryButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ridesHistoryButton1MouseClicked(evt);

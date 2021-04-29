@@ -23,12 +23,12 @@ public class Passenger {
     PreparedStatement pst = null;
     ResultSet rst = null;
     
-    private String name,fName,age,gender,sec,user,pass,cnic,contactNo,dob;
+    private String name,fName,age,gender,sec,user,pass,aadhar,contactNo,dob;
     Passenger()
     {
         
     }
-    Passenger(String name,String fName,String age, String gender,String sec,String user,String pass,String cnic,String contactNo,String dob)
+    Passenger(String name,String fName,String age, String gender,String sec,String user,String pass,String aadhar,String contactNo,String dob)
     {
         this.name=name;
         this.fName=fName;
@@ -37,7 +37,7 @@ public class Passenger {
         this.sec=sec;
         this.user=user;
         this.pass=pass;
-        this.cnic=cnic;
+        this.aadhar=aadhar;
         this.contactNo=contactNo;
         this.dob=dob;
         
@@ -144,7 +144,7 @@ public class Passenger {
     }
     public String getCnic()
     {
-        return cnic;
+        return aadhar;
     }
     public String getContactno()
     {

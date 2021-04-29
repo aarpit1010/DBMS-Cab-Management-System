@@ -52,7 +52,8 @@ public class Ride {
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET RideStatus = '"+ rideStatus +"' where ID = 'C"+mat+"'";
+        String sql = "UPDATE RideRealtime SET RideStatus = '"
+                + rideStatus +"' where ID = 'C"+mat+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -123,7 +124,8 @@ public void updateRideStatusRickshaw(String username,String rideStatus)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET RideStatus = '"+ rideStatus +"' where ID = 'R"+mat+"'";
+        String sql = "UPDATE RideRealtime SET RideStatus = '"
+                + rideStatus +"' where ID = 'R"+mat+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -168,7 +170,8 @@ public void updateRideStatusBus(String username,String rideStatus)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET RideStatus = '"+ rideStatus +"' where Username = '"+username+"'";
+        String sql = "UPDATE RideRealtime SET RideStatus = '"
+                + ""+ rideStatus +"' where Username = '"+username+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -238,7 +241,8 @@ public void updateStartTimeDateCar(String username,String date,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET StartTime = '"+ time +"',Datee='"+date+"' where ID = 'C"+mat+"'";
+        String sql = "UPDATE RideRealtime SET StartTime = '"+ time +""
+                + "',Datee='"+date+"' where ID = 'C"+mat+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -307,7 +311,8 @@ public void updateStartTimeDateRickshaw(String username,String date,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET StartTime = '"+ time +"',Datee='"+date+"' where ID = 'R"+mat+"'";
+        String sql = "UPDATE RideRealtime SET StartTime = '"+ time +""
+                + "',Datee='"+date+"' where ID = 'R"+mat+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -354,7 +359,8 @@ public void updateStartTimeDateBus(String username,String date,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET StartTime = '"+ time +"',Datee='"+date+"' where Username = '"+username+"'";
+        String sql = "UPDATE RideRealtime SET StartTime = '"+ time +""
+                + "',Datee='"+date+"' where Username = '"+username+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -407,7 +413,8 @@ public void updateEndTimeDateCar(String username,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET EndTime = '"+ time +"' where ID = 'C"+mat+"'";
+        String sql = "UPDATE RideRealtime SET EndTime = '"+ time +"' "
+                + "where ID = 'C"+mat+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -451,7 +458,8 @@ public void updateEndTimeDateBus(String username,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET EndTime = '"+ time +"' where Username = '"+username+"'";
+        String sql = "UPDATE RideRealtime SET EndTime = '"+ time +"' "
+                + "where Username = '"+username+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -502,7 +510,8 @@ public void updateEndTimeDateRickshaw(String username,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET EndTime = '"+ time +"' where ID = 'R"+mat+"'";
+        String sql = "UPDATE RideRealtime SET EndTime = '"+ time +""
+                + "' where ID = 'R"+mat+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -573,7 +582,8 @@ public void updateEndTimeDateRickshaw(String username,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET BillStatus = '"+ billStatus +"',Bill = '"+billCar+"' where ID = 'C"+mat+"'";
+        String sql = "UPDATE RideRealtime SET BillStatus = '"+ billStatus +""
+                + "',Bill = '"+billCar+"' where ID = 'C"+mat+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -645,7 +655,8 @@ public void updateEndTimeDateRickshaw(String username,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET BillStatus = '"+ billStatus +"',Bill = '"+billRickshaw+"' where ID = 'R"+mat+"'";
+        String sql = "UPDATE RideRealtime SET BillStatus = '"+ billStatus +"'"
+                + ",Bill = '"+billRickshaw+"' where ID = 'R"+mat+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -690,7 +701,8 @@ public void updateEndTimeDateRickshaw(String username,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET BillStatus = '"+ billStatus +"',Bill = '"+billBus+"' where Username = '"+username+"'";
+        String sql = "UPDATE RideRealtime SET BillStatus = '"+ billStatus +""
+                + "',Bill = '"+billBus+"' where Username = '"+username+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -715,7 +727,10 @@ public void updateEndTimeDateRickshaw(String username,String time)
         
         try{
             conn.OpenConnection();
-            String sql = "Select Datee,Username,VehiclePlate,PUsername,PassengerContactNo,Fromm,Too,StartTime,EndTime,RideStatus,BillStatus,Bill,NoOfPassengers from RideRealtime where Username ='"+username+"'";
+            String sql = "Select Datee,Username,VehiclePlate,PUsername,"
+                    + "PassengerContactNo,Fromm,Too,StartTime,EndTime,"
+                    + "RideStatus,BillStatus,Bill,NoOfPassengers "
+                    + "from RideRealtime where Username ='"+username+"'";
             rst1= conn.GetData(sql);
                    do{
                 return rst1;

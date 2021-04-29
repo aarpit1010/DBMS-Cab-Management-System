@@ -663,7 +663,7 @@ public class CurrentRide extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel6.setBackground(new java.awt.Color(51, 0, 102));
+        jPanel6.setBackground(new java.awt.Color(25, 25, 112));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel6.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 71, 183, 10));
 
@@ -672,7 +672,7 @@ public class CurrentRide extends javax.swing.JFrame {
         jLabel10.setText("Vehler");
         jPanel6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 20, -1, -1));
 
-        checkRidesButton3.setBackground(new java.awt.Color(51, 0, 102));
+        checkRidesButton3.setBackground(new java.awt.Color(25, 25, 112));
         checkRidesButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 checkRidesButton3MouseClicked(evt);
@@ -696,7 +696,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
         jPanel6.add(checkRidesButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 176, 390, 47));
 
-        removeVehicleButton3.setBackground(new java.awt.Color(51, 0, 102));
+        removeVehicleButton3.setBackground(new java.awt.Color(25, 25, 112));
         removeVehicleButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 removeVehicleButton3MouseEntered(evt);
@@ -721,7 +721,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
         jPanel6.add(removeVehicleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 280, 93, -1));
 
-        currentRideButton3.setBackground(new java.awt.Color(51, 0, 102));
+        currentRideButton3.setBackground(new java.awt.Color(25, 25, 112));
         currentRideButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 currentRideButton3MouseClicked(evt);
@@ -745,7 +745,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
         jPanel6.add(currentRideButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 234, 390, -1));
 
-        settingsButton3.setBackground(new java.awt.Color(51, 0, 102));
+        settingsButton3.setBackground(new java.awt.Color(25, 25, 112));
         settingsButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 settingsButton3MouseClicked(evt);
@@ -769,7 +769,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
         jPanel6.add(settingsButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 298, 390, -1));
 
-        logOutButton3.setBackground(new java.awt.Color(51, 0, 102));
+        logOutButton3.setBackground(new java.awt.Color(25, 25, 112));
         logOutButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logOutButton3MouseClicked(evt);
@@ -1014,7 +1014,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
         jPanel6.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 1030, 646));
 
-        repairButton1.setBackground(new java.awt.Color(64, 34, 107));
+        repairButton1.setBackground(new java.awt.Color(25, 25, 112));
         repairButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 repairButton1MouseClicked(evt);
@@ -1609,18 +1609,18 @@ public class CurrentRide extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"YEA, YOU HAVE A CURRENT RIDE ");
                 
                 updateHeading.setVisible(true);
-        checkAtPickup.setVisible(true);
-        checkRunning.setVisible(true);
-        updateButton.setVisible(true);
-        calculateLabel.setVisible(true);
-        kmLabel.setVisible(true);
-        inkmLabel.setVisible(true);
-        kmCombo.setVisible(true);
-        calculateButton.setVisible(true);
-        billLabel.setVisible(true);
-        billText.setVisible(true);
-        receivedButton.setVisible(true);
-        pkrLabel.setVisible(true);        
+                checkAtPickup.setVisible(true);
+                checkRunning.setVisible(true);
+                updateButton.setVisible(true);
+                calculateLabel.setVisible(true);
+                kmLabel.setVisible(true);
+                inkmLabel.setVisible(true);
+                kmCombo.setVisible(true);
+                calculateButton.setVisible(true);
+                billLabel.setVisible(true);
+                billText.setVisible(true);
+                receivedButton.setVisible(true);
+                pkrLabel.setVisible(true);        
             }
             else
             {
@@ -1634,18 +1634,18 @@ public class CurrentRide extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(null,"YEA, YOU HAVE A CURRENT RIDE ");
                 updateHeading.setVisible(true);
-        checkAtPickup.setVisible(true);
-        checkRunning.setVisible(true);
-        updateButton.setVisible(true);
-        calculateLabel.setVisible(true);
-        kmLabel.setVisible(true);
-        inkmLabel.setVisible(true);
-        kmCombo.setVisible(true);
-        calculateButton.setVisible(true);
-        billLabel.setVisible(true);
-        billText.setVisible(true);
-        receivedButton.setVisible(true);
-        pkrLabel.setVisible(true);
+                checkAtPickup.setVisible(true);
+                checkRunning.setVisible(true);
+                updateButton.setVisible(true);
+                calculateLabel.setVisible(true);
+                kmLabel.setVisible(true);
+                inkmLabel.setVisible(true);
+                kmCombo.setVisible(true);
+                calculateButton.setVisible(true);
+                billLabel.setVisible(true);
+                billText.setVisible(true);
+                receivedButton.setVisible(true);
+                pkrLabel.setVisible(true);
                 
             }
             else
@@ -1658,18 +1658,18 @@ public class CurrentRide extends javax.swing.JFrame {
             
                 JOptionPane.showMessageDialog(null,"YEA, YOU HAVE A CURRENT RIDE ");
                 updateHeading.setVisible(true);
-        checkAtPickup.setVisible(true);
-        checkRunning.setVisible(true);
-        updateButton.setVisible(true);
-        calculateLabel.setVisible(true);
-        kmLabel.setVisible(true);
-        inkmLabel.setVisible(true);
-        kmCombo.setVisible(true);
-        calculateButton.setVisible(true);
-        billLabel.setVisible(true);
-        billText.setVisible(true);
-        receivedButton.setVisible(true);
-         pkrLabel.setVisible(true);   
+                checkAtPickup.setVisible(true);
+                checkRunning.setVisible(true);
+                updateButton.setVisible(true);
+                calculateLabel.setVisible(true);
+                kmLabel.setVisible(true);
+                inkmLabel.setVisible(true);
+                kmCombo.setVisible(true);
+                calculateButton.setVisible(true);
+                billLabel.setVisible(true);
+                billText.setVisible(true);
+                receivedButton.setVisible(true);
+                pkrLabel.setVisible(true);   
             
         }
     }//GEN-LAST:event_confirmButtonMouseClicked

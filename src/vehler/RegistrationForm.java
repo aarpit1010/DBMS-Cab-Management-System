@@ -56,7 +56,7 @@ public class RegistrationForm extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         registerSecurity = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
-        cnicText = new javax.swing.JTextField();
+        aadharText = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         contactnoText = new javax.swing.JTextField();
         uu = new javax.swing.JLabel();
@@ -161,11 +161,11 @@ public class RegistrationForm extends javax.swing.JFrame {
 
         jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel33.setText("CNIC No");
+        jLabel33.setText("Aadhar No.");
 
-        cnicText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cnicText.setForeground(new java.awt.Color(102, 102, 102));
-        cnicText.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(12, 91, 160)));
+        aadharText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        aadharText.setForeground(new java.awt.Color(102, 102, 102));
+        aadharText.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(12, 91, 160)));
 
         jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(153, 153, 153));
@@ -236,7 +236,7 @@ public class RegistrationForm extends javax.swing.JFrame {
                             .addComponent(jLabel34)
                             .addComponent(contactnoText, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
                             .addComponent(jLabel33)
-                            .addComponent(cnicText, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                            .addComponent(aadharText, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
                             .addComponent(jLabel30)
                             .addComponent(registerSecurity, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
                             .addComponent(jLabel19)
@@ -303,7 +303,7 @@ public class RegistrationForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel33)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cnicText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(aadharText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel34)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -476,7 +476,7 @@ public class RegistrationForm extends javax.swing.JFrame {
 
     private void registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseClicked
         // TODO add your handling code here:
-if(registerName.getText(). equals("")||registerFather.getText(). equals("")||registerUsername.getText(). equals("")||registerPassword.getText(). equals("")||registerAge.getText(). equals("")||registerSecurity.getText(). equals("")||cnicText.getText().equals("")||contactnoText.getText().equals(""))
+if(registerName.getText(). equals("")||registerFather.getText(). equals("")||registerUsername.getText(). equals("")||registerPassword.getText(). equals("")||registerAge.getText(). equals("")||registerSecurity.getText(). equals("")||aadharText.getText().equals("")||contactnoText.getText().equals(""))
 {
         JOptionPane.showMessageDialog(null,"Please fill All Fields");
 
@@ -495,7 +495,7 @@ else
     String sec=registerSecurity.getText();
     String regAs=String.valueOf(registerAsCombo.getSelectedItem());
     String gender=null;
-    String cnic=cnicText.getText();
+    String aadhar=aadharText.getText();
     String contactNo=contactnoText.getText();
     String dob = ((JTextField) dobCombo2.getDateEditor().getUiComponent()).getText();
     if(checkMale.isSelected())
@@ -508,7 +508,7 @@ else
     }
     if(regAs=="Passenger")
     {
-        Passenger passenger=new Passenger(name,fName,age,gender,sec,user,pass,cnic,contactNo,dob);
+        Passenger passenger=new Passenger(name,fName,age,gender,sec,user,pass,aadhar,contactNo,dob);
         passenger.addPassPass();
         
     }
@@ -516,7 +516,7 @@ else
     {
         
 //           DriverSignUp ds=new DriverSignUp(user,name,fName,age,gender,sec,pass);
-        DriverSignUp ds=new DriverSignUp(user,name,fName,age,gender,sec,pass,cnic,contactNo,dob);
+        DriverSignUp ds=new DriverSignUp(user,name,fName,age,gender,sec,pass,aadhar,contactNo,dob);
             this.setVisible(false);
             ds.setVisible(true);
     }
@@ -526,7 +526,7 @@ else
         registerFather.setText("");
         registerSecurity.setText("");
         registerAge.setText("");
-        cnicText.setText("");
+        aadharText.setText("");
         contactnoText.setText("");
 //    this.setVisible(false);
 //    LoginMain login=new LoginMain();
@@ -642,9 +642,9 @@ else
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel SignInButton;
+    private javax.swing.JTextField aadharText;
     private javax.swing.JCheckBox checkFemale;
     private javax.swing.JCheckBox checkMale;
-    private javax.swing.JTextField cnicText;
     private javax.swing.JTextField contactnoText;
     private com.toedter.calendar.JDateChooser dobCombo2;
     private javax.swing.JLabel jLabel1;

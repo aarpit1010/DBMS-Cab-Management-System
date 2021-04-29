@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class DriverSignUp extends javax.swing.JFrame {
     private String user;
-    private String name,fname,age,gender,sec,pass,cnic,contactNo,dob;
+    private String name,fname,age,gender,sec,pass,aadhar,contactNo,dob;
 
     /**
      * Creates new form DrivrSignUp
@@ -25,7 +25,7 @@ public class DriverSignUp extends javax.swing.JFrame {
     }
     public DriverSignUp(String user,String name,String fname,String age, 
             String gender, String sec, String pass,
-            String cnic,String contactNo,String dob) {
+            String aadhar,String contactNo,String dob) {
        
         initComponents();
         this.user=user;
@@ -35,7 +35,7 @@ public class DriverSignUp extends javax.swing.JFrame {
         this.gender=gender;
         this.sec=sec;
         this.pass=pass;
-        this.cnic=cnic;
+        this.aadhar=aadhar;
         this.contactNo=contactNo;
         this.dob=dob;
         mm();
@@ -486,7 +486,7 @@ public class DriverSignUp extends javax.swing.JFrame {
         String type;        // TODO add your handling code here:
         if(checkCar.isSelected()) {
             DriverCar driver=new DriverCar(name,fname,age,gender,sec,
-                    user,pass,"Car",cnic,contactNo,dob);
+                    user,pass,"Car",aadhar,contactNo,dob);
 
             type=checkCar.getText();
             Car car=new Car();
@@ -521,7 +521,7 @@ public class DriverSignUp extends javax.swing.JFrame {
         
         else if(checkBus.isSelected()){
             DriverBus driver=new DriverBus(name,fname,age,gender,
-                    sec,user,pass,"Bus",cnic,contactNo,dob);
+                    sec,user,pass,"Bus",aadhar,contactNo,dob);
             
             type=checkBus.getText();
             Bus bus=new Bus();
@@ -557,7 +557,7 @@ public class DriverSignUp extends javax.swing.JFrame {
 
         else if(checkRickshaw.isSelected()) {
             DriverRickshaw driver=new DriverRickshaw(name,fname,age,gender,
-                    sec,user,pass,"Rickshaw",cnic,contactNo,dob);
+                    sec,user,pass,"Rickshaw",aadhar,contactNo,dob);
             
             
             type=checkRickshaw.getText(); 
