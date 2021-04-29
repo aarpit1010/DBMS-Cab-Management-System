@@ -7,6 +7,10 @@ package vehler;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 /**
  *
@@ -27,6 +31,9 @@ public class BookRide extends javax.swing.JFrame {
     public BookRide() {
 //        initComponents();
     }
+    
+    String currentLocation = "ZZZ";
+    String finalLocation = "ZZZ";
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,6 +78,7 @@ public class BookRide extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         ypanel = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        mapbutton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -457,6 +465,18 @@ public class BookRide extends javax.swing.JFrame {
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 0, -1, -1));
 
+        mapbutton.setBackground(new java.awt.Color(64, 34, 107));
+        mapbutton.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        mapbutton.setForeground(new java.awt.Color(255, 255, 255));
+        mapbutton.setText("<html><center> Maps <br> (Direction)</center>  </html> ");
+        mapbutton.setActionCommand("Maps");
+        mapbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mapbuttonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(mapbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 540, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -490,7 +510,7 @@ public class BookRide extends javax.swing.JFrame {
 
     private void bookRideButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookRideButtonMouseExited
         // TODO add your handling code here:
-        bookRideButton.setBackground(new Color(51,0,102));
+        bookRideButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_bookRideButtonMouseExited
 
     private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
@@ -508,7 +528,7 @@ public class BookRide extends javax.swing.JFrame {
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(51,0,102));
+        removeVehicleButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void myRidesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRidesButtonMouseClicked
@@ -525,7 +545,7 @@ public class BookRide extends javax.swing.JFrame {
 
     private void myRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRidesButtonMouseExited
         // TODO add your handling code here:
-        myRidesButton.setBackground(new Color(51,0,102));
+        myRidesButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_myRidesButtonMouseExited
 
     private void busRidesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_busRidesButtonMouseClicked
@@ -542,7 +562,7 @@ public class BookRide extends javax.swing.JFrame {
 
     private void busRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_busRidesButtonMouseExited
         // TODO add your handling code here:
-        busRidesButton.setBackground(new Color(51,0,102));
+        busRidesButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_busRidesButtonMouseExited
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
@@ -559,7 +579,7 @@ public class BookRide extends javax.swing.JFrame {
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(51,0,102));
+        logOutButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void jPanel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseEntered
@@ -593,8 +613,8 @@ public class BookRide extends javax.swing.JFrame {
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
         // TODO add your handling code here:
         // System.out.println(s.replace(' ','+'));
-        String currentLocation=String.valueOf(fromCombo.getSelectedItem());
-        String finalLocation=String.valueOf(toCombo.getSelectedItem());
+        currentLocation=String.valueOf(fromCombo.getSelectedItem());
+        finalLocation=String.valueOf(toCombo.getSelectedItem());
         JOptionPane.showMessageDialog(null,"PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
         DriverRickshaw dr=new DriverRickshaw();
         int iidd=dr.assignDriver(username,name,currentLocation,finalLocation);
@@ -614,11 +634,12 @@ public class BookRide extends javax.swing.JFrame {
         jPanel1.setBackground(new Color(204,204,204));
     }//GEN-LAST:event_jPanel1MouseEntered
 
+    
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         // TODO add your handling code here:
         // System.out.println(currentLocation.replace(' ','+'));
-        String currentLocation=String.valueOf(fromCombo.getSelectedItem());
-        String finalLocation=String.valueOf(toCombo.getSelectedItem());
+        currentLocation=String.valueOf(fromCombo.getSelectedItem());
+        finalLocation=String.valueOf(toCombo.getSelectedItem());
         JOptionPane.showMessageDialog(null,"PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
         DriverCar dr=new DriverCar();
         int iidd=dr.assignDriver(username,name,currentLocation,finalLocation);
@@ -662,6 +683,32 @@ public class BookRide extends javax.swing.JFrame {
     private void toComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toComboActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_toComboActionPerformed
+
+    private void mapbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mapbuttonActionPerformed
+        // TODO add your handling code here:
+        try {
+            // currentLocation=String.valueOf(fromCombo.getSelectedItem());
+            // finalLocation=String.valueOf(toCombo.getSelectedItem());
+            if( (currentLocation == "ZZZ") || (finalLocation == "ZZZ") ||
+                    (this.currentLocation == "ZZZ") || (this.finalLocation == "ZZZ")) {
+                JOptionPane.showMessageDialog(null,"Location Not Defined, Book Ride First");
+            }
+            else {
+                String source = currentLocation.replace(' ','+');
+                String dest = finalLocation.replace(' ','+');
+
+                String URL1 = 
+                "http://maps.google.com/maps?saddr="+ source +"&daddr="+ dest ;
+
+                String URL2 = 
+                "http://maps.google.com/maps/dir/"+ source +"/"+ dest ;
+
+                java.awt.Desktop.getDesktop().browse(java.net.URI.create(URL1));
+            }
+        } catch (java.io.IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_mapbuttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -731,6 +778,7 @@ public class BookRide extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JPanel logOutButton;
+    private javax.swing.JButton mapbutton;
     private javax.swing.JPanel myRidesButton;
     private javax.swing.JPanel removeVehicleButton;
     private javax.swing.JComboBox toCombo;
