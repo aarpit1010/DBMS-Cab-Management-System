@@ -512,7 +512,8 @@ public class DriverRickshaw implements Driver {
             conn.CloseConnection();
           }
         catch(Exception e){
-          JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last DriverRickshawId");  
+            return -1;
+//          JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last DriverRickshawId");  
         }
         total=total+1;
         while(i<total)
@@ -551,127 +552,134 @@ public class DriverRickshaw implements Driver {
            
                i++;
         }
-        DbConnection conn = new DbConnection();
-        int flag;
-        try{
-        conn.OpenConnection();
-        String sql = "UPDATE DriverRickshawRT SET DriverAvail = '"+ newAss +"' where ID = '"+i+ "'";
-       
-        flag = conn.InsertUpdateDelete(sql);
-           if(flag == 1){
-               JOptionPane.showMessageDialog(null, "YOU HAVE BEEN ASSIGNED DRIVER. HIS DRIVER ID IS :  "+i);
-           }
-           else{
-                JOptionPane.showMessageDialog(null, " 2 : Sorry, No Rickshaw Available " );
-           }
+        if(i<total){
+            DbConnection conn = new DbConnection();
+            int flag;
+            try{
+            conn.OpenConnection();
+            String sql = "UPDATE DriverRickshawRT SET DriverAvail = '"+ newAss +"' where ID = '"+i+ "'";
+
+            flag = conn.InsertUpdateDelete(sql);
+               if(flag == 1){
+    //               JOptionPane.showMessageDialog(null, "YOU HAVE BEEN ASSIGNED DRIVER. HIS DRIVER ID IS :  "+i);
+               }
+               else{
+                    JOptionPane.showMessageDialog(null, " 2 : Sorry, No Rickshaw Available " );
+               }
+            }
+            catch(Exception e){
+                 JOptionPane.showMessageDialog(null, "3 : UpdateBill Query Failed");
+            }
+             try
+            {
+            DbConnection comm = new DbConnection();
+            conn.OpenConnection();
+            String sql = "UPDATE DriverRickshawRT SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"' where ID = '"+i+ "'";
+
+
+
+            int flagg=comm.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "4: Insertion Failed");
+               }
+               conn.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
+             String contact=null;
+              try
+            {
+            DbConnection conn2 = new DbConnection();
+            conn2.OpenConnection();
+            String sql="Select ContactNo from PassengerT where PID = '"+ pusername + "'"; 
+            rst= conn2.GetData(sql);      
+
+             while(rst.next()){
+               contact=rst.getString("ContactNo");
+
+                    }
+
+
+    //           conn.CloseConnection();
+
+
+                conn2.CloseConnection();
+              }
+                   catch(Exception e){
+              JOptionPane.showMessageDialog(null, e+"\n getPassengerContact  Error");  
+            }
+             try
+            {
+            DbConnection comm = new DbConnection();
+            conn.OpenConnection();
+            String sql = "UPDATE RideRealtime SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"',PassengerContactNo='"+contact+"' where ID = 'R"+i+ "'";
+             int flagg=comm.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+
+               }
+               else{
+
+               }
+
+
+
+               conn.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
+             try
+            {
+            DbConnection comm = new DbConnection();
+            conn.OpenConnection();
+            String sql = "UPDATE DriverRickshawRT SET PName = '"+ pname +"' where ID = '"+i+ "'";
+
+
+            int flagg=comm.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "5: Insertion Failed");
+               }
+               conn.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
+              try
+            {
+            DbConnection comm = new DbConnection();
+            conn.OpenConnection();
+            String sql = "UPDATE RideRealtime SET PName = '"+ pname +"' where ID = 'R"+i+ "'";
+             int flagg=comm.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+
+               }
+               else{
+
+               }
+
+               conn.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
+            return i;
         }
-        catch(Exception e){
-             JOptionPane.showMessageDialog(null, "3 : UpdateBill Query Failed");
-        }
-         try
+        else
         {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE DriverRickshawRT SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"' where ID = '"+i+ "'";
-        
-        
-         
-        int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-              
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "4: Insertion Failed");
-           }
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
+            return -1;
         }
-         String contact=null;
-          try
-        {
-        DbConnection conn2 = new DbConnection();
-        conn2.OpenConnection();
-        String sql="Select ContactNo from PassengerT where PID = '"+ pusername + "'"; 
-        rst= conn2.GetData(sql);      
-          
-         while(rst.next()){
-           contact=rst.getString("ContactNo");
-           
-                }
-       
         
-//           conn.CloseConnection();
-        
-        
-            conn2.CloseConnection();
-          }
-               catch(Exception e){
-          JOptionPane.showMessageDialog(null, e+"\n getPassengerContact  Error");  
-        }
-         try
-        {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET PUsername = '"+ pusername +"',Fromm ='"+currentLocation+"',Too='"+finalLocation+"',PassengerContactNo='"+contact+"' where ID = 'R"+i+ "'";
-         int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-              
-           }
-           else{
-               
-           }
-         
-         
-          
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
-        }
-         try
-        {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE DriverRickshawRT SET PName = '"+ pname +"' where ID = '"+i+ "'";
-        
-         
-        int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-              
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "5: Insertion Failed");
-           }
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
-        }
-          try
-        {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET PName = '"+ pname +"' where ID = 'R"+i+ "'";
-         int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-               
-           }
-           else{
-               
-           }
-      
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
-        }
-        return i;
     }
     public String getRType(String username)
     {

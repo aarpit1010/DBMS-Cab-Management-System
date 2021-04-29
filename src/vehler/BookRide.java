@@ -618,10 +618,16 @@ public class BookRide extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,"PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
         DriverRickshaw dr=new DriverRickshaw();
         int iidd=dr.assignDriver(username,name,currentLocation,finalLocation);
-        String dname=dr.getRRDriverName(iidd);
+        if(iidd!=-1){
+            String dname=dr.getRRDriverName(iidd);
         String cname=dr.getRRRickshawName(iidd);
         JOptionPane.showMessageDialog(null,"YOUR RIDE HAS BEEN BOOKED \n "
                 + "DRIVER's NAME : "+dname+"\n RICKSHAW NAME : "+cname);
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"No Driver Available\nSorry For Inconvenience");
+        }
+        
     }//GEN-LAST:event_jPanel7MouseClicked
 
     private void jPanel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseExited
@@ -643,10 +649,16 @@ public class BookRide extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,"PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
         DriverCar dr=new DriverCar();
         int iidd=dr.assignDriver(username,name,currentLocation,finalLocation);
-        String dname=dr.getRRDriverName(iidd);
-        String cname=dr.getRRCarName(iidd);
-        JOptionPane.showMessageDialog(null,"YOUR RIDE HAS BEEN BOOKED \n "
+        if(iidd!=-1){
+            String dname=dr.getRRDriverName(iidd);
+            String cname=dr.getRRCarName(iidd);
+            JOptionPane.showMessageDialog(null,"YOUR RIDE HAS BEEN BOOKED \n "
                 + "DRIVER's NAME : "+dname+"\n CAR NAME : "+cname);
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"No Driver Available\nSorry For Inconvenience");
+        }
+        
 
     }//GEN-LAST:event_jPanel1MouseClicked
 

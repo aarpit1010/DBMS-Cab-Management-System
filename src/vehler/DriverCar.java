@@ -607,7 +607,8 @@ public class DriverCar implements Driver {
             conn.CloseConnection();
           }
         catch(Exception e){
-          JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last DriverCarId");  
+//          JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last DriverCarId");  
+            return -1;
         }
         total=total+1;
         while(i<total)
@@ -646,137 +647,142 @@ public class DriverCar implements Driver {
            
                i++;
         }
-        DbConnection conn = new DbConnection();
-        int flag;
-        try{
-        conn.OpenConnection();
-        String sql = "UPDATE DriverCarRT SET DriverAvail = "+ newAss +" where ID = "+i+ "";
-       
-        flag = conn.InsertUpdateDelete(sql);
-           if(flag == 1){
-               JOptionPane.showMessageDialog(null, "YOU HAVE BEEN ASSIGNED DRIVER. HIS DRIVER ID IS :  "+i);
-           }
-           else{
-                JOptionPane.showMessageDialog(null, "No Car Available " );
-           }
-        }
-        catch(Exception e){
-             JOptionPane.showMessageDialog(null, "UpdateBill Query Failed");
-        }
-         try
-        {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE DriverCarRT SET PUsername = '"+ pusername +"',"
-                + "Fromm ='"+currentLocation+"',"
-                + "Too='"+finalLocation+"' where ID = "+i+ "";
-        
-         
-        int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-              
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "Insertion Failed asdfghjk");
-           }
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
-        }
-         String contact=null;
+        if(i<total){
+            DbConnection conn = new DbConnection();
+            int flag;
+            try{
+            conn.OpenConnection();
+            String sql = "UPDATE DriverCarRT SET DriverAvail = "+ newAss +" where ID = "+i+ "";
+
+            flag = conn.InsertUpdateDelete(sql);
+               if(flag == 1){
+//                   JOptionPane.showMessageDialog(null, "YOU HAVE BEEN ASSIGNED DRIVER. HIS DRIVER ID IS :  "+i);
+               }
+               else{
+                    JOptionPane.showMessageDialog(null, "No Car Available " );
+               }
+            }
+            catch(Exception e){
+                 JOptionPane.showMessageDialog(null, "UpdateBill Query Failed");
+            }
+             try
+            {
+            DbConnection comm = new DbConnection();
+            conn.OpenConnection();
+            String sql = "UPDATE DriverCarRT SET PUsername = '"+ pusername +"',"
+                    + "Fromm ='"+currentLocation+"',"
+                    + "Too='"+finalLocation+"' where ID = "+i+ "";
+
+
+            int flagg=comm.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "Insertion Failed asdfghjk");
+               }
+               conn.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
+             String contact=null;
+                  try
+            {
+            DbConnection conn2 = new DbConnection();
+            conn2.OpenConnection();
+            String sql="Select ContactNo from PassengerT where PID = '"+ pusername + "'"; 
+            rst= conn2.GetData(sql);      
+
+             while(rst.next()){
+               contact=rst.getString("ContactNo");
+
+                    }
+
+
+    //           conn.CloseConnection();
+
+
+                conn2.CloseConnection();
+              }
+                   catch(Exception e){
+              JOptionPane.showMessageDialog(null, e+"\n getPassengerContact  Error");  
+            }
+
+
+             try
+            {
+            DbConnection comm = new DbConnection();
+            conn.OpenConnection();
+            String sql = "UPDATE RideRealtime SET PUsername = '"+ pusername +"',"
+                    + "Fromm ='"+currentLocation+"',Too='"+finalLocation+"',"
+                    + "PassengerContactNo='"+contact+"' "
+                    + "where ID = 'C"+String.valueOf(i)+ "'";
+
+            System.out.println( sql );
+
+            int flagg=comm.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "Insertion Failed abc");
+               }
+
+
+
+               conn.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
+             try
+            {
+            DbConnection comm = new DbConnection();
+            conn.OpenConnection();
+            String sql = "UPDATE DriverCarRT SET PName = '"+ pname +"' where ID = "+i+ "";
+
+
+            int flagg=comm.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "Insertion Failed dfghjhgf");
+               }
+               conn.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
               try
-        {
-        DbConnection conn2 = new DbConnection();
-        conn2.OpenConnection();
-        String sql="Select ContactNo from PassengerT where PID = '"+ pusername + "'"; 
-        rst= conn2.GetData(sql);      
-          
-         while(rst.next()){
-           contact=rst.getString("ContactNo");
-           
-                }
-       
+            {
+            DbConnection comm = new DbConnection();
+            conn.OpenConnection();
+            String sql = "UPDATE RideRealtime SET PName = '"+ pname +"' where ID = 'C"+i+ "'";
+             int flagg=comm.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+
+
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "Insertion Failed cvbnm");
+               }
+
+               conn.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
+            return i;
+            }
+        else
+            return -1;
         
-//           conn.CloseConnection();
-        
-        
-            conn2.CloseConnection();
-          }
-               catch(Exception e){
-          JOptionPane.showMessageDialog(null, e+"\n getPassengerContact  Error");  
-        }
-              
-        
-         try
-        {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET PUsername = '"+ pusername +"',"
-                + "Fromm ='"+currentLocation+"',Too='"+finalLocation+"',"
-                + "PassengerContactNo='"+contact+"' "
-                + "where ID = 'C"+String.valueOf(i)+ "'";
-         
-        System.out.println( sql );
-        
-        int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-               
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "Insertion Failed abc");
-           }
-         
-         
-          
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
-        }
-         try
-        {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE DriverCarRT SET PName = '"+ pname +"' where ID = "+i+ "";
-        
-         
-        int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-               
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "Insertion Failed dfghjhgf");
-           }
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
-        }
-          try
-        {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET PName = '"+ pname +"' where ID = 'C"+i+ "'";
-         int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-               
-               
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "Insertion Failed cvbnm");
-           }
-      
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
-        }
-        return i;
     }
         public String getRCarPlate(String username)
     {
@@ -827,6 +833,7 @@ public class DriverCar implements Driver {
         String dob="";
         
         DbConnection conn = new DbConnection();
+        int checkUsername=0;    //Checking valid Username
         // driver username is given => extracting CarID from DriverCarT
         try{
             conn.OpenConnection();
@@ -837,153 +844,159 @@ public class DriverCar implements Driver {
                 CarId=rst.getInt("CarID");
 //           matching=rst.getString("ID");
            System.out.println(CarId);
+           checkUsername=1;
                 }
          conn.CloseConnection();
         
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Get Car Data Query Failed");
+            JOptionPane.showMessageDialog(null, "Invalid Driver Username\nSearch again with valid username");
+            return;
         }
 
-        
-        // Extracting all Driver personal info from Driver Table
-        try{
-            conn.OpenConnection();
-            String select_sql = "Select * from Driver where ID='"+username+"'";
-            rst=null;
-            rst=conn.GetData(select_sql);
-//            System.out.println(rst.getObject("*"));
-            System.out.println(select_sql);
-//            rst.absoulte(1);
+        if(checkUsername==1){
+            // Extracting all Driver personal info from Driver Table
+            try{
+                conn.OpenConnection();
+                String select_sql = "Select * from Driver where ID='"+username+"'";
+                rst=null;
+                rst=conn.GetData(select_sql);
+    //            System.out.println(rst.getObject("*"));
+                System.out.println(select_sql);
+    //            rst.absoulte(1);
 
-            
-           while(rst.next())
+
+               while(rst.next())
+                {
+                    System.out.println(rst.getString("ID"));
+                    password=rst.getString("Password");
+                    name=rst.getString("Name");
+                    fname=rst.getString("FatherName");
+                    Age=rst.getInt("Age");
+                    gender=rst.getString("Gender");
+                    security=rst.getString("SecurityQuestion");
+                    type=rst.getString("Type");
+                    aadhar=rst.getString("CNIC");
+                    mobile=rst.getString("ContactNo");
+                    dob=rst.getString("DOB");
+    //                System.out.println("HHHHH");
+    //           System.out.println(rst.getInt("ID"));
+               System.out.println(rst.getString("Password"));
+                    }
+             conn.CloseConnection();
+
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Get Car Data Query Failed");
+                return;
+            }
+
+         // Adding Banned Driver to New Table BanDriver   
+         try
             {
-                System.out.println(rst.getString("ID"));
-                password=rst.getString("Password");
-                name=rst.getString("Name");
-                fname=rst.getString("FatherName");
-                Age=rst.getInt("Age");
-                gender=rst.getString("Gender");
-                security=rst.getString("SecurityQuestion");
-                type=rst.getString("Type");
-                aadhar=rst.getString("CNIC");
-                mobile=rst.getString("ContactNo");
-                dob=rst.getString("DOB");
-//                System.out.println("HHHHH");
-//           System.out.println(rst.getInt("ID"));
-           System.out.println(rst.getString("Password"));
-                }
-         conn.CloseConnection();
-        
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Get Car Data Query Failed");
-        }
-        
-     // Adding Banned Driver to New Table BanDriver   
-     try
-        {
-        conn.OpenConnection();
-        String sql="Insert into BanDriver (ID, CarId, Password, Name, "
-                + "FatherName, Age, Gender, SecurityQuestion, Type, "
-                + "CNIC, ContactNo, DOB) values ('"
-                + username+ "','"
-                    + CarId+ "','"
-                    + password+ "','"
-                    + name +"','"
-                    + fname+ "','"
-                    + Age+ "','"
-                    + gender+ "','"
-                    + security + "','"
-                    + type+ "','"
-                    +aadhar+ "','"
-                    +mobile+ "','"
-                  + dob+"')";
-        
-        System.out.println(sql + "  ??");
-        int flag=conn.InsertUpdateDelete(sql);
-                 
-           if(flag==1){
-               JOptionPane.showMessageDialog(null, "Driver inserted in Ban Driver");
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "Insertion into Ban Failed");
-           }
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
-        }    
-     
-     // Deleting Driver from from its own information table (Driver)
-     try
-        {
-        DbConnection comm = new DbConnection();
-        comm.OpenConnection();
-        String sql = "DELETE from Driver WHERE ID = '"+username+"'";
-        
+            conn.OpenConnection();
+            String sql="Insert into BanDriver (ID, CarId, Password, Name, "
+                    + "FatherName, Age, Gender, SecurityQuestion, Type, "
+                    + "CNIC, ContactNo, DOB) values ('"
+                    + username+ "','"
+                        + CarId+ "','"
+                        + password+ "','"
+                        + name +"','"
+                        + fname+ "','"
+                        + Age+ "','"
+                        + gender+ "','"
+                        + security + "','"
+                        + type+ "','"
+                        +aadhar+ "','"
+                        +mobile+ "','"
+                      + dob+"')";
+
+            System.out.println(sql + "  ??");
+            int flag=conn.InsertUpdateDelete(sql);
+
+               if(flag==1){
+//                   JOptionPane.showMessageDialog(null, "Driver inserted in Ban Driver");
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "Insertion into Ban Failed");
+               }
+               conn.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }    
+
+         // Deleting Driver from from its own information table (Driver)
+         try
+            {
+            DbConnection comm = new DbConnection();
+            comm.OpenConnection();
+            String sql = "DELETE from Driver WHERE ID = '"+username+"'";
+
+
+            int flagg=comm.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+//                   JOptionPane.showMessageDialog(null, "Driver Banned");
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "Driver Ban Failed");
+               }
+               conn.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
+
+
+        // If a Car was assigned to that deleted Driver, its assigned flag is updated to 0 in CarT table. 
+        try
+            {
+    //        DbConnection conn = new DbConnection();
+            conn.OpenConnection();
+            int newAss=0;
+            String sql = "Update CarT set Assigned='"+newAss+"' where CarId= '"+CarId+"'";
+
+
+            int flagg=conn.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+//                   JOptionPane.showMessageDialog(null, "Car status updated");
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "Car status update failed");
+               }
+               conn.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
+
+        // Deleting Driver & Car from DriverCarT ...
+         try
+            {
+            DbConnection comm = new DbConnection();
+            comm.OpenConnection();
+            String sql = "DELETE from DriverCarT WHERE DriverUsername = '"+username+"'";
+
+
+            int flagg=comm.InsertUpdateDelete(sql);
+
+               if(flagg==1){
+//                   JOptionPane.showMessageDialog(null, "Driver & Car link Deleted");
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "Driver & Car removal FAILED");
+               }
+               conn.CloseConnection();
+              }
+            catch(Exception e){
+              JOptionPane.showMessageDialog(null, e);  
+            }
          
-        int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-               JOptionPane.showMessageDialog(null, "Driver Banned");
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "Driver Ban Failed");
-           }
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
+            JOptionPane.showMessageDialog(null, "Driver Banned");
         }
-     
-     
-    // If a Car was assigned to that deleted Driver, its assigned flag is updated to 0 in CarT table. 
-    try
-        {
-//        DbConnection conn = new DbConnection();
-        conn.OpenConnection();
-        int newAss=0;
-        String sql = "Update CarT set Assigned='"+newAss+"' where CarId= '"+CarId+"'";
-        
-         
-        int flagg=conn.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-               JOptionPane.showMessageDialog(null, "Car status updated");
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "Car status update failed");
-           }
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
-        }
-    
-    // Deleting Driver & Car from DriverCarT ...
-     try
-        {
-        DbConnection comm = new DbConnection();
-        comm.OpenConnection();
-        String sql = "DELETE from DriverCarT WHERE DriverUsername = '"+username+"'";
-        
-         
-        int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-               JOptionPane.showMessageDialog(null, "Driver & Car link Deleted");
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "Driver & Car removal FAILED");
-           }
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
-        }
-      
+              
      }
      
      public ResultSet getDriverData()
