@@ -1018,4 +1018,61 @@ public class DriverCar implements Driver {
         return null;
          
      }
+     public ResultSet getCarData()
+     {
+         DbConnection conn = new DbConnection();
+        try{
+            conn.OpenConnection();
+            String select_sql = "Select * from CarT ";
+            rst=conn.GetData(select_sql);
+            do{
+                return rst;
+            } while(rst.next());
+        
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Get Car Data Query Failed");
+        }
+        conn.CloseConnection();
+        return null;
+         
+     }
+     public ResultSet getBusData()
+     {
+         DbConnection conn = new DbConnection();
+        try{
+            conn.OpenConnection();
+            String select_sql = "Select * from BusT ";
+            rst=conn.GetData(select_sql);
+            do{
+                return rst;
+            } while(rst.next());
+        
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Get Bus Data Query Failed");
+        }
+        conn.CloseConnection();
+        return null;
+         
+     }
+     public ResultSet getRickshawData()
+     {
+         DbConnection conn = new DbConnection();
+        try{
+            conn.OpenConnection();
+            String select_sql = "Select * from RickshawT ";
+            rst=conn.GetData(select_sql);
+            do{
+                return rst;
+            } while(rst.next());
+        
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Get Rickshaw Data Query Failed");
+        }
+        conn.CloseConnection();
+        return null;
+         
+     }
 }

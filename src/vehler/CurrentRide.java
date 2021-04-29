@@ -1570,27 +1570,27 @@ public class CurrentRide extends javax.swing.JFrame {
             ride.updateBillStatusCar(username, billStatus,billCar);
             ride.updateRideStatus(username,answer);
             
-            try
-            {
-            DbConnection comm = new DbConnection();
-            comm.OpenConnection();
-            String sql = "DELETE from DriverCarRT WHERE Username = '"+username+"'";
-
-
-            int flagg=comm.InsertUpdateDelete(sql);
-
-               if(flagg==1){
-//                   JOptionPane.showMessageDialog(null, "Driver Deleted");
-               }
-               else{
-                   JOptionPane.showMessageDialog(null, "Driver removal FAILED");
-               }
-               comm.CloseConnection();
-              }
-            catch(Exception e){
-              JOptionPane.showMessageDialog(null, e);  
-            }
-         
+//            try
+//            {
+//            DbConnection comm = new DbConnection();
+//            comm.OpenConnection();
+//            String sql = "DELETE from DriverCarRT WHERE Username = '"+username+"'";
+//
+//
+//            int flagg=comm.InsertUpdateDelete(sql);
+//
+//               if(flagg==1){
+////                   JOptionPane.showMessageDialog(null, "Driver Deleted");
+//               }
+//               else{
+//                   JOptionPane.showMessageDialog(null, "Driver removal FAILED");
+//               }
+//               comm.CloseConnection();
+//              }
+//            catch(Exception e){
+//              JOptionPane.showMessageDialog(null, e);  
+//            }
+//         
             JOptionPane.showMessageDialog(null, "Ride Finished");
 
         }
@@ -1600,27 +1600,27 @@ public class CurrentRide extends javax.swing.JFrame {
             ride.updateBillStatusRickshaw(username,billStatus,billRickshaw);
             ride.updateRideStatusRickshaw(username,answer);
             
-            try
-            {
-            DbConnection comm = new DbConnection();
-            comm.OpenConnection();
-            String sql = "DELETE from DriverRickshawRT WHERE Username = '"+username+"'";
-
-
-            int flagg=comm.InsertUpdateDelete(sql);
-
-               if(flagg==1){
-//                   JOptionPane.showMessageDialog(null, "Driver Deleted ");
-               }
-               else{
-                   JOptionPane.showMessageDialog(null, "Driver removal FAILED");
-               }
-               comm.CloseConnection();
-              }
-            catch(Exception e){
-              JOptionPane.showMessageDialog(null, e);  
-            }
-         
+//            try
+//            {
+//            DbConnection comm = new DbConnection();
+//            comm.OpenConnection();
+//            String sql = "DELETE from DriverRickshawRT WHERE Username = '"+username+"'";
+//
+//
+//            int flagg=comm.InsertUpdateDelete(sql);
+//
+//               if(flagg==1){
+////                   JOptionPane.showMessageDialog(null, "Driver Deleted ");
+//               }
+//               else{
+//                   JOptionPane.showMessageDialog(null, "Driver removal FAILED");
+//               }
+//               comm.CloseConnection();
+//              }
+//            catch(Exception e){
+//              JOptionPane.showMessageDialog(null, e);  
+//            }
+//         
             JOptionPane.showMessageDialog(null, "Ride Finished");
             
         }
@@ -1631,29 +1631,29 @@ public class CurrentRide extends javax.swing.JFrame {
             ride.updateRideStatusBus(username,answer);
             
             
-            try
-            {
-            DbConnection comm = new DbConnection();
-            comm.OpenConnection();
-            String sql = "DELETE from DriverBusRT WHERE Username = '"+username+"'";
-
-
-            int flagg=comm.InsertUpdateDelete(sql);
-
-               if(flagg==1){
-//                   JOptionPane.showMessageDialog(null, "Driver Deleted ");
-               }
-               else{
-                   JOptionPane.showMessageDialog(null, "Driver removal FAILED");
-               }
-               comm.CloseConnection();
-              }
-            catch(Exception e){
-              JOptionPane.showMessageDialog(null, e);  
-            }
-         
+//            try
+//            {
+//            DbConnection comm = new DbConnection();
+//            comm.OpenConnection();
+//            String sql = "DELETE from DriverBusRT WHERE Username = '"+username+"'";
+//
+//
+//            int flagg=comm.InsertUpdateDelete(sql);
+//
+//               if(flagg==1){
+////                   JOptionPane.showMessageDialog(null, "Driver Deleted ");
+//               }
+//               else{
+//                   JOptionPane.showMessageDialog(null, "Driver removal FAILED");
+//               }
+//               comm.CloseConnection();
+//              }
+//            catch(Exception e){
+//              JOptionPane.showMessageDialog(null, e);  
+//            }
+//         
             JOptionPane.showMessageDialog(null, "Ride Finished");
-           
+         
         }
         
     }//GEN-LAST:event_receivedButtonMouseClicked
