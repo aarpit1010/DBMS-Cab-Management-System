@@ -95,17 +95,20 @@ public ViewRepairHis()
         rephisbutton = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        manageVehicle1 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel3.setBackground(new java.awt.Color(51, 0, 102));
+        jPanel3.setBackground(new java.awt.Color(25, 25, 112));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Vehler");
 
-        addVehicleButton.setBackground(new java.awt.Color(51, 0, 102));
+        addVehicleButton.setBackground(new java.awt.Color(25, 25, 112));
         addVehicleButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addVehicleButtonMouseClicked(evt);
@@ -127,7 +130,7 @@ public ViewRepairHis()
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Transportation_25px.png"))); // NOI18N
         addVehicleButton.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        removeVehicleButton.setBackground(new java.awt.Color(51, 0, 102));
+        removeVehicleButton.setBackground(new java.awt.Color(25, 25, 112));
         removeVehicleButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 removeVehicleButtonMouseEntered(evt);
@@ -150,7 +153,7 @@ public ViewRepairHis()
         addVehicleButton5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         removeVehicleButton.add(addVehicleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        banDriverButton.setBackground(new java.awt.Color(51, 0, 102));
+        banDriverButton.setBackground(new java.awt.Color(25, 25, 112));
         banDriverButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 banDriverButtonMouseClicked(evt);
@@ -172,7 +175,7 @@ public ViewRepairHis()
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Denied_25px.png"))); // NOI18N
         banDriverButton.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        ridesHistoryButton.setBackground(new java.awt.Color(51, 0, 102));
+        ridesHistoryButton.setBackground(new java.awt.Color(25, 25, 112));
         ridesHistoryButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ridesHistoryButtonMouseClicked(evt);
@@ -194,7 +197,7 @@ public ViewRepairHis()
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Clock_25px.png"))); // NOI18N
         ridesHistoryButton.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        settingsButton.setBackground(new java.awt.Color(51, 0, 102));
+        settingsButton.setBackground(new java.awt.Color(25, 25, 112));
         settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 settingsButtonMouseClicked(evt);
@@ -216,7 +219,7 @@ public ViewRepairHis()
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
         settingsButton.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        logOutButton.setBackground(new java.awt.Color(51, 0, 102));
+        logOutButton.setBackground(new java.awt.Color(25, 25, 112));
         logOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logOutButtonMouseClicked(evt);
@@ -347,10 +350,16 @@ public ViewRepairHis()
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, -1, -1));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 330, 20));
 
-        fuelButton.setBackground(new java.awt.Color(51, 0, 102));
+        fuelButton.setBackground(new java.awt.Color(25, 25, 112));
         fuelButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 fuelButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                fuelButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                fuelButtonMouseExited(evt);
             }
         });
 
@@ -376,7 +385,7 @@ public ViewRepairHis()
                 .addContainerGap())
         );
 
-        rephisbutton.setBackground(new java.awt.Color(51, 0, 102));
+        rephisbutton.setBackground(new java.awt.Color(25, 25, 112));
         rephisbutton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 rephisbuttonMouseClicked(evt);
@@ -397,6 +406,28 @@ public ViewRepairHis()
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Clock_25px.png"))); // NOI18N
         rephisbutton.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
+
+        manageVehicle1.setBackground(new java.awt.Color(25, 25, 112));
+        manageVehicle1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                manageVehicle1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                manageVehicle1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                manageVehicle1MouseExited(evt);
+            }
+        });
+        manageVehicle1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel24.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel24.setText("Manage Vehicle");
+        manageVehicle1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Transportation_25px.png"))); // NOI18N
+        manageVehicle1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -428,7 +459,8 @@ public ViewRepairHis()
                                     .addComponent(ridesHistoryButton, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
                                     .addComponent(banDriverButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(rephisbutton, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE))))
+                            .addComponent(rephisbutton, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
+                            .addComponent(manageVehicle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1039, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -440,9 +472,11 @@ public ViewRepairHis()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(108, 108, 108)
+                .addGap(54, 54, 54)
                 .addComponent(addVehicleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addComponent(manageVehicle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
                 .addComponent(banDriverButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ridesHistoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -491,7 +525,7 @@ public ViewRepairHis()
 
     private void addVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButtonMouseExited
         // TODO add your handling code here:
-        addVehicleButton.setBackground(new Color(51,0,102));
+        addVehicleButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_addVehicleButtonMouseExited
 
     private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
@@ -509,7 +543,7 @@ public ViewRepairHis()
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(51,0,102));
+        removeVehicleButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void banDriverButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseClicked
@@ -527,7 +561,7 @@ public ViewRepairHis()
 
     private void banDriverButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseExited
         // TODO add your handling code here:
-        banDriverButton.setBackground(new Color(51,0,102));
+        banDriverButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_banDriverButtonMouseExited
 
     private void ridesHistoryButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseClicked
@@ -542,7 +576,7 @@ public ViewRepairHis()
 
     private void ridesHistoryButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseExited
         // TODO add your handling code here:
-        ridesHistoryButton.setBackground(new Color(51,0,102));
+        ridesHistoryButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_ridesHistoryButtonMouseExited
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
@@ -559,7 +593,7 @@ public ViewRepairHis()
 
     private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(51,0,102));
+        settingsButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_settingsButtonMouseExited
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
@@ -576,7 +610,7 @@ public ViewRepairHis()
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(51,0,102));
+        logOutButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
@@ -636,8 +670,35 @@ public ViewRepairHis()
 
     private void rephisbuttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseExited
         // TODO add your handling code here:
-        rephisbutton.setBackground(new Color(51,0,102));
+        rephisbutton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_rephisbuttonMouseExited
+
+    private void manageVehicle1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVehicle1MouseClicked
+        // TODO add your handling code here:
+        ManageVehicle as=new ManageVehicle(adminusername);
+        this.setVisible(false);
+        as.setVisible(true);
+    }//GEN-LAST:event_manageVehicle1MouseClicked
+
+    private void manageVehicle1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVehicle1MouseEntered
+        // TODO add your handling code here:
+        manageVehicle1.setBackground(new Color(85,65,118));
+    }//GEN-LAST:event_manageVehicle1MouseEntered
+
+    private void manageVehicle1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVehicle1MouseExited
+        // TODO add your handling code here:
+        manageVehicle1.setBackground(new Color(25,25,112));
+    }//GEN-LAST:event_manageVehicle1MouseExited
+
+    private void fuelButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseEntered
+        // TODO add your handling code here:
+        fuelButton.setBackground(new Color(85,65,118));
+    }//GEN-LAST:event_fuelButtonMouseEntered
+
+    private void fuelButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseExited
+        // TODO add your handling code here:
+        fuelButton.setBackground(new Color(25,25,112));
+    }//GEN-LAST:event_fuelButtonMouseExited
 
     /**
      * @param args the command line arguments
@@ -708,6 +769,8 @@ public ViewRepairHis()
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -721,6 +784,7 @@ public ViewRepairHis()
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JPanel logOutButton;
+    private javax.swing.JPanel manageVehicle1;
     private javax.swing.JPanel removeVehicleButton;
     private javax.swing.JPanel rephisbutton;
     private javax.swing.JPanel ridesHistoryButton;

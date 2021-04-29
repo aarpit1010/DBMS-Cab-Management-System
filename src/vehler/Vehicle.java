@@ -27,7 +27,8 @@ public class Vehicle {
     {
         
     }
-    Vehicle(String Model,String Version,String Color,String plateNo,String registrationDate,String expirationDate)
+    Vehicle(String Model,String Version,String Color,String plateNo,
+            String registrationDate,String expirationDate)
     {
         this.Model=Model;
         this.Version=Version;
@@ -112,7 +113,8 @@ public class Vehicle {
 
            }
            catch(Exception e){
-               JOptionPane.showMessageDialog(null, "Invalid ID\nSearch again with valid ID");
+               JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                       + "Search again with valid ID");
                return;
            }
 
@@ -141,7 +143,8 @@ public class Vehicle {
 
            }
            catch(Exception e){
-               JOptionPane.showMessageDialog(null, "Invalid ID\nSearch again with valid ID");
+               JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                       + "Search again with valid ID");
                return;
            }
 
@@ -171,7 +174,8 @@ public class Vehicle {
 
            }
            catch(Exception e){
-               JOptionPane.showMessageDialog(null, "Invalid ID\nSearch again with valid ID");
+               JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                       + "Search again with valid ID");
                return;
            }
         }
@@ -305,39 +309,44 @@ public class Vehicle {
                     int flag;
                     try{
                         conn.OpenConnection();
-                        String sql = "UPDATE CarT SET Assigned = '"+ "1" +"' where CarId = '"+newId+ "'";
+                        String sql = "UPDATE CarT SET Assigned = '"+ "1" +"' "
+                                + "where CarId = '"+newId+ "'";
 
                         flag = conn.InsertUpdateDelete(sql);
                            if(flag == 1){
-                               JOptionPane.showMessageDialog(null, "Car's Availablity Updated ");
+                               JOptionPane.showMessageDialog(null, ""
+                                       + "Car's Availablity Updated ");
                                 
                            }
                            else{
 
-                                JOptionPane.showMessageDialog(null, "No Car Available. Try again later. " );
+                                JOptionPane.showMessageDialog(null, 
+                                        "No Car Available. Try again later. " );
                                 
                            }
                     }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null, "Update car availability Query Failed");
+                        JOptionPane.showMessageDialog(null, 
+                                "Update car availability Query Failed");
                     }
                     
                     //FETCH NEW CAR DETAILS
                     try{
                         conn.OpenConnection();
-                        String select_sql = "Select * from CarT where CarID='"+newId+"'";
+                        String select_sql = "Select * from CarT where CarId='"+newId+"'";
                         rst=conn.GetData(select_sql);
                         while(rst.next())
                         {
                             newPlate=rst.getString("PlateNo");
-                            newName=rst.getString("Name");
+                            newName=rst.getString("CarName");
 //                            System.out.println(dId);
                         }
                         conn.CloseConnection();
 
                        }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null, "Unable to fetch new vehicle ID");
+                        JOptionPane.showMessageDialog(null, 
+                                "Unable to fetch new vehicle ID");
                         return;
                     }
                     
@@ -345,7 +354,8 @@ public class Vehicle {
                     // GETTING DRIVER ID TO UPDATE HIS DETAILS
                     try{
                         conn.OpenConnection();
-                        String select_sql = "Select * from DriverCarT where CarID='"+id+"'";
+                        String select_sql = "Select * from DriverCarT "
+                                + "where CarID='"+id+"'";
                         rst=conn.GetData(select_sql);
                         while(rst.next())
                         {
@@ -356,7 +366,8 @@ public class Vehicle {
 
                        }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null, "Unable to fetch driver ID");
+                        JOptionPane.showMessageDialog(null, 
+                                "Unable to fetch driver ID");
                         return;
                     }
                     
@@ -365,16 +376,21 @@ public class Vehicle {
                     {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
-                        String sql = "Update DriverCarT Set CarPlate = '"+newPlate+"',CarID = '"+newId+"',CarName = '"+newName+"'";
+                        String sql = "Update DriverCarT Set CarPlate = '"
+                                + ""+newPlate+"',CarID = '"+newId+""
+                                + "',CarName = '"+newName+"' where DriverUsername"
+                                + " = '"+dId+"'";
                         
 
                         int flagg=comm.InsertUpdateDelete(sql);
 
                            if(flagg==1){
-                               JOptionPane.showMessageDialog(null, "DriverCarT details Update Success");
+                               JOptionPane.showMessageDialog(null, 
+                                       "DriverCarT details Update Success");
                            }
                            else{
-                               JOptionPane.showMessageDialog(null, "DriverCarT details Update Failed");
+                               JOptionPane.showMessageDialog(null, 
+                                       "DriverCarT details Update Failed");
                            }
                            conn.CloseConnection();
                     }
@@ -394,10 +410,12 @@ public class Vehicle {
                         int flagg=comm.InsertUpdateDelete(sql);
 
                            if(flagg==1){
-                               JOptionPane.showMessageDialog(null, "Car removal Sucess");
+                               JOptionPane.showMessageDialog(null, 
+                                       "Car removal Sucess");
                            }
                            else{
-                               JOptionPane.showMessageDialog(null, "Car removal FAILED");
+                               JOptionPane.showMessageDialog(null, 
+                                       "Car removal FAILED");
                            }
                            conn.CloseConnection();
                       }
@@ -408,7 +426,9 @@ public class Vehicle {
                     
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "Can't delete vehicle as it is assigned to a driver and no extra vehicle is available.");
+                    JOptionPane.showMessageDialog(null, "Can't delete vehicle "
+                            + "as it is assigned to a driver and "
+                            + "no extra vehicle is available.");
                     return;
                 }
             }
@@ -425,7 +445,8 @@ public class Vehicle {
                 {
 //                DbConnection conn = new DbConnection();
                     conn.OpenConnection();
-                    String sql="SELECT RickshawId FROM RickshawT ORDER BY RickshawId DESC LIMIT 1"; 
+                    String sql="SELECT RickshawId FROM RickshawT "
+                            + "ORDER BY RickshawId DESC LIMIT 1"; 
 
                     rst= conn.GetData(sql);      
 
@@ -436,7 +457,8 @@ public class Vehicle {
                     conn.CloseConnection();
                 }
                 catch(Exception e){
-                  JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last RickshawId");  
+                  JOptionPane.showMessageDialog(null, e+"\n"
+                          + "Couldn't Select Last RickshawId");  
                 }
                 total=total+1;
                 while(i<total)
@@ -446,7 +468,8 @@ public class Vehicle {
                     {
 
                         conn.OpenConnection();
-                        String sql="Select Assigned from RickshawT where RickshawId = '"+ i + "'"; 
+                        String sql="Select Assigned from RickshawT "
+                                + "where RickshawId = '"+ i + "'"; 
                         rst= conn.GetData(sql);      
 
                         while(rst.next()){
@@ -455,7 +478,8 @@ public class Vehicle {
                         conn.CloseConnection();
                     }
                     catch(Exception e){
-                      JOptionPane.showMessageDialog(null, e+"\nCheck Rickshaw ID Error");  
+                      JOptionPane.showMessageDialog(null, e+"\n"
+                              + "Check Rickshaw ID Error");  
                     }
     
                     if(checkAss==0)
@@ -470,39 +494,45 @@ public class Vehicle {
                     int flag;
                     try{
                         conn.OpenConnection();
-                        String sql = "UPDATE RickshawT SET Assigned = '"+ "1" +"' where RickshawId = '"+newId+ "'";
+                        String sql = "UPDATE RickshawT SET Assigned = '"+ 
+                                "1" +"' where RickshawId = '"+newId+ "'";
 
                         flag = conn.InsertUpdateDelete(sql);
                            if(flag == 1){
-                               JOptionPane.showMessageDialog(null, "Rickshaw's Availablity Updated ");
+                               JOptionPane.showMessageDialog(null, 
+                                       "Rickshaw's Availablity Updated ");
                                 
                            }
                            else{
 
-                                JOptionPane.showMessageDialog(null, "No Car Available. Try again later. " );
+                                JOptionPane.showMessageDialog(null, 
+                                        "No Car Available. Try again later. " );
                                 
                            }
                     }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null, "Update Rickshaw availability Query Failed");
+                        JOptionPane.showMessageDialog(null, 
+                                "Update Rickshaw availability Query Failed");
                     }
                     
-                    //FETCH NEW CAR DETAILS
+                    //FETCH NEW Rickshaw DETAILS
                     try{
                         conn.OpenConnection();
-                        String select_sql = "Select * from CarT where CarID='"+newId+"'";
+                        String select_sql = "Select * from RickshawT "
+                                + "where RickshawId='"+newId+"'";
                         rst=conn.GetData(select_sql);
                         while(rst.next())
                         {
                             newPlate=rst.getString("PlateNo");
-                            newName=rst.getString("Name");
+                            newName=rst.getString("RickshawName");
 //                            System.out.println(dId);
                         }
                         conn.CloseConnection();
 
                        }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null, "Unable to fetch new vehicle ID");
+                        JOptionPane.showMessageDialog(null, 
+                                "Unable to fetch new vehicle ID");
                         return;
                     }
                     
@@ -510,7 +540,8 @@ public class Vehicle {
                     // GETTING DRIVER ID TO UPDATE HIS DETAILS
                     try{
                         conn.OpenConnection();
-                        String select_sql = "Select * from DriverRickshawT where RickshawID='"+id+"'";
+                        String select_sql = "Select * from DriverRickshawT "
+                                + "where RickshawID='"+id+"'";
                         rst=conn.GetData(select_sql);
                         while(rst.next())
                         {
@@ -521,7 +552,8 @@ public class Vehicle {
 
                        }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null, "Unable to fetch driver ID");
+                        JOptionPane.showMessageDialog(null, 
+                                "Unable to fetch driver ID");
                         return;
                     }
                     
@@ -530,16 +562,21 @@ public class Vehicle {
                     {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
-                        String sql = "Update DriverRickshawT Set RickshawPlate = '"+newPlate+"',RickshawID = '"+newId+"',RickshawName = '"+newName+"'";
+                        String sql = "Update DriverRickshawT Set RickshawPlate "
+                                + "= '"+newPlate+"',RickshawID = '"+newId+"',"
+                                + "RickshawName = '"+newName+"' where DriverUsername"
+                                + " = '"+dId+"'";
                         
 
                         int flagg=comm.InsertUpdateDelete(sql);
 
                            if(flagg==1){
-                               JOptionPane.showMessageDialog(null, "DriverRickshawT details Update Success");
+                               JOptionPane.showMessageDialog(null, 
+                                       "DriverRickshawT details Update Success");
                            }
                            else{
-                               JOptionPane.showMessageDialog(null, "DriverRickshawT details Update Failed");
+                               JOptionPane.showMessageDialog(null, 
+                                       "DriverRickshawT details Update Failed");
                            }
                            conn.CloseConnection();
                     }
@@ -553,16 +590,19 @@ public class Vehicle {
                     {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
-                        String sql = "DELETE from RickshawT WHERE RickshawId = '"+id+"'";
+                        String sql = "DELETE from RickshawT "
+                                + "WHERE RickshawId = '"+id+"'";
 
 
                         int flagg=comm.InsertUpdateDelete(sql);
 
                            if(flagg==1){
-                               JOptionPane.showMessageDialog(null, "Rickshaw removal Sucess");
+                               JOptionPane.showMessageDialog(null, 
+                                       "Rickshaw removal Sucess");
                            }
                            else{
-                               JOptionPane.showMessageDialog(null, "Rickshaw removal FAILED");
+                               JOptionPane.showMessageDialog(null, 
+                                       "Rickshaw removal FAILED");
                            }
                            conn.CloseConnection();
                       }
@@ -573,7 +613,9 @@ public class Vehicle {
                     
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "Can't delete vehicle as it is assigned to a driver and no extra vehicle is available.");
+                    JOptionPane.showMessageDialog(null, "Can't delete vehicle "
+                            + "as it is assigned to a driver and no "
+                            + "extra vehicle is available.");
                     return;
                 }
             }
@@ -601,7 +643,8 @@ public class Vehicle {
                     conn.CloseConnection();
                 }
                 catch(Exception e){
-                  JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last BusId");  
+                  JOptionPane.showMessageDialog(null, e+"\n"
+                          + "Couldn't Select Last BusId");  
                 }
                 total=total+1;
                 while(i<total)
@@ -635,32 +678,36 @@ public class Vehicle {
                     int flag;
                     try{
                         conn.OpenConnection();
-                        String sql = "UPDATE BusT SET Assigned = '"+ "1" +"' where BusId = '"+newId+ "'";
+                        String sql = "UPDATE BusT SET Assigned = '"+ "1" +"' "
+                                + "where BusId = '"+newId+ "'";
 
                         flag = conn.InsertUpdateDelete(sql);
                            if(flag == 1){
-                               JOptionPane.showMessageDialog(null, "Bus's Availablity Updated ");
+                               JOptionPane.showMessageDialog(null, 
+                                       "Bus's Availablity Updated ");
                                 
                            }
                            else{
 
-                                JOptionPane.showMessageDialog(null, "No Bus Available. Try again later. " );
+                                JOptionPane.showMessageDialog(null, 
+                                        "No Bus Available. Try again later. " );
                                 
                            }
                     }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null, "Update Bus availability Query Failed");
+                        JOptionPane.showMessageDialog(null, 
+                                "Update Bus availability Query Failed");
                     }
                     
                     //FETCH NEW CAR DETAILS
                     try{
                         conn.OpenConnection();
-                        String select_sql = "Select * from BusT where BusID='"+newId+"'";
+                        String select_sql = "Select * from BusT where BusId='"+newId+"'";
                         rst=conn.GetData(select_sql);
                         while(rst.next())
                         {
                             newPlate=rst.getString("PlateNo");
-                            newName=rst.getString("Name");
+                            newName=rst.getString("BusName");
                             fromm=rst.getString("Fromm");
                             too=rst.getString("Too");
 //                            System.out.println(dId);
@@ -669,7 +716,8 @@ public class Vehicle {
 
                        }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null, "Unable to fetch new vehicle ID");
+                        JOptionPane.showMessageDialog(null, 
+                                "Unable to fetch new vehicle ID");
                         return;
                     }
                     
@@ -677,7 +725,8 @@ public class Vehicle {
                     // GETTING DRIVER ID TO UPDATE HIS DETAILS
                     try{
                         conn.OpenConnection();
-                        String select_sql = "Select * from DriverBusT where BusID='"+id+"'";
+                        String select_sql = "Select * from DriverBusT "
+                                + "where BusID='"+id+"'";
                         rst=conn.GetData(select_sql);
                         while(rst.next())
                         {
@@ -688,7 +737,8 @@ public class Vehicle {
 
                        }
                     catch(Exception e){
-                        JOptionPane.showMessageDialog(null, "Unable to fetch driver ID");
+                        JOptionPane.showMessageDialog(null, 
+                                "Unable to fetch driver ID");
                         return;
                     }
                     
@@ -697,16 +747,22 @@ public class Vehicle {
                     {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
-                        String sql = "Update DriverBusT Set BusPlate = '"+newPlate+"',BusID = '"+newId+"',BusName = '"+newName+"',Fromm = '"+fromm+"',Too = '"+too+"'";
+                        String sql = "Update DriverBusT Set BusPlate = '"
+                                + ""+newPlate+"',BusID = '"+newId+"',"
+                                + "BusName = '"+newName+"',Fromm = '"+fromm+""
+                                + "',Too = '"+too+"' where DriverUsername ="
+                                + " '"+dId+"'";
                         
 
                         int flagg=comm.InsertUpdateDelete(sql);
 
                            if(flagg==1){
-                               JOptionPane.showMessageDialog(null, "DriverBusT details Update Success");
+                               JOptionPane.showMessageDialog(null, 
+                                       "DriverBusT details Update Success");
                            }
                            else{
-                               JOptionPane.showMessageDialog(null, "DriverBusT details Update Failed");
+                               JOptionPane.showMessageDialog(null, 
+                                       "DriverBusT details Update Failed");
                            }
                            conn.CloseConnection();
                     }
@@ -726,10 +782,12 @@ public class Vehicle {
                         int flagg=comm.InsertUpdateDelete(sql);
 
                            if(flagg==1){
-                               JOptionPane.showMessageDialog(null, "Bus removal Sucess");
+                               JOptionPane.showMessageDialog(null, 
+                                       "Bus removal Sucess");
                            }
                            else{
-                               JOptionPane.showMessageDialog(null, "Bus removal FAILED");
+                               JOptionPane.showMessageDialog(null, 
+                                       "Bus removal FAILED");
                            }
                            conn.CloseConnection();
                       }
@@ -740,7 +798,9 @@ public class Vehicle {
                     
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "Can't delete vehicle as it is assigned to a driver and no extra vehicle is available.");
+                    JOptionPane.showMessageDialog(null, "Can't delete vehicle "
+                            + "as it is assigned to a driver and no "
+                            + "extra vehicle is available.");
                     return;
                 }
             }

@@ -268,6 +268,12 @@ public class ManageVehicle extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 fuelButtonMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                fuelButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                fuelButtonMouseExited(evt);
+            }
         });
 
         jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -592,6 +598,9 @@ public class ManageVehicle extends javax.swing.JFrame {
 
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, -1, 40));
 
+        ViewCars.setBackground(new java.awt.Color(64, 34, 107));
+        ViewCars.setFont(new java.awt.Font("Trebuchet MS", 1, 13)); // NOI18N
+        ViewCars.setForeground(new java.awt.Color(255, 255, 255));
         ViewCars.setText("View Cars");
         ViewCars.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -603,8 +612,11 @@ public class ManageVehicle extends javax.swing.JFrame {
                 ViewCarsActionPerformed(evt);
             }
         });
-        jPanel1.add(ViewCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
+        jPanel1.add(ViewCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, -1));
 
+        ViewRickshaws.setBackground(new java.awt.Color(64, 34, 107));
+        ViewRickshaws.setFont(new java.awt.Font("Trebuchet MS", 1, 13)); // NOI18N
+        ViewRickshaws.setForeground(new java.awt.Color(255, 255, 255));
         ViewRickshaws.setText("View Rickshaws");
         ViewRickshaws.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -616,8 +628,11 @@ public class ManageVehicle extends javax.swing.JFrame {
                 ViewRickshawsActionPerformed(evt);
             }
         });
-        jPanel1.add(ViewRickshaws, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, -1, -1));
+        jPanel1.add(ViewRickshaws, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, -1, -1));
 
+        ViewBus.setBackground(new java.awt.Color(64, 34, 107));
+        ViewBus.setFont(new java.awt.Font("Trebuchet MS", 1, 13)); // NOI18N
+        ViewBus.setForeground(new java.awt.Color(255, 255, 255));
         ViewBus.setText("View Bus");
         ViewBus.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -629,7 +644,7 @@ public class ManageVehicle extends javax.swing.JFrame {
                 ViewBusActionPerformed(evt);
             }
         });
-        jPanel1.add(ViewBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, -1, -1));
+        jPanel1.add(ViewBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -665,7 +680,7 @@ addvehicle.setVisible(true);
 
     private void addVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButtonMouseExited
         // TODO add your handling code here:
-        addVehicleButton.setBackground(new Color(51,0,102));
+        addVehicleButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_addVehicleButtonMouseExited
 
     private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
@@ -683,7 +698,7 @@ addvehicle.setVisible(true);
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(51,0,102));
+        removeVehicleButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void banDriverButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseClicked
@@ -698,7 +713,7 @@ addvehicle.setVisible(true);
 
     private void banDriverButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseExited
         // TODO add your handling code here:
-        banDriverButton.setBackground(new Color(51,0,102));
+        banDriverButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_banDriverButtonMouseExited
 
     private void ridesHistoryButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseClicked
@@ -715,7 +730,7 @@ addvehicle.setVisible(true);
 
     private void ridesHistoryButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseExited
         // TODO add your handling code here:
-        ridesHistoryButton.setBackground(new Color(51,0,102));
+        ridesHistoryButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_ridesHistoryButtonMouseExited
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
@@ -732,7 +747,7 @@ addvehicle.setVisible(true);
 
     private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(51,0,102));
+        settingsButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_settingsButtonMouseExited
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
@@ -749,7 +764,7 @@ addvehicle.setVisible(true);
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(51,0,102));
+        logOutButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void jPanel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseExited
@@ -867,7 +882,7 @@ addvehicle.setVisible(true);
 
     private void rephisbuttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseExited
         // TODO add your handling code here:
-        rephisbutton.setBackground(new Color(51,0,102));
+        rephisbutton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_rephisbuttonMouseExited
 
     private void ViewRickshawsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewRickshawsActionPerformed
@@ -906,6 +921,16 @@ addvehicle.setVisible(true);
         RickshawListPane.setVisible(false);
         type="Bus";
     }//GEN-LAST:event_ViewBusMouseClicked
+
+    private void fuelButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseEntered
+        // TODO add your handling code here:
+        fuelButton.setBackground(new Color(85,65,118));
+    }//GEN-LAST:event_fuelButtonMouseEntered
+
+    private void fuelButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseExited
+        // TODO add your handling code here:
+        fuelButton.setBackground(new Color(25,25,112));
+    }//GEN-LAST:event_fuelButtonMouseExited
 
     /**
      * @param args the command line arguments

@@ -5,12 +5,31 @@
  */
 package vehler;
 
-import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import javax.swing.JOptionPane;
 import java.awt.Desktop;
+import java.awt.TextField;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.awt.Color;
+//import javafx.application.Platform;
+//import javafx.embed.swing.JFXPanel;
+//import javafx.scene.Group;
+//import javafx.scene.Scene;
+////import javafx.scene.paint.Color;
+//import javafx.scene.text.Font;
+//import javafx.scene.text.Text;
+//import javafx.application.Application;
+//import javafx.fxml.FXML;
+//import javafx.scene.Scene;
+//import javafx.scene.layout.VBox;
+//import javafx.scene.web.WebEngine;
+//import javafx.scene.web.WebView;
+//import javafx.stage.Stage;
 
 /**
  *
@@ -34,6 +53,76 @@ public class BookRide extends javax.swing.JFrame {
     
     String currentLocation = "ZZZ";
     String finalLocation = "ZZZ";
+    
+//    @FXML
+//    private WebView webView;
+////    
+//    @FXML
+//    private TextField textField;
+//    private WebEngine engine;
+//    
+//    public void initialize(URL arg0, ResourceBundle arg1) {
+//        engine=webView.getEngine();
+//        loadPage();
+//    }
+//    public void loadPage() {
+//        engine.load("http://www.google.com");
+//    }
+    
+    
+//    public void start(Stage primaryStage) {
+//        primaryStage.setTitle("JavaFX WebView Example");
+//
+//        WebView webView = new WebView();
+//
+//        webView.getEngine().load("http://google.com");
+//
+//        VBox vBox = new VBox(webView);
+//        Scene scene = new Scene(vBox, 960, 600);
+//
+//        primaryStage.setScene(scene);
+//        primaryStage.show();
+//
+//    }
+//    private static void initAndShowGUI() {
+//        // This method is invoked on the EDT thread
+//        JFrame frame = new JFrame("Swing and JavaFX");
+//        final JFXPanel fxPanel = new JFXPanel();
+//        frame.add(fxPanel);
+//        frame.setSize(300, 200);
+//        frame.setVisible(true);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//
+//        Platform.runLater(new Runnable() {
+//            @Override
+//            public void run() {
+//                initFX(fxPanel);
+//            }
+//       });
+//    }
+//
+//    private static void initFX(JFXPanel fxPanel) {
+//        // This method is invoked on the JavaFX thread
+//        Scene scene = createScene();
+//        fxPanel.setScene(scene);
+//    }
+//
+//    private static Scene createScene() {
+//        Group  root  =  new  Group();
+//        Scene  scene  =  new  Scene(root, Color.ALICEBLUE);
+//        Text  text  =  new  Text();
+//        
+//        text.setX(40);
+//        text.setY(100);
+//        text.setFont(new Font(25));
+//        text.setText("Welcome JavaFX!");
+//
+//        root.getChildren().add(text);
+//
+//        return (scene);
+//    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -618,16 +707,10 @@ public class BookRide extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,"PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
         DriverRickshaw dr=new DriverRickshaw();
         int iidd=dr.assignDriver(username,name,currentLocation,finalLocation);
-        if(iidd!=-1){
-            String dname=dr.getRRDriverName(iidd);
+        String dname=dr.getRRDriverName(iidd);
         String cname=dr.getRRRickshawName(iidd);
         JOptionPane.showMessageDialog(null,"YOUR RIDE HAS BEEN BOOKED \n "
                 + "DRIVER's NAME : "+dname+"\n RICKSHAW NAME : "+cname);
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"No Driver Available\nSorry For Inconvenience");
-        }
-        
     }//GEN-LAST:event_jPanel7MouseClicked
 
     private void jPanel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseExited
@@ -649,16 +732,10 @@ public class BookRide extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,"PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
         DriverCar dr=new DriverCar();
         int iidd=dr.assignDriver(username,name,currentLocation,finalLocation);
-        if(iidd!=-1){
-            String dname=dr.getRRDriverName(iidd);
-            String cname=dr.getRRCarName(iidd);
-            JOptionPane.showMessageDialog(null,"YOUR RIDE HAS BEEN BOOKED \n "
+        String dname=dr.getRRDriverName(iidd);
+        String cname=dr.getRRCarName(iidd);
+        JOptionPane.showMessageDialog(null,"YOUR RIDE HAS BEEN BOOKED \n "
                 + "DRIVER's NAME : "+dname+"\n CAR NAME : "+cname);
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"No Driver Available\nSorry For Inconvenience");
-        }
-        
 
     }//GEN-LAST:event_jPanel1MouseClicked
 
@@ -720,6 +797,10 @@ public class BookRide extends javax.swing.JFrame {
         } catch (java.io.IOException e) {
             System.out.println(e.getMessage());
         }
+
+//          WebEngine engine = webView.getEngine();
+//          engine.load("http://www.google.com");
+
     }//GEN-LAST:event_mapbuttonActionPerformed
 
     /**
