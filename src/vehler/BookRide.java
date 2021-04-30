@@ -33,7 +33,7 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.runtime.*;
+//import javafx.runtime.*;
 
 /**
  *
@@ -46,7 +46,7 @@ public class BookRide extends javax.swing.JFrame {
      */
     private String username;
     private String name;
-//    WebEngine engine;
+    private WebEngine engine;
     private Stage stage;
     private WebView browser;
     private JFXPanel jfxPanel;
@@ -65,27 +65,28 @@ public class BookRide extends javax.swing.JFrame {
 
     }
 
-    public void run() {
-        new JFXPanel();
-        Platform.runLater(new Runnable() {
-            @Override
             public void run() {
-                // if you change the UI, do it here !
-
-                browser = new WebView();
-                webEngine = browser.getEngine();
-                webEngine.load("http://www.google.com");
+                new JFXPanel();
+        Platform.runLater(new Runnable() {
+    @Override
+    public void run() {
+        // if you change the UI, do it here !
+        
+        
+    browser = new WebView();
+//    webEngine = browser.getEngine();
+//    webEngine.load("http://www.google.com");
 //    WebView wv=new WebView();
-                engine = browser.getEngine();
-//    jFXPanel1.setScene(new Scene);
-                jFXPanel1.setScene(new Scene(browser));
+    engine=browser.getEngine();
+//    jFXPanel1.setScene(scene);
+    jFXPanel1.setScene(new Scene(browser));
 //    jFXPanel1.setZoomFactors();
-//                engine.load(url);
-                System.out.println(browser.getEngine().getLocation());
-            }
-
-        });
+    engine.load(url);
+    System.out.println(browser.getEngine().getLocation());
     }
+    
+        });
+                }
 
     public BookRide() {
 //        initComponents();
