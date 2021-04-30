@@ -13,31 +13,32 @@ import javax.swing.JOptionPane;
  * @author user
  */
 public class DriverSignUp extends javax.swing.JFrame {
+
     private String user;
-    private String name,fname,age,gender,sec,pass,aadhar,contactNo,dob;
+    private String name, fname, age, gender, sec, pass, aadhar, contactNo, dob;
 
     /**
      * Creates new form DrivrSignUp
      */
-    public DriverSignUp()
-    {
-        
+    public DriverSignUp() {
+
     }
-    public DriverSignUp(String user,String name,String fname,String age, 
+
+    public DriverSignUp(String user, String name, String fname, String age,
             String gender, String sec, String pass,
-            String aadhar,String contactNo,String dob) {
-       
+            String aadhar, String contactNo, String dob) {
+
         initComponents();
-        this.user=user;
-        this.name=name;
-        this.fname=fname;
-        this.age=age;
-        this.gender=gender;
-        this.sec=sec;
-        this.pass=pass;
-        this.aadhar=aadhar;
-        this.contactNo=contactNo;
-        this.dob=dob;
+        this.user = user;
+        this.name = name;
+        this.fname = fname;
+        this.age = age;
+        this.gender = gender;
+        this.sec = sec;
+        this.pass = pass;
+        this.aadhar = aadhar;
+        this.contactNo = contactNo;
+        this.dob = dob;
         mm();
     }
 
@@ -272,10 +273,15 @@ public class DriverSignUp extends javax.swing.JFrame {
         checkBus.setBounds(440, 270, 90, 25);
 
         nextButton.setBackground(new java.awt.Color(26, 111, 145));
+        nextButton.setFont(new java.awt.Font("Trebuchet MS", 1, 13)); // NOI18N
+        nextButton.setForeground(new java.awt.Color(255, 255, 255));
         nextButton.setText("Next");
         nextButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 nextButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                nextButtonMouseExited(evt);
             }
         });
         nextButton.addActionListener(new java.awt.event.ActionListener() {
@@ -438,8 +444,7 @@ public class DriverSignUp extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1293, 749));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    private void mm()
-    {
+    private void mm() {
         showModel.setEditable(false);
         showVersion.setEditable(false);
         showColor.setEditable(false);
@@ -467,41 +472,40 @@ public class DriverSignUp extends javax.swing.JFrame {
     private void SignInButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
-        LoginMain reg=new LoginMain();
+        LoginMain reg = new LoginMain();
         reg.setVisible(true);
     }//GEN-LAST:event_SignInButtonMouseClicked
 
     private void SignInButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseEntered
         // TODO add your handling code here:
-        SignInButton.setBackground(new Color(204,153,255));
+        SignInButton.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_SignInButtonMouseEntered
 
     private void SignInButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseExited
         // TODO add your handling code here:
-        SignInButton.setBackground(new Color(153,51,255));
+        SignInButton.setBackground(new Color(26, 111, 145));
     }//GEN-LAST:event_SignInButtonMouseExited
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
         // TODO add your handling code here:
         String type;        // TODO add your handling code here:
-        if(checkCar.isSelected()) {
-            DriverCar driver=new DriverCar(name,fname,age,gender,sec,
-                    user,pass,"Car",aadhar,contactNo,dob);
+        if (checkCar.isSelected()) {
+            DriverCar driver = new DriverCar(name, fname, age, gender, sec,
+                    user, pass, "Car", aadhar, contactNo, dob);
 
-            type=checkCar.getText();
-            Car car=new Car();
+            type = checkCar.getText();
+            Car car = new Car();
             int result;
             result = car.assignCar();
-            if(result!=-1)
-            {
+            if (result != -1) {
                 driver.addDriver();
-                String model=car.getRModel(result);
-                String version=car.getRVersion(result);
-                String color=car.getRColor(result);
-                String plateNo=car.getRPlateNo(result);
-                String rDate=car.getRRDate(result);
-                String eDate=car.getEDate(result);
-                String carName=car.getCarName(result);
+                String model = car.getRModel(result);
+                String version = car.getRVersion(result);
+                String color = car.getRColor(result);
+                String plateNo = car.getRPlateNo(result);
+                String rDate = car.getRRDate(result);
+                String eDate = car.getEDate(result);
+                String carName = car.getCarName(result);
                 showModel.setText(model);
                 showVersion.setText(version);
                 showColor.setText(color);
@@ -509,35 +513,32 @@ public class DriverSignUp extends javax.swing.JFrame {
                 showRDate.setText(rDate);
                 showEDate.setText(eDate);
                 showCarName.setText(carName);
-                DriverCar dd=new DriverCar();
-                dd.insertDriverCarData(user,name,type,plateNo,result,carName);
-            }
-            else{
-                LoginMain lm=new LoginMain();
+                DriverCar dd = new DriverCar();
+                dd.insertDriverCarData(user, name, type, plateNo, result, carName);
+            } else {
+                LoginMain lm = new LoginMain();
                 this.setVisible(false);
                 lm.setVisible(true);
-            }   
-        }
-        
-        else if(checkBus.isSelected()){
-            DriverBus driver=new DriverBus(name,fname,age,gender,
-                    sec,user,pass,"Bus",aadhar,contactNo,dob);
-            
-            type=checkBus.getText();
-            Bus bus=new Bus();
+            }
+        } else if (checkBus.isSelected()) {
+            DriverBus driver = new DriverBus(name, fname, age, gender,
+                    sec, user, pass, "Bus", aadhar, contactNo, dob);
+
+            type = checkBus.getText();
+            Bus bus = new Bus();
             int result;
             result = bus.assignBus();
-            if(result!=-1) {
+            if (result != -1) {
                 driver.addDriver();
-                String model=bus.getRModel(result);
-                String version=bus.getRVersion(result);
-                String color=bus.getRColor(result);
-                String plateNo=bus.getRPlateNo(result);
-                String rDate=bus.getRRDate(result);
-                String eDate=bus.getEDate(result);
-                String busName=bus.getBusName(result);
-                String fromm=bus.getRFromm(result);
-                String too=bus.getRToo(result);
+                String model = bus.getRModel(result);
+                String version = bus.getRVersion(result);
+                String color = bus.getRColor(result);
+                String plateNo = bus.getRPlateNo(result);
+                String rDate = bus.getRRDate(result);
+                String eDate = bus.getEDate(result);
+                String busName = bus.getBusName(result);
+                String fromm = bus.getRFromm(result);
+                String too = bus.getRToo(result);
                 showModel.setText(model);
                 showVersion.setText(version);
                 showColor.setText(color);
@@ -545,34 +546,30 @@ public class DriverSignUp extends javax.swing.JFrame {
                 showRDate.setText(rDate);
                 showEDate.setText(eDate);
                 showCarName.setText(busName);
-                DriverBus dd=new DriverBus();
-                dd.insertDriverBusData(user,name,type,plateNo,result,busName,fromm,too);
-            }
-            else{
-                LoginMain lm=new LoginMain();
+                DriverBus dd = new DriverBus();
+                dd.insertDriverBusData(user, name, type, plateNo, result, busName, fromm, too);
+            } else {
+                LoginMain lm = new LoginMain();
                 this.setVisible(false);
                 lm.setVisible(true);
-            } 
-        }
+            }
+        } else if (checkRickshaw.isSelected()) {
+            DriverRickshaw driver = new DriverRickshaw(name, fname, age, gender,
+                    sec, user, pass, "Rickshaw", aadhar, contactNo, dob);
 
-        else if(checkRickshaw.isSelected()) {
-            DriverRickshaw driver=new DriverRickshaw(name,fname,age,gender,
-                    sec,user,pass,"Rickshaw",aadhar,contactNo,dob);
-            
-            
-            type=checkRickshaw.getText(); 
-            Rickshaw rickshaw=new Rickshaw();
+            type = checkRickshaw.getText();
+            Rickshaw rickshaw = new Rickshaw();
             int result;
             result = rickshaw.assignRickshaw();
-            if(result!=-1) {
+            if (result != -1) {
                 driver.addDriver();
-                String model=rickshaw.getRModel(result);
-                String version=rickshaw.getRVersion(result);
-                String color=rickshaw.getRColor(result);
-                String plateNo=rickshaw.getRPlateNo(result);
-                String rDate=rickshaw.getRRDate(result);
-                String eDate=rickshaw.getEDate(result);
-                String carName=rickshaw.getRickshawName(result);
+                String model = rickshaw.getRModel(result);
+                String version = rickshaw.getRVersion(result);
+                String color = rickshaw.getRColor(result);
+                String plateNo = rickshaw.getRPlateNo(result);
+                String rDate = rickshaw.getRRDate(result);
+                String eDate = rickshaw.getEDate(result);
+                String carName = rickshaw.getRickshawName(result);
                 showModel.setText(model);
                 showVersion.setText(version);
                 showColor.setText(color);
@@ -580,22 +577,21 @@ public class DriverSignUp extends javax.swing.JFrame {
                 showRDate.setText(rDate);
                 showEDate.setText(eDate);
                 showCarName.setText(carName);
-                DriverRickshaw dd=new DriverRickshaw();
-                dd.insertDriverRickshawData(user,name,type,plateNo,result,carName);
-            }
-            else{
-                LoginMain lm=new LoginMain();
+                DriverRickshaw dd = new DriverRickshaw();
+                dd.insertDriverRickshawData(user, name, type, plateNo, result, carName);
+            } else {
+                LoginMain lm = new LoginMain();
                 this.setVisible(false);
                 lm.setVisible(true);
-            } 
+            }
         }
-        
+
     }//GEN-LAST:event_nextButtonActionPerformed
 
     private void nextButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextButtonMouseEntered
         // TODO add your handling code here:
-        nextButton.setBackground(new Color(204,153,255));
-        
+        nextButton.setBackground(new Color(51, 153, 153));
+
     }//GEN-LAST:event_nextButtonMouseEntered
 
     private void xpanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseClicked
@@ -605,12 +601,12 @@ public class DriverSignUp extends javax.swing.JFrame {
 
     private void xpanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseEntered
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(51,153,153));
+        xpanel.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_xpanelMouseEntered
 
     private void xpanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseExited
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(0,51,153));
+        xpanel.setBackground(new Color(0, 51, 153));
     }//GEN-LAST:event_xpanelMouseExited
 
     private void ypanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseClicked
@@ -620,13 +616,18 @@ public class DriverSignUp extends javax.swing.JFrame {
 
     private void ypanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseEntered
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(51,153,153));
+        ypanel.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_ypanelMouseEntered
 
     private void ypanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseExited
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(0,51,153));
+        ypanel.setBackground(new Color(0, 51, 153));
     }//GEN-LAST:event_ypanelMouseExited
+
+    private void nextButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextButtonMouseExited
+        // TODO add your handling code here:
+        nextButton.setBackground(new Color(26, 111, 145));
+    }//GEN-LAST:event_nextButtonMouseExited
 
     /**
      * @param args the command line arguments

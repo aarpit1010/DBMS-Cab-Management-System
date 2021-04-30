@@ -344,18 +344,18 @@ public class LoginMain extends javax.swing.JFrame {
 
     private void SignUpButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpButtonMouseExited
         // TODO add your handling code here:
-        SignUpButton.setBackground(new Color(26,111,145));
+        SignUpButton.setBackground(new Color(26, 111, 145));
     }//GEN-LAST:event_SignUpButtonMouseExited
 
     private void SignUpButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpButtonMouseEntered
         // TODO add your handling code here:
-        SignUpButton.setBackground(new Color(51,153,153));
+        SignUpButton.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_SignUpButtonMouseEntered
 
     private void SignUpButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpButtonMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
-        RegistrationForm reg=new RegistrationForm();
+        RegistrationForm reg = new RegistrationForm();
         reg.setVisible(true);
     }//GEN-LAST:event_SignUpButtonMouseClicked
 
@@ -366,111 +366,90 @@ public class LoginMain extends javax.swing.JFrame {
     private void forgotButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgotButtonMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
-        ForgotPasswordForm fp=new ForgotPasswordForm();
+        ForgotPasswordForm fp = new ForgotPasswordForm();
         fp.setVisible(true);
     }//GEN-LAST:event_forgotButtonMouseClicked
 
     private void LoginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseExited
         // TODO add your handling code here:
-        LoginButton.setBackground(new Color(26,111,145));
+        LoginButton.setBackground(new Color(26, 111, 145));
     }//GEN-LAST:event_LoginButtonMouseExited
 
     private void LoginButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseEntered
         // TODO add your handling code here:
-        LoginButton.setBackground(new Color(51,153,153));
+        LoginButton.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_LoginButtonMouseEntered
 
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseClicked
         // TODO add your handling code here:
 
-        if(TextId.getText(). equals("") || TextPass.getText().equals(""))
-        {
-            JOptionPane.showMessageDialog(null,"Please fill All Fields");
-        }
-        else
-        {
-            String LoginAs=String.valueOf(LoginAsCombo.getSelectedItem());
-            Admin a=new Admin();
-            DriverCar d=new DriverCar();
-            Passenger passing=new Passenger();
-            String iidd=TextId.getText();
-            String pass=TextPass.getText();
-            if(LoginAs=="Admin")
-            {
-                if(a.chkAdminPass(iidd, pass))
-                {
-                    AdminHome ah=new AdminHome(iidd);
+        if (TextId.getText().equals("") || TextPass.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please fill All Fields");
+        } else {
+            String LoginAs = String.valueOf(LoginAsCombo.getSelectedItem());
+            Admin a = new Admin();
+            DriverCar d = new DriverCar();
+            Passenger passing = new Passenger();
+            String iidd = TextId.getText();
+            String pass = TextPass.getText();
+            if (LoginAs == "Admin") {
+                if (a.chkAdminPass(iidd, pass)) {
+                    AdminHome ah = new AdminHome(iidd);
                     this.setVisible(false);
                     ah.setVisible(true);
-                }
-                else{
+                } else {
                     JOptionPane.showMessageDialog(null, "Invalid UserID or Password");
                 }
 
-            }
-            else if(LoginAs.equals("Driver"))
-            {
-                DriverCar checking =new DriverCar();
-                if(checking.chkDriverPass(iidd, pass))
-                {
-                    String answer=checking.getDriverType(iidd);
-                    if(answer.equals("Car"))
-                    {
-                        String dname=d.getRDriverName(iidd);
-                        int carid=d.getRCarId(iidd);
-                        String carName=d.getRCarName(iidd);
-                        String type="Car";
-                        String plateNo=d.getRCarPlate(iidd);
-                        DriverHome dh=new DriverHome(iidd,dname,type,plateNo,carid,carName);
+            } else if (LoginAs.equals("Driver")) {
+                DriverCar checking = new DriverCar();
+                if (checking.chkDriverPass(iidd, pass)) {
+                    String answer = checking.getDriverType(iidd);
+                    if (answer.equals("Car")) {
+                        String dname = d.getRDriverName(iidd);
+                        int carid = d.getRCarId(iidd);
+                        String carName = d.getRCarName(iidd);
+                        String type = "Car";
+                        String plateNo = d.getRCarPlate(iidd);
+                        DriverHome dh = new DriverHome(iidd, dname, type, plateNo, carid, carName);
                         this.setVisible(false);
 
                         dh.setVisible(true);
-                    }
-
-                    else if(answer.equals("Rickshaw"))
-                    {
-                        DriverRickshaw dr=new DriverRickshaw();
-                        String dname=dr.getRDriverName(iidd);
-                        int carid=dr.getRRickshawId(iidd);
-                        String carName=dr.getRRickshawName(iidd);
-                        String plateNo=dr.getRRickshawPlate(iidd);
-                        String type="Rickshaw";
-                        DriverHome dh=new DriverHome(iidd,dname,type,plateNo,carid,carName);
+                    } else if (answer.equals("Rickshaw")) {
+                        DriverRickshaw dr = new DriverRickshaw();
+                        String dname = dr.getRDriverName(iidd);
+                        int carid = dr.getRRickshawId(iidd);
+                        String carName = dr.getRRickshawName(iidd);
+                        String plateNo = dr.getRRickshawPlate(iidd);
+                        String type = "Rickshaw";
+                        DriverHome dh = new DriverHome(iidd, dname, type, plateNo, carid, carName);
                         this.setVisible(false);
 
                         dh.setVisible(true);
-                    }
-                    else if(answer.equals("Bus"))
-                    {
-                        DriverBus dr=new DriverBus();
-                        String dname=dr.getRDriverName(iidd);
-                        int carid=dr.getRBusId(iidd);
-                        String carName=dr.getRBusName(iidd);
-                        String plateNo=dr.getRBusPlate(iidd);
-                        String type="Bus";
-                        DriverHome dh=new DriverHome(iidd,dname,type,plateNo,carid,carName);
+                    } else if (answer.equals("Bus")) {
+                        DriverBus dr = new DriverBus();
+                        String dname = dr.getRDriverName(iidd);
+                        int carid = dr.getRBusId(iidd);
+                        String carName = dr.getRBusName(iidd);
+                        String plateNo = dr.getRBusPlate(iidd);
+                        String type = "Bus";
+                        DriverHome dh = new DriverHome(iidd, dname, type, plateNo, carid, carName);
                         this.setVisible(false);
                         dh.setVisible(true);
 
                     }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Invalid Username or Password");
                 }
-                else
-                {
-                    JOptionPane.showMessageDialog(null,"Invalid Username or Password");
-                }
-            }
-            else if(LoginAs=="Passenger")
-            {
-                if(passing.chkPassPass(iidd, pass))
-                {
-                   
+            } else if (LoginAs == "Passenger") {
+                if (passing.chkPassPass(iidd, pass)) {
+
                     this.setVisible(false);
-                    String pname=passing.getRPassengerName(iidd);
-                    PassengerHome ph=new PassengerHome(iidd,pname);
+                    String pname = passing.getRPassengerName(iidd);
+                    PassengerHome ph = new PassengerHome(iidd, pname);
                     //            BookRide psi=new BookRide(iidd,pname);
                     ph.setVisible(true);
-                }
-                else{
+                } else {
                     JOptionPane.showMessageDialog(null, "Invalid UserID or Password");
                 }
 
@@ -481,7 +460,7 @@ public class LoginMain extends javax.swing.JFrame {
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
-        LoginButton.action(null,null);
+        LoginButton.action(null, null);
     }//GEN-LAST:event_jLabel12MouseClicked
 
     private void TextIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextIdActionPerformed
@@ -490,32 +469,32 @@ public class LoginMain extends javax.swing.JFrame {
 
     private void TextIdFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TextIdFocusGained
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_TextIdFocusGained
 
     private void TextPassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TextPassFocusGained
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_TextPassFocusGained
 
     private void xpanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseEntered
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(51,153,153));
+        xpanel.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_xpanelMouseEntered
 
     private void xpanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseExited
         // TODO add your handling code here:
-         xpanel.setBackground(new Color(0,51,153));
+        xpanel.setBackground(new Color(0, 51, 153));
     }//GEN-LAST:event_xpanelMouseExited
 
     private void ypanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseEntered
         // TODO add your handling code here:
-         ypanel.setBackground(new Color(51,153,153));
+        ypanel.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_ypanelMouseEntered
 
     private void ypanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseExited
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(0,51,153));
+        ypanel.setBackground(new Color(0, 51, 153));
     }//GEN-LAST:event_ypanelMouseExited
 
     private void ypanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseClicked

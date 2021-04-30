@@ -30,13 +30,13 @@ public class GoogleMaps {
 
     private static final int MIN_ZOOM = 0;
     private static final int MAX_ZOOM = 21;
-    private static final String setMarkerScript =
-            "var myLatlng = new google.maps.LatLng(48.4431727,23.0488126);\n" +
-                    "var marker = new google.maps.Marker({\n" +
-                    "    position: myLatlng,\n" +
-                    "    map: map,\n" +
-                    "    title: 'Hello World!'\n" +
-                    "});";
+    private static final String setMarkerScript
+            = "var myLatlng = new google.maps.LatLng(48.4431727,23.0488126);\n"
+            + "var marker = new google.maps.Marker({\n"
+            + "    position: myLatlng,\n"
+            + "    map: map,\n"
+            + "    title: 'Hello World!'\n"
+            + "});";
 
     /**
      * In map.html file default zoom value is set to 4.
@@ -44,8 +44,8 @@ public class GoogleMaps {
     private static int zoomValue = 4;
 
     public static void main(String[] args) {
-        EngineOptions options =
-                EngineOptions.newBuilder(HARDWARE_ACCELERATED).build();
+        EngineOptions options
+                = EngineOptions.newBuilder(HARDWARE_ACCELERATED).build();
         Engine engine = Engine.newInstance(options);
         Browser browser = engine.newBrowser();
 
@@ -55,25 +55,25 @@ public class GoogleMaps {
             JButton zoomInButton = new JButton("Zoom In");
             zoomInButton.addActionListener(e -> {
                 if (zoomValue < MAX_ZOOM) {
-                    browser.mainFrame().ifPresent(frame ->
-                            frame.executeJavaScript("map.setZoom(" +
-                                    ++zoomValue + ")"));
+                    browser.mainFrame().ifPresent(frame
+                            -> frame.executeJavaScript("map.setZoom("
+                                    + ++zoomValue + ")"));
                 }
             });
 
             JButton zoomOutButton = new JButton("Zoom Out");
             zoomOutButton.addActionListener(e -> {
                 if (zoomValue > MIN_ZOOM) {
-                    browser.mainFrame().ifPresent(frame ->
-                            frame.executeJavaScript("map.setZoom(" +
-                                    --zoomValue + ")"));
+                    browser.mainFrame().ifPresent(frame
+                            -> frame.executeJavaScript("map.setZoom("
+                                    + --zoomValue + ")"));
                 }
             });
 
             JButton setMarkerButton = new JButton("Set Marker");
-            setMarkerButton.addActionListener(e ->
-                    browser.mainFrame().ifPresent(frame ->
-                            frame.executeJavaScript(setMarkerScript)));
+            setMarkerButton.addActionListener(e
+                    -> browser.mainFrame().ifPresent(frame
+                            -> frame.executeJavaScript(setMarkerScript)));
 
             JPanel toolBar = new JPanel();
             toolBar.add(zoomInButton);

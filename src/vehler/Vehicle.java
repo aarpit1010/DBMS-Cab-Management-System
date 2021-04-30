@@ -124,7 +124,7 @@ public class Vehicle {
             conn.OpenConnection();
             String select_sql = "Select * from BusT where BusId='"+id+"'";
             rst=conn.GetData(select_sql);
-           while(rst.next())
+            while(rst.next())
             {
                 model=rst.getString("Model");
                 version=rst.getString("Version");
@@ -135,12 +135,11 @@ public class Vehicle {
                 name=rst.getString("BusName");
                 ass=rst.getInt("Assigned");
 
-//           matching=rst.getString("ID");
-           System.out.println(name);
-//           checkId=1;
-                }
+//              matching=rst.getString("ID");
+                System.out.println(name);
+//              checkId=1;
+            }
             conn.CloseConnection();
-
            }
            catch(Exception e){
                JOptionPane.showMessageDialog(null, "Invalid ID\n"
@@ -155,7 +154,7 @@ public class Vehicle {
             conn.OpenConnection();
             String select_sql = "Select * from RicksawT where RickshawId='"+id+"'";
             rst=conn.GetData(select_sql);
-           while(rst.next())
+            while(rst.next())
             {
                 model=rst.getString("Model");
                 version=rst.getString("Version");
@@ -166,12 +165,11 @@ public class Vehicle {
                 name=rst.getString("RickshawName");
                 ass=rst.getInt("Assigned");
 
-//           matching=rst.getString("ID");
-           System.out.println(name);
-//           checkId=1;
-                }
+    //           matching=rst.getString("ID");
+               System.out.println(name);
+    //           checkId=1;
+            }
             conn.CloseConnection();
-
            }
            catch(Exception e){
                JOptionPane.showMessageDialog(null, "Invalid ID\n"
@@ -183,8 +181,7 @@ public class Vehicle {
         if(ass==0){
             //Delete from Respective Table (CarT/ BustT/ RickshawT)
             if(type.equals("Car")){
-                try
-                {
+                try {
                 DbConnection comm = new DbConnection();
                 comm.OpenConnection();
                 String sql = "DELETE from CarT WHERE CarId = '"+id+"'";
@@ -199,15 +196,14 @@ public class Vehicle {
                        JOptionPane.showMessageDialog(null, "Car removal FAILED");
                    }
                    conn.CloseConnection();
-                  }
+                }
                 catch(Exception e){
                   JOptionPane.showMessageDialog(null, e);  
                 }
             }
             
             if(type.equals("Bus")){
-                try
-                {
+                try {
                 DbConnection comm = new DbConnection();
                 comm.OpenConnection();
                 String sql = "DELETE from BusT WHERE BusId = '"+id+"'";
@@ -222,15 +218,14 @@ public class Vehicle {
                        JOptionPane.showMessageDialog(null, "Bus removal FAILED");
                    }
                    conn.CloseConnection();
-                  }
+                }
                 catch(Exception e){
                   JOptionPane.showMessageDialog(null, e);  
                 }
             }
             
             if(type.equals("Rickshaw")){
-                try
-                {
+                try {
                 DbConnection comm = new DbConnection();
                 comm.OpenConnection();
                 String sql = "DELETE from RickshawT WHERE RickshawId = '"+id+"'";
@@ -245,7 +240,7 @@ public class Vehicle {
                        JOptionPane.showMessageDialog(null, "Rickshaw removal FAILED");
                    }
                    conn.CloseConnection();
-                  }
+                }
                 catch(Exception e){
                   JOptionPane.showMessageDialog(null, e);  
                 }
@@ -260,8 +255,7 @@ public class Vehicle {
                 int checkAss=-1;
                 int i=1;
                 int total=0;
-                try
-                {
+                try {
 //                DbConnection conn = new DbConnection();
                     conn.OpenConnection();
                     String sql="SELECT CarId FROM CarT ORDER BY CarId DESC LIMIT 1"; 
@@ -281,8 +275,7 @@ public class Vehicle {
                 while(i<total)
                 { 
 
-                    try
-                    {
+                    try {
 
                         conn.OpenConnection();
                         String sql="Select Assigned from CarT where CarId = '"+ i + "'"; 
@@ -372,8 +365,7 @@ public class Vehicle {
                     }
                     
                     //Updating his details
-                    try
-                    {
+                    try {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
                         String sql = "Update DriverCarT Set CarPlate = '"
@@ -400,8 +392,7 @@ public class Vehicle {
                     
                     //Delete Car
                     
-                    try
-                    {
+                    try {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
                         String sql = "DELETE from CarT WHERE CarId = '"+id+"'";
@@ -441,8 +432,7 @@ public class Vehicle {
                 int checkAss=-1;
                 int i=1;
                 int total=0;
-                try
-                {
+                try {
 //                DbConnection conn = new DbConnection();
                     conn.OpenConnection();
                     String sql="SELECT RickshawId FROM RickshawT "
@@ -464,8 +454,7 @@ public class Vehicle {
                 while(i<total)
                 { 
 
-                    try
-                    {
+                    try {
 
                         conn.OpenConnection();
                         String sql="Select Assigned from RickshawT "
@@ -558,8 +547,7 @@ public class Vehicle {
                     }
                     
                     //Updating his details
-                    try
-                    {
+                    try {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
                         String sql = "Update DriverRickshawT Set RickshawPlate "
@@ -586,8 +574,7 @@ public class Vehicle {
                     
                     //Delete Car
                     
-                    try
-                    {
+                    try {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
                         String sql = "DELETE from RickshawT "
@@ -628,8 +615,7 @@ public class Vehicle {
                 int checkAss=-1;
                 int i=1;
                 int total=0;
-                try
-                {
+                try {
 //                DbConnection conn = new DbConnection();
                     conn.OpenConnection();
                     String sql="SELECT BusId FROM BusT ORDER BY BusId DESC LIMIT 1"; 
@@ -650,9 +636,7 @@ public class Vehicle {
                 while(i<total)
                 { 
 
-                    try
-                    {
-
+                    try {
                         conn.OpenConnection();
                         String sql="Select Assigned from BusT where BusId = '"+ i + "'"; 
                         rst= conn.GetData(sql);      
@@ -743,8 +727,7 @@ public class Vehicle {
                     }
                     
                     //Updating his details
-                    try
-                    {
+                    try {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
                         String sql = "Update DriverBusT Set BusPlate = '"
@@ -772,8 +755,7 @@ public class Vehicle {
                     
                     //Delete Car
                     
-                    try
-                    {
+                    try {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
                         String sql = "DELETE from BusT WHERE BusId = '"+id+"'";

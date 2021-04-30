@@ -17,33 +17,31 @@ public class DriverHome extends javax.swing.JFrame {
     /**
      * Creates new form DriverHome
      */
-    
-    private String dname,carName,iidd,type,plateNo;
+    private String dname, carName, iidd, type, plateNo;
     private int carid;
-    public DriverHome(String id,String dn,String type,String plateNo,int ci,String cn) {
-        iidd=id;
-        dname=dn;
-       this.type=type;
-       this.plateNo=plateNo;
-       carid=ci;
-       carName=cn;
-       
-        
+
+    public DriverHome(String id, String dn, String type, String plateNo, int ci, String cn) {
+        iidd = id;
+        dname = dn;
+        this.type = type;
+        this.plateNo = plateNo;
+        carid = ci;
+        carName = cn;
 
         initComponents();
         mm(dname);
         kaam();
     }
-    public DriverHome()
-    {
-        
+
+    public DriverHome() {
+
     }
-    public void kaam()
-    {
+
+    public void kaam() {
         welcome.setEditable(false);
     }
-    public void mm(String namee)
-    {
+
+    public void mm(String namee) {
         welcome.setText(namee);
     }
 
@@ -419,19 +417,19 @@ public class DriverHome extends javax.swing.JFrame {
 
     private void checkRidesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkRidesButtonMouseClicked
         // TODO add your handling code here:
-        DriverRide driverride=new DriverRide(iidd,type,carid);
+        DriverRide driverride = new DriverRide(iidd, type, carid);
         this.setVisible(false);
         driverride.setVisible(true);
     }//GEN-LAST:event_checkRidesButtonMouseClicked
 
     private void checkRidesButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkRidesButtonMouseEntered
         // TODO add your handling code here:
-        checkRidesButton.setBackground(new Color(85,65,118));
+        checkRidesButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_checkRidesButtonMouseEntered
 
     private void checkRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkRidesButtonMouseExited
         // TODO add your handling code here:
-        checkRidesButton.setBackground(new Color(51,0,102));
+        checkRidesButton.setBackground(new Color(51, 0, 102));
     }//GEN-LAST:event_checkRidesButtonMouseExited
 
     private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
@@ -444,63 +442,63 @@ public class DriverHome extends javax.swing.JFrame {
 
     private void removeVehicleButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseEntered
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(85,65,118));
+        removeVehicleButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_removeVehicleButtonMouseEntered
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(51,0,102));
+        removeVehicleButton.setBackground(new Color(51, 0, 102));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void currentRideButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseClicked
         // TODO add your handling code here:
-       CurrentRide cr= new CurrentRide(iidd,type,carid);
-       this.setVisible(false);
-       cr.setVisible(true);
+        CurrentRide cr = new CurrentRide(iidd, type, carid);
+        this.setVisible(false);
+        cr.setVisible(true);
     }//GEN-LAST:event_currentRideButtonMouseClicked
 
     private void currentRideButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseEntered
         // TODO add your handling code here:
-        currentRideButton.setBackground(new Color(85,65,118));
+        currentRideButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_currentRideButtonMouseEntered
 
     private void currentRideButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseExited
         // TODO add your handling code here:
-        currentRideButton.setBackground(new Color(51,0,102));
+        currentRideButton.setBackground(new Color(51, 0, 102));
     }//GEN-LAST:event_currentRideButtonMouseExited
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
         // TODO add your handling code here:
-        DriverSettings ds=new DriverSettings(iidd,type,carid);
+        DriverSettings ds = new DriverSettings(iidd, type, carid);
         this.setVisible(false);
         ds.setVisible(true);
     }//GEN-LAST:event_settingsButtonMouseClicked
 
     private void settingsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseEntered
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(85,65,118));
+        settingsButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_settingsButtonMouseEntered
 
     private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(51,0,102));
+        settingsButton.setBackground(new Color(51, 0, 102));
     }//GEN-LAST:event_settingsButtonMouseExited
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
         // TODO add your handling code here:
-        LoginMain lm=new LoginMain();
+        LoginMain lm = new LoginMain();
         this.setVisible(false);
         lm.setVisible(true);
     }//GEN-LAST:event_logOutButtonMouseClicked
 
     private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(85,65,118));
+        logOutButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_logOutButtonMouseEntered
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(51,0,102));
+        logOutButton.setBackground(new Color(51, 0, 102));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void welcomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_welcomeActionPerformed
@@ -513,55 +511,48 @@ public class DriverHome extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        int yes=1;
-        if(plateNo.equals("null")){
-            JOptionPane.showMessageDialog(null,"NO Vehicle ASSIGNED");
+        int yes = 1;
+        if (plateNo.equals("null")) {
+            JOptionPane.showMessageDialog(null, "NO Vehicle ASSIGNED");
+        } else {
+            if (type == "Rickshaw") {
+
+                DriverRickshaw driverr = new DriverRickshaw();
+                driverr.insertAvailablity(iidd, dname, plateNo, carid, carName, yes);
+                JOptionPane.showMessageDialog(null, "You are online now.");
+
+            } else if (type == "Car") {
+                DriverCar driver = new DriverCar();
+                //                          
+                driver.insertAvailablity(iidd, dname, plateNo, carid, carName, yes);
+                JOptionPane.showMessageDialog(null, "You are online now.");
+
+            } else if (type == "Bus") {
+                DriverBus driver = new DriverBus();
+                String fromm = driver.getDriverBusFrom(iidd);
+                String too = driver.getDriverBusToo(iidd);
+                driver.insertAvailablity(iidd, dname, plateNo, carid, carName, yes, fromm, too);
+                JOptionPane.showMessageDialog(null, "You are online now.");
+
+            }
         }
-        else {
-            if(type=="Rickshaw")
-           {
-
-              DriverRickshaw driverr=new DriverRickshaw();
-              driverr.insertAvailablity(iidd, dname, plateNo,carid, carName, yes);
-             JOptionPane.showMessageDialog(null,"You are online now.");
-
-           }
-           else if(type=="Car")
-           {
-                DriverCar driver=new DriverCar();
-    //                          
-                driver.insertAvailablity(iidd, dname,plateNo, carid, carName, yes);
-                JOptionPane.showMessageDialog(null,"You are online now.");
-
-
-           }
-            else if(type=="Bus")
-           {
-               DriverBus driver=new DriverBus();
-               String fromm=driver.getDriverBusFrom(iidd);
-               String too=driver.getDriverBusToo(iidd);
-            driver.insertAvailablity(iidd, dname,plateNo, carid, carName, yes,fromm,too);
-            JOptionPane.showMessageDialog(null,"You are online now.");
-
-           }
-    }
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
         // TODO add your handling code here:
-        jButton1.setBackground(new Color(153,102,255));
-        jLabel2.setForeground(new Color(255,255,255));
+        jButton1.setBackground(new Color(153, 102, 255));
+        jLabel2.setForeground(new Color(255, 255, 255));
     }//GEN-LAST:event_jButton1MouseEntered
 
     private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
         // TODO add your handling code here:
-        jButton1.setBackground(new Color(255,255,255));
-        jLabel2.setForeground(new Color(102,102,102));
+        jButton1.setBackground(new Color(255, 255, 255));
+        jLabel2.setForeground(new Color(102, 102, 102));
     }//GEN-LAST:event_jButton1MouseExited
 
     private void repairButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseClicked
         // TODO add your handling code here:
-        Repair rep= new Repair(carid,dname,type);
+        Repair rep = new Repair(carid, dname, type);
         this.setVisible(false);
         rep.setVisible(true);
 
@@ -606,8 +597,7 @@ public class DriverHome extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new DriverHome().setVisible(true);
-               
-                
+
             }
         });
     }

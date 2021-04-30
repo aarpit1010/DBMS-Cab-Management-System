@@ -10,40 +10,40 @@ import net.proteanit.sql.DbUtils;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author user
  */
- 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+
 public class MyRides extends javax.swing.JFrame {
 
     /**
      * Creates new form MyRides
      */
-    private String username,pname;
-    public MyRides()
-    {
-        
+    private String username, pname;
+
+    public MyRides() {
+
     }
-    public MyRides(String username,String pname) {
+
+    public MyRides(String username, String pname) {
         initComponents();
-       
-         this.username=username;
-         this.pname=pname;
+
+        this.username = username;
+        this.pname = pname;
         ResultSet rst;
-        try{
+        try {
             Passenger p = new Passenger();
-            
-        rst=p.PassengerRide(username);
-        myRidesTable.setModel(DbUtils.resultSetToTableModel(rst));
-        }catch(Exception e){
+
+            rst = p.PassengerRide(username);
+            myRidesTable.setModel(DbUtils.resultSetToTableModel(rst));
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Passenger CheckOut Error");
         }
     }
@@ -402,46 +402,46 @@ public class MyRides extends javax.swing.JFrame {
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(51,0,102));
+        logOutButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(85,65,118));
+        logOutButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_logOutButtonMouseEntered
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
         // TODO add your handling code here:
-        LoginMain lm=new LoginMain();
+        LoginMain lm = new LoginMain();
         this.setVisible(false);
         lm.setVisible(true);
     }//GEN-LAST:event_logOutButtonMouseClicked
 
     private void busRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_busRidesButtonMouseExited
         // TODO add your handling code here:
-        busRidesButton.setBackground(new Color(51,0,102));
+        busRidesButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_busRidesButtonMouseExited
 
     private void busRidesButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_busRidesButtonMouseEntered
         // TODO add your handling code here:
-        busRidesButton.setBackground(new Color(85,65,118));
+        busRidesButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_busRidesButtonMouseEntered
 
     private void busRidesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_busRidesButtonMouseClicked
         // TODO add your handling code here:
-        PassengerBusRides pbr=new PassengerBusRides(username,pname);
+        PassengerBusRides pbr = new PassengerBusRides(username, pname);
         this.setVisible(false);
         pbr.setVisible(true);
     }//GEN-LAST:event_busRidesButtonMouseClicked
 
     private void myRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRidesButtonMouseExited
         // TODO add your handling code here:
-        myRidesButton.setBackground(new Color(51,0,102));
+        myRidesButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_myRidesButtonMouseExited
 
     private void myRidesButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRidesButtonMouseEntered
         // TODO add your handling code here:
-        myRidesButton.setBackground(new Color(85,65,118));
+        myRidesButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_myRidesButtonMouseEntered
 
     private void myRidesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRidesButtonMouseClicked
@@ -453,12 +453,12 @@ public class MyRides extends javax.swing.JFrame {
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(51,0,102));
+        removeVehicleButton.setBackground(new Color(51, 0, 102));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void removeVehicleButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseEntered
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(85,65,118));
+        removeVehicleButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_removeVehicleButtonMouseEntered
 
     private void addVehicleButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseExited
@@ -471,19 +471,19 @@ public class MyRides extends javax.swing.JFrame {
 
     private void bookRideButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookRideButtonMouseExited
         // TODO add your handling code here:
-        bookRideButton.setBackground(new Color(51,0,102));
+        bookRideButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_bookRideButtonMouseExited
 
     private void bookRideButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookRideButtonMouseEntered
         // TODO add your handling code here:
-        bookRideButton.setBackground(new Color(85,65,118));
+        bookRideButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_bookRideButtonMouseEntered
 
     private void bookRideButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookRideButtonMouseClicked
         // TODO add your handling code here:
-                BookRide br=new BookRide(username,pname);
-                this.setVisible(false);
-                br.setVisible(true);
+        BookRide br = new BookRide(username, pname);
+        this.setVisible(false);
+        br.setVisible(true);
     }//GEN-LAST:event_bookRideButtonMouseClicked
 
     private void xpanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseClicked
@@ -493,12 +493,12 @@ public class MyRides extends javax.swing.JFrame {
 
     private void xpanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseEntered
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(153,51,255));
+        xpanel.setBackground(new Color(153, 51, 255));
     }//GEN-LAST:event_xpanelMouseEntered
 
     private void xpanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseExited
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(255,255,255));
+        xpanel.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_xpanelMouseExited
 
     private void ypanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseClicked
@@ -508,12 +508,12 @@ public class MyRides extends javax.swing.JFrame {
 
     private void ypanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseEntered
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(153,51,255));
+        ypanel.setBackground(new Color(153, 51, 255));
     }//GEN-LAST:event_ypanelMouseEntered
 
     private void ypanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseExited
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(255,255,255));
+        ypanel.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_ypanelMouseExited
 
     /**

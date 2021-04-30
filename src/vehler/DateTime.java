@@ -13,18 +13,18 @@ import java.util.Date;
  * @author user
  */
 public class DateTime {
-    public String getTime()
-    {
-      Date d=new Date();
-        SimpleDateFormat df=new SimpleDateFormat("HH:mm");
-        String date=df.format(d);
+
+    public String getTime() {
+        Date d = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("HH:mm");
+        String date = df.format(d);
         return date;
     }
-    public String getDate()
-    {
-      Date d=new Date();
-        SimpleDateFormat df=new SimpleDateFormat("dd/MM/yyyy");
-        String date=df.format(d);
+
+    public String getDate() {
+        Date d = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        String date = df.format(d);
         return date;
     }
 }

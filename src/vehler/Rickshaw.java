@@ -41,7 +41,8 @@ public class Rickshaw extends Vehicle{
         {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
-        String sql="Insert into RickshawT (Model,Version,Color,PlateNo,RegistrationDate,ExpirationDate,RickshawName) values ' "
+        String sql="Insert into RickshawT (Model,Version,Color,PlateNo,"
+                + "RegistrationDate,ExpirationDate,RickshawName) values ' "
                     + super.getModel()+ "','"
                     + super.getVersion()+ "','"
                     + super.getColor()+ "','"
@@ -52,7 +53,8 @@ public class Rickshaw extends Vehicle{
         int flag=conn.InsertUpdateDelete(sql);
                  
            if(flag==1){
-               JOptionPane.showMessageDialog(null, "You Have Successfully Added "+getRickshawName()+" "+super.getModel());
+               JOptionPane.showMessageDialog(null, "You Have Successfully Added "
+                       + ""+getRickshawName()+" "+super.getModel());
            }
            else{
                JOptionPane.showMessageDialog(null, "Rickshaw Insertion Failed");
@@ -78,7 +80,7 @@ public class Rickshaw extends Vehicle{
         {
         DbConnection conn = new DbConnection();
         conn.OpenConnection();
-        String sql="SELECT TOP 1 RickshawId FROM RickshawT ORDER BY RickshawId DESC"; 
+        String sql="SELECT RickshawId FROM RickshawT ORDER BY RickshawId DESC LIMIT 1"; 
         rst= conn.GetData(sql);      
           
          while(rst.next()){
@@ -93,7 +95,8 @@ public class Rickshaw extends Vehicle{
             conn.CloseConnection();
           }
         catch(Exception e){
-          JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last RickshawId");  
+          JOptionPane.showMessageDialog(null, e+"\n"
+                  + "Couldn't Select Last RickshawId");  
         }
         total=total+1;
 
@@ -121,11 +124,6 @@ public class Rickshaw extends Vehicle{
         catch(Exception e){
           JOptionPane.showMessageDialog(null, e+"\nCheck Rickshaw ID Error");  
         }
-    
-               
-        
-               
-               
                if(ass==0)
                {
                    break;
@@ -137,14 +135,17 @@ public class Rickshaw extends Vehicle{
         int flag;
         try{
         conn.OpenConnection();
-        String sql = "UPDATE RickshawT SET Assigned = '"+ newAss +"' where RickshawId = '"+i+ "'";
+        String sql = "UPDATE RickshawT SET Assigned = '"+ newAss +"' "
+                + "where RickshawId = '"+i+ "'";
        
         flag = conn.InsertUpdateDelete(sql);
            if(flag == 1){
-               JOptionPane.showMessageDialog(null, "Rickshaw's Availablity Updated  ");
+               JOptionPane.showMessageDialog(null, 
+                       "Rickshaw's Availablity Updated  ");
            }
            else{
-                JOptionPane.showMessageDialog(null, "Rickshaw's Availablity Couldn't Updatedr " );
+                JOptionPane.showMessageDialog(null, 
+                        "Rickshaw's Availablity Couldn't Updatedr " );
            }
         }
         catch(Exception e){

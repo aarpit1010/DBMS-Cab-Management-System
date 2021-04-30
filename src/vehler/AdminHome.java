@@ -7,7 +7,6 @@ import java.awt.Color;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author user
@@ -18,12 +17,13 @@ public class AdminHome extends javax.swing.JFrame {
      * Creates new form AdminHome
      */
     private String username;
-    public AdminHome()
-    {
-        
+
+    public AdminHome() {
+
     }
+
     public AdminHome(String username) {
-        this.username=username;
+        this.username = username;
         initComponents();
     }
 
@@ -555,62 +555,62 @@ public class AdminHome extends javax.swing.JFrame {
 
     private void addVehicleButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButtonMouseEntered
         // TODO add your handling code here:
-        addVehicleButton.setBackground(new Color(85,65,118));
+        addVehicleButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_addVehicleButtonMouseEntered
 
     private void addVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButtonMouseExited
         // TODO add your handling code here:
-        addVehicleButton.setBackground(new Color(25,25,112));
+        addVehicleButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_addVehicleButtonMouseExited
 
     private void banDriverButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseEntered
         // TODO add your handling code here:
-        banDriverButton.setBackground(new Color(85,65,118));
+        banDriverButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_banDriverButtonMouseEntered
 
     private void banDriverButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseExited
         // TODO add your handling code here:
-         banDriverButton.setBackground(new Color(25,25,112));
+        banDriverButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_banDriverButtonMouseExited
 
     private void ridesHistoryButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseEntered
         // TODO add your handling code here:
-        ridesHistoryButton.setBackground(new Color(85,65,118));
+        ridesHistoryButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_ridesHistoryButtonMouseEntered
 
     private void ridesHistoryButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseExited
         // TODO add your handling code here:
-         ridesHistoryButton.setBackground(new Color(25,25,112));
+        ridesHistoryButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_ridesHistoryButtonMouseExited
 
     private void rephisbuttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseEntered
         // TODO add your handling code here:
-        rephisbutton.setBackground(new Color(85,65,118));
+        rephisbutton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_rephisbuttonMouseEntered
 
     private void rephisbuttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseExited
         // TODO add your handling code here:
-         rephisbutton.setBackground(new Color(25,25,112));
+        rephisbutton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_rephisbuttonMouseExited
 
     private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(85,65,118));
+        logOutButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_logOutButtonMouseEntered
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-         logOutButton.setBackground(new Color(25,25,112));
+        logOutButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(25,25,112));
+        removeVehicleButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void removeVehicleButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseEntered
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(85,65,118));
+        removeVehicleButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_removeVehicleButtonMouseEntered
 
     private void addVehicleButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseExited
@@ -623,35 +623,35 @@ public class AdminHome extends javax.swing.JFrame {
 
     private void addVehicleButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButtonMouseClicked
         // TODO add your handling code here:
-        AddVehicle av=new AddVehicle(username);
+        AddVehicle av = new AddVehicle(username);
         this.setVisible(false);
         av.setVisible(true);
     }//GEN-LAST:event_addVehicleButtonMouseClicked
 
     private void banDriverButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseClicked
         // TODO add your handling code here:
-          BanDriver ban=new BanDriver(username);
+        BanDriver ban = new BanDriver(username);
         this.setVisible(false);
         ban.setVisible(true);
     }//GEN-LAST:event_banDriverButtonMouseClicked
 
     private void ridesHistoryButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseClicked
         // TODO add your handling code here:
-        RidesHistory rh=new RidesHistory(username);
+        RidesHistory rh = new RidesHistory(username);
         this.setVisible(false);
         rh.setVisible(true);
     }//GEN-LAST:event_ridesHistoryButtonMouseClicked
 
     private void rephisbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseClicked
         // TODO add your handling code here:
-        ViewRepairHis rephis=new ViewRepairHis(username);
+        ViewRepairHis rephis = new ViewRepairHis(username);
         this.setVisible(false);
         rephis.setVisible(true);
     }//GEN-LAST:event_rephisbuttonMouseClicked
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
         // TODO add your handling code here:
-        LoginMain lm=new LoginMain();
+        LoginMain lm = new LoginMain();
         this.setVisible(false);
         lm.setVisible(true);
     }//GEN-LAST:event_logOutButtonMouseClicked
@@ -663,12 +663,12 @@ public class AdminHome extends javax.swing.JFrame {
 
     private void xpanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseEntered
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(153,51,255));
+        xpanel.setBackground(new Color(153, 51, 255));
     }//GEN-LAST:event_xpanelMouseEntered
 
     private void xpanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseExited
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(255,255,255));
+        xpanel.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_xpanelMouseExited
 
     private void ypanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseClicked
@@ -678,18 +678,18 @@ public class AdminHome extends javax.swing.JFrame {
 
     private void ypanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseEntered
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(153,51,255));
+        ypanel.setBackground(new Color(153, 51, 255));
     }//GEN-LAST:event_ypanelMouseEntered
 
     private void ypanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseExited
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(255,255,255));
+        ypanel.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_ypanelMouseExited
 
     private void fuelButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseClicked
         // TODO add your handling code here:
 
-        FuelPrice fuelprice=new FuelPrice(username);
+        FuelPrice fuelprice = new FuelPrice(username);
         this.setVisible(false);
         fuelprice.setVisible(true);
 
@@ -697,47 +697,47 @@ public class AdminHome extends javax.swing.JFrame {
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
         // TODO add your handling code here:
-        
-        AdminSettings as=new AdminSettings(username);
+
+        AdminSettings as = new AdminSettings(username);
         this.setVisible(false);
         as.setVisible(true);
     }//GEN-LAST:event_settingsButtonMouseClicked
 
     private void settingsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseEntered
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(85,65,118));
+        settingsButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_settingsButtonMouseEntered
 
     private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(25,25,112));
+        settingsButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_settingsButtonMouseExited
 
     private void manageVehicleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVehicleMouseClicked
         // TODO add your handling code here:
-        ManageVehicle as=new ManageVehicle(username);
+        ManageVehicle as = new ManageVehicle(username);
         this.setVisible(false);
         as.setVisible(true);
     }//GEN-LAST:event_manageVehicleMouseClicked
 
     private void manageVehicleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVehicleMouseEntered
         // TODO add your handling code here:
-        manageVehicle.setBackground(new Color(85,65,118));
+        manageVehicle.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_manageVehicleMouseEntered
 
     private void manageVehicleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVehicleMouseExited
         // TODO add your handling code here:
-        manageVehicle.setBackground(new Color(25,25,112));
+        manageVehicle.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_manageVehicleMouseExited
 
     private void fuelButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseEntered
         // TODO add your handling code here:
-        fuelButton.setBackground(new Color(85,65,118));
+        fuelButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_fuelButtonMouseEntered
 
     private void fuelButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseExited
         // TODO add your handling code here:
-        fuelButton.setBackground(new Color(25,25,112));
+        fuelButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_fuelButtonMouseExited
 
     /**

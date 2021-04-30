@@ -8,14 +8,15 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author user
  */
 public class ForgotPasswordForm extends javax.swing.JFrame {
-String comb;
-String username;
+
+    String comb;
+    String username;
+
     /**
      * Creates new form ForgotPasswordForm
      */
@@ -26,7 +27,7 @@ String username;
         newPasswordText.setVisible(false);
         confirmPasswordText.setVisible(false);
         saveButton.setVisible(false);
-       
+
     }
 
     /**
@@ -410,58 +411,49 @@ String username;
 
     private void saveButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseExited
         // TODO add your handling code here:
-        saveButton.setBackground(new Color(153,51,255));
+        saveButton.setBackground(new Color(26, 111, 145));
     }//GEN-LAST:event_saveButtonMouseExited
 
     private void saveButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseEntered
         // TODO add your handling code here:
-        saveButton.setBackground(new Color(204,153,255));
+        saveButton.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_saveButtonMouseEntered
 
     private void saveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseClicked
         // TODO add your handling code here:
-        if(comb.equals("Driver"))
-        {
-            DriverCar dc=new DriverCar();
-            String newPassword=newPasswordText.getText();
-            String confirmPassword=confirmPasswordText.getText();
-            if(newPassword.equals(confirmPassword))
-            {
-                JOptionPane.showMessageDialog(null,"Your both passwords matched");
-                dc.changePassword(username,newPassword);
+        if (comb.equals("Driver")) {
+            DriverCar dc = new DriverCar();
+            String newPassword = newPasswordText.getText();
+            String confirmPassword = confirmPasswordText.getText();
+            if (newPassword.equals(confirmPassword)) {
+                JOptionPane.showMessageDialog(null, "Your both passwords matched");
+                dc.changePassword(username, newPassword);
                 usernameTxt.setText("");
                 SecurityText.setText("");
                 newPasswordText.setText("");
                 confirmPasswordText.setText("");
 
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null,"Your passwords didn't matched");
+            } else {
+                JOptionPane.showMessageDialog(null, "Your passwords didn't matched");
                 newPasswordText.setText("");
                 confirmPasswordText.setText("");
 
             }
-        }
-        else if(comb.equals("Passenger"))
-        {
+        } else if (comb.equals("Passenger")) {
 
-            Passenger dc=new Passenger();
-            String newPassword=newPasswordText.getText();
-            String confirmPassword=confirmPasswordText.getText();
-            if(newPassword.equals(confirmPassword))
-            {
-                JOptionPane.showMessageDialog(null,"Your both passwords matched");
-                dc.changePassword(username,newPassword);
+            Passenger dc = new Passenger();
+            String newPassword = newPasswordText.getText();
+            String confirmPassword = confirmPasswordText.getText();
+            if (newPassword.equals(confirmPassword)) {
+                JOptionPane.showMessageDialog(null, "Your both passwords matched");
+                dc.changePassword(username, newPassword);
                 usernameTxt.setText("");
                 SecurityText.setText("");
                 newPasswordText.setText("");
                 confirmPasswordText.setText("");
 
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null,"Your passwords didn't matched");
+            } else {
+                JOptionPane.showMessageDialog(null, "Your passwords didn't matched");
                 newPasswordText.setText("");
                 confirmPasswordText.setText("");
 
@@ -475,18 +467,18 @@ String username;
 
     private void SignInButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseExited
         // TODO add your handling code here:
-        SignInButton.setBackground(new Color(153,51,255));
+        SignInButton.setBackground(new Color(26, 111, 145));
     }//GEN-LAST:event_SignInButtonMouseExited
 
     private void SignInButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseEntered
         // TODO add your handling code here:
-        SignInButton.setBackground(new Color(204,153,255));
+        SignInButton.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_SignInButtonMouseEntered
 
     private void SignInButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
-        LoginMain reg=new LoginMain();
+        LoginMain reg = new LoginMain();
         reg.setVisible(true);
     }//GEN-LAST:event_SignInButtonMouseClicked
 
@@ -496,27 +488,24 @@ String username;
 
     private void LoginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseExited
         // TODO add your handling code here:
-        LoginButton.setBackground(new Color(153,51,255));
+        LoginButton.setBackground(new Color(26, 111, 145));
     }//GEN-LAST:event_LoginButtonMouseExited
 
     private void LoginButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseEntered
         // TODO add your handling code here:
-        LoginButton.setBackground(new Color(204,153,255));
+        LoginButton.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_LoginButtonMouseEntered
 
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseClicked
         // TODO add your handling code here:
 
-        comb=String.valueOf(RegisteredAsCombo.getSelectedItem());
-        username=usernameTxt.getText();
-        String sec=SecurityText.getText();
+        comb = String.valueOf(RegisteredAsCombo.getSelectedItem());
+        username = usernameTxt.getText();
+        String sec = SecurityText.getText();
 
-        
-        if(comb=="Passenger")
-        {
-            Passenger d=new Passenger();
-            if(d.verifySecurityQ(username, sec))
-            {
+        if (comb == "Passenger") {
+            Passenger d = new Passenger();
+            if (d.verifySecurityQ(username, sec)) {
                 JOptionPane.showMessageDialog(null, "Your Security Answer Was Correct ");
                 newLabel.setVisible(true);
                 confirmLabel.setVisible(true);
@@ -525,20 +514,15 @@ String username;
                 saveButton.setVisible(true);
                 gotit.setVisible(true);
                 SignInButton.setVisible(true);
-            }
-            else
-            {
+            } else {
                 JOptionPane.showMessageDialog(null, "Your Security Answer Was Wrong ");
                 usernameTxt.setText("");
                 SecurityText.setText("");
 
             }
-        }
-        else if(comb=="Driver")
-        {
-            DriverCar d=new DriverCar();
-            if(d.verifySecurityQ(username, sec))
-            {
+        } else if (comb == "Driver") {
+            DriverCar d = new DriverCar();
+            if (d.verifySecurityQ(username, sec)) {
                 JOptionPane.showMessageDialog(null, "Your Security Answer Was Correct ");
                 newLabel.setVisible(true);
                 confirmLabel.setVisible(true);
@@ -547,9 +531,7 @@ String username;
                 saveButton.setVisible(true);
                 gotit.setVisible(true);
                 SignInButton.setVisible(true);
-            }
-            else
-            {
+            } else {
                 JOptionPane.showMessageDialog(null, "Your Security Answer Was Wrong ");
                 usernameTxt.setText("");
                 SecurityText.setText("");
@@ -562,7 +544,7 @@ String username;
 
     private void verifyButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifyButtonMouseClicked
         // TODO add your handling code here:
-        LoginButton.action(null,null);
+        LoginButton.action(null, null);
     }//GEN-LAST:event_verifyButtonMouseClicked
 
     private void newPasswordTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newPasswordTextFocusGained
@@ -582,12 +564,12 @@ String username;
 
     private void xpanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseEntered
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(153,51,255));
+        xpanel.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_xpanelMouseEntered
 
     private void xpanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseExited
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(0,51,153));
+        xpanel.setBackground(new Color(0, 51, 153));
     }//GEN-LAST:event_xpanelMouseExited
 
     private void ypanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseClicked
@@ -597,12 +579,12 @@ String username;
 
     private void ypanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseEntered
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(153,51,255));
+        ypanel.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_ypanelMouseEntered
 
     private void ypanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseExited
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(0,51,153));
+        ypanel.setBackground(new Color(0, 51, 153));
     }//GEN-LAST:event_ypanelMouseExited
 
     /**

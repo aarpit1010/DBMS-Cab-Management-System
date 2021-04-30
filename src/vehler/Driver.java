@@ -10,12 +10,17 @@ package vehler;
  * @author user
  */
 public interface Driver {
-   
+
     public abstract boolean ConfirmCurrentRide(String username);
-    public abstract boolean verifySecurityQ(String username,String securityQuestion);
+
+    public abstract boolean verifySecurityQ(String username, String securityQuestion);
+
     public abstract void addDriver();
+
     public abstract boolean chkDriverPass(String id, String pass);
+
     public abstract String getRDriverName(String username);
-    public abstract int assignDriver(String pusername,String pname,String currentLocation,String finalLocation);
-    
+
+    public abstract int assignDriver(String pusername, String pname, String currentLocation, String finalLocation);
+
 }

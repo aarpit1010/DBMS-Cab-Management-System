@@ -16,6 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
+
 public class DeleteRickshaw extends javax.swing.JFrame {
 
     /**
@@ -25,15 +26,14 @@ public class DeleteRickshaw extends javax.swing.JFrame {
 //          this.setLocationRelativeTo(null);
         initComponents();
         ResultSet rst;
-        try{
+        try {
             Rickshaw p = new Rickshaw();
-        rst=p.getRickshawData();
-        RickshawList.setModel(DbUtils.resultSetToTableModel(rst));
-        }
-        catch(Exception e){
+            rst = p.getRickshawData();
+            RickshawList.setModel(DbUtils.resultSetToTableModel(rst));
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Rickshaw List Error");
         }
-        
+
     }
 
     /**
@@ -155,15 +155,15 @@ public class DeleteRickshaw extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int carid=Integer.parseInt(banText.getText());
-        Rickshaw rickshaw=new Rickshaw();
+        int carid = Integer.parseInt(banText.getText());
+        Rickshaw rickshaw = new Rickshaw();
         rickshaw.deleteRickshaw(carid);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        DeleteRickshaw dc=new DeleteRickshaw();
+        DeleteRickshaw dc = new DeleteRickshaw();
         dc.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 

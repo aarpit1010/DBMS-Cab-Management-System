@@ -16,20 +16,24 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.awt.Color;
-//import javafx.application.Platform;
-//import javafx.embed.swing.JFXPanel;
-//import javafx.scene.Group;
-//import javafx.scene.Scene;
-////import javafx.scene.paint.Color;
-//import javafx.scene.text.Font;
-//import javafx.scene.text.Text;
-//import javafx.application.Application;
-//import javafx.fxml.FXML;
-//import javafx.scene.Scene;
-//import javafx.scene.layout.VBox;
-//import javafx.scene.web.WebEngine;
-//import javafx.scene.web.WebView;
-//import javafx.stage.Stage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.swing.*;
+import javafx.application.Platform;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.Scene;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javax.swing.*;
+import javafx.scene.Group;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.application.Application;
+import javafx.fxml.FXML;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.runtime.*;
 
 /**
  *
@@ -42,18 +46,54 @@ public class BookRide extends javax.swing.JFrame {
      */
     private String username;
     private String name;
-    public BookRide(String username,String name) {
-        this.username=username;
-        this.name=name;
+//    WebEngine engine;
+    private Stage stage;
+    private WebView browser;
+    private JFXPanel jfxPanel;
+    private JButton swingButton;
+    private WebEngine webEngine;
+    private String url = "http://javatongue.blogspot.com";
+
+    public BookRide(String username, String name) {
+//        setUndecorated(false);
+//        setOpaque(false)
+        this.username = username;
+        this.name = name;
         initComponents();
+        run();
+//        jFXPanel1.setVisible(false);
+
     }
+
+    public void run() {
+        new JFXPanel();
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                // if you change the UI, do it here !
+
+                browser = new WebView();
+                webEngine = browser.getEngine();
+                webEngine.load("http://www.google.com");
+//    WebView wv=new WebView();
+                engine = browser.getEngine();
+//    jFXPanel1.setScene(new Scene);
+                jFXPanel1.setScene(new Scene(browser));
+//    jFXPanel1.setZoomFactors();
+//                engine.load(url);
+                System.out.println(browser.getEngine().getLocation());
+            }
+
+        });
+    }
+
     public BookRide() {
 //        initComponents();
     }
-    
-    String currentLocation = "ZZZ";
-    String finalLocation = "ZZZ";
-    
+
+    String currentLocation = "Amritsar";
+    String finalLocation = "Jalandhar";
+
 //    @FXML
 //    private WebView webView;
 ////    
@@ -68,8 +108,6 @@ public class BookRide extends javax.swing.JFrame {
 //    public void loadPage() {
 //        engine.load("http://www.google.com");
 //    }
-    
-    
 //    public void start(Stage primaryStage) {
 //        primaryStage.setTitle("JavaFX WebView Example");
 //
@@ -121,9 +159,6 @@ public class BookRide extends javax.swing.JFrame {
 //
 //        return (scene);
 //    }
-    
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -168,9 +203,9 @@ public class BookRide extends javax.swing.JFrame {
         ypanel = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         mapbutton = new javax.swing.JButton();
+        jFXPanel1 = new javafx.embed.swing.JFXPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -344,16 +379,16 @@ public class BookRide extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Select your pickup location.");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 90, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 140, -1, -1));
 
         fromCombo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         fromCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ashraf Colony", "Malir1", "Malir2", "Qaidabad", "DHA", "Clifton", "4 Minaar", "Dhoraji", "Bahria University", "Sir Syed University", "Quaid-e-Azam Tomb", "Hyperstar Mall", "Bahria College NORE1", "Dalmia", "Gulshan Chowrangi", "Gulistan-e-Johar", "Gulshan-e-Iqbal", "Kemari", "Landhi", "Malir", "Quaidabad", "Landhi Town", "Korangi Town", "North Nazimabad Town", "New Karachi Town", "Gulberg Town", "Liaquatabad Town", "Malir Town", "Bin Qasim Town", "Gadap Town", "Kiamari Town", "S.I.T.E Town", "Baldia Town", "Orangi Town", "Lyari Town", "Saddar Town", "Jamshed Town", "Gulshan Town", "Shah Faisal Town" }));
-        jPanel2.add(fromCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 140, 230, 30));
+        jPanel2.add(fromCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 180, 230, 30));
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Select your Ride.");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 260, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 230, -1, -1));
 
         toCombo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         toCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Quaiabad", "Malir1", "Malir2", "DHA", "Clifton", "4 Minaar", "Dhoraji", "Bahria University", "Sir Syed University", "Quaid-e-Azam Tomb", "Hyperstar Mall", "Bahria College NORE1", "Dalmia", "Gulshan Chowrangi", "Gulistan-e-Johar", "Gulshan-e-Iqbal", "Kemari", "Landhi", "Malir", "Quaidabad", "Landhi Town", "Korangi Town", "North Nazimabad Town", "New Karachi Town", "Gulberg Town", "Liaquatabad Town", "Malir Town", "Bin Qasim Town", "Gadap Town", "Kiamari Town", "S.I.T.E Town", "Baldia Town", "Orangi Town", "Lyari Town", "Saddar Town", "Jamshed Town", "Gulshan Town", "Shah Faisal Town" }));
@@ -362,12 +397,12 @@ public class BookRide extends javax.swing.JFrame {
                 toComboActionPerformed(evt);
             }
         });
-        jPanel2.add(toCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 230, 30));
+        jPanel2.add(toCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 100, 230, 30));
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Where do you want to go?");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 60, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -389,7 +424,7 @@ public class BookRide extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
@@ -400,7 +435,7 @@ public class BookRide extends javax.swing.JFrame {
                 .addGap(0, 26, Short.MAX_VALUE))
         );
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 170, 120));
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 260, 130, 120));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -434,7 +469,7 @@ public class BookRide extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 320, 160, 130));
+        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 250, 160, 130));
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -468,7 +503,7 @@ public class BookRide extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 320, 160, 130));
+        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 380, 160, 130));
 
         jPanel4.setOpaque(false);
 
@@ -564,24 +599,15 @@ public class BookRide extends javax.swing.JFrame {
                 mapbuttonActionPerformed(evt);
             }
         });
-        jPanel2.add(mapbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 540, -1, -1));
+        jPanel2.add(mapbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 550, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1382, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jFXPanel1.setAutoscrolls(true);
+        jFXPanel1.setOpaque(true);
+        jPanel2.add(jFXPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 560, 560));
 
-        setSize(new java.awt.Dimension(1350, 633));
+        getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
+
+        setSize(new java.awt.Dimension(1364, 670));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -594,12 +620,12 @@ public class BookRide extends javax.swing.JFrame {
 
     private void bookRideButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookRideButtonMouseEntered
         // TODO add your handling code here:
-        bookRideButton.setBackground(new Color(85,65,118));
+        bookRideButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_bookRideButtonMouseEntered
 
     private void bookRideButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookRideButtonMouseExited
         // TODO add your handling code here:
-        bookRideButton.setBackground(new Color(64,34,107));
+        bookRideButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_bookRideButtonMouseExited
 
     private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
@@ -612,130 +638,130 @@ public class BookRide extends javax.swing.JFrame {
 
     private void removeVehicleButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseEntered
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(85,65,118));
+        removeVehicleButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_removeVehicleButtonMouseEntered
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(64,34,107));
+        removeVehicleButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void myRidesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRidesButtonMouseClicked
         // TODO add your handling code here:
-        MyRides mr=new MyRides(username,name);
+        MyRides mr = new MyRides(username, name);
         this.setVisible(false);
         mr.setVisible(true);
     }//GEN-LAST:event_myRidesButtonMouseClicked
 
     private void myRidesButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRidesButtonMouseEntered
         // TODO add your handling code here:
-        myRidesButton.setBackground(new Color(85,65,118));
+        myRidesButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_myRidesButtonMouseEntered
 
     private void myRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRidesButtonMouseExited
         // TODO add your handling code here:
-        myRidesButton.setBackground(new Color(64,34,107));
+        myRidesButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_myRidesButtonMouseExited
 
     private void busRidesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_busRidesButtonMouseClicked
         // TODO add your handling code here:
-        PassengerBusRides pbr=new PassengerBusRides(username,name);
+        PassengerBusRides pbr = new PassengerBusRides(username, name);
         this.setVisible(false);
         pbr.setVisible(true);
     }//GEN-LAST:event_busRidesButtonMouseClicked
 
     private void busRidesButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_busRidesButtonMouseEntered
         // TODO add your handling code here:
-        busRidesButton.setBackground(new Color(85,65,118));
+        busRidesButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_busRidesButtonMouseEntered
 
     private void busRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_busRidesButtonMouseExited
         // TODO add your handling code here:
-        busRidesButton.setBackground(new Color(64,34,107));
+        busRidesButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_busRidesButtonMouseExited
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
         // TODO add your handling code here:
-        LoginMain lm=new LoginMain();
+        LoginMain lm = new LoginMain();
         this.setVisible(false);
         lm.setVisible(true);
     }//GEN-LAST:event_logOutButtonMouseClicked
 
     private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(85,65,118));
+        logOutButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_logOutButtonMouseEntered
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(64,34,107));
+        logOutButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void jPanel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseEntered
         // TODO add your handling code here:
-        jPanel7.setBackground(new Color(204,204,204));
-        
+        jPanel7.setBackground(new Color(204, 204, 204));
+
     }//GEN-LAST:event_jPanel7MouseEntered
 
     private void jPanel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseExited
         // TODO add your handling code here:
-        jPanel7.setBackground(new Color(255,255,255));
+        jPanel7.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_jPanel7MouseExited
 
     private void jPanel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseEntered
         // TODO add your handling code here:
-         jPanel8.setBackground(new Color(204,204,204));
+        jPanel8.setBackground(new Color(204, 204, 204));
     }//GEN-LAST:event_jPanel8MouseEntered
 
     private void jPanel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseExited
         // TODO add your handling code here:
-         jPanel8.setBackground(new Color(255,255,255));
+        jPanel8.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_jPanel8MouseExited
 
     private void jPanel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseClicked
         // TODO add your handling code here:
-        BookBus bookbus=new BookBus(username,name);
-            this.setVisible(false);
-            bookbus.setVisible(true);
+        BookBus bookbus = new BookBus(username, name);
+        this.setVisible(false);
+        bookbus.setVisible(true);
     }//GEN-LAST:event_jPanel8MouseClicked
 
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
         // TODO add your handling code here:
         // System.out.println(s.replace(' ','+'));
-        currentLocation=String.valueOf(fromCombo.getSelectedItem());
-        finalLocation=String.valueOf(toCombo.getSelectedItem());
-        JOptionPane.showMessageDialog(null,"PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
-        DriverRickshaw dr=new DriverRickshaw();
-        int iidd=dr.assignDriver(username,name,currentLocation,finalLocation);
-        String dname=dr.getRRDriverName(iidd);
-        String cname=dr.getRRRickshawName(iidd);
-        JOptionPane.showMessageDialog(null,"YOUR RIDE HAS BEEN BOOKED \n "
-                + "DRIVER's NAME : "+dname+"\n RICKSHAW NAME : "+cname);
+        currentLocation = String.valueOf(fromCombo.getSelectedItem());
+        finalLocation = String.valueOf(toCombo.getSelectedItem());
+        JOptionPane.showMessageDialog(null, "PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
+        DriverRickshaw dr = new DriverRickshaw();
+        int iidd = dr.assignDriver(username, name, currentLocation, finalLocation);
+        String dname = dr.getRRDriverName(iidd);
+        String cname = dr.getRRRickshawName(iidd);
+        JOptionPane.showMessageDialog(null, "YOUR RIDE HAS BEEN BOOKED \n "
+                + "DRIVER's NAME : " + dname + "\n RICKSHAW NAME : " + cname);
     }//GEN-LAST:event_jPanel7MouseClicked
 
     private void jPanel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseExited
         // TODO add your handling code here:
-        jPanel1.setBackground(new Color(255,255,255));
+        jPanel1.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_jPanel1MouseExited
 
     private void jPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseEntered
         // TODO add your handling code here:
-        jPanel1.setBackground(new Color(204,204,204));
+        jPanel1.setBackground(new Color(204, 204, 204));
     }//GEN-LAST:event_jPanel1MouseEntered
 
-    
+
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         // TODO add your handling code here:
         // System.out.println(currentLocation.replace(' ','+'));
-        currentLocation=String.valueOf(fromCombo.getSelectedItem());
-        finalLocation=String.valueOf(toCombo.getSelectedItem());
-        JOptionPane.showMessageDialog(null,"PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
-        DriverCar dr=new DriverCar();
-        int iidd=dr.assignDriver(username,name,currentLocation,finalLocation);
-        String dname=dr.getRRDriverName(iidd);
-        String cname=dr.getRRCarName(iidd);
-        JOptionPane.showMessageDialog(null,"YOUR RIDE HAS BEEN BOOKED \n "
-                + "DRIVER's NAME : "+dname+"\n CAR NAME : "+cname);
+        currentLocation = String.valueOf(fromCombo.getSelectedItem());
+        finalLocation = String.valueOf(toCombo.getSelectedItem());
+        JOptionPane.showMessageDialog(null, "PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
+        DriverCar dr = new DriverCar();
+        int iidd = dr.assignDriver(username, name, currentLocation, finalLocation);
+        String dname = dr.getRRDriverName(iidd);
+        String cname = dr.getRRCarName(iidd);
+        JOptionPane.showMessageDialog(null, "YOUR RIDE HAS BEEN BOOKED \n "
+                + "DRIVER's NAME : " + dname + "\n CAR NAME : " + cname);
 
     }//GEN-LAST:event_jPanel1MouseClicked
 
@@ -746,12 +772,12 @@ public class BookRide extends javax.swing.JFrame {
 
     private void xpanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseEntered
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(153,51,255));
+        xpanel.setBackground(new Color(153, 51, 255));
     }//GEN-LAST:event_xpanelMouseEntered
 
     private void xpanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseExited
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(255,255,255));
+        xpanel.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_xpanelMouseExited
 
     private void ypanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseClicked
@@ -761,12 +787,12 @@ public class BookRide extends javax.swing.JFrame {
 
     private void ypanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseEntered
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(153,51,255));
+        ypanel.setBackground(new Color(153, 51, 255));
     }//GEN-LAST:event_ypanelMouseEntered
 
     private void ypanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseExited
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(255,255,255));
+        ypanel.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_ypanelMouseExited
 
     private void toComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toComboActionPerformed
@@ -775,24 +801,32 @@ public class BookRide extends javax.swing.JFrame {
 
     private void mapbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mapbuttonActionPerformed
         // TODO add your handling code here:
+
+        jFXPanel1.setVisible(true);
+
         try {
+            URL myurl = new URL("https://www.google.com/");
+
             // currentLocation=String.valueOf(fromCombo.getSelectedItem());
             // finalLocation=String.valueOf(toCombo.getSelectedItem());
-            if( (currentLocation == "ZZZ") || (finalLocation == "ZZZ") ||
-                    (this.currentLocation == "ZZZ") || (this.finalLocation == "ZZZ")) {
-                JOptionPane.showMessageDialog(null,"Location Not Defined, Book Ride First");
-            }
-            else {
-                String source = currentLocation.replace(' ','+');
-                String dest = finalLocation.replace(' ','+');
+            if ((currentLocation == "ZZZ") || (finalLocation == "ZZZ")
+                    || (this.currentLocation == "ZZZ") || (this.finalLocation == "ZZZ")) {
+                JOptionPane.showMessageDialog(null, "Location Not Defined, Book Ride First");
+            } else {
+                String source = currentLocation.replace(' ', '+');
+                String dest = finalLocation.replace(' ', '+');
 
-                String URL1 = 
-                "http://maps.google.com/maps?saddr="+ source +"&daddr="+ dest ;
+                String URL1
+                        = "http://maps.google.com/maps?saddr=" + source + "&daddr=" + dest;
 
-                String URL2 = 
-                "http://maps.google.com/maps/dir/"+ source +"/"+ dest ;
+                String URL2
+                        = "http://maps.google.com/maps/dir/" + source + "/" + dest;
 
-                java.awt.Desktop.getDesktop().browse(java.net.URI.create(URL1));
+                url = String.valueOf(java.net.URI.create(URL1));
+//                BookRide r1=new BookRide();    
+                run();
+//                java.awt.Desktop.getDesktop().browse(java.net.URI.create(URL1));
+                System.out.println(browser.getEngine().getLocation());
             }
         } catch (java.io.IOException e) {
             System.out.println(e.getMessage());
@@ -834,11 +868,11 @@ public class BookRide extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BookRide().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new BookRide().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -846,6 +880,7 @@ public class BookRide extends javax.swing.JFrame {
     private javax.swing.JPanel bookRideButton;
     private javax.swing.JPanel busRidesButton;
     private javax.swing.JComboBox fromCombo;
+    private javafx.embed.swing.JFXPanel jFXPanel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

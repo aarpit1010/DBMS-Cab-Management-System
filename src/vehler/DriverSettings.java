@@ -17,22 +17,23 @@ public class DriverSettings extends javax.swing.JFrame {
     /**
      * Creates new form AdminSettings
      */
-    private String username,type;
+    private String username, type;
     private int carid;
-    public DriverSettings()
-    {
-        
+
+    public DriverSettings() {
+
     }
-    public DriverSettings(String username,String type,int carid) {
+
+    public DriverSettings(String username, String type, int carid) {
         initComponents();
-        this.username=username;
-        this.type=type;
+        this.username = username;
+        this.type = type;
         newPasswordText.setVisible(false);
         confirmPasswordText.setVisible(false);
         saveButton.setVisible(false);
         newPasswordLabel.setVisible(false);
         confirmPasswordLabel.setVisible(false);
-        this.carid=carid;
+        this.carid = carid;
     }
 
     /**
@@ -526,19 +527,19 @@ public class DriverSettings extends javax.swing.JFrame {
 
     private void checkRidesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkRidesButtonMouseClicked
 //         TODO add your handling code here:
-                DriverRide driverride=new DriverRide(username,type,carid);
-                this.setVisible(false);
-                driverride.setVisible(true);
+        DriverRide driverride = new DriverRide(username, type, carid);
+        this.setVisible(false);
+        driverride.setVisible(true);
     }//GEN-LAST:event_checkRidesButtonMouseClicked
 
     private void checkRidesButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkRidesButtonMouseEntered
         // TODO add your handling code here:
-        checkRidesButton.setBackground(new Color(85,65,118));
+        checkRidesButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_checkRidesButtonMouseEntered
 
     private void checkRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkRidesButtonMouseExited
         // TODO add your handling code here:
-        checkRidesButton.setBackground(new Color(51,0,102));
+        checkRidesButton.setBackground(new Color(51, 0, 102));
     }//GEN-LAST:event_checkRidesButtonMouseExited
 
     private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
@@ -551,63 +552,63 @@ public class DriverSettings extends javax.swing.JFrame {
 
     private void removeVehicleButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseEntered
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(85,65,118));
+        removeVehicleButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_removeVehicleButtonMouseEntered
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(51,0,102));
+        removeVehicleButton.setBackground(new Color(51, 0, 102));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void currentRideButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseClicked
         // TODO add your handling code here:
-        CurrentRide cr= new CurrentRide(username,type,carid);
+        CurrentRide cr = new CurrentRide(username, type, carid);
         this.setVisible(false);
         cr.setVisible(true);
     }//GEN-LAST:event_currentRideButtonMouseClicked
 
     private void currentRideButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseEntered
         // TODO add your handling code here:
-        currentRideButton.setBackground(new Color(85,65,118));
+        currentRideButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_currentRideButtonMouseEntered
 
     private void currentRideButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseExited
         // TODO add your handling code here:
-        currentRideButton.setBackground(new Color(51,0,102));
+        currentRideButton.setBackground(new Color(51, 0, 102));
     }//GEN-LAST:event_currentRideButtonMouseExited
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
         // TODO add your handling code here:
-        DriverSettings ds=new DriverSettings(username,type,carid);
+        DriverSettings ds = new DriverSettings(username, type, carid);
         this.setVisible(false);
         ds.setVisible(true);
     }//GEN-LAST:event_settingsButtonMouseClicked
 
     private void settingsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseEntered
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(85,65,118));
+        settingsButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_settingsButtonMouseEntered
 
     private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(51,0,102));
+        settingsButton.setBackground(new Color(51, 0, 102));
     }//GEN-LAST:event_settingsButtonMouseExited
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
         // TODO add your handling code here:
-        LoginMain lm=new LoginMain();
+        LoginMain lm = new LoginMain();
         this.setVisible(false);
         lm.setVisible(true);
     }//GEN-LAST:event_logOutButtonMouseClicked
 
     private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(85,65,118));
+        logOutButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_logOutButtonMouseEntered
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(51,0,102));
+        logOutButton.setBackground(new Color(51, 0, 102));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
@@ -617,12 +618,12 @@ public class DriverSettings extends javax.swing.JFrame {
 
     private void jPanel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseEntered
         // TODO add your handling code here:
-        jPanel4.setBackground(new Color(153,102,255));
+        jPanel4.setBackground(new Color(153, 102, 255));
     }//GEN-LAST:event_jPanel4MouseEntered
 
     private void jPanel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseExited
         // TODO add your handling code here:
-        jPanel4.setBackground(new Color(255,255,255));
+        jPanel4.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_jPanel4MouseExited
 
     private void jLabel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseEntered
@@ -636,12 +637,12 @@ public class DriverSettings extends javax.swing.JFrame {
 
     private void jPanel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseEntered
         // TODO add your handling code here:
-        jPanel6.setBackground(new Color(153,102,255));
+        jPanel6.setBackground(new Color(153, 102, 255));
     }//GEN-LAST:event_jPanel6MouseEntered
 
     private void jPanel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseExited
         // TODO add your handling code here:
-        jPanel6.setBackground(new Color(255,255,255));
+        jPanel6.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_jPanel6MouseExited
 
     private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
@@ -651,39 +652,36 @@ public class DriverSettings extends javax.swing.JFrame {
     private void saveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseClicked
         // TODO add your handling code here:
 
-       DriverCar ad=new DriverCar();
-            String newPassword=newPasswordText.getText();
-            String confirmPassword=confirmPasswordText.getText();
+        DriverCar ad = new DriverCar();
+        String newPassword = newPasswordText.getText();
+        String confirmPassword = confirmPasswordText.getText();
+        newPasswordText.setText("");
+        confirmPasswordText.setText("");
+        if (newPassword.equals(confirmPassword)) {
+            JOptionPane.showMessageDialog(null, "Your both passwords matched");
+            ad.changePassword(username, newPassword);
+            oldPasswordText.setText("");
             newPasswordText.setText("");
             confirmPasswordText.setText("");
-            if(newPassword.equals(confirmPassword))
-            {
-                JOptionPane.showMessageDialog(null,"Your both passwords matched");
-                ad.changePassword(username,newPassword);
-                oldPasswordText.setText("");
-                newPasswordText.setText("");
-                confirmPasswordText.setText("");
-                
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null,"Your passwords didn't matched");
-                newPasswordText.setText("");
-                confirmPasswordText.setText("");
-                
-            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Your passwords didn't matched");
+            newPasswordText.setText("");
+            confirmPasswordText.setText("");
+
+        }
     }//GEN-LAST:event_saveButtonMouseClicked
 
     private void saveButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseEntered
         // TODO add your handling code here:
-        saveButton.setBackground(new Color(153,102,255));
-        jLabel2.setForeground(new Color(255,255,255));
+        saveButton.setBackground(new Color(153, 102, 255));
+        jLabel2.setForeground(new Color(255, 255, 255));
     }//GEN-LAST:event_saveButtonMouseEntered
 
     private void saveButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseExited
         // TODO add your handling code here:
-        saveButton.setBackground(new Color(255,255,255));
-        jLabel2.setForeground(new Color(153,153,153));
+        saveButton.setBackground(new Color(255, 255, 255));
+        jLabel2.setForeground(new Color(153, 153, 153));
     }//GEN-LAST:event_saveButtonMouseExited
 
     private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
@@ -692,36 +690,33 @@ public class DriverSettings extends javax.swing.JFrame {
 
     private void verifyButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifyButtonMouseClicked
         // TODO add your handling code here:
-        
-        DriverCar driver=new DriverCar();
-        String oldPassword=oldPasswordText.getText();
+
+        DriverCar driver = new DriverCar();
+        String oldPassword = oldPasswordText.getText();
         oldPasswordText.setText("");
-        if(driver.chkDriverPass(username, oldPassword))
-        {
-            JOptionPane.showMessageDialog(null,"Old Password Verified");
+        if (driver.chkDriverPass(username, oldPassword)) {
+            JOptionPane.showMessageDialog(null, "Old Password Verified");
             newPasswordText.setVisible(true);
-        confirmPasswordText.setVisible(true);
-        saveButton.setVisible(true);
-        newPasswordLabel.setVisible(true);
-        confirmPasswordLabel.setVisible(true);
-        
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,"Old Password Not Verified");
+            confirmPasswordText.setVisible(true);
+            saveButton.setVisible(true);
+            newPasswordLabel.setVisible(true);
+            confirmPasswordLabel.setVisible(true);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Old Password Not Verified");
         }
     }//GEN-LAST:event_verifyButtonMouseClicked
 
     private void verifyButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifyButtonMouseEntered
         // TODO add your handling code here:
-        verifyButton.setBackground(new Color(153,102,255));
-        jLabel3.setForeground(new Color(255,255,255));
+        verifyButton.setBackground(new Color(153, 102, 255));
+        jLabel3.setForeground(new Color(255, 255, 255));
     }//GEN-LAST:event_verifyButtonMouseEntered
 
     private void verifyButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifyButtonMouseExited
         // TODO add your handling code here:
-        verifyButton.setBackground(new Color(255,255,255));
-         jLabel3.setForeground(new Color(153,153,153));
+        verifyButton.setBackground(new Color(255, 255, 255));
+        jLabel3.setForeground(new Color(153, 153, 153));
     }//GEN-LAST:event_verifyButtonMouseExited
 
     private void oldPasswordTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_oldPasswordTextFocusGained
@@ -738,10 +733,10 @@ public class DriverSettings extends javax.swing.JFrame {
 
     private void repairButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseClicked
         // TODO add your handling code here:
-        Repair rep= new Repair(carid,username,type);
+        Repair rep = new Repair(carid, username, type);
         this.setVisible(false);
         rep.setVisible(true);
-        
+
     }//GEN-LAST:event_repairButton1MouseClicked
 
     private void repairButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseEntered

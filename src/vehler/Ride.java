@@ -25,94 +25,83 @@ public class Ride {
         int mat=0;
         try{
             conn.OpenConnection();
-            String sql="Select MAX(ID) AS ID FROM DriverCarRT where Username = '" + username + "'";
+            String sql="Select MAX(ID) AS ID FROM DriverCarRT "
+                    + "where Username = '" + username + "'";
             
             rst= conn.GetData(sql);
-            while(rst.next())
-            {
+            while(rst.next()) {
                 mat=rst.getInt("ID");
-//           matching=rst.getString("RideStatus");
-           
-                }
-       
-        
-
-        
-        
+//              matching=rst.getString("RideStatus");
+            }
             conn.CloseConnection();
-          }
+        }
         catch(Exception e){
-          JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last DriverCarId");  
+          JOptionPane.showMessageDialog(null, e+"\n"
+                  + "Couldn't Select Last DriverCarId");  
         }
         String j=matching;
 //        if(matching.equals("Built")||matching.equals("AtPickup")||matching.equals("Running"))
 //        {
            
-             try
-        {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET RideStatus = '"
-                + rideStatus +"' where ID = 'C"+mat+"'";
-         int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-               JOptionPane.showMessageDialog(null, "Ride Status Updated");
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "a: Insertion Failed");
-           }
-      
-           conn.CloseConnection();
-          }
+        try {
+            DbConnection comm = new DbConnection();
+            conn.OpenConnection();
+            String sql = "UPDATE RideRealtime SET RideStatus = '"
+                    + rideStatus +"' where ID = 'C"+mat+"'";
+            int flagg=comm.InsertUpdateDelete(sql);
+
+            if(flagg==1){
+                JOptionPane.showMessageDialog(null, "Ride Status Updated");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "a: Insertion Failed");
+            }
+
+            conn.CloseConnection();
+        }
         catch(Exception e){
           JOptionPane.showMessageDialog(null, e);  
         }
-                try
-        {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE DriverCarRT SET RideStatus = '"+ rideStatus +"' where ID = '"+mat+"'";
-         int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-              
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "a: Insertion Failed");
-           }
-      
-           conn.CloseConnection();
-          }
+        try {
+            DbConnection comm = new DbConnection();
+            conn.OpenConnection();
+            String sql = "UPDATE DriverCarRT SET RideStatus = '"
+                    + ""+ rideStatus +"' where ID = '"+mat+"'";
+             int flagg=comm.InsertUpdateDelete(sql);
+
+            if(flagg==1){
+
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "a: Insertion Failed");
+            }
+
+            conn.CloseConnection();
+        }
         catch(Exception e){
           JOptionPane.showMessageDialog(null, e);  
         }
              
-        }
+    }
         
         
-public void updateRideStatusRickshaw(String username,String rideStatus)
+    public void updateRideStatusRickshaw(String username,String rideStatus)
     {
         String matching=null;
         int mat=0;
         try{
             conn.OpenConnection();
-            String sql="Select MAX(ID) AS ID FROM DriverRickshawRT where Username = '" + username + "'";
+            String sql="Select MAX(ID) AS ID FROM DriverRickshawRT "
+                    + "where Username = '" + username + "'";
             
             rst= conn.GetData(sql);
             while(rst.next())
             {
                 mat=rst.getInt("ID");
+            }
 
-           
-                }
-       
-        
-
-        
-        
             conn.CloseConnection();
-          }
+        }
         catch(Exception e){
           JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last DriverCarId");  
         }
@@ -120,13 +109,13 @@ public void updateRideStatusRickshaw(String username,String rideStatus)
 //        if(matching.equals("Built")||matching.equals("AtPickup")||matching.equals("Running"))
 //        {
           
-             try
+        try
         {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET RideStatus = '"
-                + rideStatus +"' where ID = 'R"+mat+"'";
-         int flagg=comm.InsertUpdateDelete(sql);
+            DbConnection comm = new DbConnection();
+            conn.OpenConnection();
+            String sql = "UPDATE RideRealtime SET RideStatus = '"
+                    + rideStatus +"' where ID = 'R"+mat+"'";
+            int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
                JOptionPane.showMessageDialog(null, "Ride Status Updated");
@@ -136,53 +125,51 @@ public void updateRideStatusRickshaw(String username,String rideStatus)
            }
       
            conn.CloseConnection();
-          }
+        }
         catch(Exception e){
           JOptionPane.showMessageDialog(null, e);  
         }
-                try
+        try
         {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE DriverRickshawRT SET RideStatus = '"+ rideStatus +"' where ID = '"+mat+"'";
-         int flagg=comm.InsertUpdateDelete(sql);
+            DbConnection comm = new DbConnection();
+            conn.OpenConnection();
+            String sql = "UPDATE DriverRickshawRT SET RideStatus = '"+ rideStatus +"' where ID = '"+mat+"'";
+             int flagg=comm.InsertUpdateDelete(sql);
                  
-           if(flagg==1){
-             
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "a: Insertion Failed");
-           }
-      
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
-        }
-             
-        }
-public void updateRideStatusBus(String username,String rideStatus)
-    {
+            if(flagg==1){
 
-            
-           
-             try
-        {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE RideRealtime SET RideStatus = '"
-                + ""+ rideStatus +"' where Username = '"+username+"'";
-         int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg==1){
-               JOptionPane.showMessageDialog(null, "Ride Status Updated");
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "a: Insertion Failed");
-           }
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "a: Insertion Failed");
+            }
       
            conn.CloseConnection();
-          }
+        }
+        catch(Exception e){
+          JOptionPane.showMessageDialog(null, e);  
+        }
+             
+    }
+    
+    public void updateRideStatusBus(String username,String rideStatus)
+    {
+        try
+        {
+            DbConnection comm = new DbConnection();
+            conn.OpenConnection();
+            String sql = "UPDATE RideRealtime SET RideStatus = '"
+                    + ""+ rideStatus +"' where Username = '"+username+"'";
+            int flagg=comm.InsertUpdateDelete(sql);
+                 
+            if(flagg==1){
+                JOptionPane.showMessageDialog(null, "Ride Status Updated");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "a: Insertion Failed");
+            }
+      
+           conn.CloseConnection();
+        }
         catch(Exception e){
           JOptionPane.showMessageDialog(null, e);  
         }
@@ -206,7 +193,8 @@ public void updateRideStatusBus(String username,String rideStatus)
 //          JOptionPane.showMessageDialog(null, e);  
 //        }
              
-        }
+    }
+    
 public void updateStartTimeDateCar(String username,String date,String time)
 {
      String matching=null;
@@ -261,7 +249,8 @@ public void updateStartTimeDateCar(String username,String date,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE DriverCarRT SET StartTime = '"+ time +"',Datee='"+date+"' where ID = "+mat+"";
+        String sql = "UPDATE DriverCarRT SET StartTime = '"+ time +"'"
+                + ",Datee='"+date+"' where ID = "+mat+"";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -284,30 +273,27 @@ public void updateStartTimeDateRickshaw(String username,String date,String time)
         int mat=0;
         try{
             conn.OpenConnection();
-            String sql="Select MAX(ID) AS ID FROM DriverRickshawRT where Username = '" + username + "'";
+            String sql="Select MAX(ID) AS ID FROM DriverRickshawRT "
+                    + "where Username = '" + username + "'";
             
             rst= conn.GetData(sql);
             while(rst.next())
             {
                 mat=rst.getInt("ID");
-//           matching=rst.getString("RideStatus");
-           
-                }
-       
-        
+//           matching=rst.getString("RideStatus");           
+            }
 
-        
-        
             conn.CloseConnection();
           }
         catch(Exception e){
-          JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last DriverCarId");  
+          JOptionPane.showMessageDialog(null, e+"\n"
+                  + "Couldn't Select Last DriverCarId");  
         }
         String j=matching;
 //        if(matching.equals("Built")||matching.equals("AtPickup")||matching.equals("Running"))
 //        {
             
-             try
+        try
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
@@ -331,7 +317,8 @@ public void updateStartTimeDateRickshaw(String username,String date,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE DriverRickshawRT SET StartTime = '"+ time +"',Datee='"+date+"' where ID = '"+mat+"'";
+        String sql = "UPDATE DriverRickshawRT SET StartTime = '"
+                + ""+ time +"',Datee='"+date+"' where ID = '"+mat+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -384,7 +371,8 @@ public void updateEndTimeDateCar(String username,String time)
         int mat=0;
         try{
             conn.OpenConnection();
-            String sql="Select MAX(ID) AS ID FROM DriverCarRT where Username = '" + username + "'";
+            String sql="Select MAX(ID) AS ID FROM DriverCarRT "
+                    + "where Username = '" + username + "'";
             
             rst= conn.GetData(sql);
             while(rst.next())
@@ -394,15 +382,12 @@ public void updateEndTimeDateCar(String username,String time)
 //           matching=rst.getString("RideStatus");
            
                 }
-       
-        
-
-        
         
             conn.CloseConnection();
           }
         catch(Exception e){
-          JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last DriverCarId");  
+          JOptionPane.showMessageDialog(null, e+"\n"
+                  + "Couldn't Select Last DriverCarId");  
         }
         String j=matching;
 //        if(matching.equals("Built")||matching.equals("AtPickup")||matching.equals("Running"))
@@ -482,7 +467,8 @@ public void updateEndTimeDateRickshaw(String username,String time)
         int mat=0;
         try{
             conn.OpenConnection();
-            String sql="Select MAX(ID) AS ID FROM DriverRickshawRT where Username = '" + username + "'";
+            String sql="Select MAX(ID) AS ID FROM DriverRickshawRT "
+                    + "where Username = '" + username + "'";
             
             rst= conn.GetData(sql);
             while(rst.next())
@@ -499,7 +485,8 @@ public void updateEndTimeDateRickshaw(String username,String time)
             conn.CloseConnection();
           }
         catch(Exception e){
-          JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last DriverCarId");  
+          JOptionPane.showMessageDialog(null, e+"\n"
+                  + "Couldn't Select Last DriverCarId");  
         }
         String j=matching;
 //        if(matching.equals("Built")||matching.equals("AtPickup")||matching.equals("Running"))
@@ -530,7 +517,8 @@ public void updateEndTimeDateRickshaw(String username,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE DriverRickshawRT SET EndTime = '"+ time +"' where ID = '"+mat+"'";
+        String sql = "UPDATE DriverRickshawRT SET EndTime = '"
+                + ""+ time +"' where ID = '"+mat+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){
@@ -553,7 +541,8 @@ public void updateEndTimeDateRickshaw(String username,String time)
         int mat=0;
         try{
             conn.OpenConnection();
-            String sql="Select MAX(ID) AS ID FROM DriverCarRT where Username = '" + username + "'";
+            String sql="Select MAX(ID) AS ID FROM DriverCarRT "
+                    + "where Username = '" + username + "'";
             
             rst= conn.GetData(sql);
             while(rst.next())
@@ -563,15 +552,11 @@ public void updateEndTimeDateRickshaw(String username,String time)
 //           matching=rst.getString("RideStatus");
            
                 }
-       
-        
-
-        
-        
             conn.CloseConnection();
           }
         catch(Exception e){
-          JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last DriverCarId");  
+          JOptionPane.showMessageDialog(null, e+"\n"
+                  + "Couldn't Select Last DriverCarId");  
         }
         String j=matching;
 //        if(matching.equals("Built")||matching.equals("AtPickup")||matching.equals("Running"))
@@ -602,7 +587,8 @@ public void updateEndTimeDateRickshaw(String username,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE DriverCarRT SET BillStatus = '"+ billStatus +"',Bill = '"+billCar+"' where ID = "+mat+"";
+        String sql = "UPDATE DriverCarRT SET BillStatus = '"+ billStatus +""
+                + "',Bill = '"+billCar+"' where ID = "+mat+"";
        System.out.println(sql);
          int flaggg=comm.InsertUpdateDelete(sql);
                  
@@ -621,13 +607,15 @@ public void updateEndTimeDateRickshaw(String username,String time)
              
         }
  
- public void updateBillStatusRickshaw(String username,String billStatus,double billRickshaw)
+ public void updateBillStatusRickshaw(String username,String billStatus,
+         double billRickshaw)
     {
         String matching=null;
         int mat=0;
         try{
             conn.OpenConnection();
-            String sql="Select MAX(ID) AS ID FROM DriverRickshawRT where Username = '" + username + "'";
+            String sql="Select MAX(ID) AS ID FROM DriverRickshawRT "
+                    + "where Username = '" + username + "'";
             
             rst= conn.GetData(sql);
             while(rst.next())
@@ -636,15 +624,11 @@ public void updateEndTimeDateRickshaw(String username,String time)
 //           matching=rst.getString("RideStatus");
            
                 }
-       
-        
-
-        
-        
             conn.CloseConnection();
           }
         catch(Exception e){
-          JOptionPane.showMessageDialog(null, e+"\nCouldn't Select Last DriverCarId");  
+          JOptionPane.showMessageDialog(null, e+"\n"
+                  + "Couldn't Select Last DriverCarId");  
         }
         String j=matching;
 //        if(matching.equals("Built")||matching.equals("AtPickup")||matching.equals("Running"))
@@ -675,7 +659,8 @@ public void updateEndTimeDateRickshaw(String username,String time)
         {
         DbConnection comm = new DbConnection();
         conn.OpenConnection();
-        String sql = "UPDATE DriverRickshawRT SET BillStatus = '"+ billStatus +"',Bill = '"+billRickshaw+"' where ID = '"+mat+"'";
+        String sql = "UPDATE DriverRickshawRT SET BillStatus = '"
+                + ""+ billStatus +"',Bill = '"+billRickshaw+"' where ID = '"+mat+"'";
          int flagg=comm.InsertUpdateDelete(sql);
                  
            if(flagg==1){

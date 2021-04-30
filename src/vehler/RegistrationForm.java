@@ -476,63 +476,52 @@ public class RegistrationForm extends javax.swing.JFrame {
 
     private void registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseClicked
         // TODO add your handling code here:
-if(registerName.getText(). equals("")||registerFather.getText(). equals("")||registerUsername.getText(). equals("")||registerPassword.getText(). equals("")||registerAge.getText(). equals("")||registerSecurity.getText(). equals("")||aadharText.getText().equals("")||contactnoText.getText().equals(""))
-{
-        JOptionPane.showMessageDialog(null,"Please fill All Fields");
+        if (registerName.getText().equals("") || registerFather.getText().equals("") || registerUsername.getText().equals("") || registerPassword.getText().equals("") || registerAge.getText().equals("") || registerSecurity.getText().equals("") || aadharText.getText().equals("") || contactnoText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please fill All Fields");
 
-}
-else if(checkMale.isSelected()==false&&checkFemale.isSelected()==false)
-{
-    JOptionPane.showMessageDialog(null,"Please fill All Fields");
-}
-else
-{
-    String name=registerName.getText();
-    String age=registerAge.getText();
-    String fName=registerFather.getText();
-    String user=registerUsername.getText();
-    String pass=registerPassword.getText();
-    String sec=registerSecurity.getText();
-    String regAs=String.valueOf(registerAsCombo.getSelectedItem());
-    String gender=null;
-    String aadhar=aadharText.getText();
-    String contactNo=contactnoText.getText();
-    String dob = ((JTextField) dobCombo2.getDateEditor().getUiComponent()).getText();
-    if(checkMale.isSelected())
-    {
-        gender=checkMale.getText();
-    }
-    else if(checkFemale.isSelected())
-    {
-        gender=checkFemale.getText();
-    }
-    if(regAs=="Passenger")
-    {
-        Passenger passenger=new Passenger(name,fName,age,gender,sec,user,pass,aadhar,contactNo,dob);
-        passenger.addPassPass();
-        
-    }
-    else if(regAs=="Driver")
-    {
-        
+        } else if (checkMale.isSelected() == false && checkFemale.isSelected() == false) {
+            JOptionPane.showMessageDialog(null, "Please fill All Fields");
+        } else {
+            String name = registerName.getText();
+            String age = registerAge.getText();
+            String fName = registerFather.getText();
+            String user = registerUsername.getText();
+            String pass = registerPassword.getText();
+            String sec = registerSecurity.getText();
+            String regAs = String.valueOf(registerAsCombo.getSelectedItem());
+            String gender = null;
+            String aadhar = aadharText.getText();
+            String contactNo = contactnoText.getText();
+            String dob = ((JTextField) dobCombo2.getDateEditor().getUiComponent()).getText();
+            if (checkMale.isSelected()) {
+                gender = checkMale.getText();
+            } else if (checkFemale.isSelected()) {
+                gender = checkFemale.getText();
+            }
+            if (regAs == "Passenger") {
+                Passenger passenger = new Passenger(name, fName, age, gender, sec, user, pass, aadhar, contactNo, dob);
+                passenger.addPassPass();
+
+            } else if (regAs == "Driver") {
+
 //           DriverSignUp ds=new DriverSignUp(user,name,fName,age,gender,sec,pass);
-        DriverSignUp ds=new DriverSignUp(user,name,fName,age,gender,sec,pass,aadhar,contactNo,dob);
-            this.setVisible(false);
-            ds.setVisible(true);
-    }
-    registerName.setText("");
-       registerUsername.setText("");
-        registerPassword.setText("");
-        registerFather.setText("");
-        registerSecurity.setText("");
-        registerAge.setText("");
-        aadharText.setText("");
-        contactnoText.setText("");
+                DriverSignUp ds = new DriverSignUp(user, name, fName, age, gender, sec, pass, aadhar, contactNo, dob);
+                this.setVisible(false);
+                ds.setVisible(true);
+            }
+            registerName.setText("");
+            registerUsername.setText("");
+            registerPassword.setText("");
+            registerFather.setText("");
+            registerSecurity.setText("");
+            registerAge.setText("");
+            aadharText.setText("");
+            contactnoText.setText("");
 //    this.setVisible(false);
 //    LoginMain login=new LoginMain();
 //    login.setVisible(true);
-    
-}
+
+        }
     }//GEN-LAST:event_registerButtonMouseClicked
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
@@ -551,12 +540,12 @@ else
 
     private void xpanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseEntered
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(51,153,153));
+        xpanel.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_xpanelMouseEntered
 
     private void xpanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xpanelMouseExited
         // TODO add your handling code here:
-        xpanel.setBackground(new Color(0,51,153));
+        xpanel.setBackground(new Color(0, 51, 153));
     }//GEN-LAST:event_xpanelMouseExited
 
     private void ypanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseClicked
@@ -566,22 +555,22 @@ else
 
     private void ypanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseEntered
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(51,153,153));
+        ypanel.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_ypanelMouseEntered
 
     private void ypanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ypanelMouseExited
         // TODO add your handling code here:
-        ypanel.setBackground(new Color(0,51,153));
+        ypanel.setBackground(new Color(0, 51, 153));
     }//GEN-LAST:event_ypanelMouseExited
 
     private void registerButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseEntered
         // TODO add your handling code here:
-        registerButton.setBackground(new Color(51,153,153));
+        registerButton.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_registerButtonMouseEntered
 
     private void registerButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseExited
         // TODO add your handling code here:
-        registerButton.setBackground(new Color(26,111,145));
+        registerButton.setBackground(new Color(26, 111, 145));
     }//GEN-LAST:event_registerButtonMouseExited
 
     private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
@@ -591,18 +580,18 @@ else
     private void SignInButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
-        LoginMain reg=new LoginMain();
+        LoginMain reg = new LoginMain();
         reg.setVisible(true);
     }//GEN-LAST:event_SignInButtonMouseClicked
 
     private void SignInButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseEntered
         // TODO add your handling code here:
-        SignInButton.setBackground(new Color(51,153,153));
+        SignInButton.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_SignInButtonMouseEntered
 
     private void SignInButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseExited
         // TODO add your handling code here:
-        SignInButton.setBackground(new Color(26,111,145));
+        SignInButton.setBackground(new Color(26, 111, 145));
     }//GEN-LAST:event_SignInButtonMouseExited
 
     /**
