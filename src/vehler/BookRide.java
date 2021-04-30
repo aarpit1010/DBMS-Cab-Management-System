@@ -34,6 +34,8 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 //import javafx.runtime.*;
+import java.net.URL;
+import java.util.regex.*;
 
 /**
  *
@@ -52,7 +54,7 @@ public class BookRide extends javax.swing.JFrame {
     private JFXPanel jfxPanel;
     private JButton swingButton;
     private WebEngine webEngine;
-    private String url = "http://javatongue.blogspot.com";
+    private String url = "https://www.google.com/maps";
 
     public BookRide(String username, String name) {
 //        setUndecorated(false);
@@ -65,35 +67,53 @@ public class BookRide extends javax.swing.JFrame {
 
     }
 
-            public void run() {
-                new JFXPanel();
-        Platform.runLater(new Runnable() {
-    @Override
     public void run() {
-        // if you change the UI, do it here !
-        
-        
-    browser = new WebView();
+        new JFXPanel();
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                // if you change the UI, do it here !
+
+                browser = new WebView();
 //    webEngine = browser.getEngine();
 //    webEngine.load("http://www.google.com");
 //    WebView wv=new WebView();
-    engine=browser.getEngine();
+                engine = browser.getEngine();
 //    jFXPanel1.setScene(scene);
-    jFXPanel1.setScene(new Scene(browser));
+                jFXPanel1.setScene(new Scene(browser));
 //    jFXPanel1.setZoomFactors();
-    engine.load(url);
-    System.out.println(browser.getEngine().getLocation());
-    }
-    
-        });
+                engine.load(url);
+                String urll = browser.getEngine().getLocation()+"/";
+                System.out.println(urll);
+                if(urll.equals("https://www.google.com/maps/")) {
+//                    System.out.println("sadcsklfvjdkgbhv");
                 }
+                else {
+                    String saddr = urll.substring(urll.indexOf("saddr=") + 5);
+                    System.out.println(saddr);
+                    String daddr = urll.substring(urll.indexOf("daddr=") + 5);
+                    System.out.println(daddr);
+                    String curr = saddr.substring(saddr.indexOf("=")+1);
+                    curr = saddr.substring(1, saddr.indexOf("&"));
+                    curr = curr.replace('+', ' ');
+                    String fdest = daddr.substring(daddr.indexOf("=")+1);
+                    fdest = daddr.substring(1, daddr.indexOf("/"));
+                    fdest = fdest.replace('+', ' ');
+                    System.out.println(curr);
+                    System.out.println(fdest);
+//                    System.out.println(browser.getEngine().getLocation());
+                }
+            }
+
+        });
+    }
 
     public BookRide() {
 //        initComponents();
     }
 
-    String currentLocation = "Amritsar";
-    String finalLocation = "Jalandhar";
+    String currentLocation = "ZZZ";
+    String finalLocation = "ZZZ";
 
 //    @FXML
 //    private WebView webView;
@@ -731,6 +751,21 @@ public class BookRide extends javax.swing.JFrame {
         // System.out.println(s.replace(' ','+'));
         currentLocation = String.valueOf(fromCombo.getSelectedItem());
         finalLocation = String.valueOf(toCombo.getSelectedItem());
+        
+        String url = "http://maps.google.com/maps?saddr=Amritsar&daddr=Jalandhar/";
+        String saddr = url.substring(url.indexOf("saddr=") + 5);
+//        System.out.println(saddr);
+        String daddr = url.substring(url.indexOf("daddr=") + 5);
+//        System.out.println(daddr);
+        String curr = saddr.substring(saddr.indexOf("=")+1);
+        curr = saddr.substring(1, saddr.indexOf("&"));
+        String dest = daddr.substring(daddr.indexOf("=")+1);
+        dest = daddr.substring(1, daddr.indexOf("/"));
+        
+        System.out.println(curr);
+        System.out.println(dest);
+        
+        
         JOptionPane.showMessageDialog(null, "PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
         DriverRickshaw dr = new DriverRickshaw();
         int iidd = dr.assignDriver(username, name, currentLocation, finalLocation);
@@ -756,6 +791,11 @@ public class BookRide extends javax.swing.JFrame {
         // System.out.println(currentLocation.replace(' ','+'));
         currentLocation = String.valueOf(fromCombo.getSelectedItem());
         finalLocation = String.valueOf(toCombo.getSelectedItem());
+        
+        String url = "http://maps.google.com/maps?saddr=Amritsar&daddr=Jalandhar";
+        String saddr = url.substring(url.indexOf("saddr=") + 2);
+        System.out.println(saddr);
+        
         JOptionPane.showMessageDialog(null, "PLEASE WAIT, WE're FINDING A DRIVER FOR YOU ");
         DriverCar dr = new DriverCar();
         int iidd = dr.assignDriver(username, name, currentLocation, finalLocation);
@@ -827,7 +867,8 @@ public class BookRide extends javax.swing.JFrame {
 //                BookRide r1=new BookRide();    
                 run();
 //                java.awt.Desktop.getDesktop().browse(java.net.URI.create(URL1));
-                System.out.println(browser.getEngine().getLocation());
+//                System.out.println(browser.getEngine().getLocation());
+                
             }
         } catch (java.io.IOException e) {
             System.out.println(e.getMessage());
