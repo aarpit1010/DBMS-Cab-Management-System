@@ -87,7 +87,7 @@ public class LoginMain extends javax.swing.JFrame {
         kGradientPanel1.add(jLabel3);
         jLabel3.setBounds(910, 220, 70, 19);
 
-        LoginAsCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Admin", "Driver", "Passenger", " " }));
+        LoginAsCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Admin", "Driver", "Passenger" }));
         LoginAsCombo.setOpaque(false);
         kGradientPanel1.add(LoginAsCombo);
         LoginAsCombo.setBounds(910, 260, 110, 20);
