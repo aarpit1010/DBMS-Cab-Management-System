@@ -42,14 +42,14 @@ public class LoginMain extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         TextId = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
+        LoginButton = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         xpanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         ypanel = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        LoginButton = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         forgotButton = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel16 = new javax.swing.JLabel();
@@ -136,6 +136,39 @@ public class LoginMain extends javax.swing.JFrame {
         kGradientPanel1.add(jSeparator6);
         jSeparator6.setBounds(910, 450, 270, 10);
 
+        LoginButton.setBackground(new java.awt.Color(26, 111, 145));
+        LoginButton.setToolTipText("");
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LoginButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LoginButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LoginButtonMouseExited(evt);
+            }
+        });
+        LoginButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel10.setText("EMAIL");
+        LoginButton.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel12.setText("SignIn");
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        LoginButton.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
+
+        kGradientPanel1.add(LoginButton);
+        LoginButton.setBounds(920, 510, 150, 40);
+
         jPanel1.setOpaque(false);
 
         xpanel.setBackground(new java.awt.Color(0, 51, 153));
@@ -220,40 +253,7 @@ public class LoginMain extends javax.swing.JFrame {
         );
 
         kGradientPanel1.add(jPanel1);
-        jPanel1.setBounds(1180, 10, 0, 30);
-
-        LoginButton.setBackground(new java.awt.Color(26, 111, 145));
-        LoginButton.setToolTipText("");
-        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LoginButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                LoginButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                LoginButtonMouseExited(evt);
-            }
-        });
-        LoginButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel10.setText("EMAIL");
-        LoginButton.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, -1, -1));
-
-        jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel12.setText("SignIn");
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel12MouseClicked(evt);
-            }
-        });
-        LoginButton.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
-
-        kGradientPanel1.add(LoginButton);
-        LoginButton.setBounds(920, 510, 150, 40);
+        jPanel1.setBounds(1180, 10, 83, 30);
 
         forgotButton.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         forgotButton.setForeground(new java.awt.Color(204, 204, 204));

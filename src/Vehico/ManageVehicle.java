@@ -704,6 +704,9 @@ public class ManageVehicle extends javax.swing.JFrame {
 
     private void banDriverButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseClicked
         // TODO add your handling code here:
+        BanDriver ban = new BanDriver(adminusername);
+        this.setVisible(false);
+        ban.setVisible(true);
 
     }//GEN-LAST:event_banDriverButtonMouseClicked
 

@@ -517,7 +517,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void addVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButtonMouseExited
         // TODO add your handling code here:
-        addVehicleButton.setBackground(new Color(51, 0, 102));
+        addVehicleButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_addVehicleButtonMouseExited
 
     private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
@@ -535,7 +535,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(51, 0, 102));
+        removeVehicleButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void banDriverButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseClicked
@@ -553,7 +553,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void banDriverButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseExited
         // TODO add your handling code here:
-        banDriverButton.setBackground(new Color(51, 0, 102));
+        banDriverButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_banDriverButtonMouseExited
 
     private void ridesHistoryButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseClicked
@@ -568,7 +568,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void ridesHistoryButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseExited
         // TODO add your handling code here:
-        ridesHistoryButton.setBackground(new Color(51, 0, 102));
+        ridesHistoryButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_ridesHistoryButtonMouseExited
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
@@ -585,7 +585,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(51, 0, 102));
+        settingsButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_settingsButtonMouseExited
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
@@ -602,7 +602,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(51, 0, 102));
+        logOutButton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
@@ -663,7 +663,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void rephisbuttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseExited
         // TODO add your handling code here:
-        rephisbutton.setBackground(new Color(51, 0, 102));
+        rephisbutton.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_rephisbuttonMouseExited
 
     private void manageVehicleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVehicleMouseClicked

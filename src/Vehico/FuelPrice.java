@@ -709,7 +709,7 @@ public class FuelPrice extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Fuel Price can't be NULL");
 
         } else {
-            int newPrice = Integer.parseInt(fuelPrice.getText());
+            double newPrice = Double.parseDouble(fuelPrice.getText());
             System.out.println(newPrice);
             DbConnection conn = new DbConnection();
             int flag;

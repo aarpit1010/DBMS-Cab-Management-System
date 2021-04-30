@@ -567,6 +567,9 @@ public class ViewRepairHis extends javax.swing.JFrame {
 
     private void ridesHistoryButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseClicked
         // TODO add your handling code here:
+        RidesHistory rh = new RidesHistory(adminusername);
+        this.setVisible(false);
+        rh.setVisible(true);
 
     }//GEN-LAST:event_ridesHistoryButtonMouseClicked
 

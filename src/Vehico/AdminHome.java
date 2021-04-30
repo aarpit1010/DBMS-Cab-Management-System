@@ -73,8 +73,8 @@ public class AdminHome extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         fuelButton = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         settingsButton = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -98,7 +98,7 @@ public class AdminHome extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel5.setText("Adeel Zafar,");
+        jLabel5.setText("ADMIN");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,7 +107,7 @@ public class AdminHome extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(279, 279, 279)
                 .addComponent(jLabel5)
-                .addContainerGap(469, Short.MAX_VALUE))
+                .addContainerGap(560, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(57, 57, 57)
@@ -412,25 +412,37 @@ public class AdminHome extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout fuelButtonLayout = new javax.swing.GroupLayout(fuelButton);
-        fuelButton.setLayout(fuelButtonLayout);
-        fuelButtonLayout.setHorizontalGroup(
-            fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-        fuelButtonLayout.setVerticalGroup(
-            fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 61, Short.MAX_VALUE)
-        );
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/price.png"))); // NOI18N
-
         jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(240, 240, 240));
         jLabel9.setText("     Fuel Price");
         jLabel9.setMaximumSize(new java.awt.Dimension(54, 19));
         jLabel9.setMinimumSize(new java.awt.Dimension(54, 19));
         jLabel9.setPreferredSize(new java.awt.Dimension(54, 19));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/price.png"))); // NOI18N
+
+        javax.swing.GroupLayout fuelButtonLayout = new javax.swing.GroupLayout(fuelButton);
+        fuelButton.setLayout(fuelButtonLayout);
+        fuelButtonLayout.setHorizontalGroup(
+            fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fuelButtonLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jLabel10)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        fuelButtonLayout.setVerticalGroup(
+            fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fuelButtonLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addGroup(fuelButtonLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel10)))
+                .addContainerGap())
+        );
 
         settingsButton.setBackground(new java.awt.Color(25, 25, 112));
         settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -469,31 +481,21 @@ public class AdminHome extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(117, 117, 117)
                                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 110, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(fuelButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(addVehicleButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(297, 297, 297)
-                                .addComponent(removeVehicleButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(removeVehicleButton, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))
                             .addComponent(ridesHistoryButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(rephisbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(logOutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(banDriverButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fuelButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(settingsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(manageVehicle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(banDriverButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(settingsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(manageVehicle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -516,14 +518,8 @@ public class AdminHome extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(fuelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
-                        .addGap(17, 17, 17)))
+                .addComponent(fuelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addComponent(rephisbutton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(logOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -687,15 +683,6 @@ public class AdminHome extends javax.swing.JFrame {
         ypanel.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_ypanelMouseExited
 
-    private void fuelButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseClicked
-        // TODO add your handling code here:
-
-        FuelPrice fuelprice = new FuelPrice(username);
-        this.setVisible(false);
-        fuelprice.setVisible(true);
-
-    }//GEN-LAST:event_fuelButtonMouseClicked
-
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
         // TODO add your handling code here:
 
@@ -731,15 +718,23 @@ public class AdminHome extends javax.swing.JFrame {
         manageVehicle.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_manageVehicleMouseExited
 
+    private void fuelButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseExited
+        // TODO add your handling code here:
+        fuelButton.setBackground(new Color(25, 25, 112));
+    }//GEN-LAST:event_fuelButtonMouseExited
+
     private void fuelButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseEntered
         // TODO add your handling code here:
         fuelButton.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_fuelButtonMouseEntered
 
-    private void fuelButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseExited
+    private void fuelButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseClicked
         // TODO add your handling code here:
-        fuelButton.setBackground(new Color(25, 25, 112));
-    }//GEN-LAST:event_fuelButtonMouseExited
+
+        FuelPrice fuelprice = new FuelPrice(username);
+        this.setVisible(false);
+        fuelprice.setVisible(true);
+    }//GEN-LAST:event_fuelButtonMouseClicked
 
     /**
      * @param args the command line arguments
