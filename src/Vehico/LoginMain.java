@@ -7,6 +7,7 @@ package Vehico;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -94,7 +95,7 @@ public class LoginMain extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("PASSWORD");
         kGradientPanel1.add(jLabel6);
-        jLabel6.setBounds(910, 390, 76, 19);
+        jLabel6.setBounds(910, 390, 90, 19);
 
         TextPass.setBackground(new java.awt.Color(0, 51, 153));
         TextPass.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,6 +104,11 @@ public class LoginMain extends javax.swing.JFrame {
         TextPass.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 TextPassFocusGained(evt);
+            }
+        });
+        TextPass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TextPassKeyPressed(evt);
             }
         });
         kGradientPanel1.add(TextPass);
@@ -147,6 +153,11 @@ public class LoginMain extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 LoginButtonMouseExited(evt);
+            }
+        });
+        LoginButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                LoginButtonKeyPressed(evt);
             }
         });
         LoginButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -500,6 +511,170 @@ public class LoginMain extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_xpanelMouseClicked
+
+    private void LoginButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LoginButtonKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (TextId.getText().equals("") || TextPass.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please fill All Fields");
+            } else {
+                String LoginAs = String.valueOf(LoginAsCombo.getSelectedItem());
+                Admin a = new Admin();
+                DriverCar d = new DriverCar();
+                Passenger passing = new Passenger();
+                String iidd = TextId.getText();
+                String pass = TextPass.getText();
+                if (LoginAs == "Admin") {
+                    if (a.chkAdminPass(iidd, pass)) {
+                        AdminHome ah = new AdminHome(iidd);
+                        this.setVisible(false);
+                        ah.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Invalid UserID or Password");
+                    }
+
+                } else if (LoginAs.equals("Driver")) {
+                    DriverCar checking = new DriverCar();
+                    if (checking.chkDriverPass(iidd, pass)) {
+                        String answer = checking.getDriverType(iidd);
+                        if (answer.equals("Car")) {
+                            String dname = d.getRDriverName(iidd);
+                            int carid = d.getRCarId(iidd);
+                            String carName = d.getRCarName(iidd);
+                            String type = "Car";
+                            String plateNo = d.getRCarPlate(iidd);
+                            DriverHome dh = new DriverHome(iidd, dname, type, plateNo, carid, carName);
+                            this.setVisible(false);
+
+                            dh.setVisible(true);
+                        } else if (answer.equals("Rickshaw")) {
+                            DriverRickshaw dr = new DriverRickshaw();
+                            String dname = dr.getRDriverName(iidd);
+                            int carid = dr.getRRickshawId(iidd);
+                            String carName = dr.getRRickshawName(iidd);
+                            String plateNo = dr.getRRickshawPlate(iidd);
+                            String type = "Rickshaw";
+                            DriverHome dh = new DriverHome(iidd, dname, type, plateNo, carid, carName);
+                            this.setVisible(false);
+
+                            dh.setVisible(true);
+                        } else if (answer.equals("Bus")) {
+                            DriverBus dr = new DriverBus();
+                            String dname = dr.getRDriverName(iidd);
+                            int carid = dr.getRBusId(iidd);
+                            String carName = dr.getRBusName(iidd);
+                            String plateNo = dr.getRBusPlate(iidd);
+                            String type = "Bus";
+                            DriverHome dh = new DriverHome(iidd, dname, type, plateNo, carid, carName);
+                            this.setVisible(false);
+                            dh.setVisible(true);
+
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Invalid Username or Password");
+                    }
+                } else if (LoginAs == "Passenger") {
+                    if (passing.chkPassPass(iidd, pass)) {
+
+                        this.setVisible(false);
+                        String pname = passing.getRPassengerName(iidd);
+                        PassengerHome ph = new PassengerHome(iidd, pname);
+                        //            BookRide psi=new BookRide(iidd,pname);
+                        ph.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Invalid UserID or Password");
+                    }
+
+                }
+
+            }
+        }
+    }//GEN-LAST:event_LoginButtonKeyPressed
+
+    private void TextPassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextPassKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            /* PUT YOUR STUFF HERE OR CALL A FUNCTION */
+//                doSomething();
+            /* If you want to change the focus to the next component */
+            LoginButton.grabFocus();
+            if (TextId.getText().equals("") || TextPass.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please fill All Fields");
+            } else {
+                String LoginAs = String.valueOf(LoginAsCombo.getSelectedItem());
+                Admin a = new Admin();
+                DriverCar d = new DriverCar();
+                Passenger passing = new Passenger();
+                String iidd = TextId.getText();
+                String pass = TextPass.getText();
+                if (LoginAs == "Admin") {
+                    if (a.chkAdminPass(iidd, pass)) {
+                        AdminHome ah = new AdminHome(iidd);
+                        this.setVisible(false);
+                        ah.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Invalid UserID or Password");
+                    }
+
+                } else if (LoginAs.equals("Driver")) {
+                    DriverCar checking = new DriverCar();
+                    if (checking.chkDriverPass(iidd, pass)) {
+                        String answer = checking.getDriverType(iidd);
+                        if (answer.equals("Car")) {
+                            String dname = d.getRDriverName(iidd);
+                            int carid = d.getRCarId(iidd);
+                            String carName = d.getRCarName(iidd);
+                            String type = "Car";
+                            String plateNo = d.getRCarPlate(iidd);
+                            DriverHome dh = new DriverHome(iidd, dname, type, plateNo, carid, carName);
+                            this.setVisible(false);
+
+                            dh.setVisible(true);
+                        } else if (answer.equals("Rickshaw")) {
+                            DriverRickshaw dr = new DriverRickshaw();
+                            String dname = dr.getRDriverName(iidd);
+                            int carid = dr.getRRickshawId(iidd);
+                            String carName = dr.getRRickshawName(iidd);
+                            String plateNo = dr.getRRickshawPlate(iidd);
+                            String type = "Rickshaw";
+                            DriverHome dh = new DriverHome(iidd, dname, type, plateNo, carid, carName);
+                            this.setVisible(false);
+
+                            dh.setVisible(true);
+                        } else if (answer.equals("Bus")) {
+                            DriverBus dr = new DriverBus();
+                            String dname = dr.getRDriverName(iidd);
+                            int carid = dr.getRBusId(iidd);
+                            String carName = dr.getRBusName(iidd);
+                            String plateNo = dr.getRBusPlate(iidd);
+                            String type = "Bus";
+                            DriverHome dh = new DriverHome(iidd, dname, type, plateNo, carid, carName);
+                            this.setVisible(false);
+                            dh.setVisible(true);
+
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Invalid Username or Password");
+                    }
+                } else if (LoginAs == "Passenger") {
+                    if (passing.chkPassPass(iidd, pass)) {
+
+                        this.setVisible(false);
+                        String pname = passing.getRPassengerName(iidd);
+                        PassengerHome ph = new PassengerHome(iidd, pname);
+                        //            BookRide psi=new BookRide(iidd,pname);
+                        ph.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Invalid UserID or Password");
+                    }
+
+                }
+
+            }
+
+        }
+
+    }//GEN-LAST:event_TextPassKeyPressed
 
     /**
      * @param args the command line arguments

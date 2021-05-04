@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -193,6 +194,11 @@ public class RegistrationForm extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 registerButtonMouseExited(evt);
+            }
+        });
+        registerButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                registerButtonKeyPressed(evt);
             }
         });
         registerButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -430,7 +436,7 @@ public class RegistrationForm extends javax.swing.JFrame {
         );
 
         kGradientPanel1.add(jPanel2);
-        jPanel2.setBounds(1220, 10, 0, 0);
+        jPanel2.setBounds(1220, 10, 120, 30);
 
         SignInButton.setBackground(new java.awt.Color(26, 111, 145));
         SignInButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -593,6 +599,58 @@ public class RegistrationForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         SignInButton.setBackground(new Color(26, 111, 145));
     }//GEN-LAST:event_SignInButtonMouseExited
+
+    private void registerButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_registerButtonKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (registerName.getText().equals("") || registerFather.getText().equals("") || registerUsername.getText().equals("") || registerPassword.getText().equals("") || registerAge.getText().equals("") || registerSecurity.getText().equals("") || aadharText.getText().equals("") || contactnoText.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Please fill All Fields");
+
+            } else if (checkMale.isSelected() == false && checkFemale.isSelected() == false) {
+                JOptionPane.showMessageDialog(null, "Please fill All Fields");
+            } else {
+                String name = registerName.getText();
+                String age = registerAge.getText();
+                String fName = registerFather.getText();
+                String user = registerUsername.getText();
+                String pass = registerPassword.getText();
+                String sec = registerSecurity.getText();
+                String regAs = String.valueOf(registerAsCombo.getSelectedItem());
+                String gender = null;
+                String aadhar = aadharText.getText();
+                String contactNo = contactnoText.getText();
+                String dob = ((JTextField) dobCombo2.getDateEditor().getUiComponent()).getText();
+                if (checkMale.isSelected()) {
+                    gender = checkMale.getText();
+                } else if (checkFemale.isSelected()) {
+                    gender = checkFemale.getText();
+                }
+                if (regAs == "Passenger") {
+                    Passenger passenger = new Passenger(name, fName, age, gender, sec, user, pass, aadhar, contactNo, dob);
+                    passenger.addPassPass();
+
+                } else if (regAs == "Driver") {
+
+//           DriverSignUp ds=new DriverSignUp(user,name,fName,age,gender,sec,pass);
+                    DriverSignUp ds = new DriverSignUp(user, name, fName, age, gender, sec, pass, aadhar, contactNo, dob);
+                    this.setVisible(false);
+                    ds.setVisible(true);
+                }
+                registerName.setText("");
+                registerUsername.setText("");
+                registerPassword.setText("");
+                registerFather.setText("");
+                registerSecurity.setText("");
+                registerAge.setText("");
+                aadharText.setText("");
+                contactnoText.setText("");
+//    this.setVisible(false);
+//    LoginMain login=new LoginMain();
+//    login.setVisible(true);
+
+            }
+        }
+    }//GEN-LAST:event_registerButtonKeyPressed
 
     /**
      * @param args the command line arguments

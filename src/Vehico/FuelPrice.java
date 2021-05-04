@@ -8,6 +8,7 @@ package Vehico;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -314,6 +315,11 @@ public class FuelPrice extends javax.swing.JFrame {
                 updateButtonMouseExited(evt);
             }
         });
+        updateButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                updateButtonKeyPressed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 153, 153));
@@ -344,6 +350,11 @@ public class FuelPrice extends javax.swing.JFrame {
         jSeparator6.setForeground(new java.awt.Color(0, 51, 153));
 
         fuelPrice.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        fuelPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fuelPriceKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -794,6 +805,75 @@ public class FuelPrice extends javax.swing.JFrame {
         // TODO add your handling code here:
         fuelButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_fuelButtonMouseExited
+
+    private void updateButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_updateButtonKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            String check = fuelPrice.getText();
+            String x = "";
+            if (check.equals(x)) {
+                JOptionPane.showMessageDialog(null, "Fuel Price can't be NULL");
+
+            } else {
+                double newPrice = Double.parseDouble(fuelPrice.getText());
+                System.out.println(newPrice);
+                DbConnection conn = new DbConnection();
+                int flag;
+                try {
+                    conn.OpenConnection();
+                    String sql = "Update fuel set price=" + String.valueOf(newPrice) + " where id=1;";
+
+                    flag = conn.InsertUpdateDelete(sql);
+                    if (flag == 1) {
+                        JOptionPane.showMessageDialog(null, "Price Updated");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Price not updated");
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Update Price Query Failed");
+                }
+
+                //    fuelprice=newPrice;
+                //    JOptionPane.showMessageDialog(null,"Updated");
+            }
+        }
+    }//GEN-LAST:event_updateButtonKeyPressed
+
+    private void fuelPriceKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fuelPriceKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            updateButton.grabFocus();
+
+            String check = fuelPrice.getText();
+            String x = "";
+            if (check.equals(x)) {
+                JOptionPane.showMessageDialog(null, "Fuel Price can't be NULL");
+
+            } else {
+                double newPrice = Double.parseDouble(fuelPrice.getText());
+                System.out.println(newPrice);
+                DbConnection conn = new DbConnection();
+                int flag;
+                try {
+                    conn.OpenConnection();
+                    String sql = "Update fuel set price=" + String.valueOf(newPrice) + " where id=1;";
+
+                    flag = conn.InsertUpdateDelete(sql);
+                    if (flag == 1) {
+                        JOptionPane.showMessageDialog(null, "Price Updated");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Price not updated");
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Update Price Query Failed");
+                }
+
+                //    fuelprice=newPrice;
+                //    JOptionPane.showMessageDialog(null,"Updated");
+            }
+
+        }
+    }//GEN-LAST:event_fuelPriceKeyPressed
 
     /**
      * @param args the command line arguments
