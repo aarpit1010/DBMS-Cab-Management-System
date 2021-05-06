@@ -211,12 +211,27 @@ public class AddVehicle extends javax.swing.JFrame {
 
         checkCar.setBackground(new java.awt.Color(255, 255, 255));
         checkCar.setText("Car");
+        checkCar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkCarActionPerformed(evt);
+            }
+        });
 
         checkBus.setBackground(new java.awt.Color(255, 255, 255));
         checkBus.setText("Bus");
+        checkBus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBusActionPerformed(evt);
+            }
+        });
 
         checkRickshaw.setBackground(new java.awt.Color(255, 255, 255));
         checkRickshaw.setText("Rickshaw");
+        checkRickshaw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkRickshawActionPerformed(evt);
+            }
+        });
 
         finishButton.setBackground(new java.awt.Color(255, 255, 255));
         finishButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(100, 149, 237), 3));
@@ -378,9 +393,14 @@ public class AddVehicle extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        fromCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kemari", "Landhi", "Malir", "Quaidabad", "Landhi Town", "Korangi Town", "North Nazimabad Town", "New Karachi Town", "Gulberg Town", "Liaquatabad Town", "Malir Town", "Bin Qasim Town", "Gadap Town", "Kiamari Town", "S.I.T.E Town", "Baldia Town", "Orangi Town", "Lyari Town", "Saddar Town", "Jamshed Town", "Gulshan Town", "Shah Faisal Town" }));
+        fromCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "New Delhi", "Prayagraj", "Ghaziabad", "Agra", "Meerut", "Chandigarh", "Noida", "Gurgaon", "Kanpur", "Jaipur", "IIIT Allahabad", "Amritsar", "Manali", "Shimla", " ", " " }));
+        fromCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fromComboActionPerformed(evt);
+            }
+        });
 
-        toCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Landhi", "Malir", "Quaidabad", "Landhi Town", "Korangi Town", "North Nazimabad Town", "New Karachi Town", "Gulberg Town", "Liaquatabad Town", "Malir Town", "Bin Qasim Town", "Gadap Town", "Kiamari Town", "S.I.T.E Town", "Baldia Town", "Orangi Town", "Lyari Town", "Saddar Town", "Jamshed Town", "Gulshan Town", "Shah Faisal Town" }));
+        toCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "IIIT Allahabad", "Agra", "Meerut", "Chandigarh", "Noida", "Gurgaon", "Jaipur", "Amritsar", "Manali", "Kanpur", "Shimla", "Ghaziabad", "New Delhi", "Prayagraj" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -803,7 +823,7 @@ public class AddVehicle extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(272, Short.MAX_VALUE))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
         fuelButtonLayout.setVerticalGroup(
             fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -865,32 +885,31 @@ public class AddVehicle extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(124, 124, 124)
-                                .addComponent(jLabel8))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(99, 99, 99)
-                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(fuelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addComponent(ridesHistoryButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(12, 12, 12)
-                                .addComponent(removeVehicleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(settingsButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(logOutButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(banDriverButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(removeVehicleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(rephisbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(logOutButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(rephisbutton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(settingsButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fuelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(manageVehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(banDriverButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(manageVehicle, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -928,10 +947,11 @@ public class AddVehicle extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ridesHistoryButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(banDriverButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(settingsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(ridesHistoryButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(settingsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)))
+                        .addGap(15, 15, 15)
                         .addComponent(removeVehicleButton, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1154,19 +1174,28 @@ public class AddVehicle extends javax.swing.JFrame {
                 registerCarName.setText("");
 
             } else if (type == "Bus") {
+                
                 fromLabel.setVisible(true);
                 toLabel.setVisible(true);
                 busRoute.setVisible(true);
                 fromCombo.setVisible(true);
                 toCombo.setVisible(true);
                 doneButton.setVisible(true);
-
-                registerModel.setText("");
-                registerVersion.setText("");
-                registerColor.setText("");
-                registerPlateNo.setText("");
-
-                registerCarName.setText("");
+                
+                registerModel.setText(model);
+                registerVersion.setText(version);
+                registerColor.setText(color);
+            registerPlateNo.setText(plateNo);
+//            RDate = ((JTextField) registerRDate.getDateEditor().getUiComponent()).getText();
+//            EDate = ((JTextField) registerEDate.getDateEditor().getUiComponent()).getText();
+             registerCarName.setText(carName);
+                
+//                registerModel.setText("");
+//                registerVersion.setText("");
+//                registerColor.setText("");
+//                registerPlateNo.setText("");
+//
+//                registerCarName.setText("");
 
             } else if (type == "Rickshaw") {
                 Rickshaw rickshaw = new Rickshaw(v.getModel(), v.getVersion(), v.getColor(), v.getPlateNo(), v.getregistrationDate(), v.getExpirationDate(), carName);
@@ -1341,6 +1370,34 @@ public class AddVehicle extends javax.swing.JFrame {
         // TODO add your handling code here:
         fuelButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_fuelButtonMouseExited
+
+    private void checkCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkCarActionPerformed
+        // TODO add your handling code here:
+        if(checkCar.isSelected()==true){
+            checkBus.setSelected(false);
+            checkRickshaw.setSelected(false);
+        }
+    }//GEN-LAST:event_checkCarActionPerformed
+
+    private void checkRickshawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkRickshawActionPerformed
+        // TODO add your handling code here:
+        if(checkRickshaw.isSelected()==true){
+            checkBus.setSelected(false);
+            checkCar.setSelected(false);
+        }
+    }//GEN-LAST:event_checkRickshawActionPerformed
+
+    private void checkBusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBusActionPerformed
+        // TODO add your handling code here:
+        if(checkBus.isSelected()==true){
+            checkCar.setSelected(false);
+            checkRickshaw.setSelected(false);
+        }
+    }//GEN-LAST:event_checkBusActionPerformed
+
+    private void fromComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fromComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fromComboActionPerformed
 
     /**
      * @param args the command line arguments

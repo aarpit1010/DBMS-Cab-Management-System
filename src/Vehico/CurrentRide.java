@@ -1531,7 +1531,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
     private void calculateButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculateButtonMouseExited
         // TODO add your handling code here:
-        updateButton.setBackground(new Color(255, 255, 255));
+        calculateButton.setBackground(new Color(255, 255, 255));
         jLabel46.setForeground(new Color(102, 102, 102));
     }//GEN-LAST:event_calculateButtonMouseExited
 
@@ -1572,6 +1572,16 @@ public class CurrentRide extends javax.swing.JFrame {
 //            }
 //         
             JOptionPane.showMessageDialog(null, "Ride Finished");
+            DriverCar d= new DriverCar();
+            String dname = d.getRDriverName(username);
+                        int carid = d.getRCarId(username);
+                        String carName = d.getRCarName(username);
+                        String type = "Car";
+                        String plateNo = d.getRCarPlate(username);
+                        DriverHome dh = new DriverHome(username, dname, type, plateNo, carid, carName);
+                        this.setVisible(false);
+
+                        dh.setVisible(true);
 
         } else if (type == "Rickshaw") {
             answer = "Completed";
@@ -1600,6 +1610,16 @@ public class CurrentRide extends javax.swing.JFrame {
 //            }
 //         
             JOptionPane.showMessageDialog(null, "Ride Finished");
+            DriverRickshaw dr = new DriverRickshaw();
+                        String dname = dr.getRDriverName(username);
+                        int carid = dr.getRRickshawId(username);
+                        String carName = dr.getRRickshawName(username);
+                        String plateNo = dr.getRRickshawPlate(username);
+                        String type = "Rickshaw";
+                        DriverHome dh = new DriverHome(username, dname, type, plateNo, carid, carName);
+                        this.setVisible(false);
+
+                        dh.setVisible(true);
 
         } else if (type == "Bus") {
             answer = "Completed";
@@ -1628,8 +1648,19 @@ public class CurrentRide extends javax.swing.JFrame {
 //            }
 //         
             JOptionPane.showMessageDialog(null, "Ride Finished");
+            DriverBus dr = new DriverBus();
+                        String dname = dr.getRDriverName(username);
+                        int carid = dr.getRBusId(username);
+                        String carName = dr.getRBusName(username);
+                        String plateNo = dr.getRBusPlate(username);
+                        String type = "Bus";
+                        DriverHome dh = new DriverHome(username, dname, type, plateNo, carid, carName);
+                        this.setVisible(false);
+                        dh.setVisible(true);
 
         }
+        
+        
 
     }//GEN-LAST:event_receivedButtonMouseClicked
 

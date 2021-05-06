@@ -482,6 +482,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Car"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkCarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="checkBus">
           <Properties>
@@ -490,6 +493,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Bus"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkBusActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="checkRickshaw">
           <Properties>
@@ -498,6 +504,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Rickshaw"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkRickshawActionPerformed"/>
+          </Events>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="registerRDate">
         </Component>
@@ -737,58 +746,48 @@
         <Component class="javax.swing.JComboBox" name="fromCombo">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="22">
-                <StringItem index="0" value="Kemari"/>
-                <StringItem index="1" value="Landhi"/>
-                <StringItem index="2" value="Malir"/>
-                <StringItem index="3" value="Quaidabad"/>
-                <StringItem index="4" value="Landhi Town"/>
-                <StringItem index="5" value="Korangi Town"/>
-                <StringItem index="6" value="North Nazimabad Town"/>
-                <StringItem index="7" value="New Karachi Town"/>
-                <StringItem index="8" value="Gulberg Town"/>
-                <StringItem index="9" value="Liaquatabad Town"/>
-                <StringItem index="10" value="Malir Town"/>
-                <StringItem index="11" value="Bin Qasim Town"/>
-                <StringItem index="12" value="Gadap Town"/>
-                <StringItem index="13" value="Kiamari Town"/>
-                <StringItem index="14" value="S.I.T.E Town"/>
-                <StringItem index="15" value="Baldia Town"/>
-                <StringItem index="16" value="Orangi Town"/>
-                <StringItem index="17" value="Lyari Town"/>
-                <StringItem index="18" value="Saddar Town"/>
-                <StringItem index="19" value="Jamshed Town"/>
-                <StringItem index="20" value="Gulshan Town"/>
-                <StringItem index="21" value="Shah Faisal Town"/>
+              <StringArray count="16">
+                <StringItem index="0" value="New Delhi"/>
+                <StringItem index="1" value="Prayagraj"/>
+                <StringItem index="2" value="Ghaziabad"/>
+                <StringItem index="3" value="Agra"/>
+                <StringItem index="4" value="Meerut"/>
+                <StringItem index="5" value="Chandigarh"/>
+                <StringItem index="6" value="Noida"/>
+                <StringItem index="7" value="Gurgaon"/>
+                <StringItem index="8" value="Kanpur"/>
+                <StringItem index="9" value="Jaipur"/>
+                <StringItem index="10" value="IIIT Allahabad"/>
+                <StringItem index="11" value="Amritsar"/>
+                <StringItem index="12" value="Manali"/>
+                <StringItem index="13" value="Shimla"/>
+                <StringItem index="14" value=" "/>
+                <StringItem index="15" value=" "/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fromComboActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="toCombo">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="21">
-                <StringItem index="0" value="Landhi"/>
-                <StringItem index="1" value="Malir"/>
-                <StringItem index="2" value="Quaidabad"/>
-                <StringItem index="3" value="Landhi Town"/>
-                <StringItem index="4" value="Korangi Town"/>
-                <StringItem index="5" value="North Nazimabad Town"/>
-                <StringItem index="6" value="New Karachi Town"/>
-                <StringItem index="7" value="Gulberg Town"/>
-                <StringItem index="8" value="Liaquatabad Town"/>
-                <StringItem index="9" value="Malir Town"/>
-                <StringItem index="10" value="Bin Qasim Town"/>
-                <StringItem index="11" value="Gadap Town"/>
-                <StringItem index="12" value="Kiamari Town"/>
-                <StringItem index="13" value="S.I.T.E Town"/>
-                <StringItem index="14" value="Baldia Town"/>
-                <StringItem index="15" value="Orangi Town"/>
-                <StringItem index="16" value="Lyari Town"/>
-                <StringItem index="17" value="Saddar Town"/>
-                <StringItem index="18" value="Jamshed Town"/>
-                <StringItem index="19" value="Gulshan Town"/>
-                <StringItem index="20" value="Shah Faisal Town"/>
+              <StringArray count="14">
+                <StringItem index="0" value="IIIT Allahabad"/>
+                <StringItem index="1" value="Agra"/>
+                <StringItem index="2" value="Meerut"/>
+                <StringItem index="3" value="Chandigarh"/>
+                <StringItem index="4" value="Noida"/>
+                <StringItem index="5" value="Gurgaon"/>
+                <StringItem index="6" value="Jaipur"/>
+                <StringItem index="7" value="Amritsar"/>
+                <StringItem index="8" value="Manali"/>
+                <StringItem index="9" value="Kanpur"/>
+                <StringItem index="10" value="Shimla"/>
+                <StringItem index="11" value="Ghaziabad"/>
+                <StringItem index="12" value="New Delhi"/>
+                <StringItem index="13" value="Prayagraj"/>
               </StringArray>
             </Property>
           </Properties>
@@ -815,11 +814,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="ridesHistoryButton" alignment="0" min="-2" pref="374" max="-2" attributes="0"/>
                               <Component id="banDriverButton" alignment="0" min="-2" pref="365" max="-2" attributes="0"/>
-                              <Component id="settingsButton" alignment="0" min="-2" pref="364" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="ridesHistoryButton" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="settingsButton" alignment="0" pref="364" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           <Component id="removeVehicleButton" pref="92" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -1149,42 +1150,41 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
-                                      <Component id="jSeparator4" min="-2" pref="183" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="fuelButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="ridesHistoryButton1" min="-2" pref="368" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                      <Component id="removeVehicleButton1" max="32767" attributes="0"/>
+                                      <Component id="removeVehicleButton1" pref="92" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="settingsButton1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="logOutButton1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="banDriverButton1" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="rephisbutton" min="-2" pref="364" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="logOutButton1" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="rephisbutton" alignment="0" pref="364" max="32767" attributes="0"/>
+                                      </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
+                                  <Component id="settingsButton1" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                              <Component id="jSeparator4" min="-2" pref="183" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="fuelButton" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="manageVehicle" min="-2" pref="366" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="banDriverButton1" alignment="1" min="-2" pref="366" max="-2" attributes="0"/>
+                          <Component id="manageVehicle" alignment="0" min="-2" pref="366" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -1472,7 +1472,7 @@
                           <Component id="jLabel1" min="-2" pref="39" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel11" min="-2" pref="70" max="-2" attributes="0"/>
-                          <EmptySpace pref="272" max="32767" attributes="0"/>
+                          <EmptySpace pref="164" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1550,10 +1550,10 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel37">
+                <Component class="javax.swing.JLabel" name="jLabel40">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Images/icons8_Settings_25px.png"/>
+                      <Image iconType="3" name="/Images/icons8_Clock_25px.png"/>
                     </Property>
                   </Properties>
                   <Constraints>

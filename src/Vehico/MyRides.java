@@ -193,7 +193,7 @@ public class MyRides extends javax.swing.JFrame {
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Bus_25px.png"))); // NOI18N
         busRidesButton.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        logOutButton.setBackground(new java.awt.Color(51, 0, 102));
+        logOutButton.setBackground(new java.awt.Color(64, 34, 107));
         logOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logOutButtonMouseClicked(evt);
@@ -366,7 +366,7 @@ public class MyRides extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 0, 102));
-        jLabel11.setText("Here's list of Vehler's Rides");
+        jLabel11.setText("Here's list of Vehico's Rides");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 90, -1, -1));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 130, 330, 10));
 

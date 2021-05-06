@@ -455,14 +455,26 @@ public class DriverSignUp extends javax.swing.JFrame {
     }
     private void checkCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkCarActionPerformed
         // TODO add your handling code here:
+        if(checkCar.isSelected()==true){
+            checkBus.setSelected(false);
+            checkRickshaw.setSelected(false);
+        }
     }//GEN-LAST:event_checkCarActionPerformed
 
     private void checkRickshawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkRickshawActionPerformed
         // TODO add your handling code here:
+        if(checkRickshaw.isSelected()==true){
+            checkBus.setSelected(false);
+            checkCar.setSelected(false);
+        }
     }//GEN-LAST:event_checkRickshawActionPerformed
 
     private void checkBusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBusActionPerformed
         // TODO add your handling code here:
+        if(checkBus.isSelected()==true){
+            checkCar.setSelected(false);
+            checkRickshaw.setSelected(false);
+        }
     }//GEN-LAST:event_checkBusActionPerformed
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
