@@ -46,7 +46,7 @@ public class Bus extends Vehicle {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into BusT (Model,Version,Color,PlateNo,RegistrationDate,ExpirationDate,BusName,Fromm,Too) values ' "
+            String sql = "Insert into BusT (Model,Version,Color,PlateNo,RegistrationDate,ExpirationDate,BusName,Fromm,Too) values (' "
                     + super.getModel() + "','"
                     + super.getVersion() + "','"
                     + super.getColor() + "','"
@@ -55,7 +55,7 @@ public class Bus extends Vehicle {
                     + super.getExpirationDate() + "','"
                     + getBusName() + "','"
                     + getFromm() + "','"
-                    + getToo() + "'";
+                    + getToo() + "')";
             int flag = conn.InsertUpdateDelete(sql);
 
             if (flag == 1) {
@@ -456,7 +456,7 @@ public class Bus extends Vehicle {
         try {
 
             conn.OpenConnection();
-            String sql = "Insert into PassengerBusRides (Username,DriverName,VehiclePlate,VehicleId,VehicleName,PUsername,PName,Fromm,Too) values ' "
+            String sql = "Insert into PassengerBusRides (Username,DriverName,VehiclePlate,VehicleId,VehicleName,PUsername,PName,Fromm,Too) values (' "
                     + dusername + "','"
                     + dname + "','"
                     + plateNo + "','"
@@ -465,7 +465,7 @@ public class Bus extends Vehicle {
                     + pusername + "','"
                     + pname + "','"
                     + fromm + "','"
-                    + too + "'";
+                    + too + "')";
             flag = conn.InsertUpdateDelete(sql);
 
             if (flag == 1) {

@@ -6,6 +6,7 @@
 package Vehico;
 
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -396,6 +397,11 @@ public class DriverSettings extends javax.swing.JFrame {
                 oldPasswordTextFocusGained(evt);
             }
         });
+        oldPasswordText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                oldPasswordTextKeyPressed(evt);
+            }
+        });
         jPanel1.add(oldPasswordText, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 267, 270, 30));
 
         jSeparator6.setForeground(new java.awt.Color(0, 51, 153));
@@ -422,6 +428,11 @@ public class DriverSettings extends javax.swing.JFrame {
                 confirmPasswordTextFocusGained(evt);
             }
         });
+        confirmPasswordText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                confirmPasswordTextKeyPressed(evt);
+            }
+        });
         jPanel1.add(confirmPasswordText, new org.netbeans.lib.awtextra.AbsoluteConstraints(404, 507, 270, 30));
 
         jSeparator8.setForeground(new java.awt.Color(0, 51, 153));
@@ -446,7 +457,7 @@ public class DriverSettings extends javax.swing.JFrame {
         jLabel22.setText("Repair Request");
         repairButton1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
 
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/tools.png"))); // NOI18N
         repairButton1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -539,7 +550,7 @@ public class DriverSettings extends javax.swing.JFrame {
 
     private void checkRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkRidesButtonMouseExited
         // TODO add your handling code here:
-        checkRidesButton.setBackground(new Color(51, 0, 102));
+        checkRidesButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_checkRidesButtonMouseExited
 
     private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
@@ -557,7 +568,7 @@ public class DriverSettings extends javax.swing.JFrame {
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(51, 0, 102));
+        removeVehicleButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void currentRideButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseClicked
@@ -574,7 +585,7 @@ public class DriverSettings extends javax.swing.JFrame {
 
     private void currentRideButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseExited
         // TODO add your handling code here:
-        currentRideButton.setBackground(new Color(51, 0, 102));
+        currentRideButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_currentRideButtonMouseExited
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
@@ -591,7 +602,7 @@ public class DriverSettings extends javax.swing.JFrame {
 
     private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(51, 0, 102));
+        settingsButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_settingsButtonMouseExited
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
@@ -608,7 +619,7 @@ public class DriverSettings extends javax.swing.JFrame {
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(51, 0, 102));
+        logOutButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
@@ -741,11 +752,57 @@ public class DriverSettings extends javax.swing.JFrame {
 
     private void repairButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseEntered
         // TODO add your handling code here:
+        repairButton1.setBackground(new Color(85, 65, 118));
     }//GEN-LAST:event_repairButton1MouseEntered
 
     private void repairButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseExited
         // TODO add your handling code here:
+        repairButton1.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_repairButton1MouseExited
+
+    private void oldPasswordTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_oldPasswordTextKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            DriverCar driver = new DriverCar();
+            String oldPassword = oldPasswordText.getText();
+            oldPasswordText.setText("");
+            if (driver.chkDriverPass(username, oldPassword)) {
+                JOptionPane.showMessageDialog(null, "Old Password Verified");
+                newPasswordText.setVisible(true);
+                confirmPasswordText.setVisible(true);
+                saveButton.setVisible(true);
+                newPasswordLabel.setVisible(true);
+                confirmPasswordLabel.setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Old Password Not Verified");
+            }
+        }
+    }//GEN-LAST:event_oldPasswordTextKeyPressed
+
+    private void confirmPasswordTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_confirmPasswordTextKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            DriverCar ad = new DriverCar();
+            String newPassword = newPasswordText.getText();
+            String confirmPassword = confirmPasswordText.getText();
+            newPasswordText.setText("");
+            confirmPasswordText.setText("");
+            if (newPassword.equals(confirmPassword)) {
+                JOptionPane.showMessageDialog(null, "Your both passwords matched");
+                ad.changePassword(username, newPassword);
+                oldPasswordText.setText("");
+                newPasswordText.setText("");
+                confirmPasswordText.setText("");
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Your passwords didn't matched");
+                newPasswordText.setText("");
+                confirmPasswordText.setText("");
+
+            }
+        }
+    }//GEN-LAST:event_confirmPasswordTextKeyPressed
 
     /**
      * @param args the command line arguments

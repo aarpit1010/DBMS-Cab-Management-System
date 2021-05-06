@@ -155,7 +155,7 @@ public class DriverRickshaw implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into Driver (ID, Password, Name,FatherName,Age, Gender, SecurityQuestion, Type,CNIC,ContactNo,DOB) values '"
+            String sql = "Insert into Driver (ID, Password, Name,FatherName,Age, Gender, SecurityQuestion, Type,aadhar,ContactNo,DOB) values ('"
                     + getUsername() + "','"
                     + getPassword() + "','"
                     + getName() + "','"
@@ -166,7 +166,7 @@ public class DriverRickshaw implements Driver {
                     + getType() + "','"
                     + getCnic() + "','"
                     + getContactno() + "','"
-                    + getDob() + "'";
+                    + getDob() + "')";
 
             int flag = conn.InsertUpdateDelete(sql);
 
@@ -205,13 +205,13 @@ public class DriverRickshaw implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into DriverRickshawT (DriverUsername, DriverName,VehicleType,RickshawPlate, RickshawID, RickshawName) values '"
+            String sql = "Insert into DriverRickshawT (DriverUsername, DriverName,VehicleType,RickshawPlate, RickshawID, RickshawName) values ('"
                     + driverUsername + "','"
                     + driverName + "','"
                     + type + "','"
                     + rickshawPlate + "','"
                     + RickshawId + "','"
-                    + RickshawName + "'";
+                    + RickshawName + "')";
 
             int flag = conn.InsertUpdateDelete(sql);
 
@@ -351,13 +351,13 @@ public class DriverRickshaw implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into DriverRickshawRT (Username, DriverName,RickshawPlate, RickshawId, RickshawName,DriverAvail) values '"
+            String sql = "Insert into DriverRickshawRT (Username, DriverName,RickshawPlate, RickshawId, RickshawName,DriverAvail) values ('"
                     + driverUsername + "','"
                     + driverName + "','"
                     + plateNo + "','"
                     + RickshawId + "','"
                     + RickshawName + "','"
-                    + avail + "'";
+                    + avail + "')";
 
             int flag = conn.InsertUpdateDelete(sql);
 
@@ -406,14 +406,14 @@ public class DriverRickshaw implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into RideRealtime (ID,Username, DriverName,VehiclePlate, VehicleId, VehicleName,DriverContactNo) values '"
+            String sql = "Insert into RideRealtime (ID,Username, DriverName,VehiclePlate, VehicleId, VehicleName,DriverContactNo) values ('"
                     + "R" + no + "','"
                     + driverUsername + "','"
                     + driverName + "','"
                     + plateNo + "','"
                     + RickshawId + "','"
                     + RickshawName + "','"
-                    + contact + "'";
+                    + contact + "')";
 
             int flag = conn.InsertUpdateDelete(sql);
 

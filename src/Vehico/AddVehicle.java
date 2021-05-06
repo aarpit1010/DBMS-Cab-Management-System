@@ -126,7 +126,7 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         rephisbutton = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
         manageVehicle = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
@@ -833,8 +833,8 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel36.setText("View Repair History");
         rephisbutton.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
 
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
-        rephisbutton.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Clock_25px.png"))); // NOI18N
+        rephisbutton.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
         manageVehicle.setBackground(new java.awt.Color(25, 25, 112));
         manageVehicle.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1422,10 +1422,10 @@ public class AddVehicle extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

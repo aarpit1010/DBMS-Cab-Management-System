@@ -68,7 +68,7 @@ public class AdminHome extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         rephisbutton = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
         logOutButton = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -374,8 +374,8 @@ public class AdminHome extends javax.swing.JFrame {
         jLabel18.setText("View Repair History");
         rephisbutton.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
-        rephisbutton.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Clock_25px.png"))); // NOI18N
+        rephisbutton.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
         logOutButton.setBackground(new java.awt.Color(25, 25, 112));
         logOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -786,13 +786,13 @@ public class AdminHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

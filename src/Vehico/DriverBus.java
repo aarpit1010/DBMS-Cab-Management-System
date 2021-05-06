@@ -155,7 +155,7 @@ public class DriverBus implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into Driver (ID, Password, Name,FatherName,Age, Gender, SecurityQuestion, Type,CNIC,ContactNo,DOB) values '"
+            String sql = "Insert into Driver (ID, Password, Name,FatherName,Age, Gender, SecurityQuestion, Type,aadhar,ContactNo,DOB) values ('"
                     + getUsername() + "','"
                     + getPassword() + "','"
                     + getName() + "','"
@@ -166,7 +166,7 @@ public class DriverBus implements Driver {
                     + getType() + "','"
                     + getCnic() + "','"
                     + getContactno() + "','"
-                    + getDob() + "'";
+                    + getDob() + "')";
 
             int flag = conn.InsertUpdateDelete(sql);
 
@@ -205,7 +205,7 @@ public class DriverBus implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into DriverBusT (DriverUsername, DriverName,VehicleType,BusPlate, BusID, BusName,Fromm,Too) values '"
+            String sql = "Insert into DriverBusT (DriverUsername, DriverName,VehicleType,BusPlate, BusID, BusName,Fromm,Too) values ('"
                     + driverUsername + "','"
                     + driverName + "','"
                     + type + "','"
@@ -213,7 +213,7 @@ public class DriverBus implements Driver {
                     + BusId + "','"
                     + BusName + "','"
                     + fromm + "','"
-                    + too + "'";
+                    + too + "')";
 
             int flag = conn.InsertUpdateDelete(sql);
 
@@ -353,7 +353,7 @@ public class DriverBus implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into DriverBusRT (Username, DriverName,BusPlate, BusId, BusName,DriverAvail,Fromm,Too) values '"
+            String sql = "Insert into DriverBusRT (Username, DriverName,BusPlate, BusId, BusName,DriverAvail,Fromm,Too) values ('"
                     + driverUsername + "','"
                     + driverName + "','"
                     + plateNo + "','"
@@ -361,7 +361,7 @@ public class DriverBus implements Driver {
                     + BusName + "','"
                     + avail + "','"
                     + fromm + "','"
-                    + too + "'";
+                    + too + "')";
 
             int flag = conn.InsertUpdateDelete(sql);
 
@@ -410,7 +410,7 @@ public class DriverBus implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into RideRealtime (ID,Username, DriverName,VehiclePlate, VehicleId, VehicleName,Fromm,Too,DriverContactNo) values '"
+            String sql = "Insert into RideRealtime (ID,Username, DriverName,VehiclePlate, VehicleId, VehicleName,Fromm,Too,DriverContactNo) values ('"
                     + "B" + no + "','"
                     + driverUsername + "','"
                     + driverName + "','"
@@ -419,7 +419,7 @@ public class DriverBus implements Driver {
                     + BusName + "','"
                     + fromm + "','"
                     + too + "','"
-                    + contact + "'";
+                    + contact + "')";
 
             int flag = conn.InsertUpdateDelete(sql);
 

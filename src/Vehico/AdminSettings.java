@@ -6,6 +6,7 @@
 package Vehico;
 
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -87,7 +88,7 @@ public class AdminSettings extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         rephisbutton = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
         manageVehicle = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -408,6 +409,11 @@ public class AdminSettings extends javax.swing.JFrame {
                 oldPasswordTextFocusGained(evt);
             }
         });
+        oldPasswordText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                oldPasswordTextKeyPressed(evt);
+            }
+        });
 
         jSeparator6.setForeground(new java.awt.Color(0, 51, 153));
 
@@ -428,6 +434,11 @@ public class AdminSettings extends javax.swing.JFrame {
         confirmPasswordText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 confirmPasswordTextFocusGained(evt);
+            }
+        });
+        confirmPasswordText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                confirmPasswordTextKeyPressed(evt);
             }
         });
 
@@ -575,8 +586,8 @@ public class AdminSettings extends javax.swing.JFrame {
         jLabel24.setText("View Repair History");
         rephisbutton.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
 
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
-        rephisbutton.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Clock_25px.png"))); // NOI18N
+        rephisbutton.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
         manageVehicle.setBackground(new java.awt.Color(25, 25, 112));
         manageVehicle.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -954,6 +965,51 @@ public class AdminSettings extends javax.swing.JFrame {
         fuelButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_fuelButtonMouseExited
 
+    private void oldPasswordTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_oldPasswordTextKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            Admin admin = new Admin();
+            String oldPassword = oldPasswordText.getText();
+            oldPasswordText.setText("");
+            if (admin.chkAdminPass(username, oldPassword)) {
+                JOptionPane.showMessageDialog(null, "Old Password Verified");
+                newPasswordText.setVisible(true);
+                confirmPasswordText.setVisible(true);
+                saveButton.setVisible(true);
+                newPasswordLabel.setVisible(true);
+                confirmPasswordLabel.setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Old Password Not Verified");
+            }
+
+        }
+    }//GEN-LAST:event_oldPasswordTextKeyPressed
+
+    private void confirmPasswordTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_confirmPasswordTextKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            Admin ad = new Admin();
+            String newPassword = newPasswordText.getText();
+            String confirmPassword = confirmPasswordText.getText();
+            newPasswordText.setText("");
+            confirmPasswordText.setText("");
+            if (newPassword.equals(confirmPassword)) {
+                JOptionPane.showMessageDialog(null, "Your both passwords matched");
+                ad.changePassword(username, newPassword);
+                oldPasswordText.setText("");
+                newPasswordText.setText("");
+                confirmPasswordText.setText("");
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Your passwords didn't matched");
+                newPasswordText.setText("");
+                confirmPasswordText.setText("");
+
+            }
+        }
+    }//GEN-LAST:event_confirmPasswordTextKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -1009,8 +1065,8 @@ public class AdminSettings extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

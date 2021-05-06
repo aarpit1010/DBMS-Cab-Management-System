@@ -273,10 +273,15 @@ public class DriverSignUp extends javax.swing.JFrame {
         checkBus.setBounds(440, 270, 90, 25);
 
         nextButton.setBackground(new java.awt.Color(26, 111, 145));
+        nextButton.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        nextButton.setForeground(new java.awt.Color(255, 255, 255));
         nextButton.setText("Next");
         nextButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 nextButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                nextButtonMouseExited(evt);
             }
         });
         nextButton.addActionListener(new java.awt.event.ActionListener() {
@@ -421,7 +426,7 @@ public class DriverSignUp extends javax.swing.JFrame {
         );
 
         kGradientPanel1.add(jPanel2);
-        jPanel2.setBounds(1200, 10, 0, 30);
+        jPanel2.setBounds(1200, 10, 83, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -473,12 +478,12 @@ public class DriverSignUp extends javax.swing.JFrame {
 
     private void SignInButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseEntered
         // TODO add your handling code here:
-        SignInButton.setBackground(new Color(204, 153, 255));
+        SignInButton.setBackground(new Color(51, 153, 153));
     }//GEN-LAST:event_SignInButtonMouseEntered
 
     private void SignInButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInButtonMouseExited
         // TODO add your handling code here:
-        SignInButton.setBackground(new Color(153, 51, 255));
+        SignInButton.setBackground(new Color(26, 111, 145));
     }//GEN-LAST:event_SignInButtonMouseExited
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
@@ -585,7 +590,7 @@ public class DriverSignUp extends javax.swing.JFrame {
 
     private void nextButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextButtonMouseEntered
         // TODO add your handling code here:
-        nextButton.setBackground(new Color(204, 153, 255));
+        nextButton.setBackground(new Color(51, 153, 153));
 
     }//GEN-LAST:event_nextButtonMouseEntered
 
@@ -618,6 +623,11 @@ public class DriverSignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
         ypanel.setBackground(new Color(0, 51, 153));
     }//GEN-LAST:event_ypanelMouseExited
+
+    private void nextButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextButtonMouseExited
+        // TODO add your handling code here:
+        nextButton.setBackground(new Color(26, 111, 145));
+    }//GEN-LAST:event_nextButtonMouseExited
 
     /**
      * @param args the command line arguments

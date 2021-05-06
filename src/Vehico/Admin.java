@@ -30,7 +30,7 @@ public class Admin {
 
         try {
             conn.OpenConnection();
-            String sql = "UPDATE Admint SET AdminP = '" + newPassword + "' where AdminID = '" + username + "'";
+            String sql = "UPDATE AdminT SET AdminP = '" + newPassword + "' where AdminID = '" + username + "'";
 
             flag = conn.InsertUpdateDelete(sql);
             if (flag == 1) {

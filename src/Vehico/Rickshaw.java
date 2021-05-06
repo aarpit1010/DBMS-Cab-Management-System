@@ -42,14 +42,14 @@ public class Rickshaw extends Vehicle {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into RickshawT (Model,Version,Color,PlateNo,RegistrationDate,ExpirationDate,RickshawName) values ' "
+            String sql = "Insert into RickshawT (Model,Version,Color,PlateNo,RegistrationDate,ExpirationDate,RickshawName) values (' "
                     + super.getModel() + "','"
                     + super.getVersion() + "','"
                     + super.getColor() + "','"
                     + super.getPlateNo() + "','"
                     + super.getregistrationDate() + "','"
                     + super.getExpirationDate() + "','"
-                    + getRickshawName() + "'";
+                    + getRickshawName() + "')";
             int flag = conn.InsertUpdateDelete(sql);
 
             if (flag == 1) {
@@ -74,7 +74,7 @@ public class Rickshaw extends Vehicle {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "SELECT TOP 1 RickshawId FROM RickshawT ORDER BY RickshawId DESC";
+            String sql = "SELECT RickshawId FROM RickshawT ORDER BY RickshawId DESC LIMIT 1";
             rst = conn.GetData(sql);
 
             while (rst.next()) {
