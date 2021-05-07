@@ -7,6 +7,7 @@
 <h3 align="center">A Vehicle Management System for Vehicles, Drivers & Passengers.</h3>
 
 ---
+<br>
 
 # Abstract
 
@@ -21,18 +22,23 @@
 * Keeps accurate records for any type of vehicle.
 * Keeps track of Driver, Passengers and other employee ledgers.
 
+<br> 
+
 # Tech Stack
 
 * Java Swing (NetBeans v12.1)
 * JDBC for `PHPMyAdmin (MySQL)` Connectivity
 * SQL (queries)
 
+<br> 
 
 # Dependencies
 
 * NetBeans
 * MySQL
 * JavaFX-SDK-16
+
+<br>
 
 # Getting Started
 
@@ -50,6 +56,8 @@
 * Admin account username: **`1`** <br>
   Admin account password : **`y`**
 * For Driver & Passenger, register and proceed.
+
+<br>
 
 # Modules
 
@@ -83,6 +91,7 @@ There are mainly 3 modules in this project.
 * Car & Driver Details can be viewed anytime.
 * Passengers Ride History
 
+<br>
 
 # Screenshots
 <img src="vehler_screenshots/1.png" />
