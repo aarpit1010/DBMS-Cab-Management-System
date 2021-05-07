@@ -319,7 +319,7 @@ public class ViewRepairHis extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 0, 102));
-        jLabel11.setText("Here's list of Vehler's Rides");
+        jLabel11.setText("Here's list of Vehico's Rides");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, -1));
 
         RepairHistoryTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));

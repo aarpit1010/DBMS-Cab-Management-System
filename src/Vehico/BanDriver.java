@@ -477,7 +477,7 @@ public class BanDriver extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel11.setText("Here's list of Vehler's drivers");
+        jLabel11.setText("Here's list of Vehico's drivers");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, -1, -1));
 
         banText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N

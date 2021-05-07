@@ -71,7 +71,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         dobCombo2 = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -81,6 +80,7 @@ public class RegistrationForm extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         SignInButton = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -108,11 +108,11 @@ public class RegistrationForm extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel6.setText("Name");
+        jLabel6.setText("<html>Name<span style=\"color:red\">*</span> </html>");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel8.setText("Password");
+        jLabel8.setText("<html>Password<span style=\"color:red\">*</span> </html>");
 
         registerPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         registerPassword.setForeground(new java.awt.Color(102, 102, 102));
@@ -126,7 +126,7 @@ public class RegistrationForm extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel15.setText("For A Free Vehler Account");
+        jLabel15.setText("For A Free Vehico Account");
 
         registerName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         registerName.setForeground(new java.awt.Color(102, 102, 102));
@@ -150,11 +150,11 @@ public class RegistrationForm extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel19.setText("Gender");
+        jLabel19.setText("<html>Gender<span style=\"color:red\">*</span> </html>");
 
         jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel30.setText("What is the name of your eldest cousin?");
+        jLabel30.setText("<html> What is the name of your eldest cousin?<span style=\"color:red\">*</span> (Security Question) </html>");
 
         registerSecurity.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         registerSecurity.setForeground(new java.awt.Color(102, 102, 102));
@@ -162,7 +162,7 @@ public class RegistrationForm extends javax.swing.JFrame {
 
         jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel33.setText("Aadhar No.");
+        jLabel33.setText("<html>Aadhar No.<span style=\"color:red\">*</span> </html>");
 
         aadharText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         aadharText.setForeground(new java.awt.Color(102, 102, 102));
@@ -170,7 +170,7 @@ public class RegistrationForm extends javax.swing.JFrame {
 
         jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel34.setText("Contact No");
+        jLabel34.setText("<html>Contact No.<span style=\"color:red\">*</span> </html>");
 
         contactnoText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         contactnoText.setForeground(new java.awt.Color(102, 102, 102));
@@ -178,7 +178,7 @@ public class RegistrationForm extends javax.swing.JFrame {
 
         uu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         uu.setForeground(new java.awt.Color(153, 153, 153));
-        uu.setText("Username");
+        uu.setText("<html>Username<span style=\"color:red\">*</span> </html>");
 
         registerUsername.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         registerUsername.setForeground(new java.awt.Color(102, 102, 102));
@@ -226,7 +226,7 @@ public class RegistrationForm extends javax.swing.JFrame {
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel20.setText("DOB");
+        jLabel20.setText("<html>DOB<span style=\"color:red\">*</span> </html>");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -237,22 +237,22 @@ public class RegistrationForm extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(uu)
-                            .addComponent(registerUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-                            .addComponent(jLabel34)
-                            .addComponent(contactnoText, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-                            .addComponent(jLabel33)
-                            .addComponent(aadharText, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-                            .addComponent(jLabel30)
-                            .addComponent(registerSecurity, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-                            .addComponent(jLabel19)
+                            .addComponent(uu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registerUsername)
+                            .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(contactnoText)
+                            .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(aadharText)
+                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registerSecurity)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel18)
                             .addComponent(jLabel17)
-                            .addComponent(registerFather, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                            .addComponent(registerFather)
                             .addComponent(jLabel15)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel6)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
                             .addComponent(registerAsCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(registerName)
@@ -260,14 +260,14 @@ public class RegistrationForm extends javax.swing.JFrame {
                                 .addComponent(checkMale)
                                 .addGap(46, 46, 46)
                                 .addComponent(checkFemale))
-                            .addComponent(jLabel20)
-                            .addComponent(registerAge, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registerAge)
                             .addComponent(registerPassword)
                             .addComponent(dobCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(125, 125, 125)
                         .addComponent(registerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,7 +281,7 @@ public class RegistrationForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(registerAsCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -293,33 +293,33 @@ public class RegistrationForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registerAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
-                .addComponent(jLabel20)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dobCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
-                .addComponent(jLabel19)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(checkFemale)
                     .addComponent(checkMale))
                 .addGap(6, 6, 6)
-                .addComponent(jLabel30)
+                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registerSecurity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel33)
+                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(aadharText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel34)
+                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contactnoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(uu)
+                .addComponent(uu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registerUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registerPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -335,12 +335,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         jLabel4.setText("Vehicles at your footsteps");
         kGradientPanel1.add(jLabel4);
         jLabel4.setBounds(130, 180, 250, 40);
-
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 64)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("TheVehler");
-        kGradientPanel1.add(jLabel11);
-        jLabel11.setBounds(120, 90, 360, 120);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/grap.png"))); // NOI18N
         kGradientPanel1.add(jLabel2);
@@ -464,6 +458,12 @@ public class RegistrationForm extends javax.swing.JFrame {
 
         kGradientPanel1.add(SignInButton);
         SignInButton.setBounds(140, 650, 140, 40);
+
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 64)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("TheVehico");
+        kGradientPanel1.add(jLabel11);
+        jLabel11.setBounds(120, 90, 360, 120);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

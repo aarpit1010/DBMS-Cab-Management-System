@@ -361,7 +361,7 @@ public class DriverRide extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 0, 102));
-        jLabel11.setText("Here's list of Vehler's Rides");
+        jLabel11.setText("Here's list of Vehico's Rides");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, -1, -1));
 
         DriverRideTable.setModel(new javax.swing.table.DefaultTableModel(
