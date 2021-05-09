@@ -848,10 +848,20 @@ public class CurrentRide extends javax.swing.JFrame {
 
         checkAtPickup.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         checkAtPickup.setText("AtPickup");
+        checkAtPickup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkAtPickupActionPerformed(evt);
+            }
+        });
         jPanel1.add(checkAtPickup, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, -1));
 
         checkRunning.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         checkRunning.setText("Running");
+        checkRunning.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkRunningActionPerformed(evt);
+            }
+        });
         jPanel1.add(checkRunning, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, -1, -1));
 
         updateButton.setBackground(new java.awt.Color(255, 255, 255));
@@ -1757,6 +1767,20 @@ public class CurrentRide extends javax.swing.JFrame {
         // TODO add your handling code here:
         repairButton1.setBackground(new Color(25,25,112));
     }//GEN-LAST:event_repairButton1MouseExited
+
+    private void checkAtPickupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkAtPickupActionPerformed
+        // TODO add your handling code here:
+        if(checkAtPickup.isSelected()==true){
+            checkRunning.setSelected(false);
+        }
+    }//GEN-LAST:event_checkAtPickupActionPerformed
+
+    private void checkRunningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkRunningActionPerformed
+        // TODO add your handling code here:
+        if(checkRunning.isSelected()==true){
+            checkAtPickup.setSelected(false);
+        }
+    }//GEN-LAST:event_checkRunningActionPerformed
 
     /**
      * @param args the command line arguments

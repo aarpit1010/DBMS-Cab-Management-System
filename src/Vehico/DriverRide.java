@@ -8,6 +8,7 @@ package Vehico;
 import java.awt.Color;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -32,10 +33,151 @@ public class DriverRide extends javax.swing.JFrame {
         this.carid = carid;
         this.type = type;
         ResultSet rst;
+        ResultSet rst2;
         try {
             Ride p = new Ride();
             rst = p.DriverRide(username);
-            DriverRideTable.setModel(DbUtils.resultSetToTableModel(rst));
+            int count = 0;
+            while (rst.next()) {
+                String date = rst.getString("Datee");
+                String dname = username;
+                if (type.equals("Car")) {
+                    DriverCar d = new DriverCar();
+                    int id = d.getRCarId(dname);
+//                String type = d.getDriverType(dname);
+//                String driverName = d.getRDriverName(dname);
+                    String pname = rst.getString("PUsername");
+                    String fromm = rst.getString("Fromm");
+                    String too = rst.getString("Too");
+                    String start = rst.getString("StartTime");
+                    String end = rst.getString("EndTime");
+                    String ridestatus = rst.getString("RideStatus");
+                    String billstatus = rst.getString("BillStatus");
+                    double bill = rst.getDouble("Bill");
+                    int passengers = rst.getInt("NoOfPassengers");
+
+                    String contact = "";
+                    DbConnection conn = new DbConnection();
+                    try {
+                        conn.OpenConnection();
+                        String select_sql = "Select ContactNo from PassengerT where PID='" + pname + "'";
+                        rst2 = conn.GetData(select_sql);
+                        while (rst2.next()) {
+
+                            contact = rst2.getString("ContactNo");
+//                    System.out.println(name);
+//                checkId=1;
+                        }
+                        conn.CloseConnection();
+
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                                + "Search again with valid ID");
+                        return;
+                    }
+                    String plate = d.getRCarPlate(dname);
+//                String carName = d.getRCarName(dname);
+                    Object[] row = {date, dname, plate, pname, contact, fromm, too, start, end, ridestatus, billstatus, bill, passengers};
+
+                    DefaultTableModel model = (DefaultTableModel) DriverRideTable.getModel();
+
+                    model.addRow(row);
+                    count = count + 1;
+                    System.out.println(count);
+
+                } else if (type.equals("Rickshaw")) {
+                    DriverRickshaw d = new DriverRickshaw();
+                    int id = d.getRRickshawId(dname);
+//                String type = d.getDriverType(dname);
+//                String driverName = d.getRDriverName(dname);
+                    String pname = rst.getString("PUsername");
+                    String fromm = rst.getString("Fromm");
+                    String too = rst.getString("Too");
+                    String start = rst.getString("StartTime");
+                    String end = rst.getString("EndTime");
+                    String ridestatus = rst.getString("RideStatus");
+                    String billstatus = rst.getString("BillStatus");
+                    double bill = rst.getDouble("Bill");
+                    int passengers = rst.getInt("NoOfPassengers");
+
+                    String contact = "";
+                    DbConnection conn = new DbConnection();
+                    try {
+                        conn.OpenConnection();
+                        String select_sql = "Select ContactNo from PassengerT where PID='" + pname + "'";
+                        rst2 = conn.GetData(select_sql);
+                        while (rst2.next()) {
+
+                            contact = rst2.getString("ContactNo");
+//                    System.out.println(name);
+//                checkId=1;
+                        }
+                        conn.CloseConnection();
+
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                                + "Search again with valid ID");
+                        return;
+                    }
+                    String plate = d.getRRickshawPlate(dname);
+//                String carName = d.getRCarName(dname);
+                    Object[] row = {date, dname, plate, pname, contact, fromm, too, start, end, ridestatus, billstatus, bill, passengers};
+
+                    DefaultTableModel model = (DefaultTableModel) DriverRideTable.getModel();
+
+                    model.addRow(row);
+                    count = count + 1;
+                    System.out.println(count);
+
+                } else {
+                    DriverBus d = new DriverBus();
+                    int id = d.getRBusId(dname);
+//                String type = d.getDriverType(dname);
+//                String driverName = d.getRDriverName(dname);
+                    String pname = rst.getString("PUsername");
+                    String fromm = rst.getString("Fromm");
+                    String too = rst.getString("Too");
+                    String start = rst.getString("StartTime");
+                    String end = rst.getString("EndTime");
+                    String ridestatus = rst.getString("RideStatus");
+                    String billstatus = rst.getString("BillStatus");
+                    double bill = rst.getDouble("Bill");
+                    int passengers = rst.getInt("NoOfPassengers");
+
+                    String contact = "";
+                    DbConnection conn = new DbConnection();
+                    try {
+                        conn.OpenConnection();
+                        String select_sql = "Select ContactNo from PassengerT where PID='" + pname + "'";
+                        rst2 = conn.GetData(select_sql);
+                        while (rst2.next()) {
+
+                            contact = rst2.getString("ContactNo");
+//                    System.out.println(name);
+//                checkId=1;
+                        }
+                        conn.CloseConnection();
+
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                                + "Search again with valid ID");
+                        return;
+                    }
+                    String plate = d.getRBusPlate(dname);
+//                String carName = d.getRCarName(dname);
+                    Object[] row = {date, dname, plate, pname, contact, fromm, too, start, end, ridestatus, billstatus, bill, passengers};
+
+                    DefaultTableModel model = (DefaultTableModel) DriverRideTable.getModel();
+
+                    model.addRow(row);
+                    count = count + 1;
+                    System.out.println(count);
+
+                }
+
+            }
+
+//            DriverRideTable.setModel(DbUtils.resultSetToTableModel(rst));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Passenger CheckOut Error");
         }
@@ -334,7 +476,7 @@ public class DriverRide extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setText("-");
+        jLabel7.setText("<html>\n<body>\n<center>-</center>\n</body>\n</html>");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel7MouseEntered(evt);
@@ -347,14 +489,12 @@ public class DriverRide extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
-                .addGap(1, 1, 1))
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addComponent(jLabel7)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel7)
         );
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(943, 11, -1, -1));
@@ -366,13 +506,10 @@ public class DriverRide extends javax.swing.JFrame {
 
         DriverRideTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "Date", "DriverUsername", "VehiclePlateNo", "PassengerUsername", "ContactNo", "From", "To", "StartTime", "EndTime", "RideStatus", "BillStatus", "Bill", "NoOfPassengers"
+                "Date", "DriverUsername", "VehiclePlateNo", "PassengerUsername", "PassengerContactNo", "From", "To", "StartTime", "EndTime", "RideStatus", "BillStatus", "Bill", "NoOfPassengers"
             }
         ));
         DriverRideTable.setGridColor(new java.awt.Color(255, 255, 255));
@@ -402,7 +539,7 @@ public class DriverRide extends javax.swing.JFrame {
 
     private void checkRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkRidesButtonMouseExited
         // TODO add your handling code here:
-        checkRidesButton.setBackground(new Color(64,34,107));
+        checkRidesButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_checkRidesButtonMouseExited
 
     private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
@@ -420,7 +557,7 @@ public class DriverRide extends javax.swing.JFrame {
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(64,34,107));
+        removeVehicleButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void currentRideButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseClicked
@@ -437,7 +574,7 @@ public class DriverRide extends javax.swing.JFrame {
 
     private void currentRideButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseExited
         // TODO add your handling code here:
-        currentRideButton.setBackground(new Color(64,34,107));
+        currentRideButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_currentRideButtonMouseExited
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
@@ -454,7 +591,7 @@ public class DriverRide extends javax.swing.JFrame {
 
     private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(64,34,107));
+        settingsButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_settingsButtonMouseExited
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
@@ -471,7 +608,7 @@ public class DriverRide extends javax.swing.JFrame {
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(64,34,107));
+        logOutButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
@@ -523,7 +660,7 @@ public class DriverRide extends javax.swing.JFrame {
 
     private void repairButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseExited
         // TODO add your handling code here:
-        repairButton1.setBackground(new Color(64,34,107));
+        repairButton1.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_repairButton1MouseExited
 
     /**

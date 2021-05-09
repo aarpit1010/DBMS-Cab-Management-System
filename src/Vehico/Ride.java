@@ -603,8 +603,8 @@ public class Ride {
 
         try {
             conn.OpenConnection();
-            String sql = "Select Datee,Username,VehiclePlate,PUsername,"
-                    + "PassengerContactNo,Fromm,Too,StartTime,EndTime,"
+            String sql = "Select Datee,Username,PUsername,"
+                    + "Fromm,Too,StartTime,EndTime,"
                     + "RideStatus,BillStatus,Bill,NoOfPassengers "
                     + "from RideRealtime where Username ='" + username + "'";
             rst1 = conn.GetData(sql);

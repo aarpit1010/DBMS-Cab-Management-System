@@ -41,11 +41,125 @@ public class RidesHistory extends javax.swing.JFrame {
         this.adminusername = adminusername;
         initComponents();
         ResultSet rst;
+        ResultSet rst2;
         try {
             Admin p = new Admin();
             rst = p.RideRealTimeCombined();
+            int count =0;
+            DbConnection conn = new DbConnection();
 
-            RidesHistoryTable.setModel(DbUtils.resultSetToTableModel(rst));
+            while(rst.next()){
+                String date=rst.getString("Datee");
+                String dname=rst.getString("Username");
+                
+                String type = "";
+
+                try {
+                    conn.OpenConnection();
+                    String select_sql = "Select Type from Driver where ID='" + dname + "'";
+                    rst2 = conn.GetData(select_sql);
+                    while (rst2.next()) {
+
+                        type = rst2.getString("Type");
+//                    System.out.println(name);
+//                checkId=1;
+                    }
+                    conn.CloseConnection();
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                            + "Search again with valid ID");
+
+//                    return;
+                }
+                
+                if(type.equals("Car")){
+                    DriverCar d= new DriverCar();
+                int id=d.getRCarId(dname);
+                String pname=rst.getString("PUsername");
+                String fromm=rst.getString("Fromm");
+                String too=rst.getString("Too");
+                String start=rst.getString("StartTime");
+                String end=rst.getString("EndTime");
+                String ridestatus=rst.getString("RideStatus");
+                String billstatus=rst.getString("BillStatus");
+                double bill=rst.getDouble("Bill");
+                int passengers=rst.getInt("NoOfPassengers");
+                
+                
+                Object[] row = {date,dname,id,type,pname,fromm,too,start,end,ridestatus,billstatus,bill,passengers};
+                
+
+                DefaultTableModel model = (DefaultTableModel) RidesHistoryTable.getModel();
+
+                model.addRow(row);
+                count=count+1;
+                System.out.println(count);
+                }
+                else if(type.equals("Rickshaw")){
+                    DriverRickshaw d= new DriverRickshaw();
+                int id=d.getRRickshawId(dname);
+                String pname=rst.getString("PUsername");
+                String fromm=rst.getString("Fromm");
+                String too=rst.getString("Too");
+                String start=rst.getString("StartTime");
+                String end=rst.getString("EndTime");
+                String ridestatus=rst.getString("RideStatus");
+                String billstatus=rst.getString("BillStatus");
+                double bill=rst.getDouble("Bill");
+                int passengers=rst.getInt("NoOfPassengers");
+                
+                
+                Object[] row = {date,dname,id,type,pname,fromm,too,start,end,ridestatus,billstatus,bill,passengers};
+                
+
+                DefaultTableModel model = (DefaultTableModel) RidesHistoryTable.getModel();
+
+                model.addRow(row);
+                count=count+1;
+                System.out.println(count);
+                }
+                else{
+                    DriverBus d= new DriverBus();
+                int id=d.getRBusId(dname);
+                String pname=rst.getString("PUsername");
+                String fromm=rst.getString("Fromm");
+                String too=rst.getString("Too");
+                String start=rst.getString("StartTime");
+                String end=rst.getString("EndTime");
+                String ridestatus=rst.getString("RideStatus");
+                String billstatus=rst.getString("BillStatus");
+                double bill=rst.getDouble("Bill");
+                int passengers=rst.getInt("NoOfPassengers");
+                
+                
+                Object[] row = {date,dname,id,type,pname,fromm,too,start,end,ridestatus,billstatus,bill,passengers};
+                
+
+                DefaultTableModel model = (DefaultTableModel) RidesHistoryTable.getModel();
+
+                model.addRow(row);
+                count=count+1;
+                System.out.println(count);
+                }
+                    
+                
+                
+                
+                
+            }
+//            System.out.println(count);
+//            RidesHistoryTable.setModel(DbUtils.resultSetToTableModel(rst));
+            
+//            int i=RidesHistoryTable.getRowCount();
+//            for(int j=0;j<i;j++){
+//                String username=(String)RidesHistoryTable.getModel().getValueAt(i, 1);
+//                DriverCar d= new DriverCar();
+//                int id;
+//                id = d.getRCarId(username);
+//                RidesHistoryTable.getModel().setValueAt(String.valueOf(id),i, 2);
+//                
+//            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ride History  Error");
         }
@@ -325,13 +439,10 @@ public class RidesHistory extends javax.swing.JFrame {
         RidesHistoryTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         RidesHistoryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "Date", "DriverUsername", "VehiclePlateNo", "PassengerUname", "From", "To", "StartTime", "EndTime", "RideStatus", "BillStatus", "Bill", "NoOfPassengers"
+                "Date", "DriverUsername", "VehicleId", "Vehicle type", "PassengerUname", "From", "To", "StartTime", "EndTime", "RideStatus", "BillStatus", "Bill", "NoOfPassengers"
             }
         ));
         RidesHistoryTable.setGridColor(new java.awt.Color(255, 255, 255));

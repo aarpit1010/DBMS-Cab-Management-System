@@ -66,29 +66,62 @@ public class DriverRickshaw implements Driver {
         String matching = null;
 //        "SELECT TOP 1 ID FROM DriverCarRT ORDER BY ID DESC"; 
         boolean flag = false;
+        int idd=0;
 //        String sqlBill = "Select MAX(BillNumber) AS BillNumber FROM BillT where PID = '" + PID + "'"  ;
         try {
             conn.OpenConnection();
-            String sql = "Select MAX(RideStatus) AS RideStatus FROM DriverRickshawRT where Username = '" + username + "'";
+            String sql = "Select MAX(ID) AS ID FROM DriverRickshawRT where Username = '" + username + "'";
 
             rst = conn.GetData(sql);
             while (rst.next()) {
-                matching = rst.getString("RideStatus");
+                idd= rst.getInt("ID");
 
             }
 
 //           conn.CloseConnection();
             conn.CloseConnection();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e + "\nCouldn't Select Last DriverCarId");
+            JOptionPane.showMessageDialog(null, e + "\nCouldn't Select Last DriverRickshawId");
+            
+        }
+        
+        
+        try {
+            conn.OpenConnection();
+            String sql = "Select RideStatus FROM DriverRickshawRT where ID = " + idd + "";
+            System.out.println(sql);
+            rst = conn.GetData(sql);
+            while (rst.next()) {
+//                idd=rst.getInt("ID");
+                matching = rst.getString("RideStatus");
+//                System.out.println(matching);
+            }
+
+//           conn.CloseConnection();
+            conn.CloseConnection();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e + "\nCouldn't Select Last DriverRickshawId");
+        }
+
+        if (matching == null) {
+            matching = "";
         }
         String j = matching;
-        if (matching.equals("Running") || matching.equals("Built") || matching.equals("AtPickUp")) {
+        if (matching.equals("Running") || matching.equals("Built") || matching.equals(""
+                + "AtPickUp") || matching.equals("")) {
             flag = true;
 
         }
 
         return flag;
+//
+//        String j = matching;
+//        if (matching.equals("Running") || matching.equals("Built") || matching.equals("AtPickUp")) {
+//            flag = true;
+//
+//        }
+//
+//        return flag;
 
     }
 
@@ -205,13 +238,16 @@ public class DriverRickshaw implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into DriverRickshawT (DriverUsername, DriverName,VehicleType,RickshawPlate, RickshawID, RickshawName) values ('"
+            String sql = "Insert into DriverRickshawT (DriverUsername, RickshawID) values ('"
                     + driverUsername + "','"
-                    + driverName + "','"
-                    + type + "','"
-                    + rickshawPlate + "','"
-                    + RickshawId + "','"
-                    + RickshawName + "')";
+//                    + driverName + "','"
+//                    + type + "','"
+//                    + rickshawPlate + "','"
+//                    + RickshawName + "'"
+                    + RickshawId + "'"
+//                    + ",'"
+//                    + RickshawName + "'"
+                    + ")";
 
             int flag = conn.InsertUpdateDelete(sql);
 
@@ -231,11 +267,11 @@ public class DriverRickshaw implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Select DriverName from DriverRickshawT where DriverUsername = '" + username + "'";
+            String sql = "Select Name from Driver where ID = '" + username + "'";
             rst = conn.GetData(sql);
 
             while (rst.next()) {
-                ass = rst.getString("DriverName");
+                ass = rst.getString("Name");
 
             }
 
@@ -251,11 +287,11 @@ public class DriverRickshaw implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Select DriverName from DriverRickshawRT where ID = '" + Id + "'";
+            String sql = "Select Username from DriverRickshawRT where ID = '" + Id + "'";
             rst = conn.GetData(sql);
 
             while (rst.next()) {
-                ass = rst.getString("DriverName");
+                ass = rst.getString("Username");
 
             }
 
@@ -263,7 +299,7 @@ public class DriverRickshaw implements Driver {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e + "\n getRRDriverName  Error");
         }
-        return ass;
+        return getRDriverName(ass);
     }
 
     public int getRRickshawId(String username) {
@@ -287,15 +323,16 @@ public class DriverRickshaw implements Driver {
     }
 
     public String getRRickshawPlate(String username) {
+        int id=getRRickshawId(username);
         String ass = null;
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Select RickshawPlate from DriverRickshawT where DriverUsername = '" + username + "'";
+            String sql = "Select PlateNo from RickshawT where RickshawId = '" + id + "'";
             rst = conn.GetData(sql);
 
             while (rst.next()) {
-                ass = rst.getString("RickshawPlate");
+                ass = rst.getString("PlateNo");
 
             }
 
@@ -307,11 +344,12 @@ public class DriverRickshaw implements Driver {
     }
 
     public String getRRickshawName(String username) {
+        int id=getRRickshawId(username);
         String ass = null;
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Select RickshawName from DriverRickshawT where DriverUsername = '" + username + "'";
+            String sql = "Select RickshawName from RickshawT where RickshawId = '" + id + "'";
             rst = conn.GetData(sql);
 
             while (rst.next()) {
@@ -331,11 +369,11 @@ public class DriverRickshaw implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Select RickshawName from DriverRickshawRT where ID = '" + id + "'";
+            String sql = "Select Username from DriverRickshawRT where ID = '" + id + "'";
             rst = conn.GetData(sql);
 
             while (rst.next()) {
-                ass = rst.getString("RickshawName");
+                ass = rst.getString("Username");
 
             }
 
@@ -343,7 +381,7 @@ public class DriverRickshaw implements Driver {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e + "\n getRRRickshawName Error");
         }
-        return ass;
+        return getRRickshawName(ass);
     }
 
     public void insertAvailablity(String driverUsername, String driverName, String plateNo, int RickshawId, String RickshawName, int avail) {
@@ -351,12 +389,12 @@ public class DriverRickshaw implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into DriverRickshawRT (Username, DriverName,RickshawPlate, RickshawId, RickshawName,DriverAvail) values ('"
+            String sql = "Insert into DriverRickshawRT (Username, RickshawId,DriverAvail) values ('"
                     + driverUsername + "','"
-                    + driverName + "','"
-                    + plateNo + "','"
+//                    + driverName + "','"
+//                    + plateNo + "','"
                     + RickshawId + "','"
-                    + RickshawName + "','"
+//                    + RickshawName + "','"
                     + avail + "')";
 
             int flag = conn.InsertUpdateDelete(sql);
@@ -406,14 +444,16 @@ public class DriverRickshaw implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into RideRealtime (ID,Username, DriverName,VehiclePlate, VehicleId, VehicleName,DriverContactNo) values ('"
+            String sql = "Insert into RideRealtime (ID,Username, DriverName,VehiclePlate, VehicleId, VehicleName) values ('"
                     + "R" + no + "','"
                     + driverUsername + "','"
                     + driverName + "','"
                     + plateNo + "','"
                     + RickshawId + "','"
-                    + RickshawName + "','"
-                    + contact + "')";
+                    + RickshawName 
+//                    "','"
+//                    + contact + ""
+                    + "')";
 
             int flag = conn.InsertUpdateDelete(sql);
 
@@ -530,7 +570,7 @@ public class DriverRickshaw implements Driver {
             try {
                 DbConnection comm = new DbConnection();
                 conn.OpenConnection();
-                String sql = "UPDATE RideRealtime SET PUsername = '" + pusername + "',Fromm ='" + currentLocation + "',Too='" + finalLocation + "',PassengerContactNo='" + contact + "' where ID = 'R" + i + "'";
+                String sql = "UPDATE RideRealtime SET PUsername = '" + pusername + "',Fromm ='" + currentLocation + "',Too='" + finalLocation + "' where ID = 'R" + i + "'";
                 int flagg = comm.InsertUpdateDelete(sql);
 
                 if (flagg == 1) {
@@ -543,38 +583,38 @@ public class DriverRickshaw implements Driver {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
             }
-            try {
-                DbConnection comm = new DbConnection();
-                conn.OpenConnection();
-                String sql = "UPDATE DriverRickshawRT SET PName = '" + pname + "' where ID = '" + i + "'";
-
-                int flagg = comm.InsertUpdateDelete(sql);
-
-                if (flagg == 1) {
-
-                } else {
-                    JOptionPane.showMessageDialog(null, "5: Insertion Failed");
-                }
-                conn.CloseConnection();
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
-            try {
-                DbConnection comm = new DbConnection();
-                conn.OpenConnection();
-                String sql = "UPDATE RideRealtime SET PName = '" + pname + "' where ID = 'R" + i + "'";
-                int flagg = comm.InsertUpdateDelete(sql);
-
-                if (flagg == 1) {
-
-                } else {
-
-                }
-
-                conn.CloseConnection();
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
+//            try {
+//                DbConnection comm = new DbConnection();
+//                conn.OpenConnection();
+//                String sql = "UPDATE DriverRickshawRT SET PName = '" + pname + "' where ID = '" + i + "'";
+//
+//                int flagg = comm.InsertUpdateDelete(sql);
+//
+//                if (flagg == 1) {
+//
+//                } else {
+//                    JOptionPane.showMessageDialog(null, "5: Insertion Failed");
+//                }
+//                conn.CloseConnection();
+//            } catch (Exception e) {
+//                JOptionPane.showMessageDialog(null, e);
+//            }
+//            try {
+//                DbConnection comm = new DbConnection();
+//                conn.OpenConnection();
+//                String sql = "UPDATE RideRealtime SET PName = '" + pname + "' where ID = 'R" + i + "'";
+//                int flagg = comm.InsertUpdateDelete(sql);
+//
+//                if (flagg == 1) {
+//
+//                } else {
+//
+//                }
+//
+//                conn.CloseConnection();
+//            } catch (Exception e) {
+//                JOptionPane.showMessageDialog(null, e);
+//            }
             return i;
         } else {
             return -1;
@@ -587,11 +627,11 @@ public class DriverRickshaw implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Select VehicleType from DriverRickshawT where DriverUsername = '" + username + "'";
+            String sql = "Select Type from Driver where ID = '" + username + "'";
             rst = conn.GetData(sql);
 
             while (rst.next()) {
-                ass = rst.getString("VehicleType");
+                ass = rst.getString("Type");
 
             }
 

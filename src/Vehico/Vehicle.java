@@ -340,9 +340,8 @@ public class Vehicle {
                     try {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
-                        String sql = "Update DriverCarT Set CarPlate = '"
-                                + "" + newPlate + "',CarID = '" + newId + ""
-                                + "',CarName = '" + newName + "' where DriverUsername"
+                        String sql = "Update DriverCarT Set CarID = '" + newId 
+                                + "' where DriverUsername"
                                 + " = '" + dId + "'";
 
                         int flagg = comm.InsertUpdateDelete(sql);
@@ -500,9 +499,7 @@ public class Vehicle {
                     try {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
-                        String sql = "Update DriverRickshawT Set RickshawPlate "
-                                + "= '" + newPlate + "',RickshawID = '" + newId + "',"
-                                + "RickshawName = '" + newName + "' where DriverUsername"
+                        String sql = "Update DriverRickshawT Set RickshawID = '" + newId + "' where DriverUsername"
                                 + " = '" + dId + "'";
 
                         int flagg = comm.InsertUpdateDelete(sql);

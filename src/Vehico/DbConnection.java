@@ -37,10 +37,10 @@ public class DbConnection {
 //            String dir = System.getProperty("user.dir");
 //            
 //String url = "jdbc:ucanaccess://" + dir + "/" + dataSourceName;
-        String url = "jdbc:mysql://remotemysql.com:3306/J65uX6B2Zx";
+        String url = "jdbc:mysql://remotemysql.com:3306/JYjwEkSAKs";
         connection = null;
         try {
-            connection = DriverManager.getConnection(url, "J65uX6B2Zx", "afOGrnCSXU");
+            connection = DriverManager.getConnection(url, "JYjwEkSAKs", "Bu2j4lIWgy");
         } catch (Exception e) {
             System.out.println(e);
         }

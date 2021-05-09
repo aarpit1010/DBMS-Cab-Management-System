@@ -20,6 +20,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class MyRides extends javax.swing.JFrame {
 
@@ -38,11 +39,177 @@ public class MyRides extends javax.swing.JFrame {
         this.username = username;
         this.pname = pname;
         ResultSet rst;
+        ResultSet rst2;
         try {
             Passenger p = new Passenger();
 
             rst = p.PassengerRide(username);
-            myRidesTable.setModel(DbUtils.resultSetToTableModel(rst));
+            int count = 0;
+            DbConnection conn = new DbConnection();
+            while (rst.next()) {
+                String date = rst.getString("Datee");
+                String dname = rst.getString("Username");
+                String type = "";
+
+                try {
+                    conn.OpenConnection();
+                    String select_sql = "Select Type from Driver where ID='" + dname + "'";
+                    rst2 = conn.GetData(select_sql);
+                    while (rst2.next()) {
+
+                        type = rst2.getString("Type");
+//                    System.out.println(name);
+//                checkId=1;
+                    }
+                    conn.CloseConnection();
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                            + "Search again with valid ID");
+
+//                    return;
+                }
+
+                if (type.equals("Car")) {
+                    DriverCar d = new DriverCar();
+                    int id = d.getRCarId(dname);
+//                String type = d.getDriverType(dname);
+                    String driverName = d.getRDriverName(dname);
+                    String Pname = username;
+                    String fromm = rst.getString("Fromm");
+                    String too = rst.getString("Too");
+                    String start = rst.getString("StartTime");
+                    String end = rst.getString("EndTime");
+                    String ridestatus = rst.getString("RideStatus");
+                    String billstatus = rst.getString("BillStatus");
+                    double bill = rst.getDouble("Bill");
+                    int passengers = rst.getInt("NoOfPassengers");
+//
+                    String plate = d.getRCarPlate(dname);
+                    String carName = d.getRCarName(dname);
+                    String contact = "";
+
+                    try {
+                        conn.OpenConnection();
+                        String select_sql = "Select ContactNo from Driver where ID='" + dname + "'";
+                        rst2 = conn.GetData(select_sql);
+                        while (rst2.next()) {
+
+                            contact = rst2.getString("ContactNo");
+//                    System.out.println(name);
+//                checkId=1;
+                        }
+                        conn.CloseConnection();
+
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                                + "Search again with valid ID");
+
+//                    return;
+                    }
+
+                    Object[] row = {date, dname, driverName, contact, plate, carName, fromm, too, start, end, ridestatus, billstatus, bill};
+
+                    DefaultTableModel model = (DefaultTableModel) myRidesTable.getModel();
+
+                    model.addRow(row);
+                    count = count + 1;
+                    System.out.println(dname);
+                } else if (type.equals("Rickshaw")) {
+                    DriverRickshaw d = new DriverRickshaw();
+                    int id = d.getRRickshawId(dname);
+//                String type = d.getDriverType(dname);
+                    String driverName = d.getRDriverName(dname);
+                    String Pname = username;
+                    String fromm = rst.getString("Fromm");
+                    String too = rst.getString("Too");
+                    String start = rst.getString("StartTime");
+                    String end = rst.getString("EndTime");
+                    String ridestatus = rst.getString("RideStatus");
+                    String billstatus = rst.getString("BillStatus");
+                    double bill = rst.getDouble("Bill");
+                    int passengers = rst.getInt("NoOfPassengers");
+//
+                    String plate = d.getRRickshawPlate(dname);
+                    String carName = d.getRRickshawName(dname);
+                    String contact = "";
+
+                    try {
+                        conn.OpenConnection();
+                        String select_sql = "Select ContactNo from Driver where ID='" + dname + "'";
+                        rst2 = conn.GetData(select_sql);
+                        while (rst2.next()) {
+
+                            contact = rst2.getString("ContactNo");
+//                    System.out.println(name);
+//                checkId=1;
+                        }
+                        conn.CloseConnection();
+
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                                + "Search again with valid ID");
+
+//                    return;
+                    }
+
+                    Object[] row = {date, dname, driverName, contact, plate, carName, fromm, too, start, end, ridestatus, billstatus, bill};
+
+                    DefaultTableModel model = (DefaultTableModel) myRidesTable.getModel();
+
+                    model.addRow(row);
+                    count = count + 1;
+                    System.out.println(dname);
+                } else {
+                    DriverBus d = new DriverBus();
+                    int id = d.getRBusId(dname);
+//                String type = d.getDriverType(dname);
+                    String driverName = d.getRDriverName(dname);
+                    String Pname = username;
+                    String fromm = rst.getString("Fromm");
+                    String too = rst.getString("Too");
+                    String start = rst.getString("StartTime");
+                    String end = rst.getString("EndTime");
+                    String ridestatus = rst.getString("RideStatus");
+                    String billstatus = rst.getString("BillStatus");
+                    double bill = rst.getDouble("Bill");
+                    int passengers = rst.getInt("NoOfPassengers");
+//
+                    String plate = d.getRBusPlate(dname);
+                    String carName = d.getRBusName(dname);
+                    String contact = "";
+
+                    try {
+                        conn.OpenConnection();
+                        String select_sql = "Select ContactNo from Driver where ID='" + dname + "'";
+                        rst2 = conn.GetData(select_sql);
+                        while (rst2.next()) {
+
+                            contact = rst2.getString("ContactNo");
+//                    System.out.println(name);
+//                checkId=1;
+                        }
+                        conn.CloseConnection();
+
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                                + "Search again with valid ID");
+
+//                    return;
+                    }
+
+                    Object[] row = {date, dname, driverName, contact, plate, carName, fromm, too, start, end, ridestatus, billstatus, bill};
+
+                    DefaultTableModel model = (DefaultTableModel) myRidesTable.getModel();
+
+                    model.addRow(row);
+                    count = count + 1;
+                    System.out.println(dname);
+                }
+
+            }
+
+//            myRidesTable.setModel(DbUtils.resultSetToTableModel(rst));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Passenger CheckOut Error");
         }
@@ -266,10 +433,7 @@ public class MyRides extends javax.swing.JFrame {
 
         myRidesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Date", "DriverUsername", "DriverName", "Contact", "VehiclePlateNo", "VehicleName", "From", "To", "StartTime", "EndTime", "RideStatus", "BillStatus", "Bill"
@@ -402,7 +566,7 @@ public class MyRides extends javax.swing.JFrame {
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(64,34,107));
+        logOutButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
@@ -419,7 +583,7 @@ public class MyRides extends javax.swing.JFrame {
 
     private void busRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_busRidesButtonMouseExited
         // TODO add your handling code here:
-        busRidesButton.setBackground(new Color(64,34,107));
+        busRidesButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_busRidesButtonMouseExited
 
     private void busRidesButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_busRidesButtonMouseEntered
@@ -436,7 +600,7 @@ public class MyRides extends javax.swing.JFrame {
 
     private void myRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRidesButtonMouseExited
         // TODO add your handling code here:
-        myRidesButton.setBackground(new Color(64,34,107));
+        myRidesButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_myRidesButtonMouseExited
 
     private void myRidesButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRidesButtonMouseEntered
@@ -453,7 +617,7 @@ public class MyRides extends javax.swing.JFrame {
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(64,34,107));
+        removeVehicleButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void removeVehicleButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseEntered
@@ -471,7 +635,7 @@ public class MyRides extends javax.swing.JFrame {
 
     private void bookRideButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookRideButtonMouseExited
         // TODO add your handling code here:
-        bookRideButton.setBackground(new Color(64,34,107));
+        bookRideButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_bookRideButtonMouseExited
 
     private void bookRideButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookRideButtonMouseEntered

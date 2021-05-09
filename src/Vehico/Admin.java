@@ -69,7 +69,8 @@ public class Admin {
 
         try {
             conn.OpenConnection();
-            String sql = "Select Datee,Username,VehiclePlate,PUsername,Fromm,Too,StartTime,EndTime,RideStatus,BillStatus,Bill,NoOfPassengers from RideRealtime ";
+//            String sql = "Select Datee,Username,PUsername,Fromm,Too,StartTime,EndTime,RideStatus,BillStatus,Bill,NoOfPassengers from RideRealtime ";
+            String sql = "Select Datee,Username,PUsername,Fromm,Too,StartTime,EndTime,RideStatus,BillStatus,Bill,NoOfPassengers from RideRealtime ";
             rst1 = conn.GetData(sql);
             do {
                 return rst1;
