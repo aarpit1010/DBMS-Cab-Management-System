@@ -16,6 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
 public class PassengerBusRides extends javax.swing.JFrame {
@@ -34,11 +35,48 @@ public class PassengerBusRides extends javax.swing.JFrame {
         this.pname = pname;
         initComponents();
         ResultSet rst;
+        ResultSet rst2;
         try {
             Passenger p = new Passenger();
 
             rst = p.PassengerBusRide(username);
-            passengerBusRides.setModel(DbUtils.resultSetToTableModel(rst));
+            
+            int count = 0;
+            DbConnection conn = new DbConnection();
+            while (rst.next()) {
+                String date = rst.getString("Datee");
+                String dname = rst.getString("Username");
+                String type = "";
+
+                
+                    DriverBus d = new DriverBus();
+                    int id = d.getRBusId(dname);
+//                String type = d.getDriverType(dname);
+                    String driverName = d.getRDriverName(dname);
+                    String Pname = username;
+                    String fromm = rst.getString("Fromm");
+                    String too = rst.getString("Too");
+                    String start = rst.getString("StartTime");
+                    String end = rst.getString("EndTime");
+                    String ridestatus = rst.getString("RideStatus");
+                    String billstatus = rst.getString("BillStatus");
+                    double bill = rst.getDouble("Bill");
+                    int passengers = rst.getInt("NoOfPassengers");
+//
+                    String plate = d.getRBusPlate(dname);
+                    String carName = d.getRBusName(dname);
+
+                    Object[] row = {dname,driverName,plate,id,fromm,too};
+
+                    DefaultTableModel model = (DefaultTableModel) passengerBusRides.getModel();
+
+                    model.addRow(row);
+                    count = count + 1;
+                    System.out.println(dname);
+                
+            }
+            
+//            passengerBusRides.setModel(DbUtils.resultSetToTableModel(rst));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Passenger CheckOut Error");
         }
@@ -255,13 +293,10 @@ public class PassengerBusRides extends javax.swing.JFrame {
 
         passengerBusRides.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "DriverUsername", "DriverName", "VehiclePlate", "VehicleName", "From", "To"
+                "DriverUsername", "DriverName", "VehiclePlate", "VehicleId", "From", "To"
             }
         ));
         passengerBusRides.setSelectionBackground(new java.awt.Color(51, 0, 102));

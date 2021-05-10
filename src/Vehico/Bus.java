@@ -57,7 +57,7 @@ public class Bus extends Vehicle {
                     + getFromm() + "','"
                     + getToo() + "')";
             int flag = conn.InsertUpdateDelete(sql);
-//            System.out.println(sql + " " + flag);
+            System.out.println(sql + " " + flag);
 
             if (flag == 1) {
                 JOptionPane.showMessageDialog(null, "You Have Successfully Added " + getBusName() + " " + super.getModel());
@@ -428,7 +428,8 @@ public class Bus extends Vehicle {
         try {
 
             conn.OpenConnection();
-            String sql = "Select NoOfPassengers from RideRealtime where iD = '" + RideId + "'";
+            String sql = "Select NoOfPassengers from RideRealtime"
+                    + " where iD = 'B" + RideId + "'";
             rst = conn.GetData(sql);
 
             while (rst.next()) {
@@ -443,7 +444,7 @@ public class Bus extends Vehicle {
         noOfPassengers = noOfPassengers + 1;
         try {
             conn.OpenConnection();
-            String sql = "UPDATE RideRealtime SET NoOfPassengers = '" + noOfPassengers + "' where iD = '" + RideId + "'";
+            String sql = "UPDATE RideRealtime SET NoOfPassengers = '" + noOfPassengers + "' where iD = 'B" + RideId + "'";
 
             flag = conn.InsertUpdateDelete(sql);
             if (flag == 1) {
@@ -455,9 +456,23 @@ public class Bus extends Vehicle {
             JOptionPane.showMessageDialog(null, "Update Query Failed");
         }
         try {
+            conn.OpenConnection();
+            String sql = "UPDATE DriverBusRT SET NoOfPassengers = '" + noOfPassengers + "' where ID = '" + RideId + "'";
+
+            flag = conn.InsertUpdateDelete(sql);
+            if (flag == 1) {
+//                JOptionPane.showMessageDialog(null, "NoOfPassengers Updated  ");
+            } else {
+                JOptionPane.showMessageDialog(null, "Bus's Availablity Couldn't Updatedr ");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Update Query Failed");
+        }
+        try {
 
             conn.OpenConnection();
-            String sql = "Insert into PassengerBusRides (Username,VehicleId,PUsername,Fromm,Too) values (' "
+            String sql = "Insert into PassengerBusRides (iD,Username,VehicleId,PUsername,Fromm,Too) values ('"
+                    + RideId + "','"
                     + dusername + "','"
                     //                    + dname + "','"
                     //                    + plateNo + "','"
@@ -468,6 +483,7 @@ public class Bus extends Vehicle {
                     + fromm + "','"
                     + too + "')";
             flag = conn.InsertUpdateDelete(sql);
+            System.out.println(sql);
 
             if (flag == 1) {
 

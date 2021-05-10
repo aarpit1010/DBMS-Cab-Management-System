@@ -439,7 +439,7 @@ public class BookBus extends javax.swing.JFrame {
 
     private void bookRideButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookRideButtonMouseExited
         // TODO add your handling code here:
-        bookRideButton.setBackground(new Color(51, 0, 102));
+        bookRideButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_bookRideButtonMouseExited
 
     private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
@@ -457,7 +457,7 @@ public class BookBus extends javax.swing.JFrame {
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(51, 0, 102));
+        removeVehicleButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void myRidesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRidesButtonMouseClicked
@@ -474,7 +474,7 @@ public class BookBus extends javax.swing.JFrame {
 
     private void myRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRidesButtonMouseExited
         // TODO add your handling code here:
-        myRidesButton.setBackground(new Color(51, 0, 102));
+        myRidesButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_myRidesButtonMouseExited
 
     private void busRidesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_busRidesButtonMouseClicked
@@ -491,7 +491,7 @@ public class BookBus extends javax.swing.JFrame {
 
     private void busRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_busRidesButtonMouseExited
         // TODO add your handling code here:
-        busRidesButton.setBackground(new Color(51, 0, 102));
+        busRidesButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_busRidesButtonMouseExited
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
@@ -508,7 +508,7 @@ public class BookBus extends javax.swing.JFrame {
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(51, 0, 102));
+        logOutButton.setBackground(new Color(64,34,107));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
@@ -521,6 +521,7 @@ public class BookBus extends javax.swing.JFrame {
         Bus b = new Bus();
         int rideid = Integer.parseInt(enterRide.getText());
         DriverBus db = new DriverBus();
+//        int iidd = db.assignDriver(username, name, currentLocation, finalLocation);
         String driverUsername = db.getBusDriverUsername(rideid);
         String driverName = db.getRDriverName(driverUsername);
         String plateNo = b.getDPlateNo(driverUsername);

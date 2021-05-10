@@ -1190,6 +1190,7 @@ public class AddVehicle extends javax.swing.JFrame {
 //            RDate = ((JTextField) registerRDate.getDateEditor().getUiComponent()).getText();
 //            EDate = ((JTextField) registerEDate.getDateEditor().getUiComponent()).getText();
                 registerCarName.setText(carName);
+                finishButton.setVisible(false);
 
 //                registerModel.setText("");
 //                registerVersion.setText("");
@@ -1222,6 +1223,7 @@ public class AddVehicle extends javax.swing.JFrame {
         fromCombo.setVisible(false);
         toCombo.setVisible(false);
         doneButton.setVisible(false);
+        finishButton.setVisible(true);
     }//GEN-LAST:event_doneButtonMouseClicked
 
     private void jPanel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseEntered

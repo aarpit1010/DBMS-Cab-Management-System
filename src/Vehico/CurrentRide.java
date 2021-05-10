@@ -799,7 +799,7 @@ public class CurrentRide extends javax.swing.JFrame {
 
         pkrLabel.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         pkrLabel.setForeground(new java.awt.Color(102, 102, 102));
-        pkrLabel.setText("(In PKR)");
+        pkrLabel.setText("(In INR)");
         jPanel1.add(pkrLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, -1, -1));
 
         confirmButton.setBackground(new java.awt.Color(255, 255, 255));

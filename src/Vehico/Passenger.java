@@ -109,7 +109,7 @@ public class Passenger {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into `PassengerT` (PID, PPass, PName,PFName,PAge, PGender, PSec,CNIC,ContactNo,DOB) values ('"
+            String sql = "Insert into PassengerT (PID, PPass, PName,PFName,PAge, PGender, PSec,aadhar,ContactNo,DOB) values ('"
                     + getUser() + "','"
                     + getPass() + "','"
                     + getPname() + "','"
@@ -220,7 +220,7 @@ public class Passenger {
 
         try {
             conn.OpenConnection();
-            String sql = "Select Username,DriverName,VehiclePlate,VehicleName,Fromm,Too from PassengerBusRides where PUsername = '" + pu + "'";
+            String sql = "Select Username,VehicleId,Fromm,Too,Datee,RideStatus,StartTime,EndTime,BillStatus,Bill from PassengerBusRides where PUsername = '" + pu + "'";
             rst1 = conn.GetData(sql);
             do {
                 return rst1;
