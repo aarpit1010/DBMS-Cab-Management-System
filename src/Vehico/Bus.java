@@ -456,14 +456,14 @@ public class Bus extends Vehicle {
         try {
 
             conn.OpenConnection();
-            String sql = "Insert into PassengerBusRides (Username,DriverName,VehiclePlate,VehicleId,VehicleName,PUsername,PName,Fromm,Too) values (' "
+            String sql = "Insert into PassengerBusRides (Username,VehicleId,PUsername,Fromm,Too) values (' "
                     + dusername + "','"
-                    + dname + "','"
-                    + plateNo + "','"
+//                    + dname + "','"
+//                    + plateNo + "','"
                     + busId + "','"
-                    + busName + "','"
+//                    + busName + "','"
                     + pusername + "','"
-                    + pname + "','"
+//                    + pname + "','"
                     + fromm + "','"
                     + too + "')";
             flag = conn.InsertUpdateDelete(sql);

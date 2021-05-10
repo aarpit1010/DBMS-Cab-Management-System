@@ -410,16 +410,16 @@ public class DriverBus implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into RideRealtime (ID,Username, DriverName,VehiclePlate, VehicleId, VehicleName,Fromm,Too,DriverContactNo) values ('"
+            String sql = "Insert into RideRealtime (ID,Username, VehicleId, Fromm,Too) values ('"
                     + "B" + no + "','"
                     + driverUsername + "','"
-                    + driverName + "','"
-                    + plateNo + "','"
+                    //                    + driverName + "','"
+                    //                    + plateNo + "','"
                     + BusId + "','"
-                    + BusName + "','"
+                    //                    + BusName + "','"
                     + fromm + "','"
-                    + too + "','"
-                    + contact + "')";
+                    //                    + too + "','"
+                    + too + "')";
 
             int flag = conn.InsertUpdateDelete(sql);
 
@@ -534,7 +534,7 @@ public class DriverBus implements Driver {
         try {
             DbConnection comm = new DbConnection();
             conn.OpenConnection();
-            String sql = "UPDATE RideRealtime SET PUsername = '" + pusername + "',Fromm ='" + currentLocation + "',Too='" + finalLocation + "',PassengerContactNo='" + contact + "' where ID = B'" + i + "'";
+            String sql = "UPDATE RideRealtime SET PUsername = '" + pusername + "',Fromm ='" + currentLocation + "',Too='" + finalLocation + "' where ID = B'" + i + "'";
             int flagg = comm.InsertUpdateDelete(sql);
 
             if (flagg == 1) {
@@ -563,22 +563,22 @@ public class DriverBus implements Driver {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-        try {
-            DbConnection comm = new DbConnection();
-            conn.OpenConnection();
-            String sql = "UPDATE RideRealtime SET PName = '" + pname + "' where ID = 'B" + i + "'";
-            int flagg = comm.InsertUpdateDelete(sql);
-
-            if (flagg == 1) {
-
-            } else {
-
-            }
-
-            conn.CloseConnection();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
+//        try {
+//            DbConnection comm = new DbConnection();
+//            conn.OpenConnection();
+//            String sql = "UPDATE RideRealtime SET PName = '" + pname + "' where ID = 'B" + i + "'";
+//            int flagg = comm.InsertUpdateDelete(sql);
+//
+//            if (flagg == 1) {
+//
+//            } else {
+//
+//            }
+//
+//            conn.CloseConnection();
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, e);
+//        }
         return i;
     }
 

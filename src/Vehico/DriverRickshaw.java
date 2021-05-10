@@ -66,7 +66,7 @@ public class DriverRickshaw implements Driver {
         String matching = null;
 //        "SELECT TOP 1 ID FROM DriverCarRT ORDER BY ID DESC"; 
         boolean flag = false;
-        int idd=0;
+        int idd = 0;
 //        String sqlBill = "Select MAX(BillNumber) AS BillNumber FROM BillT where PID = '" + PID + "'"  ;
         try {
             conn.OpenConnection();
@@ -74,7 +74,7 @@ public class DriverRickshaw implements Driver {
 
             rst = conn.GetData(sql);
             while (rst.next()) {
-                idd= rst.getInt("ID");
+                idd = rst.getInt("ID");
 
             }
 
@@ -82,10 +82,9 @@ public class DriverRickshaw implements Driver {
             conn.CloseConnection();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e + "\nCouldn't Select Last DriverRickshawId");
-            
+
         }
-        
-        
+
         try {
             conn.OpenConnection();
             String sql = "Select RideStatus FROM DriverRickshawRT where ID = " + idd + "";
@@ -240,13 +239,13 @@ public class DriverRickshaw implements Driver {
             conn.OpenConnection();
             String sql = "Insert into DriverRickshawT (DriverUsername, RickshawID) values ('"
                     + driverUsername + "','"
-//                    + driverName + "','"
-//                    + type + "','"
-//                    + rickshawPlate + "','"
-//                    + RickshawName + "'"
+                    //                    + driverName + "','"
+                    //                    + type + "','"
+                    //                    + rickshawPlate + "','"
+                    //                    + RickshawName + "'"
                     + RickshawId + "'"
-//                    + ",'"
-//                    + RickshawName + "'"
+                    //                    + ",'"
+                    //                    + RickshawName + "'"
                     + ")";
 
             int flag = conn.InsertUpdateDelete(sql);
@@ -323,7 +322,7 @@ public class DriverRickshaw implements Driver {
     }
 
     public String getRRickshawPlate(String username) {
-        int id=getRRickshawId(username);
+        int id = getRRickshawId(username);
         String ass = null;
         try {
             DbConnection conn = new DbConnection();
@@ -344,7 +343,7 @@ public class DriverRickshaw implements Driver {
     }
 
     public String getRRickshawName(String username) {
-        int id=getRRickshawId(username);
+        int id = getRRickshawId(username);
         String ass = null;
         try {
             DbConnection conn = new DbConnection();
@@ -391,10 +390,10 @@ public class DriverRickshaw implements Driver {
             conn.OpenConnection();
             String sql = "Insert into DriverRickshawRT (Username, RickshawId,DriverAvail) values ('"
                     + driverUsername + "','"
-//                    + driverName + "','"
-//                    + plateNo + "','"
+                    //                    + driverName + "','"
+                    //                    + plateNo + "','"
                     + RickshawId + "','"
-//                    + RickshawName + "','"
+                    //                    + RickshawName + "','"
                     + avail + "')";
 
             int flag = conn.InsertUpdateDelete(sql);
@@ -444,15 +443,15 @@ public class DriverRickshaw implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into RideRealtime (ID,Username, DriverName,VehiclePlate, VehicleId, VehicleName) values ('"
+            String sql = "Insert into RideRealtime (ID,Username, VehicleId) values ('"
                     + "R" + no + "','"
                     + driverUsername + "','"
-                    + driverName + "','"
-                    + plateNo + "','"
-                    + RickshawId + "','"
-                    + RickshawName 
-//                    "','"
-//                    + contact + ""
+                    //                    + driverName + "','"
+                    //                    + plateNo + "','"
+                    //                    + RickshawId + "','"
+                    + RickshawId
+                    //                    "','"
+                    //                    + contact + ""
                     + "')";
 
             int flag = conn.InsertUpdateDelete(sql);

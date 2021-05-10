@@ -445,7 +445,7 @@ public class Repair extends javax.swing.JFrame {
 
     private void checkRidesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkRidesButtonMouseExited
         // TODO add your handling code here:
-        checkRidesButton.setBackground(new Color(64,34,107));
+        checkRidesButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_checkRidesButtonMouseExited
 
     private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
@@ -463,7 +463,7 @@ public class Repair extends javax.swing.JFrame {
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(64,34,107));
+        removeVehicleButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void currentRideButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseClicked
@@ -480,7 +480,7 @@ public class Repair extends javax.swing.JFrame {
 
     private void currentRideButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currentRideButtonMouseExited
         // TODO add your handling code here:
-        currentRideButton.setBackground(new Color(64,34,107));
+        currentRideButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_currentRideButtonMouseExited
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
@@ -497,7 +497,7 @@ public class Repair extends javax.swing.JFrame {
 
     private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(64,34,107));
+        settingsButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_settingsButtonMouseExited
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
@@ -514,7 +514,7 @@ public class Repair extends javax.swing.JFrame {
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(64,34,107));
+        logOutButton.setBackground(new Color(64, 34, 107));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked

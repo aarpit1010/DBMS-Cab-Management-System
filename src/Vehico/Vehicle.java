@@ -340,7 +340,7 @@ public class Vehicle {
                     try {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
-                        String sql = "Update DriverCarT Set CarID = '" + newId 
+                        String sql = "Update DriverCarT Set CarID = '" + newId
                                 + "' where DriverUsername"
                                 + " = '" + dId + "'";
 

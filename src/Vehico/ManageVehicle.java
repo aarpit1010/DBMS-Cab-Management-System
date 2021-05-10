@@ -43,8 +43,7 @@ public class ManageVehicle extends javax.swing.JFrame {
             DriverCar p = new DriverCar();
             rst = p.getCarData();
             CarList.setModel(DbUtils.resultSetToTableModel(rst));
-            
-            
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Drivers List Error");
         }

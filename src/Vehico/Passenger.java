@@ -201,9 +201,9 @@ public class Passenger {
         try {
             conn.OpenConnection();
 //            String sql = "Select Datee,Username,DriverName,DriverContactNo,VehiclePlate,VehicleName,Fromm,Too,StartTime,EndTime,RideStatus,BillStatus,Bill from RideRealtime where PUsername = '" + pu + "'";
-String sql = "Select Datee,Username,PUsername,Fromm,Too,StartTime,EndTime,RideStatus,BillStatus,Bill,NoOfPassengers from RideRealtime where PUsername = '" + pu + "'";
-                        
-rst1 = conn.GetData(sql);
+            String sql = "Select Datee,Username,PUsername,Fromm,Too,StartTime,EndTime,RideStatus,BillStatus,Bill,NoOfPassengers from RideRealtime where PUsername = '" + pu + "'";
+
+            rst1 = conn.GetData(sql);
             do {
                 return rst1;
             } while (rst1.next());

@@ -746,69 +746,67 @@ public class DriverCar implements Driver {
             JOptionPane.showMessageDialog(null, "Invalid Driver Username\nSearch again with valid username");
             return;
         }
-        
+
         System.out.println(checkType);
         if (checkUsername == 1) {
-            String vehicle="";
-            if(checkType.equals("Car")){
+            String vehicle = "";
+            if (checkType.equals("Car")) {
                 try {
-            conn.OpenConnection();
-            String select_sql = "Select CarID from DriverCarT where DriverUsername='" + username + "'";
-            System.out.println(select_sql);
-            rst = conn.GetData(select_sql);
-            while (rst.next()) {
-                vehicle = rst.getString("CarID");
+                    conn.OpenConnection();
+                    String select_sql = "Select CarID from DriverCarT where DriverUsername='" + username + "'";
+                    System.out.println(select_sql);
+                    rst = conn.GetData(select_sql);
+                    while (rst.next()) {
+                        vehicle = rst.getString("CarID");
 //                checkType = rst.getString("Type");
 //           matching=rst.getString("ID");
-                System.out.println("HELLP");
+                        System.out.println("HELLP");
 //                checkUsername = 1;
-            }
-            conn.CloseConnection();
+                    }
+                    conn.CloseConnection();
 
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Invalid Driver Username\nSearch again with valid username");
-            return;
-        }
-            }
-            else if(checkType.equals("Rickshaw")){
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Invalid Driver Username\nSearch again with valid username");
+                    return;
+                }
+            } else if (checkType.equals("Rickshaw")) {
                 try {
-            conn.OpenConnection();
-            String select_sql = "Select RickshawID from DriverRickshawT where DriverUsername='" + username + "'";
-            System.out.println(select_sql);
-            rst = conn.GetData(select_sql);
-            while (rst.next()) {
-                vehicle = rst.getString("RickshawID");
+                    conn.OpenConnection();
+                    String select_sql = "Select RickshawID from DriverRickshawT where DriverUsername='" + username + "'";
+                    System.out.println(select_sql);
+                    rst = conn.GetData(select_sql);
+                    while (rst.next()) {
+                        vehicle = rst.getString("RickshawID");
 //                checkType = rst.getString("Type");
 //           matching=rst.getString("ID");
-                System.out.println("HELLP");
+                        System.out.println("HELLP");
 //                checkUsername = 1;
-            }
-            conn.CloseConnection();
+                    }
+                    conn.CloseConnection();
 
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Invalid Driver Username\nSearch again with valid username");
-            return;
-        }
-            }
-            else{
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Invalid Driver Username\nSearch again with valid username");
+                    return;
+                }
+            } else {
                 try {
-            conn.OpenConnection();
-            String select_sql = "Select BusID from DriverBusT where DriverUsername='" + username + "'";
-            System.out.println(select_sql);
-            rst = conn.GetData(select_sql);
-            while (rst.next()) {
-                vehicle = rst.getString("BusID");
+                    conn.OpenConnection();
+                    String select_sql = "Select BusID from DriverBusT where DriverUsername='" + username + "'";
+                    System.out.println(select_sql);
+                    rst = conn.GetData(select_sql);
+                    while (rst.next()) {
+                        vehicle = rst.getString("BusID");
 //                checkType = rst.getString("Type");
 //           matching=rst.getString("ID");
-                System.out.println("HELLP");
+                        System.out.println("HELLP");
 //                checkUsername = 1;
-            }
-            conn.CloseConnection();
+                    }
+                    conn.CloseConnection();
 
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Invalid Driver Username\nSearch again with valid username");
-            return;
-        }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Invalid Driver Username\nSearch again with valid username");
+                    return;
+                }
             }
             // Extracting all Driver personal info from Driver Table
 
@@ -934,9 +932,7 @@ public class DriverCar implements Driver {
                 }
 
                 JOptionPane.showMessageDialog(null, "Driver Banned");
-            } 
-            
-            else if (checkType.equals("Rickshaw")) {
+            } else if (checkType.equals("Rickshaw")) {
                 try {
                     //        DbConnection conn = new DbConnection();
                     conn.OpenConnection();

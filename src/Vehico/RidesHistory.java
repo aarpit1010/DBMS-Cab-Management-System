@@ -45,13 +45,13 @@ public class RidesHistory extends javax.swing.JFrame {
         try {
             Admin p = new Admin();
             rst = p.RideRealTimeCombined();
-            int count =0;
+            int count = 0;
             DbConnection conn = new DbConnection();
 
-            while(rst.next()){
-                String date=rst.getString("Datee");
-                String dname=rst.getString("Username");
-                
+            while (rst.next()) {
+                String date = rst.getString("Datee");
+                String dname = rst.getString("Username");
+
                 String type = "";
 
                 try {
@@ -72,85 +72,73 @@ public class RidesHistory extends javax.swing.JFrame {
 
 //                    return;
                 }
-                
-                if(type.equals("Car")){
-                    DriverCar d= new DriverCar();
-                int id=d.getRCarId(dname);
-                String pname=rst.getString("PUsername");
-                String fromm=rst.getString("Fromm");
-                String too=rst.getString("Too");
-                String start=rst.getString("StartTime");
-                String end=rst.getString("EndTime");
-                String ridestatus=rst.getString("RideStatus");
-                String billstatus=rst.getString("BillStatus");
-                double bill=rst.getDouble("Bill");
-                int passengers=rst.getInt("NoOfPassengers");
-                
-                
-                Object[] row = {date,dname,id,type,pname,fromm,too,start,end,ridestatus,billstatus,bill,passengers};
-                
 
-                DefaultTableModel model = (DefaultTableModel) RidesHistoryTable.getModel();
+                if (type.equals("Car")) {
+                    DriverCar d = new DriverCar();
+                    int id = d.getRCarId(dname);
+                    String pname = rst.getString("PUsername");
+                    String fromm = rst.getString("Fromm");
+                    String too = rst.getString("Too");
+                    String start = rst.getString("StartTime");
+                    String end = rst.getString("EndTime");
+                    String ridestatus = rst.getString("RideStatus");
+                    String billstatus = rst.getString("BillStatus");
+                    double bill = rst.getDouble("Bill");
+                    int passengers = rst.getInt("NoOfPassengers");
 
-                model.addRow(row);
-                count=count+1;
-                System.out.println(count);
+                    Object[] row = {date, dname, id, type, pname, fromm, too, start, end, ridestatus, billstatus, bill, passengers};
+
+                    DefaultTableModel model = (DefaultTableModel) RidesHistoryTable.getModel();
+
+                    model.addRow(row);
+                    count = count + 1;
+                    System.out.println(count);
+                } else if (type.equals("Rickshaw")) {
+                    DriverRickshaw d = new DriverRickshaw();
+                    int id = d.getRRickshawId(dname);
+                    String pname = rst.getString("PUsername");
+                    String fromm = rst.getString("Fromm");
+                    String too = rst.getString("Too");
+                    String start = rst.getString("StartTime");
+                    String end = rst.getString("EndTime");
+                    String ridestatus = rst.getString("RideStatus");
+                    String billstatus = rst.getString("BillStatus");
+                    double bill = rst.getDouble("Bill");
+                    int passengers = rst.getInt("NoOfPassengers");
+
+                    Object[] row = {date, dname, id, type, pname, fromm, too, start, end, ridestatus, billstatus, bill, passengers};
+
+                    DefaultTableModel model = (DefaultTableModel) RidesHistoryTable.getModel();
+
+                    model.addRow(row);
+                    count = count + 1;
+                    System.out.println(count);
+                } else {
+                    DriverBus d = new DriverBus();
+                    int id = d.getRBusId(dname);
+                    String pname = rst.getString("PUsername");
+                    String fromm = rst.getString("Fromm");
+                    String too = rst.getString("Too");
+                    String start = rst.getString("StartTime");
+                    String end = rst.getString("EndTime");
+                    String ridestatus = rst.getString("RideStatus");
+                    String billstatus = rst.getString("BillStatus");
+                    double bill = rst.getDouble("Bill");
+                    int passengers = rst.getInt("NoOfPassengers");
+
+                    Object[] row = {date, dname, id, type, pname, fromm, too, start, end, ridestatus, billstatus, bill, passengers};
+
+                    DefaultTableModel model = (DefaultTableModel) RidesHistoryTable.getModel();
+
+                    model.addRow(row);
+                    count = count + 1;
+                    System.out.println(count);
                 }
-                else if(type.equals("Rickshaw")){
-                    DriverRickshaw d= new DriverRickshaw();
-                int id=d.getRRickshawId(dname);
-                String pname=rst.getString("PUsername");
-                String fromm=rst.getString("Fromm");
-                String too=rst.getString("Too");
-                String start=rst.getString("StartTime");
-                String end=rst.getString("EndTime");
-                String ridestatus=rst.getString("RideStatus");
-                String billstatus=rst.getString("BillStatus");
-                double bill=rst.getDouble("Bill");
-                int passengers=rst.getInt("NoOfPassengers");
-                
-                
-                Object[] row = {date,dname,id,type,pname,fromm,too,start,end,ridestatus,billstatus,bill,passengers};
-                
 
-                DefaultTableModel model = (DefaultTableModel) RidesHistoryTable.getModel();
-
-                model.addRow(row);
-                count=count+1;
-                System.out.println(count);
-                }
-                else{
-                    DriverBus d= new DriverBus();
-                int id=d.getRBusId(dname);
-                String pname=rst.getString("PUsername");
-                String fromm=rst.getString("Fromm");
-                String too=rst.getString("Too");
-                String start=rst.getString("StartTime");
-                String end=rst.getString("EndTime");
-                String ridestatus=rst.getString("RideStatus");
-                String billstatus=rst.getString("BillStatus");
-                double bill=rst.getDouble("Bill");
-                int passengers=rst.getInt("NoOfPassengers");
-                
-                
-                Object[] row = {date,dname,id,type,pname,fromm,too,start,end,ridestatus,billstatus,bill,passengers};
-                
-
-                DefaultTableModel model = (DefaultTableModel) RidesHistoryTable.getModel();
-
-                model.addRow(row);
-                count=count+1;
-                System.out.println(count);
-                }
-                    
-                
-                
-                
-                
             }
 //            System.out.println(count);
 //            RidesHistoryTable.setModel(DbUtils.resultSetToTableModel(rst));
-            
+
 //            int i=RidesHistoryTable.getRowCount();
 //            for(int j=0;j<i;j++){
 //                String username=(String)RidesHistoryTable.getModel().getValueAt(i, 1);
@@ -628,7 +616,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void addVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButtonMouseExited
         // TODO add your handling code here:
-        addVehicleButton.setBackground(new Color(25,25,112));
+        addVehicleButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_addVehicleButtonMouseExited
 
     private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
@@ -646,7 +634,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
         // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(25,25,112));
+        removeVehicleButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_removeVehicleButtonMouseExited
 
     private void banDriverButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseClicked
@@ -664,7 +652,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void banDriverButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseExited
         // TODO add your handling code here:
-        banDriverButton.setBackground(new Color(25,25,112));
+        banDriverButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_banDriverButtonMouseExited
 
     private void ridesHistoryButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseClicked
@@ -679,7 +667,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void ridesHistoryButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseExited
         // TODO add your handling code here:
-        ridesHistoryButton.setBackground(new Color(25,25,112));
+        ridesHistoryButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_ridesHistoryButtonMouseExited
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
@@ -696,7 +684,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
         // TODO add your handling code here:
-        settingsButton.setBackground(new Color(25,25,112));
+        settingsButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_settingsButtonMouseExited
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
@@ -713,7 +701,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         // TODO add your handling code here:
-        logOutButton.setBackground(new Color(25,25,112));
+        logOutButton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
@@ -774,7 +762,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
     private void rephisbuttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseExited
         // TODO add your handling code here:
-        rephisbutton.setBackground(new Color(25,25,112));
+        rephisbutton.setBackground(new Color(25, 25, 112));
     }//GEN-LAST:event_rephisbuttonMouseExited
 
     private void manageVehicleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVehicleMouseClicked

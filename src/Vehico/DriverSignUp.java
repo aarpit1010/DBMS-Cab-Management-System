@@ -455,7 +455,7 @@ public class DriverSignUp extends javax.swing.JFrame {
     }
     private void checkCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkCarActionPerformed
         // TODO add your handling code here:
-        if(checkCar.isSelected()==true){
+        if (checkCar.isSelected() == true) {
             checkBus.setSelected(false);
             checkRickshaw.setSelected(false);
         }
@@ -463,7 +463,7 @@ public class DriverSignUp extends javax.swing.JFrame {
 
     private void checkRickshawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkRickshawActionPerformed
         // TODO add your handling code here:
-        if(checkRickshaw.isSelected()==true){
+        if (checkRickshaw.isSelected() == true) {
             checkBus.setSelected(false);
             checkCar.setSelected(false);
         }
@@ -471,7 +471,7 @@ public class DriverSignUp extends javax.swing.JFrame {
 
     private void checkBusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBusActionPerformed
         // TODO add your handling code here:
-        if(checkBus.isSelected()==true){
+        if (checkBus.isSelected() == true) {
             checkCar.setSelected(false);
             checkRickshaw.setSelected(false);
         }
