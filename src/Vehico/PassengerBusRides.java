@@ -44,29 +44,50 @@ public class PassengerBusRides extends javax.swing.JFrame {
             int count = 0;
             DbConnection conn = new DbConnection();
             while (rst.next()) {
-                String date = rst.getString("Datee");
+                
                 String dname = rst.getString("Username");
-                String type = "";
+                int id = rst.getInt("VehicleId");
+                String Pname = username;
+                
+                String ride=rst.getString("iD");
+//                String rideString=ride.substring(1);
+                int rideID=Integer.parseInt(ride);
+               
+                String date="";
+                try {
+                    conn.OpenConnection();
+                    String select_sql = "Select Datee from RideRealtime where iD='B" + rideID + "'";
+                    rst2 = conn.GetData(select_sql);
+                    while (rst2.next()) {
+
+                        date = rst2.getString("Datee");
+//                    System.out.println(name);
+//                checkId=1;
+                    }
+                    conn.CloseConnection();
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                            + "Search again with valid ID");
+
+//                    return;
+                }
+                
+                String type = "Bus";
 
                 
                     DriverBus d = new DriverBus();
-                    int id = d.getRBusId(dname);
-//                String type = d.getDriverType(dname);
                     String driverName = d.getRDriverName(dname);
-                    String Pname = username;
-                    String fromm = rst.getString("Fromm");
-                    String too = rst.getString("Too");
-                    String start = rst.getString("StartTime");
-                    String end = rst.getString("EndTime");
-                    String ridestatus = rst.getString("RideStatus");
-                    String billstatus = rst.getString("BillStatus");
-                    double bill = rst.getDouble("Bill");
-                    int passengers = rst.getInt("NoOfPassengers");
-//
                     String plate = d.getRBusPlate(dname);
-                    String carName = d.getRBusName(dname);
+                    
+                    Bus dr=new Bus();
+                    String fromm = dr.getRFromm(id);
+                    String too = dr.getRToo(id);
+                    
+//
+                    
 
-                    Object[] row = {dname,driverName,plate,id,fromm,too};
+                    Object[] row = {date,dname,driverName,plate,id,fromm,too};
 
                     DefaultTableModel model = (DefaultTableModel) passengerBusRides.getModel();
 
@@ -296,7 +317,7 @@ public class PassengerBusRides extends javax.swing.JFrame {
 
             },
             new String [] {
-                "DriverUsername", "DriverName", "VehiclePlate", "VehicleId", "From", "To"
+                "Date", "DriverUsername", "DriverName", "VehiclePlate", "VehicleId", "From", "To"
             }
         ));
         passengerBusRides.setSelectionBackground(new java.awt.Color(51, 0, 102));

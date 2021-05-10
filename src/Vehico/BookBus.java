@@ -530,7 +530,14 @@ public class BookBus extends javax.swing.JFrame {
         String fromm = b.getRFromm(busId);
         String too = b.getRToo(busId);
 
-        b.BookBus(pusername, pname, rideid, driverUsername, driverName, plateNo, busId, busName, fromm, too);
+        int check=b.BookBus(pusername, pname, rideid, driverUsername, driverName, plateNo, busId, busName, fromm, too);
+        if(check==-1){
+            JOptionPane.showMessageDialog(null, "Incorrect Ride ID\nRetry with Correct ID");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Ride Booked Succesfully!");
+        }
+        
     }//GEN-LAST:event_submitButtonMouseClicked
 
     private void submitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitButtonMouseEntered

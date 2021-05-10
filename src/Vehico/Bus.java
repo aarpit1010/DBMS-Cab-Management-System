@@ -265,15 +265,16 @@ public class Bus extends Vehicle {
     }
 
     public String getDPlateNo(String dusername) {
+        int id=getDCarId(dusername);
         String ass = null;
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Select BusPlate from DriverBusT where DriverUsername = '" + dusername + "'";
+            String sql = "Select PlateNo from BusT where BusId = '" + dusername + "'";
             rst = conn.GetData(sql);
 
             while (rst.next()) {
-                ass = rst.getString("BusPlate");
+                ass = rst.getString("PlateNo");
 
             }
 
@@ -421,39 +422,46 @@ public class Bus extends Vehicle {
 
     }
 
-    public void BookBus(String pusername, String pname, int RideId, String dusername, String dname, String plateNo, int busId, String busName, String fromm, String too) {
+    public int BookBus(String pusername, String pname, int RideId, String dusername, String dname, String plateNo, int busId, String busName, String fromm, String too) {
         int noOfPassengers = 0;
+        int count=0;
+//        int check=0;
         DbConnection conn = new DbConnection();
         int flag;
         try {
-
+            
             conn.OpenConnection();
-            String sql = "Select NoOfPassengers from RideRealtime"
-                    + " where iD = 'B" + RideId + "'";
+            String sql = "Select iD from PassengerBusRides"
+                    + " where iD = '" + RideId + "'";
             rst = conn.GetData(sql);
-
+            
             while (rst.next()) {
-                noOfPassengers = rst.getInt("NoOfPassengers");
-
+//                noOfPassengers = rst.getInt("NoOfPassengers");
+                count++;
+//                check=1;
             }
 
             conn.CloseConnection();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e + "\nCheck Bus ID Error");
+//            JOptionPane.showMessageDialog(null, e + "\nCheck Bus ID Error");
+            return -1;
         }
-        noOfPassengers = noOfPassengers + 1;
+//        if(noOfPassengers==1)
+        noOfPassengers = count + 1;
         try {
             conn.OpenConnection();
             String sql = "UPDATE RideRealtime SET NoOfPassengers = '" + noOfPassengers + "' where iD = 'B" + RideId + "'";
 
             flag = conn.InsertUpdateDelete(sql);
             if (flag == 1) {
-                JOptionPane.showMessageDialog(null, "NoOfPassengers Updated  ");
+//                JOptionPane.showMessageDialog(null, "NoOfPassengers Updated  ");
             } else {
-                JOptionPane.showMessageDialog(null, "Bus's Availablity Couldn't Updatedr ");
+//                JOptionPane.showMessageDialog(null, "Bus's Availablity Couldn't Updatedr ");
+                return -1;
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Update Query Failed");
+//            JOptionPane.showMessageDialog(null, "Update Query Failed");
+            return -1;
         }
         try {
             conn.OpenConnection();
@@ -463,37 +471,44 @@ public class Bus extends Vehicle {
             if (flag == 1) {
 //                JOptionPane.showMessageDialog(null, "NoOfPassengers Updated  ");
             } else {
-                JOptionPane.showMessageDialog(null, "Bus's Availablity Couldn't Updatedr ");
+//                JOptionPane.showMessageDialog(null, "Bus's Availablity Couldn't Updatedr ");
+                return -1;
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Update Query Failed");
+//            JOptionPane.showMessageDialog(null, "Update Query Failed");
+            return -1;
         }
         try {
 
             conn.OpenConnection();
-            String sql = "Insert into PassengerBusRides (iD,Username,VehicleId,PUsername,Fromm,Too) values ('"
+            String sql = "Insert into PassengerBusRides (iD,Username,VehicleId,PUsername) values ('"
                     + RideId + "','"
                     + dusername + "','"
                     //                    + dname + "','"
                     //                    + plateNo + "','"
                     + busId + "','"
                     //                    + busName + "','"
-                    + pusername + "','"
+                    + pusername + "'"
+//                    + ",'"
                     //                    + pname + "','"
-                    + fromm + "','"
-                    + too + "')";
+//                    + fromm + "','"
+//                    + too + "'"
+                    + ")";
             flag = conn.InsertUpdateDelete(sql);
             System.out.println(sql);
 
             if (flag == 1) {
 
             } else {
-                JOptionPane.showMessageDialog(null, "PassengerBusRides Insertion Failed");
+//                JOptionPane.showMessageDialog(null, "PassengerBusRides Insertion Failed");
             }
             conn.CloseConnection();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
+            return -1;
         }
+        
+        return 1;
     }
 
 }

@@ -34,6 +34,7 @@ public class DriverRide extends javax.swing.JFrame {
         this.type = type;
         ResultSet rst;
         ResultSet rst2;
+        ResultSet rst3;
         try {
             Ride p = new Ride();
             rst = p.DriverRide(username);
@@ -134,9 +135,22 @@ public class DriverRide extends javax.swing.JFrame {
                     int id = d.getRBusId(dname);
 //                String type = d.getDriverType(dname);
 //                String driverName = d.getRDriverName(dname);
-                    String pname = rst.getString("PUsername");
-                    String fromm = rst.getString("Fromm");
-                    String too = rst.getString("Too");
+                String ride=rst.getString("iD");
+                String ride_string=ride.substring(1);
+                int rideID=Integer.parseInt(ride_string);
+                DbConnection conn = new DbConnection();
+                    String pname="";
+                    try {
+                        conn.OpenConnection();
+                        String select_sql = "Select  PUsername from PassengerBusRides where iD='" + rideID + "'";
+                        rst2 = conn.GetData(select_sql);
+                        while (rst2.next()) {
+
+                            pname = rst2.getString("PUsername");
+                            Bus dr=new Bus();
+                    String fromm = dr.getRFromm(id);
+                    String too = dr.getRToo(id);
+                    
                     String start = rst.getString("StartTime");
                     String end = rst.getString("EndTime");
                     String ridestatus = rst.getString("RideStatus");
@@ -145,14 +159,14 @@ public class DriverRide extends javax.swing.JFrame {
                     int passengers = rst.getInt("NoOfPassengers");
 
                     String contact = "";
-                    DbConnection conn = new DbConnection();
+                    
                     try {
                         conn.OpenConnection();
-                        String select_sql = "Select ContactNo from PassengerT where PID='" + pname + "'";
-                        rst2 = conn.GetData(select_sql);
-                        while (rst2.next()) {
+                        String select_sqll = "Select ContactNo from PassengerT where PID='" + pname + "'";
+                        rst3 = conn.GetData(select_sqll);
+                        while (rst3.next()) {
 
-                            contact = rst2.getString("ContactNo");
+                            contact = rst3.getString("ContactNo");
 //                    System.out.println(name);
 //                checkId=1;
                         }
@@ -173,6 +187,20 @@ public class DriverRide extends javax.swing.JFrame {
                     count = count + 1;
                     System.out.println(count);
 
+//                    System.out.println(name);
+//                checkId=1;
+                        }
+                        conn.CloseConnection();
+
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                                + "Search again with valid ID");
+                        return;
+                    }
+                    
+                    
+                    
+                    
                 }
 
             }

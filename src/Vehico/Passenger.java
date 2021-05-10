@@ -220,7 +220,7 @@ public class Passenger {
 
         try {
             conn.OpenConnection();
-            String sql = "Select Username,VehicleId,Fromm,Too,Datee,RideStatus,StartTime,EndTime,BillStatus,Bill from PassengerBusRides where PUsername = '" + pu + "'";
+            String sql = "Select iD,Username,VehicleId from PassengerBusRides where PUsername = '" + pu + "'";
             rst1 = conn.GetData(sql);
             do {
                 return rst1;

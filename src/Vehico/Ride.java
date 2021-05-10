@@ -176,25 +176,25 @@ public class Ride {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-                try
-        {
-        DbConnection comm = new DbConnection();
-        conn.OpenConnection();
-        String sql = "UPDATE PassengerBusRides SET RideStatus = '"+ rideStatus +"' where iD = '"+mat+"'";
-         int flagg=comm.InsertUpdateDelete(sql);
-                 
-           if(flagg>=1){
-//               JOptionPane.showMessageDialog(null, "PassengerBusRides RideStatus updated");
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "a: Insertion  PASSFailed");
-           }
-      
-           conn.CloseConnection();
-          }
-        catch(Exception e){
-          JOptionPane.showMessageDialog(null, e);  
-        }
+//                try
+//        {
+//        DbConnection comm = new DbConnection();
+//        conn.OpenConnection();
+//        String sql = "UPDATE PassengerBusRides SET RideStatus = '"+ rideStatus +"' where iD = '"+mat+"'";
+//         int flagg=comm.InsertUpdateDelete(sql);
+//                 
+//           if(flagg>=1){
+////               JOptionPane.showMessageDialog(null, "PassengerBusRides RideStatus updated");
+//           }
+//           else{
+//               JOptionPane.showMessageDialog(null, "a: Insertion  PASSFailed");
+//           }
+//      
+//           conn.CloseConnection();
+//          }
+//        catch(Exception e){
+//          JOptionPane.showMessageDialog(null, e);  
+//        }
                         try
         {
         DbConnection comm = new DbConnection();
@@ -375,15 +375,32 @@ public class Ride {
             JOptionPane.showMessageDialog(null, e);
         }
         
+//        try {
+//            DbConnection comm = new DbConnection();
+//            conn.OpenConnection();
+//            String sql = "UPDATE PassengerBusRides SET StartTime = '" + time + ""
+//                    + "',Datee='" + date + "' where iD = '" + mat + "'";
+//            System.out.println(sql);
+//            int flagg = comm.InsertUpdateDelete(sql);
+//
+//            if (flagg >= 1) {
+////                JOptionPane.showMessageDialog(null, "Start Time/Date Updated");
+//            } else {
+//                JOptionPane.showMessageDialog(null, "b: Insertion Failed");
+//            }
+//
+//            conn.CloseConnection();
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, e);
+//        }
         try {
             DbConnection comm = new DbConnection();
             conn.OpenConnection();
-            String sql = "UPDATE PassengerBusRides SET StartTime = '" + time + ""
-                    + "',Datee='" + date + "' where iD = '" + mat + "'";
+            String sql = "UPDATE DriverBusRT SET DriverAvail = '0' where ID = '" + mat + "'";
             System.out.println(sql);
             int flagg = comm.InsertUpdateDelete(sql);
 
-            if (flagg >= 1) {
+            if (flagg == 1) {
 //                JOptionPane.showMessageDialog(null, "Start Time/Date Updated");
             } else {
                 JOptionPane.showMessageDialog(null, "b: Insertion Failed");
@@ -393,6 +410,7 @@ public class Ride {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
+        
         try {
             DbConnection comm = new DbConnection();
             conn.OpenConnection();
@@ -511,23 +529,23 @@ public class Ride {
             JOptionPane.showMessageDialog(null, e);
         }
         
-        try {
-            DbConnection comm = new DbConnection();
-            conn.OpenConnection();
-            String sql = "UPDATE PassengerBusRides SET EndTime = '" + time + "' "
-                    + "where iD = '" + mat + "'";
-            int flagg = comm.InsertUpdateDelete(sql);
-
-            if (flagg >= 1) {
-//                JOptionPane.showMessageDialog(null, "End Time Updated");
-            } else {
-                JOptionPane.showMessageDialog(null, "f: Insertion Failed");
-            }
-
-            conn.CloseConnection();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
+//        try {
+//            DbConnection comm = new DbConnection();
+//            conn.OpenConnection();
+//            String sql = "UPDATE PassengerBusRides SET EndTime = '" + time + "' "
+//                    + "where iD = '" + mat + "'";
+//            int flagg = comm.InsertUpdateDelete(sql);
+//
+//            if (flagg >= 1) {
+////                JOptionPane.showMessageDialog(null, "End Time Updated");
+//            } else {
+//                JOptionPane.showMessageDialog(null, "f: Insertion Failed");
+//            }
+//
+//            conn.CloseConnection();
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, e);
+//        }
         try {
             DbConnection comm = new DbConnection();
             conn.OpenConnection();
@@ -780,23 +798,23 @@ public class Ride {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-        try {
-            DbConnection comm = new DbConnection();
-            conn.OpenConnection();
-            String sql = "UPDATE PassengerBusRides SET BillStatus = '" + billStatus + ""
-                    + "',Bill = '" + billBus + "' where iD = '" + mat + "'";
-            int flagg = comm.InsertUpdateDelete(sql);
-
-            if (flagg >= 1) {
-                JOptionPane.showMessageDialog(null, "Bll Status UPDATED");
-            } else {
-                JOptionPane.showMessageDialog(null, "a: Insertion Failed");
-            }
-
-            conn.CloseConnection();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
+//        try {
+//            DbConnection comm = new DbConnection();
+//            conn.OpenConnection();
+//            String sql = "UPDATE PassengerBusRides SET BillStatus = '" + billStatus + ""
+//                    + "',Bill = '" + billBus + "' where iD = '" + mat + "'";
+//            int flagg = comm.InsertUpdateDelete(sql);
+//
+//            if (flagg >= 1) {
+//                JOptionPane.showMessageDialog(null, "Bll Status UPDATED");
+//            } else {
+//                JOptionPane.showMessageDialog(null, "a: Insertion Failed");
+//            }
+//
+//            conn.CloseConnection();
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, e);
+//        }
 
     }
 
@@ -805,7 +823,7 @@ public class Ride {
 
         try {
             conn.OpenConnection();
-            String sql = "Select Datee,Username,PUsername,"
+            String sql = "Select iD,Datee,Username,PUsername,"
                     + "Fromm,Too,StartTime,EndTime,"
                     + "RideStatus,BillStatus,Bill,NoOfPassengers "
                     + "from RideRealtime where Username ='" + username + "'";
