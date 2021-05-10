@@ -552,7 +552,7 @@ public class DriverHome extends javax.swing.JFrame {
 
     private void repairButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repairButton1MouseClicked
         // TODO add your handling code here:
-        Repair rep = new Repair(carid, dname, type);
+        Repair rep = new Repair(carid, iidd, type);
         this.setVisible(false);
         rep.setVisible(true);
 

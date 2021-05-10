@@ -567,7 +567,7 @@ public class Repair extends javax.swing.JFrame {
         int flag;
         try {
             conn.OpenConnection();
-            String sql = "insert into repairhistory values('" + repairHistory_datetime + "','" + username + "'," + String.valueOf(carid) + ",'" + s + "')";
+            String sql = "Insert into repairhistory values('" + repairHistory_datetime + "','" + username + "'," + String.valueOf(carid) + ",'" + s + "')";
             System.out.println(sql);
             flag = conn.InsertUpdateDelete(sql);
             if (flag == 1) {
