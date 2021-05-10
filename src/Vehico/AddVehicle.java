@@ -1182,6 +1182,7 @@ public class AddVehicle extends javax.swing.JFrame {
                 toCombo.setVisible(true);
                 doneButton.setVisible(true);
 
+//                Bus bus = new Bus(v.getModel(), v.getVersion(), v.getColor(), v.getPlateNo(), v.getregistrationDate(), v.getExpirationDate(), carName, fromLabel.getText(), toLabel.getText());
                 registerModel.setText(model);
                 registerVersion.setText(version);
                 registerColor.setText(color);

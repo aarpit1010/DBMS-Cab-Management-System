@@ -57,6 +57,7 @@ public class Bus extends Vehicle {
                     + getFromm() + "','"
                     + getToo() + "')";
             int flag = conn.InsertUpdateDelete(sql);
+//            System.out.println(sql + " " + flag);
 
             if (flag == 1) {
                 JOptionPane.showMessageDialog(null, "You Have Successfully Added " + getBusName() + " " + super.getModel());
@@ -80,7 +81,7 @@ public class Bus extends Vehicle {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "SELECT TOP 1 BusId FROM BusT ORDER BY BusId DESC";
+            String sql = "SELECT BusId FROM BusT ORDER BY BusId DESC LIMIT 1";
             rst = conn.GetData(sql);
 
             while (rst.next()) {
@@ -406,7 +407,7 @@ public class Bus extends Vehicle {
         DbConnection conn = new DbConnection();
         try {
             conn.OpenConnection();
-            String select_sql = "Select ID,BusName,Fromm,Too from DriverBusRT  where DriverAvail = '" + i + "'";
+            String select_sql = "Select ID,BusId,Fromm,Too from DriverBusRT  where DriverAvail = '" + i + "'";
             rst = conn.GetData(select_sql);
             do {
                 return rst;
@@ -458,12 +459,12 @@ public class Bus extends Vehicle {
             conn.OpenConnection();
             String sql = "Insert into PassengerBusRides (Username,VehicleId,PUsername,Fromm,Too) values (' "
                     + dusername + "','"
-//                    + dname + "','"
-//                    + plateNo + "','"
+                    //                    + dname + "','"
+                    //                    + plateNo + "','"
                     + busId + "','"
-//                    + busName + "','"
+                    //                    + busName + "','"
                     + pusername + "','"
-//                    + pname + "','"
+                    //                    + pname + "','"
                     + fromm + "','"
                     + too + "')";
             flag = conn.InsertUpdateDelete(sql);

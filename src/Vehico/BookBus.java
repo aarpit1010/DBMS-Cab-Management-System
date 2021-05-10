@@ -254,13 +254,10 @@ public class BookBus extends javax.swing.JFrame {
 
         bookBusTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "RideID", "BusName", "From", "To"
+                "RideID", "BusId", "From", "To"
             }
         ));
         bookBusTable.setSelectionBackground(new java.awt.Color(51, 0, 102));
