@@ -42,6 +42,7 @@ public class RidesHistory extends javax.swing.JFrame {
         initComponents();
         ResultSet rst;
         ResultSet rst2;
+        ResultSet rst3;
         try {
             Admin p = new Admin();
             rst = p.RideRealTimeCombined();
@@ -85,8 +86,9 @@ public class RidesHistory extends javax.swing.JFrame {
                     String billstatus = rst.getString("BillStatus");
                     double bill = rst.getDouble("Bill");
                     int passengers = rst.getInt("NoOfPassengers");
+                    String rideid=rst.getString("iD");
 
-                    Object[] row = {date, dname, id, type, pname, fromm, too, start, end, ridestatus, billstatus, bill, passengers};
+                    Object[] row = {date,rideid, dname, id, type, pname, fromm, too, start, end, ridestatus, billstatus, bill, passengers};
 
                     DefaultTableModel model = (DefaultTableModel) RidesHistoryTable.getModel();
 
@@ -105,8 +107,9 @@ public class RidesHistory extends javax.swing.JFrame {
                     String billstatus = rst.getString("BillStatus");
                     double bill = rst.getDouble("Bill");
                     int passengers = rst.getInt("NoOfPassengers");
+                    String rideid=rst.getString("iD");
 
-                    Object[] row = {date, dname, id, type, pname, fromm, too, start, end, ridestatus, billstatus, bill, passengers};
+                    Object[] row = {date,rideid, dname, id, type, pname, fromm, too, start, end, ridestatus, billstatus, bill, passengers};
 
                     DefaultTableModel model = (DefaultTableModel) RidesHistoryTable.getModel();
 
@@ -116,8 +119,22 @@ public class RidesHistory extends javax.swing.JFrame {
                 } else {
                     DriverBus d = new DriverBus();
                     int id = d.getRBusId(dname);
-                    String pname = rst.getString("PUsername");
-                    String fromm = rst.getString("Fromm");
+                    
+                    
+                    String rideid=rst.getString("iD");
+                    String rideid2=rideid.substring(1);
+                    int rideID=Integer.parseInt(rideid2);
+                    
+                    String pname = "";
+                    
+                    try {
+                    conn.OpenConnection();
+                    String select_sqll = "Select PUsername from PassengerBusRides where iD='" + rideID + "'";
+                    rst3 = conn.GetData(select_sqll);
+                    while (rst3.next()) {
+
+                        pname = rst3.getString("PUsername");
+                        String fromm = rst.getString("Fromm");
                     String too = rst.getString("Too");
                     String start = rst.getString("StartTime");
                     String end = rst.getString("EndTime");
@@ -126,13 +143,28 @@ public class RidesHistory extends javax.swing.JFrame {
                     double bill = rst.getDouble("Bill");
                     int passengers = rst.getInt("NoOfPassengers");
 
-                    Object[] row = {date, dname, id, type, pname, fromm, too, start, end, ridestatus, billstatus, bill, passengers};
+                    Object[] row = {date, rideid,dname, id, type, pname, fromm, too, start, end, ridestatus, billstatus, bill, passengers};
 
                     DefaultTableModel model = (DefaultTableModel) RidesHistoryTable.getModel();
 
                     model.addRow(row);
                     count = count + 1;
                     System.out.println(count);
+//                    System.out.println(name);
+//                checkId=1;
+                    }
+                    conn.CloseConnection();
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                            + "Search again with valid ID");
+
+//                    return;
+                }
+                    
+                    
+                    
+                    
                 }
 
             }
@@ -430,7 +462,7 @@ public class RidesHistory extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Date", "DriverUsername", "VehicleId", "Vehicle type", "PassengerUname", "From", "To", "StartTime", "EndTime", "RideStatus", "BillStatus", "Bill", "NoOfPassengers"
+                "Date", "RideID", "DriverUsername", "VehicleId", "Vehicle type", "PassengerUname", "From", "To", "StartTime", "EndTime", "RideStatus", "BillStatus", "Bill", "NoOfPassengers"
             }
         ));
         RidesHistoryTable.setGridColor(new java.awt.Color(255, 255, 255));
