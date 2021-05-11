@@ -65,7 +65,7 @@ There are mainly 3 modules in this project.
 ### Vehicle Management
 
 * Add Vehicle
-* Manage Vehicle Details
+* View Vehicle Details
 * Delete Vehicle 
 * Ban Driver
 * View Rides History
