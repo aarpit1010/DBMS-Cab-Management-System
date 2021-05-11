@@ -20,14 +20,17 @@ public class FuelPrice extends javax.swing.JFrame {
      * Creates new form AdminSettings
      */
     private String username;
+    private double currPrice;
 
     public FuelPrice() {
 
     }
 
     public FuelPrice(String username) {
+         currPrice=getFuelPrice();
         initComponents();
-        getFuelPrice();
+        currentPrice.setText(String.valueOf(currPrice));
+//        getFuelPrice();
         this.username = username;
     }
 
@@ -73,6 +76,8 @@ public class FuelPrice extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
         fuelPrice = new java.awt.TextField();
+        jLabel24 = new javax.swing.JLabel();
+        currentPrice = new javax.swing.JLabel();
         fuelButton = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         rephisbutton = new javax.swing.JPanel();
@@ -294,11 +299,11 @@ public class FuelPrice extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 0, 102));
         jLabel11.setText("Update New Fuel Price");
 
-        jLabel14.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(102, 102, 102));
         jLabel14.setText("Enter New Fuel Price");
 
@@ -341,20 +346,33 @@ public class FuelPrice extends javax.swing.JFrame {
         );
         updateButtonLayout.setVerticalGroup(
             updateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateButtonLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(updateButtonLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jSeparator6.setForeground(new java.awt.Color(0, 51, 153));
 
         fuelPrice.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        fuelPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fuelPriceActionPerformed(evt);
+            }
+        });
         fuelPrice.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 fuelPriceKeyPressed(evt);
             }
         });
+
+        jLabel24.setFont(new java.awt.Font("Gadugi", 1, 18)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel24.setText("Current Fuel Price:");
+
+        currentPrice.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+        currentPrice.setForeground(new java.awt.Color(102, 102, 102));
+        currentPrice.setText("Current Fuel Price:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -362,9 +380,6 @@ public class FuelPrice extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(305, 305, 305)
-                        .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(943, 943, 943)
@@ -379,10 +394,18 @@ public class FuelPrice extends javax.swing.JFrame {
                         .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(292, 292, 292)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                            .addComponent(jLabel14)
-                            .addComponent(fuelPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addGap(18, 18, 18)
+                                .addComponent(currentPrice))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                .addComponent(jLabel14)
+                                .addComponent(fuelPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -397,15 +420,19 @@ public class FuelPrice extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addGap(5, 5, 5)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
+                .addGap(55, 55, 55)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(currentPrice))
+                .addGap(81, 81, 81)
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fuelPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGap(18, 18, 18)
                 .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         fuelButton.setBackground(new java.awt.Color(25, 25, 112));
@@ -548,7 +575,7 @@ public class FuelPrice extends javax.swing.JFrame {
                 .addComponent(fuelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rephisbutton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(logOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(106, 106, 106))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -731,6 +758,8 @@ public class FuelPrice extends javax.swing.JFrame {
                 flag = conn.InsertUpdateDelete(sql);
                 if (flag == 1) {
                     JOptionPane.showMessageDialog(null, "Price Updated");
+                    currentPrice.setText(String.valueOf(check));
+                    fuelPrice.setText("");
                 } else {
                     JOptionPane.showMessageDialog(null, "Price not updated");
                 }
@@ -875,6 +904,10 @@ public class FuelPrice extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_fuelPriceKeyPressed
 
+    private void fuelPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fuelPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fuelPriceActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -939,6 +972,7 @@ public class FuelPrice extends javax.swing.JFrame {
     private javax.swing.JPanel addVehicleButton;
     private javax.swing.JPanel addVehicleButton5;
     private javax.swing.JPanel banDriverButton;
+    private javax.swing.JLabel currentPrice;
     private javax.swing.JPanel fuelButton;
     private java.awt.TextField fuelPrice;
     private javax.swing.JLabel jLabel1;
@@ -955,6 +989,7 @@ public class FuelPrice extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
