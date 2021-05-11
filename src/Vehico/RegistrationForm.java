@@ -51,8 +51,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         registerName = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         registerFather = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        registerAge = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         registerSecurity = new javax.swing.JTextField();
@@ -139,14 +137,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         registerFather.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         registerFather.setForeground(new java.awt.Color(102, 102, 102));
         registerFather.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(12, 91, 160)));
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel18.setText("Age");
-
-        registerAge.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        registerAge.setForeground(new java.awt.Color(102, 102, 102));
-        registerAge.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(12, 91, 160)));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(153, 153, 153));
@@ -243,10 +233,6 @@ public class RegistrationForm extends javax.swing.JFrame {
                             .addComponent(contactnoText)
                             .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(aadharText)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(registerSecurity)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18)
                             .addComponent(jLabel17)
                             .addComponent(registerFather)
                             .addComponent(jLabel15)
@@ -257,13 +243,16 @@ public class RegistrationForm extends javax.swing.JFrame {
                             .addComponent(registerAsCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(registerName)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(checkMale)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(checkMale))
                                 .addGap(46, 46, 46)
                                 .addComponent(checkFemale))
                             .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(registerAge)
                             .addComponent(registerPassword)
-                            .addComponent(dobCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(dobCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registerSecurity)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(125, 125, 125)
                         .addComponent(registerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -272,15 +261,15 @@ public class RegistrationForm extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel15)
-                .addGap(22, 22, 22)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(registerAsCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -288,25 +277,21 @@ public class RegistrationForm extends javax.swing.JFrame {
                 .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registerFather, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(registerAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dobCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(checkFemale)
-                    .addComponent(checkMale))
-                .addGap(6, 6, 6)
+                    .addComponent(checkMale)
+                    .addComponent(checkFemale))
+                .addGap(21, 21, 21)
                 .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registerSecurity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
                 .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(aadharText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -322,9 +307,9 @@ public class RegistrationForm extends javax.swing.JFrame {
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registerPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(registerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         kGradientPanel1.add(jPanel1);
@@ -482,14 +467,13 @@ public class RegistrationForm extends javax.swing.JFrame {
 
     private void registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseClicked
         // TODO add your handling code here:
-        if (registerName.getText().equals("") || registerFather.getText().equals("") || registerUsername.getText().equals("") || registerPassword.getText().equals("") || registerAge.getText().equals("") || registerSecurity.getText().equals("") || aadharText.getText().equals("") || contactnoText.getText().equals("")) {
+        if (registerName.getText().equals("") || registerFather.getText().equals("") || registerUsername.getText().equals("") || registerPassword.getText().equals("") || registerSecurity.getText().equals("") || aadharText.getText().equals("") || contactnoText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Please fill All Fields");
 
         } else if (checkMale.isSelected() == false && checkFemale.isSelected() == false) {
             JOptionPane.showMessageDialog(null, "Please fill All Fields");
         } else {
             String name = registerName.getText();
-            String age = registerAge.getText();
             String fName = registerFather.getText();
             String user = registerUsername.getText();
             String pass = registerPassword.getText();
@@ -505,13 +489,13 @@ public class RegistrationForm extends javax.swing.JFrame {
                 gender = checkFemale.getText();
             }
             if (regAs == "Passenger") {
-                Passenger passenger = new Passenger(name, fName, age, gender, sec, user, pass, aadhar, contactNo, dob);
+                Passenger passenger = new Passenger(name, fName, gender, sec, user, pass, aadhar, contactNo, dob);
                 passenger.addPassPass();
 
             } else if (regAs == "Driver") {
 
 //           DriverSignUp ds=new DriverSignUp(user,name,fName,age,gender,sec,pass);
-                DriverSignUp ds = new DriverSignUp(user, name, fName, age, gender, sec, pass, aadhar, contactNo, dob);
+                DriverSignUp ds = new DriverSignUp(user, name, fName, gender, sec, pass, aadhar, contactNo, dob);
                 this.setVisible(false);
                 ds.setVisible(true);
             }
@@ -520,7 +504,6 @@ public class RegistrationForm extends javax.swing.JFrame {
             registerPassword.setText("");
             registerFather.setText("");
             registerSecurity.setText("");
-            registerAge.setText("");
             aadharText.setText("");
             contactnoText.setText("");
 //    this.setVisible(false);
@@ -603,14 +586,13 @@ public class RegistrationForm extends javax.swing.JFrame {
     private void registerButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_registerButtonKeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (registerName.getText().equals("") || registerFather.getText().equals("") || registerUsername.getText().equals("") || registerPassword.getText().equals("") || registerAge.getText().equals("") || registerSecurity.getText().equals("") || aadharText.getText().equals("") || contactnoText.getText().equals("")) {
+            if (registerName.getText().equals("") || registerFather.getText().equals("") || registerUsername.getText().equals("") || registerPassword.getText().equals("") || registerSecurity.getText().equals("") || aadharText.getText().equals("") || contactnoText.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Please fill All Fields");
 
             } else if (checkMale.isSelected() == false && checkFemale.isSelected() == false) {
                 JOptionPane.showMessageDialog(null, "Please fill All Fields");
             } else {
                 String name = registerName.getText();
-                String age = registerAge.getText();
                 String fName = registerFather.getText();
                 String user = registerUsername.getText();
                 String pass = registerPassword.getText();
@@ -626,13 +608,13 @@ public class RegistrationForm extends javax.swing.JFrame {
                     gender = checkFemale.getText();
                 }
                 if (regAs == "Passenger") {
-                    Passenger passenger = new Passenger(name, fName, age, gender, sec, user, pass, aadhar, contactNo, dob);
+                    Passenger passenger = new Passenger(name, fName, gender, sec, user, pass, aadhar, contactNo, dob);
                     passenger.addPassPass();
 
                 } else if (regAs == "Driver") {
 
 //           DriverSignUp ds=new DriverSignUp(user,name,fName,age,gender,sec,pass);
-                    DriverSignUp ds = new DriverSignUp(user, name, fName, age, gender, sec, pass, aadhar, contactNo, dob);
+                    DriverSignUp ds = new DriverSignUp(user, name, fName, gender, sec, pass, aadhar, contactNo, dob);
                     this.setVisible(false);
                     ds.setVisible(true);
                 }
@@ -641,7 +623,6 @@ public class RegistrationForm extends javax.swing.JFrame {
                 registerPassword.setText("");
                 registerFather.setText("");
                 registerSecurity.setText("");
-                registerAge.setText("");
                 aadharText.setText("");
                 contactnoText.setText("");
 //    this.setVisible(false);
@@ -701,7 +682,6 @@ public class RegistrationForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -719,7 +699,6 @@ public class RegistrationForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private keeptoo.KGradientPanel kGradientPanel1;
-    private javax.swing.JTextField registerAge;
     private javax.swing.JComboBox registerAsCombo;
     private javax.swing.JPanel registerButton;
     private javax.swing.JTextField registerFather;

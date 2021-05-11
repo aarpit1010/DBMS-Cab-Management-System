@@ -25,16 +25,15 @@ public class Passenger {
     PreparedStatement pst = null;
     ResultSet rst = null;
 
-    private String name, fName, age, gender, sec, user, pass, aadhar, contactNo, dob;
+    private String name, fName, gender, sec, user, pass, aadhar, contactNo, dob;
 
     Passenger() {
 
     }
 
-    Passenger(String name, String fName, String age, String gender, String sec, String user, String pass, String aadhar, String contactNo, String dob) {
+    Passenger(String name, String fName, String gender, String sec, String user, String pass, String aadhar, String contactNo, String dob) {
         this.name = name;
         this.fName = fName;
-        this.age = age;
         this.gender = gender;
         this.sec = sec;
         this.user = user;
@@ -109,12 +108,11 @@ public class Passenger {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into PassengerT (PID, PPass, PName,PFName,PAge, PGender, PSec,aadhar,ContactNo,DOB) values ('"
+            String sql = "Insert into PassengerT (PID, PPass, PName,PFName, PGender, PSec,aadhar,ContactNo,DOB) values ('"
                     + getUser() + "','"
                     + getPass() + "','"
                     + getPname() + "','"
                     + getFname() + "',"
-                    + getPAge() + ",'"
                     + getPGender() + "','"
                     + getPSec() + "','"
                     + getCnic() + "','"
@@ -161,10 +159,6 @@ public class Passenger {
 
     public String getFname() {
         return fName;
-    }
-
-    public String getPAge() {
-        return age;
     }
 
     public String getPGender() {

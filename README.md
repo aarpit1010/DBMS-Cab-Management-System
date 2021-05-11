@@ -42,16 +42,15 @@
 
 # Getting Started
 
-* Install Netbeans
+* Install Netbeans & import this project.
 * Install JavaFX-SDK-16
-* Import this project 
-* Add the [Libraries](https://drive.google.com/file/d/1sHFpGZNLdyLHYaJo7zziz5VwzIE07ymL/view?usp=sharing).
+* Add the [Libraries](https://drive.google.com/drive/folders/128n7fQVWfDO438E0JGWCyQDgkbhs4lTt?usp=sharing).
 * Also add Libraries from `lib` folder after installing `JavaFX-SDK-16`. 
 
 * Add ***```--module-path "PATH to lib folder in JavaFX-SDK-16"``` <br>
     ```--add-modules=javafx.controls,javafx.fxml,javafx.web,javafx.media,javafx.swing```***.
 
-* Open the file **[`DbConnection.java`](https://github.com/aarpit1010/DBMS-Cab-Management-System/blob/main/src/Vehico/DbConnection.java)**, alter URL depending upon your MySQL Server, Username and Password.
+* Open the file **[`/src/Vehico/DbConnection.java`](https://github.com/aarpit1010/DBMS-Cab-Management-System/blob/main/src/Vehico/DbConnection.java)**, alter URL depending upon your MySQL Server, Username and Password.
 * Database (SQL file) is present in **[`/Database`](https://github.com/aarpit1010/DBMS-Cab-Management-System/tree/main/DataBase)** folder.
 * Admin account username: **`1`** <br>
   Admin account password : **`y`**
@@ -93,10 +92,7 @@ There are mainly 3 modules in this project.
 
 <br>
 
-# Screenshots
-<img src="vehler_screenshots/1.png" />
-<img src="vehler_screenshots/15.png" />
-<img src="vehler_screenshots/3.png" />
+
 
 
 

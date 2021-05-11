@@ -319,8 +319,8 @@ public class ViewRepairHis extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 0, 102));
-        jLabel11.setText("Here's list of Vehico's Rides");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, -1));
+        jLabel11.setText("Here's list of Driver's Repair Requests");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, 30));
 
         RepairHistoryTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         RepairHistoryTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -349,7 +349,7 @@ public class ViewRepairHis extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 700, -1));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, -1, -1));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 330, 20));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 430, 20));
 
         fuelButton.setBackground(new java.awt.Color(25, 25, 112));
         fuelButton.addMouseListener(new java.awt.event.MouseAdapter() {

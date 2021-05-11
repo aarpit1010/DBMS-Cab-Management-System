@@ -25,7 +25,6 @@ public class DriverCar implements Driver {
 
     private String name;
     private String fatherName;
-    private String age;
     private String gender;
     private String securityQ;
     private String username;
@@ -36,12 +35,11 @@ public class DriverCar implements Driver {
 
     }
 
-    DriverCar(String name, String fatherName, String age, String gender,
+    DriverCar(String name, String fatherName, String gender,
             String securityQ, String username, String password,
             String type, String aadhar, String contactNo, String dob) {
         this.name = name;
         this.fatherName = fatherName;
-        this.age = age;
         this.gender = gender;
         this.securityQ = securityQ;
         this.username = username;
@@ -92,10 +90,6 @@ public class DriverCar implements Driver {
 
     public String getfName() {
         return fatherName;
-    }
-
-    public String getAge() {
-        return age;
     }
 
     public String getGender() {
@@ -245,13 +239,12 @@ public class DriverCar implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into Driver (ID, Password, Name, FatherName, Age, "
+            String sql = "Insert into Driver (ID, Password, Name, FatherName, "
                     + "Gender, SecurityQuestion,Type,aadhar,ContactNo,DOB) values ('"
                     + getUsername() + "','"
                     + getPassword() + "','"
                     + getName() + "','"
                     + getfName() + "','"
-                    + getAge() + "','"
                     + getGender() + "','"
                     + getSecurityQ() + "','"
                     + getType() + "','"
@@ -716,7 +709,6 @@ public class DriverCar implements Driver {
         String password = "";
         String name = "";
         String fname = "";
-        int Age = -1;
         String gender = "";
         String security = "";
         String type = "";
@@ -824,7 +816,6 @@ public class DriverCar implements Driver {
                     password = rst.getString("Password");
                     name = rst.getString("Name");
                     fname = rst.getString("FatherName");
-                    Age = rst.getInt("Age");
                     gender = rst.getString("Gender");
                     security = rst.getString("SecurityQuestion");
                     type = rst.getString("Type");
@@ -846,14 +837,13 @@ public class DriverCar implements Driver {
             try {
                 conn.OpenConnection();
                 String sql = "Insert into BanDriver (ID, CarId, Password, Name, "
-                        + "FatherName, Age, Gender, SecurityQuestion, Type, "
+                        + "FatherName, Gender, SecurityQuestion, Type, "
                         + "aadhar, ContactNo, DOB) values ('"
                         + username + "','"
                         + vehicle + "','"
                         + password + "','"
                         + name + "','"
                         + fname + "','"
-                        + Age + "','"
                         + gender + "','"
                         + security + "','"
                         + type + "','"
@@ -1021,7 +1011,7 @@ public class DriverCar implements Driver {
         DbConnection conn = new DbConnection();
         try {
             conn.OpenConnection();
-            String select_sql = "Select ID,Name,FatherName,Age,Gender from Driver ";
+            String select_sql = "Select ID,Name,FatherName,Gender from Driver ";
             rst = conn.GetData(select_sql);
             do {
                 return rst;

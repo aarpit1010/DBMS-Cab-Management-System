@@ -25,7 +25,6 @@ public class DriverBus implements Driver {
 
     private String name;
     private String fatherName;
-    private String age;
     private String gender;
     private String securityQ;
     private String username;
@@ -35,10 +34,9 @@ public class DriverBus implements Driver {
 
     }
 
-    DriverBus(String name, String fatherName, String age, String gender, String securityQ, String username, String password, String type, String aadhar, String contactNo, String dob) {
+    DriverBus(String name, String fatherName, String gender, String securityQ, String username, String password, String type, String aadhar, String contactNo, String dob) {
         this.name = name;
         this.fatherName = fatherName;
-        this.age = age;
         this.gender = gender;
         this.securityQ = securityQ;
         this.username = username;
@@ -124,10 +122,6 @@ public class DriverBus implements Driver {
         return fatherName;
     }
 
-    public String getAge() {
-        return age;
-    }
-
     public String getGender() {
         return gender;
     }
@@ -200,12 +194,11 @@ public class DriverBus implements Driver {
         try {
             DbConnection conn = new DbConnection();
             conn.OpenConnection();
-            String sql = "Insert into Driver (ID, Password, Name,FatherName,Age, Gender, SecurityQuestion, Type,aadhar,ContactNo,DOB) values ('"
+            String sql = "Insert into Driver (ID, Password, Name,FatherName, Gender, SecurityQuestion, Type,aadhar,ContactNo,DOB) values ('"
                     + getUsername() + "','"
                     + getPassword() + "','"
                     + getName() + "','"
                     + getfName() + "','"
-                    + getAge() + "','"
                     + getGender() + "','"
                     + getSecurityQ() + "','"
                     + getType() + "','"

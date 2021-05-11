@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class DriverSignUp extends javax.swing.JFrame {
 
     private String user;
-    private String name, fname, age, gender, sec, pass, aadhar, contactNo, dob;
+    private String name, fname, gender, sec, pass, aadhar, contactNo, dob;
 
     /**
      * Creates new form DrivrSignUp
@@ -24,7 +24,7 @@ public class DriverSignUp extends javax.swing.JFrame {
 
     }
 
-    public DriverSignUp(String user, String name, String fname, String age,
+    public DriverSignUp(String user, String name, String fname,
             String gender, String sec, String pass,
             String aadhar, String contactNo, String dob) {
 
@@ -32,7 +32,6 @@ public class DriverSignUp extends javax.swing.JFrame {
         this.user = user;
         this.name = name;
         this.fname = fname;
-        this.age = age;
         this.gender = gender;
         this.sec = sec;
         this.pass = pass;
@@ -502,7 +501,7 @@ public class DriverSignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
         String type;        // TODO add your handling code here:
         if (checkCar.isSelected()) {
-            DriverCar driver = new DriverCar(name, fname, age, gender, sec,
+            DriverCar driver = new DriverCar(name, fname, gender, sec,
                     user, pass, "Car", aadhar, contactNo, dob);
 
             type = checkCar.getText();
@@ -533,7 +532,7 @@ public class DriverSignUp extends javax.swing.JFrame {
                 lm.setVisible(true);
             }
         } else if (checkBus.isSelected()) {
-            DriverBus driver = new DriverBus(name, fname, age, gender,
+            DriverBus driver = new DriverBus(name, fname, gender,
                     sec, user, pass, "Bus", aadhar, contactNo, dob);
 
             type = checkBus.getText();
@@ -566,7 +565,7 @@ public class DriverSignUp extends javax.swing.JFrame {
                 lm.setVisible(true);
             }
         } else if (checkRickshaw.isSelected()) {
-            DriverRickshaw driver = new DriverRickshaw(name, fname, age, gender,
+            DriverRickshaw driver = new DriverRickshaw(name, fname, gender,
                     sec, user, pass, "Rickshaw", aadhar, contactNo, dob);
 
             type = checkRickshaw.getText();

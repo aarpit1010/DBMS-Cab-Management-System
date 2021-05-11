@@ -461,13 +461,13 @@ public class BanDriver extends javax.swing.JFrame {
 
         DriversList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Username", "Name", "FatherName", "Age", "Gender"
+                "Username", "Name", "FatherName", "Gender"
             }
         ));
         DriversList.setSelectionBackground(new java.awt.Color(51, 0, 102));
