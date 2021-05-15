@@ -85,12 +85,14 @@ public class Vehicle {
 
         DbConnection conn = new DbConnection();
         // Retrieve details of vehicle if it is Car
+        
 
         if (type.equals("Car")) {
             try {
                 conn.OpenConnection();
                 String select_sql = "Select * from CarT where CarId='" + id + "'";
                 rst = conn.GetData(select_sql);
+                int count =0;
                 while (rst.next()) {
                     model = rst.getString("Model");
                     version = rst.getString("Version");
@@ -100,12 +102,20 @@ public class Vehicle {
                     expDate = rst.getString("ExpirationDate");
                     name = rst.getString("CarName");
                     ass = rst.getInt("Assigned");
+                    count++;
 
 //              matching=rst.getString("ID");
                     System.out.println(name);
 //                checkId=1;
+                    
                 }
                 conn.CloseConnection();
+                        if(count==0){
+                        JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                        + "Search again with valid ID");
+                return;
+                    }
+                
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Invalid ID\n"
@@ -119,6 +129,7 @@ public class Vehicle {
                 conn.OpenConnection();
                 String select_sql = "Select * from BusT where BusId='" + id + "'";
                 rst = conn.GetData(select_sql);
+                int count =0;
                 while (rst.next()) {
                     model = rst.getString("Model");
                     version = rst.getString("Version");
@@ -128,12 +139,18 @@ public class Vehicle {
                     expDate = rst.getString("ExpirationDate");
                     name = rst.getString("BusName");
                     ass = rst.getInt("Assigned");
-
+                    count++;
 //           matching=rst.getString("ID");
                     System.out.println(name);
 //           checkId=1;
                 }
+                
                 conn.CloseConnection();
+                if(count==0){
+                        JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                        + "Search again with valid ID");
+                return;
+                    }
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Invalid ID\n"
@@ -148,6 +165,7 @@ public class Vehicle {
                 conn.OpenConnection();
                 String select_sql = "Select * from RicksawT where RickshawId='" + id + "'";
                 rst = conn.GetData(select_sql);
+                int count =0;
                 while (rst.next()) {
                     model = rst.getString("Model");
                     version = rst.getString("Version");
@@ -157,12 +175,17 @@ public class Vehicle {
                     expDate = rst.getString("ExpirationDate");
                     name = rst.getString("RickshawName");
                     ass = rst.getInt("Assigned");
-
+                    count++;
 //           matching=rst.getString("ID");
                     System.out.println(name);
 //           checkId=1;
                 }
                 conn.CloseConnection();
+                if(count==0){
+                        JOptionPane.showMessageDialog(null, "Invalid ID\n"
+                        + "Search again with valid ID");
+                return;
+                    }
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Invalid ID\n"
