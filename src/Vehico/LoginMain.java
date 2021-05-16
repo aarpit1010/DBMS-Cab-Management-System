@@ -74,7 +74,7 @@ public class LoginMain extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("TheVehico");
         kGradientPanel1.add(jLabel11);
-        jLabel11.setBounds(120, 90, 360, 120);
+        jLabel11.setBounds(120, 60, 360, 120);
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
@@ -285,11 +285,11 @@ public class LoginMain extends javax.swing.JFrame {
         jLabel16.setForeground(new java.awt.Color(204, 204, 204));
         jLabel16.setText("Don't have an account?");
         kGradientPanel1.add(jLabel16);
-        jLabel16.setBounds(150, 550, 230, 16);
+        jLabel16.setBounds(110, 550, 230, 16);
 
         jSeparator7.setForeground(new java.awt.Color(255, 255, 255));
         kGradientPanel1.add(jSeparator7);
-        jSeparator7.setBounds(150, 570, 150, 10);
+        jSeparator7.setBounds(110, 570, 150, 10);
 
         SignUpButton.setBackground(new java.awt.Color(26, 111, 145));
         SignUpButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -316,11 +316,11 @@ public class LoginMain extends javax.swing.JFrame {
         SignUpButton.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
         kGradientPanel1.add(SignUpButton);
-        SignUpButton.setBounds(150, 590, 140, 40);
+        SignUpButton.setBounds(110, 610, 140, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/1010.png"))); // NOI18N
         kGradientPanel1.add(jLabel1);
-        jLabel1.setBounds(20, 230, 530, 280);
+        jLabel1.setBounds(70, 200, 560, 330);
 
         jSeparator8.setForeground(new java.awt.Color(255, 255, 255));
         kGradientPanel1.add(jSeparator8);

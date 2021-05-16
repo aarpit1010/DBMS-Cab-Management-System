@@ -89,9 +89,9 @@ public class RegistrationForm extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("while you're in your comfortable zone.");
+        jLabel1.setText("while you're in your comfort zone.");
         kGradientPanel1.add(jLabel1);
-        jLabel1.setBounds(120, 530, 440, 48);
+        jLabel1.setBounds(120, 540, 440, 48);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(102, 102, 102));

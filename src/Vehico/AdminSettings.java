@@ -19,6 +19,7 @@ public class AdminSettings extends javax.swing.JFrame {
      * Creates new form AdminSettings
      */
     private String username;
+    private String adminusername;
 
     public AdminSettings() {
 
@@ -27,6 +28,7 @@ public class AdminSettings extends javax.swing.JFrame {
     public AdminSettings(String username) {
         initComponents();
         this.username = username;
+        this.adminusername = adminusername;
         newPasswordText.setVisible(false);
         confirmPasswordText.setVisible(false);
         saveButton.setVisible(false);
@@ -57,7 +59,7 @@ public class AdminSettings extends javax.swing.JFrame {
         ridesHistoryButton = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        settingsButton = new javax.swing.JPanel();
+        fuelButton = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         logOutButton = new javax.swing.JPanel();
@@ -84,14 +86,15 @@ public class AdminSettings extends javax.swing.JFrame {
         jSeparator7 = new javax.swing.JSeparator();
         confirmPasswordText = new javax.swing.JPasswordField();
         jSeparator8 = new javax.swing.JSeparator();
-        fuelButton = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
         rephisbutton = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         manageVehicle = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
+        settingsButton1 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -191,27 +194,27 @@ public class AdminSettings extends javax.swing.JFrame {
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Clock_25px.png"))); // NOI18N
         ridesHistoryButton.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
-        settingsButton.setBackground(new java.awt.Color(25, 25, 112));
-        settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        fuelButton.setBackground(new java.awt.Color(25, 25, 112));
+        fuelButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                settingsButtonMouseClicked(evt);
+                fuelButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                settingsButtonMouseEntered(evt);
+                fuelButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                settingsButtonMouseExited(evt);
+                fuelButtonMouseExited(evt);
             }
         });
-        settingsButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        fuelButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel18.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel18.setText("Settings");
-        settingsButton.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
+        jLabel18.setText("Fuel Price");
+        fuelButton.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
-        settingsButton.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-petrol-25.png"))); // NOI18N
+        fuelButton.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
         logOutButton.setBackground(new java.awt.Color(25, 25, 112));
         logOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -322,7 +325,7 @@ public class AdminSettings extends javax.swing.JFrame {
         newPasswordLabel.setText("New Password");
 
         saveButton.setBackground(new java.awt.Color(255, 255, 255));
-        saveButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(72, 209, 204), 3));
+        saveButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 102, 255), 3));
         saveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 saveButtonMouseClicked(evt);
@@ -362,7 +365,7 @@ public class AdminSettings extends javax.swing.JFrame {
         );
 
         verifyButton.setBackground(new java.awt.Color(255, 255, 255));
-        verifyButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(72, 209, 204), 3));
+        verifyButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 102, 255), 3));
         verifyButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 verifyButtonMouseClicked(evt);
@@ -529,44 +532,6 @@ public class AdminSettings extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
-        fuelButton.setBackground(new java.awt.Color(25, 25, 112));
-        fuelButton.setFocusable(false);
-        fuelButton.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        fuelButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                fuelButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                fuelButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                fuelButtonMouseExited(evt);
-            }
-        });
-
-        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/price.png"))); // NOI18N
-        jLabel8.setText("        Fuel Price");
-        jLabel8.setToolTipText("");
-
-        javax.swing.GroupLayout fuelButtonLayout = new javax.swing.GroupLayout(fuelButton);
-        fuelButton.setLayout(fuelButtonLayout);
-        fuelButtonLayout.setHorizontalGroup(
-            fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(fuelButtonLayout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        fuelButtonLayout.setVerticalGroup(
-            fuelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(fuelButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
         rephisbutton.setBackground(new java.awt.Color(25, 25, 112));
         rephisbutton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -611,6 +576,28 @@ public class AdminSettings extends javax.swing.JFrame {
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Transportation_25px.png"))); // NOI18N
         manageVehicle.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
+        settingsButton1.setBackground(new java.awt.Color(25, 25, 112));
+        settingsButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                settingsButton1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                settingsButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                settingsButton1MouseExited(evt);
+            }
+        });
+        settingsButton1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel22.setText("Settings");
+        settingsButton1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
+
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Settings_25px.png"))); // NOI18N
+        settingsButton1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -626,7 +613,6 @@ public class AdminSettings extends javax.swing.JFrame {
                                 .addGap(117, 117, 117)
                                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 110, Short.MAX_VALUE))
-                    .addComponent(fuelButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -634,12 +620,13 @@ public class AdminSettings extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(305, 305, 305)
                                 .addComponent(removeVehicleButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(settingsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(logOutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(banDriverButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ridesHistoryButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(rephisbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(manageVehicle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(manageVehicle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(settingsButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(fuelButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -661,14 +648,14 @@ public class AdminSettings extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(removeVehicleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(settingsButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(fuelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rephisbutton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106))
+                .addGap(115, 115, 115))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -687,256 +674,27 @@ public class AdminSettings extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addVehicleButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButtonMouseClicked
+    private void settingsButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButton1MouseExited
         // TODO add your handling code here:
-        AddVehicle addvehicle = new AddVehicle(username);
-        this.setVisible(false);
-        addvehicle.setVisible(true);
-    }//GEN-LAST:event_addVehicleButtonMouseClicked
+    }//GEN-LAST:event_settingsButton1MouseExited
 
-    private void addVehicleButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButtonMouseEntered
+    private void settingsButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButton1MouseEntered
         // TODO add your handling code here:
-        addVehicleButton.setBackground(new Color(85, 65, 118));
-    }//GEN-LAST:event_addVehicleButtonMouseEntered
+    }//GEN-LAST:event_settingsButton1MouseEntered
 
-    private void addVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButtonMouseExited
+    private void settingsButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButton1MouseClicked
         // TODO add your handling code here:
-        addVehicleButton.setBackground(new Color(25, 25, 112));
-    }//GEN-LAST:event_addVehicleButtonMouseExited
+    }//GEN-LAST:event_settingsButton1MouseClicked
 
-    private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
+    private void manageVehicleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVehicleMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_addVehicleButton5MouseEntered
+        manageVehicle.setBackground(new Color(25, 25, 112));
+    }//GEN-LAST:event_manageVehicleMouseExited
 
-    private void addVehicleButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseExited
+    private void manageVehicleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVehicleMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_addVehicleButton5MouseExited
-
-    private void removeVehicleButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseEntered
-        // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(85, 65, 118));
-    }//GEN-LAST:event_removeVehicleButtonMouseEntered
-
-    private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
-        // TODO add your handling code here:
-        removeVehicleButton.setBackground(new Color(25, 25, 112));
-    }//GEN-LAST:event_removeVehicleButtonMouseExited
-
-    private void banDriverButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseClicked
-        // TODO add your handling code here:
-        BanDriver bandriver = new BanDriver(username);
-        this.setVisible(false);
-        bandriver.setVisible(true);
-    }//GEN-LAST:event_banDriverButtonMouseClicked
-
-    private void banDriverButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseEntered
-        // TODO add your handling code here:
-        banDriverButton.setBackground(new Color(85, 65, 118));
-    }//GEN-LAST:event_banDriverButtonMouseEntered
-
-    private void banDriverButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseExited
-        // TODO add your handling code here:
-        banDriverButton.setBackground(new Color(25, 25, 112));
-    }//GEN-LAST:event_banDriverButtonMouseExited
-
-    private void ridesHistoryButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseClicked
-        // TODO add your handling code here:
-        RidesHistory rh = new RidesHistory(username);
-        this.setVisible(false);
-        rh.setVisible(true);
-    }//GEN-LAST:event_ridesHistoryButtonMouseClicked
-
-    private void ridesHistoryButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseEntered
-        // TODO add your handling code here:
-        ridesHistoryButton.setBackground(new Color(85, 65, 118));
-    }//GEN-LAST:event_ridesHistoryButtonMouseEntered
-
-    private void ridesHistoryButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseExited
-        // TODO add your handling code here:
-        ridesHistoryButton.setBackground(new Color(25, 25, 112));
-    }//GEN-LAST:event_ridesHistoryButtonMouseExited
-
-    private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
-        // TODO add your handling code here:
-        AdminSettings as = new AdminSettings(username);
-        this.setVisible(false);
-        as.setVisible(true);
-
-    }//GEN-LAST:event_settingsButtonMouseClicked
-
-    private void settingsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseEntered
-        // TODO add your handling code here:
-        settingsButton.setBackground(new Color(85, 65, 118));
-    }//GEN-LAST:event_settingsButtonMouseEntered
-
-    private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
-        // TODO add your handling code here:
-        settingsButton.setBackground(new Color(25, 25, 112));
-    }//GEN-LAST:event_settingsButtonMouseExited
-
-    private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
-        // TODO add your handling code here:
-        LoginMain lm = new LoginMain();
-        this.setVisible(false);
-        lm.setVisible(true);
-    }//GEN-LAST:event_logOutButtonMouseClicked
-
-    private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
-        // TODO add your handling code here:
-        logOutButton.setBackground(new Color(85, 65, 118));
-    }//GEN-LAST:event_logOutButtonMouseEntered
-
-    private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
-        // TODO add your handling code here:
-        logOutButton.setBackground(new Color(25, 25, 112));
-    }//GEN-LAST:event_logOutButtonMouseExited
-
-    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_jPanel4MouseClicked
-
-    private void jPanel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseEntered
-        // TODO add your handling code here:
-        jPanel4.setBackground(new Color(153, 102, 255));
-    }//GEN-LAST:event_jPanel4MouseEntered
-
-    private void jPanel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseExited
-        // TODO add your handling code here:
-        jPanel4.setBackground(new Color(255, 255, 255));
-    }//GEN-LAST:event_jPanel4MouseExited
-
-    private void jLabel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel7MouseEntered
-
-    private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
-        // TODO add your handling code here:
-        setState(AddVehicle.ICONIFIED);
-    }//GEN-LAST:event_jPanel6MouseClicked
-
-    private void jPanel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseEntered
-        // TODO add your handling code here:
-        jPanel6.setBackground(new Color(153, 102, 255));
-        jLabel17.setForeground(Color.WHITE);
-    }//GEN-LAST:event_jPanel6MouseEntered
-
-    private void jPanel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseExited
-        // TODO add your handling code here:
-        jPanel6.setBackground(new Color(255, 255, 255));
-    }//GEN-LAST:event_jPanel6MouseExited
-
-    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel2MouseExited
-
-    private void saveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseClicked
-        // TODO add your handling code here:
-
-        Admin ad = new Admin();
-        String newPassword = newPasswordText.getText();
-        String confirmPassword = confirmPasswordText.getText();
-        newPasswordText.setText("");
-        confirmPasswordText.setText("");
-        if (newPassword.equals(confirmPassword)) {
-            JOptionPane.showMessageDialog(null, "Your both passwords matched");
-            ad.changePassword(username, newPassword);
-            oldPasswordText.setText("");
-            newPasswordText.setText("");
-            confirmPasswordText.setText("");
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Your passwords didn't matched");
-            newPasswordText.setText("");
-            confirmPasswordText.setText("");
-
-        }
-    }//GEN-LAST:event_saveButtonMouseClicked
-
-    private void saveButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseEntered
-        // TODO add your handling code here:
-        saveButton.setBackground(new Color(153, 102, 255));
-        jLabel2.setForeground(new Color(255, 255, 255));
-    }//GEN-LAST:event_saveButtonMouseEntered
-
-    private void saveButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseExited
-        // TODO add your handling code here:
-        saveButton.setBackground(new Color(255, 255, 255));
-        jLabel2.setForeground(new Color(153, 153, 153));
-    }//GEN-LAST:event_saveButtonMouseExited
-
-    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel3MouseExited
-
-    private void verifyButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifyButtonMouseClicked
-        // TODO add your handling code here:
-        Admin admin = new Admin();
-        String oldPassword = oldPasswordText.getText();
-        oldPasswordText.setText("");
-        if (admin.chkAdminPass(username, oldPassword)) {
-            JOptionPane.showMessageDialog(null, "Old Password Verified");
-            newPasswordText.setVisible(true);
-            confirmPasswordText.setVisible(true);
-            saveButton.setVisible(true);
-            newPasswordLabel.setVisible(true);
-            confirmPasswordLabel.setVisible(true);
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Old Password Not Verified");
-        }
-    }//GEN-LAST:event_verifyButtonMouseClicked
-
-    private void verifyButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifyButtonMouseEntered
-        // TODO add your handling code here:
-        verifyButton.setBackground(new Color(153, 102, 255));
-        jLabel3.setForeground(new Color(255, 255, 255));
-    }//GEN-LAST:event_verifyButtonMouseEntered
-
-    private void verifyButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifyButtonMouseExited
-        // TODO add your handling code here:
-        verifyButton.setBackground(new Color(255, 255, 255));
-        jLabel3.setForeground(new Color(153, 153, 153));
-    }//GEN-LAST:event_verifyButtonMouseExited
-
-    private void oldPasswordTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_oldPasswordTextFocusGained
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_oldPasswordTextFocusGained
-
-    private void newPasswordTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newPasswordTextFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_newPasswordTextFocusGained
-
-    private void confirmPasswordTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_confirmPasswordTextFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_confirmPasswordTextFocusGained
-
-    private void fuelButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseClicked
-        // TODO add your handling code here:
-        FuelPrice fuelprice = new FuelPrice(username);
-        this.setVisible(false);
-        fuelprice.setVisible(true);
-
-
-    }//GEN-LAST:event_fuelButtonMouseClicked
-
-    private void rephisbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseClicked
-        // TODO add your handling code here:
-        ViewRepairHis rephis = new ViewRepairHis(username);
-        this.setVisible(false);
-        rephis.setVisible(true);
-    }//GEN-LAST:event_rephisbuttonMouseClicked
-
-    private void rephisbuttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseEntered
-        // TODO add your handling code here:
-        rephisbutton.setBackground(new Color(85, 65, 118));
-    }//GEN-LAST:event_rephisbuttonMouseEntered
-
-    private void rephisbuttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseExited
-        // TODO add your handling code here:
-        rephisbutton.setBackground(new Color(25, 25, 112));
-    }//GEN-LAST:event_rephisbuttonMouseExited
+        manageVehicle.setBackground(new Color(85, 65, 118));
+    }//GEN-LAST:event_manageVehicleMouseEntered
 
     private void manageVehicleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVehicleMouseClicked
         // TODO add your handling code here:
@@ -945,46 +703,22 @@ public class AdminSettings extends javax.swing.JFrame {
         as.setVisible(true);
     }//GEN-LAST:event_manageVehicleMouseClicked
 
-    private void manageVehicleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVehicleMouseEntered
+    private void rephisbuttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseExited
         // TODO add your handling code here:
-        manageVehicle.setBackground(new Color(85, 65, 118));
-    }//GEN-LAST:event_manageVehicleMouseEntered
+        rephisbutton.setBackground(new Color(25, 25, 112));
+    }//GEN-LAST:event_rephisbuttonMouseExited
 
-    private void manageVehicleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVehicleMouseExited
+    private void rephisbuttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseEntered
         // TODO add your handling code here:
-        manageVehicle.setBackground(new Color(25, 25, 112));
-    }//GEN-LAST:event_manageVehicleMouseExited
+        rephisbutton.setBackground(new Color(85, 65, 118));
+    }//GEN-LAST:event_rephisbuttonMouseEntered
 
-    private void fuelButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseEntered
+    private void rephisbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rephisbuttonMouseClicked
         // TODO add your handling code here:
-        fuelButton.setBackground(new Color(85, 65, 118));
-    }//GEN-LAST:event_fuelButtonMouseEntered
-
-    private void fuelButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseExited
-        // TODO add your handling code here:
-        fuelButton.setBackground(new Color(25, 25, 112));
-    }//GEN-LAST:event_fuelButtonMouseExited
-
-    private void oldPasswordTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_oldPasswordTextKeyPressed
-        // TODO add your handling code here:
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            Admin admin = new Admin();
-            String oldPassword = oldPasswordText.getText();
-            oldPasswordText.setText("");
-            if (admin.chkAdminPass(username, oldPassword)) {
-                JOptionPane.showMessageDialog(null, "Old Password Verified");
-                newPasswordText.setVisible(true);
-                confirmPasswordText.setVisible(true);
-                saveButton.setVisible(true);
-                newPasswordLabel.setVisible(true);
-                confirmPasswordLabel.setVisible(true);
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Old Password Not Verified");
-            }
-
-        }
-    }//GEN-LAST:event_oldPasswordTextKeyPressed
+        ViewRepairHis rephis = new ViewRepairHis(username);
+        this.setVisible(false);
+        rephis.setVisible(true);
+    }//GEN-LAST:event_rephisbuttonMouseClicked
 
     private void confirmPasswordTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_confirmPasswordTextKeyPressed
         // TODO add your handling code here:
@@ -1010,6 +744,261 @@ public class AdminSettings extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_confirmPasswordTextKeyPressed
 
+    private void confirmPasswordTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_confirmPasswordTextFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmPasswordTextFocusGained
+
+    private void newPasswordTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newPasswordTextFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newPasswordTextFocusGained
+
+    private void oldPasswordTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_oldPasswordTextKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            Admin admin = new Admin();
+            String oldPassword = oldPasswordText.getText();
+            oldPasswordText.setText("");
+            if (admin.chkAdminPass(username, oldPassword)) {
+                JOptionPane.showMessageDialog(null, "Old Password Verified");
+                newPasswordText.setVisible(true);
+                confirmPasswordText.setVisible(true);
+                saveButton.setVisible(true);
+                newPasswordLabel.setVisible(true);
+                confirmPasswordLabel.setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Old Password Not Verified");
+            }
+
+        }
+    }//GEN-LAST:event_oldPasswordTextKeyPressed
+
+    private void oldPasswordTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_oldPasswordTextFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_oldPasswordTextFocusGained
+
+    private void verifyButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifyButtonMouseExited
+        // TODO add your handling code here:
+        verifyButton.setBackground(new Color(255, 255, 255));
+        jLabel3.setForeground(new Color(153, 153, 153));
+    }//GEN-LAST:event_verifyButtonMouseExited
+
+    private void verifyButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifyButtonMouseEntered
+        // TODO add your handling code here:
+        verifyButton.setBackground(new Color(153, 102, 255));
+        jLabel3.setForeground(new Color(255, 255, 255));
+    }//GEN-LAST:event_verifyButtonMouseEntered
+
+    private void verifyButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifyButtonMouseClicked
+        // TODO add your handling code here:
+        Admin admin = new Admin();
+        String oldPassword = oldPasswordText.getText();
+        oldPasswordText.setText("");
+        if (admin.chkAdminPass(username, oldPassword)) {
+            JOptionPane.showMessageDialog(null, "Old Password Verified");
+            newPasswordText.setVisible(true);
+            confirmPasswordText.setVisible(true);
+            saveButton.setVisible(true);
+            newPasswordLabel.setVisible(true);
+            confirmPasswordLabel.setVisible(true);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Old Password Not Verified");
+        }
+    }//GEN-LAST:event_verifyButtonMouseClicked
+
+    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel3MouseExited
+
+    private void saveButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseExited
+        // TODO add your handling code here:
+        saveButton.setBackground(new Color(255, 255, 255));
+        jLabel2.setForeground(new Color(153, 153, 153));
+    }//GEN-LAST:event_saveButtonMouseExited
+
+    private void saveButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseEntered
+        // TODO add your handling code here:
+        saveButton.setBackground(new Color(153, 102, 255));
+        jLabel2.setForeground(new Color(255, 255, 255));
+    }//GEN-LAST:event_saveButtonMouseEntered
+
+    private void saveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseClicked
+        // TODO add your handling code here:
+
+        Admin ad = new Admin();
+        String newPassword = newPasswordText.getText();
+        String confirmPassword = confirmPasswordText.getText();
+        newPasswordText.setText("");
+        confirmPasswordText.setText("");
+        if (newPassword.equals(confirmPassword)) {
+            JOptionPane.showMessageDialog(null, "Your both passwords matched");
+            ad.changePassword(username, newPassword);
+            oldPasswordText.setText("");
+            newPasswordText.setText("");
+            confirmPasswordText.setText("");
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Your passwords didn't matched");
+            newPasswordText.setText("");
+            confirmPasswordText.setText("");
+
+        }
+    }//GEN-LAST:event_saveButtonMouseClicked
+
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2MouseExited
+
+    private void jPanel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseExited
+        // TODO add your handling code here:
+        jPanel6.setBackground(new Color(255, 255, 255));
+    }//GEN-LAST:event_jPanel6MouseExited
+
+    private void jPanel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseEntered
+        // TODO add your handling code here:
+        jPanel6.setBackground(new Color(153, 102, 255));
+        jLabel17.setForeground(Color.WHITE);
+    }//GEN-LAST:event_jPanel6MouseEntered
+
+    private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
+        // TODO add your handling code here:
+        setState(AddVehicle.ICONIFIED);
+    }//GEN-LAST:event_jPanel6MouseClicked
+
+    private void jLabel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel7MouseEntered
+
+    private void jPanel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseExited
+        // TODO add your handling code here:
+        jPanel4.setBackground(new Color(255, 255, 255));
+    }//GEN-LAST:event_jPanel4MouseExited
+
+    private void jPanel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseEntered
+        // TODO add your handling code here:
+        jPanel4.setBackground(new Color(153, 102, 255));
+    }//GEN-LAST:event_jPanel4MouseEntered
+
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jPanel4MouseClicked
+
+    private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
+        // TODO add your handling code here:
+        logOutButton.setBackground(new Color(25, 25, 112));
+    }//GEN-LAST:event_logOutButtonMouseExited
+
+    private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
+        // TODO add your handling code here:
+        logOutButton.setBackground(new Color(85, 65, 118));
+    }//GEN-LAST:event_logOutButtonMouseEntered
+
+    private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
+        // TODO add your handling code here:
+        LoginMain lm = new LoginMain();
+        this.setVisible(false);
+        lm.setVisible(true);
+    }//GEN-LAST:event_logOutButtonMouseClicked
+
+    private void fuelButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseExited
+        // TODO add your handling code here:
+        fuelButton.setBackground(new Color(25, 25, 112));
+    }//GEN-LAST:event_fuelButtonMouseExited
+
+    private void fuelButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseEntered
+        // TODO add your handling code here:
+        fuelButton.setBackground(new Color(85, 65, 118));
+    }//GEN-LAST:event_fuelButtonMouseEntered
+
+    private void fuelButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelButtonMouseClicked
+        // TODO add your handling code here:
+        FuelPrice fuelprice = new FuelPrice(adminusername);
+        this.setVisible(false);
+        fuelprice.setVisible(true);
+    }//GEN-LAST:event_fuelButtonMouseClicked
+
+    private void ridesHistoryButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseExited
+        // TODO add your handling code here:
+        ridesHistoryButton.setBackground(new Color(25, 25, 112));
+    }//GEN-LAST:event_ridesHistoryButtonMouseExited
+
+    private void ridesHistoryButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseEntered
+        // TODO add your handling code here:
+        ridesHistoryButton.setBackground(new Color(85, 65, 118));
+    }//GEN-LAST:event_ridesHistoryButtonMouseEntered
+
+    private void ridesHistoryButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ridesHistoryButtonMouseClicked
+        // TODO add your handling code here:
+        RidesHistory rh = new RidesHistory(username);
+        this.setVisible(false);
+        rh.setVisible(true);
+    }//GEN-LAST:event_ridesHistoryButtonMouseClicked
+
+    private void banDriverButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseExited
+        // TODO add your handling code here:
+        banDriverButton.setBackground(new Color(25, 25, 112));
+    }//GEN-LAST:event_banDriverButtonMouseExited
+
+    private void banDriverButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseEntered
+        // TODO add your handling code here:
+        banDriverButton.setBackground(new Color(85, 65, 118));
+    }//GEN-LAST:event_banDriverButtonMouseEntered
+
+    private void banDriverButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_banDriverButtonMouseClicked
+        // TODO add your handling code here:
+        BanDriver bandriver = new BanDriver(username);
+        this.setVisible(false);
+        bandriver.setVisible(true);
+    }//GEN-LAST:event_banDriverButtonMouseClicked
+
+    private void removeVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseExited
+        // TODO add your handling code here:
+        removeVehicleButton.setBackground(new Color(25, 25, 112));
+    }//GEN-LAST:event_removeVehicleButtonMouseExited
+
+    private void removeVehicleButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeVehicleButtonMouseEntered
+        // TODO add your handling code here:
+        removeVehicleButton.setBackground(new Color(85, 65, 118));
+    }//GEN-LAST:event_removeVehicleButtonMouseEntered
+
+    private void addVehicleButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addVehicleButton5MouseExited
+
+    private void addVehicleButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButton5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addVehicleButton5MouseEntered
+
+    private void addVehicleButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButtonMouseExited
+        // TODO add your handling code here:
+        addVehicleButton.setBackground(new Color(25, 25, 112));
+    }//GEN-LAST:event_addVehicleButtonMouseExited
+
+    private void addVehicleButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButtonMouseEntered
+        // TODO add your handling code here:
+        addVehicleButton.setBackground(new Color(85, 65, 118));
+    }//GEN-LAST:event_addVehicleButtonMouseEntered
+
+    private void addVehicleButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehicleButtonMouseClicked
+        // TODO add your handling code here:
+        AddVehicle addvehicle = new AddVehicle(username);
+        this.setVisible(false);
+        addvehicle.setVisible(true);
+    }//GEN-LAST:event_addVehicleButtonMouseClicked
+
+//    private void fuelButtonMouseEntered(java.awt.event.MouseEvent evt) {                                        
+//        // TODO add your handling code here:
+//        fuelButton.setBackground(new Color(85, 65, 118));
+//    }                                       
+
+//    private void fuelButtonMouseExited(java.awt.event.MouseEvent evt) {                                       
+//        // TODO add your handling code here:
+//        fuelButton.setBackground(new Color(25, 25, 112));
+//    }                                      
+
+    
     /**
      * @param args the command line arguments
      */
@@ -1065,15 +1054,16 @@ public class AdminSettings extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1093,7 +1083,7 @@ public class AdminSettings extends javax.swing.JFrame {
     private javax.swing.JPanel rephisbutton;
     private javax.swing.JPanel ridesHistoryButton;
     private javax.swing.JPanel saveButton;
-    private javax.swing.JPanel settingsButton;
+    private javax.swing.JPanel settingsButton1;
     private javax.swing.JPanel verifyButton;
     // End of variables declaration//GEN-END:variables
 }
