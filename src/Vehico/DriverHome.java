@@ -226,7 +226,7 @@ public class DriverHome extends javax.swing.JFrame {
         jLabel22.setText("Repair Request");
         repairButton1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
 
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/tools.png"))); // NOI18N
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/repair_icon.png"))); // NOI18N
         repairButton1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -354,7 +354,7 @@ public class DriverHome extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("What are you waiting for?");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 430, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 102, 255), 3));
@@ -384,25 +384,25 @@ public class DriverHome extends javax.swing.JFrame {
         jButton1Layout.setHorizontalGroup(
             jButton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jButton1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jButton1Layout.setVerticalGroup(
             jButton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jButton1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jButton1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel7)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 500, 130, 40));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 480, 130, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
