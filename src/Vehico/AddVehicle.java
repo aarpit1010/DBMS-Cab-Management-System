@@ -812,7 +812,7 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel11.setMinimumSize(new java.awt.Dimension(54, 19));
         jLabel11.setPreferredSize(new java.awt.Dimension(54, 19));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/price.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-petrol-25.png"))); // NOI18N
 
         javax.swing.GroupLayout fuelButtonLayout = new javax.swing.GroupLayout(fuelButton);
         fuelButton.setLayout(fuelButtonLayout);

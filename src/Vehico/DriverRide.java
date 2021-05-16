@@ -394,7 +394,7 @@ public class DriverRide extends javax.swing.JFrame {
         jLabel37.setText("Repair Request");
         repairButton1.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 30));
 
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/tools.png"))); // NOI18N
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/repair_icon.png"))); // NOI18N
         repairButton1.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, 30));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);

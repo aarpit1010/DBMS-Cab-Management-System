@@ -679,12 +679,11 @@ public class Vehicle {
                     try {
                         DbConnection comm = new DbConnection();
                         comm.OpenConnection();
-                        String sql = "Update DriverBusT Set BusPlate = '"
-                                + "" + newPlate + "',BusID = '" + newId + "',"
-                                + "BusName = '" + newName + "',Fromm = '" + fromm + ""
+                        String sql = "Update DriverBusT Set BusID = '" + newId + "',"
+                                + " Fromm = '" + fromm + ""
                                 + "',Too = '" + too + "' where DriverUsername ="
                                 + " '" + dId + "'";
-
+                        System.out.println(sql);
                         int flagg = comm.InsertUpdateDelete(sql);
 
                         if (flagg == 1) {

@@ -112,7 +112,7 @@ public class Passenger {
                     + getUser() + "','"
                     + getPass() + "','"
                     + getPname() + "','"
-                    + getFname() + "',"
+                    + getFname() + "','"
                     + getPGender() + "','"
                     + getPSec() + "','"
                     + getCnic() + "','"

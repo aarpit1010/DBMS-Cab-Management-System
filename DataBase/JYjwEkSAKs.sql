@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: remotemysql.com
--- Generation Time: May 11, 2021 at 10:14 AM
+-- Generation Time: May 16, 2021 at 12:57 PM
 -- Server version: 8.0.13-4
 -- PHP Version: 7.2.24-0ubuntu0.18.04.6
 
@@ -64,6 +64,7 @@ CREATE TABLE `BanDriver` (
 --
 
 INSERT INTO `BanDriver` (`ID`, `CarId`, `Password`, `Name`, `FatherName`, `Gender`, `SecurityQuestion`, `Type`, `aadhar`, `ContactNo`, `DOB`) VALUES
+('steve1', '21', 'rogers', 'Steve', 'Bucky', 'Male', 'steve', 'Car', '42501-71291-1', '03434801218', '02-Jun-1998'),
 ('testR', '1', 'y', 'tggg', 'hhh', 'Male', 'aaa', 'Rickshaw', '1315', '1361', 'May 13, 2021');
 
 -- --------------------------------------------------------
@@ -91,8 +92,8 @@ CREATE TABLE `BusT` (
 --
 
 INSERT INTO `BusT` (`BusId`, `Model`, `Version`, `Color`, `PlateNo`, `RegistrationDate`, `ExpirationDate`, `BusName`, `Fromm`, `Too`, `Assigned`) VALUES
-(1, ' Double Decker', 'v2.0', 'Green', 'UP3267', '02-May-2011', '31-May-2021', 'BUS2', 'Prayagraj', 'Agra', 1),
-(2, ' AC', 'v4.2', 'Black', 'HR1234', '07-May-2011', '31-May-2021', 'VolVo', 'Ghaziabad', 'Meerut', 1);
+(2, ' AC', 'v4.2', 'Black', 'HR1234', '07-May-2011', '31-May-2021', 'VolVo', 'Ghaziabad', 'Meerut', 1),
+(7, ' dtcc', 'v5.2', 'white', 'up-11', '11-May-2001', '01-May-2021', 'delux', 'Prayagraj', 'Noida', 1);
 
 -- --------------------------------------------------------
 
@@ -122,7 +123,7 @@ INSERT INTO `CarT` (`CarId`, `Model`, `Version`, `Color`, `PlateNo`, `Registrati
 (18, ' 2019', 'v 1.8', 'Black', 'IJK-2004', '12-Jun-2020', '19-Oct-2029', 'Mira', 1),
 (19, ' 2020', 'v 6.4', 'White', 'IKA-1212', '12-May-2021', '04-May-2029', 'Suzuki Swift', 1),
 (20, ' 2020', 'v 5.1', 'Black', 'IN', '12-May-2021', '04-May-2029', 'Scross', 1),
-(21, ' 2020', 'v 9.9', 'Red', 'IND', '12-May-2021', '04-May-2029', 'Honda City', 1),
+(21, ' 2020', 'v 9.9', 'Red', 'IND', '12-May-2021', '04-May-2029', 'Honda City', 0),
 (22, ' 2020', 'v 7.1', 'White', 'JAN-1281', '02-May-2021', '04-Oct-2029', 'Cultus', 1),
 (23, ' 2012', 'v 1.8', 'White', 'YHK-981', '02-May-2012', '11-May-2019', 'Scross', 1),
 (24, ' 2014', 'v 6.7', 'Black', 'UJNZ-123', '12-Jun-2018', '03-Jun-2034', 'Swift', 1),
@@ -154,21 +155,14 @@ CREATE TABLE `Driver` (
 
 INSERT INTO `Driver` (`ID`, `Password`, `Name`, `FatherName`, `Gender`, `SecurityQuestion`, `Type`, `aadhar`, `ContactNo`, `DOB`) VALUES
 ('123', '1234', 'Driver1', 'Driver1 Father', 'Male', 'first', 'Car', '42501-812912-92', '0343-9128121', '08-May-1999'),
-('alex1', '123', 'Alex', 'Patrick', 'Male', 'alex', 'Bus', '43987-1232123-8', '03045566789', '06-May-1995'),
-('bd2', '1', 'bd2', 'bd2d', 'Male', 'bd2b', 'Bus', '465', '454654652', '06-May-2000'),
-('charlie1', '121', 'Charlie', 'Rohn', 'Male', 'charlie', 'Rickshaw', '33202-5677687-9', '03232344232', '04-May-2018'),
 ('d11', '1', 'd11', 'd11d', 'Male', 'd11b', 'Car', '54', '876543', '06-May-2000'),
 ('d139', '139', 'driver1', 'ddr', 'Male', 'ddr2', 'Car', '3311', '123456', '10-Oct-2001'),
-('d2c', '1', 'd2', 'd2dad', 'Male', 'd2bro', 'Car', '453', '8976543432', '06-May-1998'),
 ('d7', 'y', 'd7', 'abc', 'Male', 'abc', 'Car', '1', '1', 'May 14, 2014'),
-('emily1', '121', 'Emily ', 'Wilson', 'Female', 'emily', 'Bus', '23213-5654321-6', '03009898907', '08-May-1994'),
-('jack1', '12345', 'Jack', 'Wilson', 'Male', 'jack', 'Bus', '23213-5665654-4', '03009877654', '02-May-1987'),
-('john1', '1234', 'john', 'adam', 'Male', 'Han', 'Rickshaw', '43251-121812-1', '0343-1291281', '19-May-1998'),
 ('nic', '123', 'TaxiDriv', 'TaxiDad', 'Male', 'TaxiBro', 'Car', '463546', '7989898985', '06-May-2000'),
 ('peter1', '1234', 'Peter', 'Ben', 'Male', 'peter', 'Car', '42501-121221-91', '0343912912', '05-May-1990'),
 ('rdriver', '123', 'ricky', 'ricky_dad', 'Male', 'ricky_bro', 'Rickshaw', '23456', '876543245', '05-May-1987'),
-('steve1', 'rogers', 'Steve', 'Bucky', 'Male', 'steve', 'Car', '42501-71291-1', '03434801218', '02-Jun-1998'),
 ('testB', 'y', 'Bus_test', 'xyz', 'Male', 'xyz', 'Bus', '1', '1', 'May 31, 2021'),
+('testBD', '123', 'Test Bus Driver', 'dad', 'Male', 'Siblibg', 'Bus', '132', '7685651132', '01-May-2021'),
 ('tony1', '9900', 'Tony', 'Havard', 'Male', 'tony', 'Car', '42501-912415-9', '0343-8080543', 'Apr 19, 1999');
 
 -- --------------------------------------------------------
@@ -220,7 +214,8 @@ CREATE TABLE `DriverBusT` (
 --
 
 INSERT INTO `DriverBusT` (`SNo`, `DriverUsername`, `BusID`, `Fromm`, `Too`) VALUES
-(1, 'testB', 2, 'Ghaziabad', 'Meerut');
+(1, 'testB', 2, 'Ghaziabad', 'Meerut'),
+(4, 'testBD', 7, 'Prayagraj', 'Noida');
 
 -- --------------------------------------------------------
 
@@ -272,7 +267,6 @@ INSERT INTO `DriverCarT` (`SNo`, `DriverUsername`, `CarID`) VALUES
 (2, 'd139', 25),
 (3, 'peter1', 19),
 (4, 'tony1', 20),
-(5, 'steve1', 21),
 (8, 'd11', 2),
 (10, 'd7', 1),
 (11, 'nic', 26);
@@ -334,7 +328,7 @@ CREATE TABLE `fuel` (
 --
 
 INSERT INTO `fuel` (`id`, `price`) VALUES
-(1, 50.5);
+(1, 80);
 
 -- --------------------------------------------------------
 
@@ -358,7 +352,8 @@ INSERT INTO `PassengerBusRides` (`SNo`, `iD`, `Username`, `VehicleId`, `PUsernam
 (1, 1, 'testB', 2, 'abcd'),
 (2, 1, 'testB', 2, 'bruce1'),
 (3, 2, 'testB', 2, 'bruce1'),
-(4, 2, 'testB', 2, 'abcd');
+(4, 2, 'testB', 2, 'abcd'),
+(5, 1, 'testB', 2, 'abcd');
 
 -- --------------------------------------------------------
 
@@ -470,6 +465,8 @@ CREATE TABLE `RideRealtime` (
 INSERT INTO `RideRealtime` (`iD`, `Username`, `VehicleId`, `PUsername`, `Fromm`, `Too`, `Datee`, `RideStatus`, `StartTime`, `EndTime`, `BillStatus`, `Bill`, `NoOfPassengers`) VALUES
 ('B1', 'testB', 2, NULL, 'Ghaziabad', 'Meerut', '10/05/2021', 'Completed', '18:33', '18:33', 'Paid', 626.88, 3),
 ('B2', 'testB', 2, NULL, 'Ghaziabad', 'Meerut', '10/05/2021', 'Running', '18:56', '18:53', 'Paid', 877.6320000000001, 3),
+('B3', 'testBD', 1, NULL, 'Prayagraj', 'Agra', '16/05/2021', 'Completed', '17:33', '17:33', 'Paid', 303, 1),
+('B4', 'testBD', 1, NULL, 'Prayagraj', 'Agra', '16/05/2021', 'Completed', '17:41', '17:41', 'Paid', 181.8, 1),
 ('C1', 'nic', 26, 'kane1', 'Gurugram, Haryana', 'Allahabad, Uttar Pradesh', '10/05/2021', 'Completed', '20:57', '20:58', 'Paid', 488.9664, 1);
 
 --
@@ -610,7 +607,7 @@ ALTER TABLE `RideRealtime`
 -- AUTO_INCREMENT for table `BusT`
 --
 ALTER TABLE `BusT`
-  MODIFY `BusId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `BusId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `CarT`
@@ -622,13 +619,13 @@ ALTER TABLE `CarT`
 -- AUTO_INCREMENT for table `DriverBusRT`
 --
 ALTER TABLE `DriverBusRT`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `DriverBusT`
 --
 ALTER TABLE `DriverBusT`
-  MODIFY `SNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `SNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `DriverCarRT`
@@ -658,7 +655,7 @@ ALTER TABLE `DriverRickshawT`
 -- AUTO_INCREMENT for table `PassengerBusRides`
 --
 ALTER TABLE `PassengerBusRides`
-  MODIFY `SNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `SNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `RickshawT`

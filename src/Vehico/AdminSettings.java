@@ -546,7 +546,7 @@ public class AdminSettings extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/price.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-petrol-25.png"))); // NOI18N
         jLabel8.setText("        Fuel Price");
         jLabel8.setToolTipText("");
 

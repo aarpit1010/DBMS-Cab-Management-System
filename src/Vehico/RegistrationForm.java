@@ -28,6 +28,7 @@ public class RegistrationForm extends javax.swing.JFrame {
      */
     public RegistrationForm() {
         initComponents();
+        checkMale.setSelected(true);
     }
 
     /**
@@ -211,8 +212,18 @@ public class RegistrationForm extends javax.swing.JFrame {
         registerAsCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Driver", "Passenger" }));
 
         checkFemale.setText("Female");
+        checkFemale.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkFemaleActionPerformed(evt);
+            }
+        });
 
         checkMale.setText("Male");
+        checkMale.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkMaleActionPerformed(evt);
+            }
+        });
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(153, 153, 153));
@@ -632,6 +643,20 @@ public class RegistrationForm extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_registerButtonKeyPressed
+
+    private void checkMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkMaleActionPerformed
+        // TODO add your handling code here:
+        if(checkMale.isSelected()) {
+            checkFemale.setSelected(false);
+        }
+    }//GEN-LAST:event_checkMaleActionPerformed
+
+    private void checkFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkFemaleActionPerformed
+        // TODO add your handling code here:
+        if(checkFemale.isSelected()) {
+            checkMale.setSelected(false);
+        }
+    }//GEN-LAST:event_checkFemaleActionPerformed
 
     /**
      * @param args the command line arguments
