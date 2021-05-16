@@ -978,7 +978,7 @@
     <Container class="javax.swing.JPanel" name="jPanel6">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="70" green="19" red="19" type="rgb"/>
+          <Color blue="6b" green="22" red="40" type="rgb"/>
         </Property>
       </Properties>
 
@@ -1012,7 +1012,7 @@
         <Container class="javax.swing.JPanel" name="checkRidesButton3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="70" green="19" red="19" type="rgb"/>
+              <Color blue="6b" green="22" red="40" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -1105,7 +1105,7 @@
         <Container class="javax.swing.JPanel" name="currentRideButton3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="70" green="19" red="19" type="rgb"/>
+              <Color blue="6b" green="22" red="40" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -1156,7 +1156,7 @@
         <Container class="javax.swing.JPanel" name="settingsButton3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="70" green="19" red="19" type="rgb"/>
+              <Color blue="6b" green="22" red="40" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -1207,7 +1207,7 @@
         <Container class="javax.swing.JPanel" name="logOutButton3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="70" green="19" red="19" type="rgb"/>
+              <Color blue="6b" green="22" red="40" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -1728,7 +1728,7 @@
         <Container class="javax.swing.JPanel" name="repairButton1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="70" green="19" red="19" type="rgb"/>
+              <Color blue="6b" green="22" red="40" type="rgb"/>
             </Property>
           </Properties>
           <Events>
